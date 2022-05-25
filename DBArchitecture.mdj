@@ -2635,7 +2635,7 @@
 											"top": 537,
 											"width": 158,
 											"height": 13,
-											"text": "+responsibilities",
+											"text": "+results",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4524,7 +4524,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGA+xrVUAatMMc="
 							},
-							"name": "role_id"
+							"name": "role_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4691,7 +4692,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGA+yG/Awc19EY="
 							},
-							"name": "references"
+							"name": "references",
+							"type": ""
 						}
 					]
 				},
@@ -5023,8 +5025,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGA+3Zgm+KqmIA="
 							},
-							"name": "responsibilities",
-							"type": ""
+							"name": "results"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5221,7 +5222,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGA+6nGOb0/n08="
 							},
-							"name": "id"
+							"name": "id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5229,7 +5231,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGA+6nGOb0/n08="
 							},
-							"name": "name"
+							"name": "name",
+							"type": ""
 						}
 					]
 				}
