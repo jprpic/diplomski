@@ -9,4 +9,9 @@ class Skill extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    protected $fillable = [
+        'tag_id',
+        'name'
+    ];
 }

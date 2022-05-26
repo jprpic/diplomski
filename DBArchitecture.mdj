@@ -1547,23 +1547,6 @@
 										},
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGA+2RdysVIM38=",
-											"_parent": {
-												"$ref": "AAAAAAGA+2QUTcQCYIg="
-											},
-											"model": {
-												"$ref": "AAAAAAGA+2RdxsU/Gt0="
-											},
-											"font": "Arial;13;0",
-											"left": 1269,
-											"top": 693,
-											"width": 183,
-											"height": 13,
-											"text": "+name",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
 											"_id": "AAAAAAGA+4Kdr0QRcHs=",
 											"_parent": {
 												"$ref": "AAAAAAGA+2QUTcQCYIg="
@@ -1573,10 +1556,27 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1269,
-											"top": 708,
+											"top": 693,
 											"width": 183,
 											"height": 13,
 											"text": "+tag_id",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGA+2RdysVIM38=",
+											"_parent": {
+												"$ref": "AAAAAAGA+2QUTcQCYIg="
+											},
+											"model": {
+												"$ref": "AAAAAAGA+2RdxsU/Gt0="
+											},
+											"font": "Arial;13;0",
+											"left": 1269,
+											"top": 708,
+											"width": 183,
+											"height": 13,
+											"text": "+name",
 											"horizontalAlignment": 0
 										}
 									],
@@ -4847,20 +4847,20 @@
 						},
 						{
 							"_type": "UMLAttribute",
-							"_id": "AAAAAAGA+2RdxsU/Gt0=",
-							"_parent": {
-								"$ref": "AAAAAAGA+2QUTcP67WY="
-							},
-							"name": "name",
-							"type": ""
-						},
-						{
-							"_type": "UMLAttribute",
 							"_id": "AAAAAAGA+4KdrEQIJM8=",
 							"_parent": {
 								"$ref": "AAAAAAGA+2QUTcP67WY="
 							},
 							"name": "tag_id",
+							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGA+2RdxsU/Gt0=",
+							"_parent": {
+								"$ref": "AAAAAAGA+2QUTcP67WY="
+							},
+							"name": "name",
 							"type": ""
 						}
 					]

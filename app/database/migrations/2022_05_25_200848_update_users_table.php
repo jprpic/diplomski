@@ -17,7 +17,8 @@ return new class extends Migration
             $table->unsignedTinyInteger('role_id');
             $table->foreign('role_id')->references('id')->on('roles');
             // One-to-one relationship with CV
-            $table->foreignId('cv_id')->constrained();
+            // Employers and admins dont need a CV
+            $table->foreignId('cv_id')->nullable()->constrained();
         });
     }
 
