@@ -8,6 +8,8 @@ use Inertia\Inertia;
 class CVController extends Controller
 {
     function create(){
-        return Inertia::render('Create');
+        return Inertia::render('Create', [
+            'user' => Auth()->user()
+        ]);
     }
 }

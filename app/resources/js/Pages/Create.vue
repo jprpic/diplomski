@@ -1,15 +1,26 @@
 <script setup>
 import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
 import {Head, useForm} from '@inertiajs/inertia-vue3';
-import BreezeLabel from '@/Components/Label.vue';
 import BreezeInput from '@/Components/Input.vue';
-import BreezeCheckbox from '@/Components/Checkbox.vue';
 import BreezeButton from '@/Components/Button.vue';
+import BreezeTextArea from '@/Components/TextArea.vue';
+import BreezeLabel from '@/Components/Label.vue';
+import ExperienceList from "@/Components/ExperienceList";
+
+const props = defineProps({
+    user: {
+        type: Object,
+        required: true
+    }
+})
 
 const form = useForm({
-    email: '',
-    password: '',
-    remember: false
+    name: '',
+    job: '',
+    description: '',
+    address: '',
+    references: '',
+    experiences: [],
 });
 
 const submit = () => {
@@ -33,25 +44,40 @@ const submit = () => {
                     <div class="p-6 bg-white border-b border-gray-200">
                         <form @submit.prevent="submit">
                             <div>
-                                <BreezeLabel for="email" value="Email" />
-                                <BreezeInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />
+                                <BreezeLabel for="name" value="Full name" />
+                                <BreezeInput id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus  />
                             </div>
 
-                            <div class="mt-4">
-                                <BreezeLabel for="password" value="Password" />
-                                <BreezeInput id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="current-password" />
+                            <div class="mt-2">
+                                <BreezeLabel for="job" value="Job position" />
+                                <BreezeInput id="job" type="text" class="mt-1 block w-full" v-model="form.job" required />
                             </div>
 
-                            <div class="block mt-4">
-                                <label class="flex items-center">
-                                    <BreezeCheckbox name="remember" v-model:checked="form.remember" />
-                                    <span class="ml-2 text-sm text-gray-600">Remember me</span>
-                                </label>
+                            <div class="mt-2">
+                                <BreezeLabel for="address" value="Address" />
+                                <BreezeInput id="address" type="text" class="mt-1 block w-full" v-model="form.address" required  />
                             </div>
+
+                            <div class="mt-2">
+                                <BreezeLabel for="description" value="Profile description" />
+                                <BreezeTextArea id="description" rows="3" v-model="form.description" />
+                            </div>
+
+                            <div>
+                                <span class="font-medium text-sm text-gray-700">Experiences</span>
+                                <ExperienceList/>
+                            </div>
+
+
+                            <div class="mt-2">
+                                <BreezeLabel for="references" value="References" />
+                                <BreezeTextArea id="references" rows="2" v-model="form.references" />
+                            </div>
+
 
                             <div class="flex items-center justify-end mt-4">
                                 <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                                    Log in
+                                    Submit
                                 </BreezeButton>
                             </div>
                         </form>
@@ -61,13 +87,3 @@ const submit = () => {
         </div>
     </BreezeAuthenticatedLayout>
 </template>
-
-<script>
-export default {
-    name: "Create.vue"
-}
-</script>
-
-<style scoped>
-
-</style>
