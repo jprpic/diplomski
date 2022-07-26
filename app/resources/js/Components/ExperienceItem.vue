@@ -24,12 +24,16 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col w-2/3 mt-2 ml-4">
-            <span class="font-medium text-sm text-gray-700">Results</span>
-            <div ref="inputs">
-
+        <div class="flex flex-col grow mt-2 mx-4">
+            <BreezeLabel for="results" value="Results" class="flex-initial" />
+            <div v-for="(result, index) in results" :key="index">
+                <BreezeInput id="source" type="text" class="mt-2 block w-full" required
+                             v-model="results[index]"/>
             </div>
+            <BreezeButton @click="addResult" type="button" class="w-32 mt-2">Add Result</BreezeButton>
         </div>
+
+
     </div>
 
 </template>
@@ -37,16 +41,19 @@
 <script>
 import BreezeLabel from './Label.vue';
 import BreezeInput from './Input.vue';
+import BreezeButton from './Button.vue';
 export default {
     name: "Experience.vue",
     components: {
         BreezeLabel,
-        BreezeInput
+        BreezeInput,
+        BreezeButton
     },
-    data(){
-        return{
-            name: '',
-            source: ''
+    props: ['name','source','type','results'],
+    emits: ['update:name','update:source','update:type','update:results'],
+    methods:{
+        addResult(){
+            this.results.push('')
         }
     }
 }

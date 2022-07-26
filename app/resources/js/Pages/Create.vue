@@ -6,6 +6,7 @@ import BreezeButton from '@/Components/Button.vue';
 import BreezeTextArea from '@/Components/TextArea.vue';
 import BreezeLabel from '@/Components/Label.vue';
 import ExperienceList from "@/Components/ExperienceList";
+import ContactList from "@/Components/ContactList";
 
 const props = defineProps({
     user: {
@@ -44,13 +45,18 @@ const submit = () => {
                     <div class="p-6 bg-white border-b border-gray-200">
                         <form @submit.prevent="submit">
                             <div>
-                                <BreezeLabel for="name" value="Full name" />
+                                <BreezeLabel for="name" value="First and Last name" />
                                 <BreezeInput id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus  />
                             </div>
 
                             <div class="mt-2">
                                 <BreezeLabel for="job" value="Job position" />
                                 <BreezeInput id="job" type="text" class="mt-1 block w-full" v-model="form.job" required />
+                            </div>
+
+                            <div>
+                                <span class="font-medium text-sm text-gray-700">Contacts</span>
+                                <ContactList/>
                             </div>
 
                             <div class="mt-2">
