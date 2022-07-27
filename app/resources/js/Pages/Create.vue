@@ -5,8 +5,9 @@ import BreezeInput from '@/Components/Input.vue';
 import BreezeButton from '@/Components/Button.vue';
 import BreezeTextArea from '@/Components/TextArea.vue';
 import BreezeLabel from '@/Components/Label.vue';
-import ExperienceList from "@/Components/ExperienceList";
-import ContactList from "@/Components/ContactList";
+import ExperienceList from "@/Components/CV/ExperienceList";
+import ContactList from "@/Components/CV/ContactList";
+import SkillList from "@/Components/CV/SkillList";
 
 const props = defineProps({
     user: {
@@ -50,13 +51,8 @@ const submit = () => {
                             </div>
 
                             <div class="mt-2">
-                                <BreezeLabel for="job" value="Job position" />
-                                <BreezeInput id="job" type="text" class="mt-1 block w-full" v-model="form.job" required />
-                            </div>
-
-                            <div>
-                                <span class="font-medium text-sm text-gray-700">Contacts</span>
-                                <ContactList/>
+                                <BreezeLabel for="description" value="Profile description" />
+                                <BreezeTextArea id="description" rows="3" v-model="form.description" />
                             </div>
 
                             <div class="mt-2">
@@ -65,21 +61,29 @@ const submit = () => {
                             </div>
 
                             <div class="mt-2">
-                                <BreezeLabel for="description" value="Profile description" />
-                                <BreezeTextArea id="description" rows="3" v-model="form.description" />
+                                <span class="font-medium text-sm text-gray-700">Contacts</span>
+                                <ContactList/>
                             </div>
 
-                            <div>
-                                <span class="font-medium text-sm text-gray-700">Experiences</span>
+                            <div class="mt-2">
+                                <BreezeLabel for="job" value="Job position" />
+                                <BreezeInput id="job" type="text" class="mt-1 block w-full" v-model="form.job" required />
+                            </div>
+
+                            <div class="mt-2">
+                                <span class="font-medium text-sm text-gray-700 pb-2">Experiences</span>
                                 <ExperienceList/>
                             </div>
 
+                            <div class="mt-2">
+                                <span class="font-medium text-sm text-gray-700 pb-2">Skills</span>
+                                <SkillList/>
+                            </div>
 
                             <div class="mt-2">
                                 <BreezeLabel for="references" value="References" />
                                 <BreezeTextArea id="references" rows="2" v-model="form.references" />
                             </div>
-
 
                             <div class="flex items-center justify-end mt-4">
                                 <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">

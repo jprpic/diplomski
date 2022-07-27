@@ -25,9 +25,9 @@
 </template>
 
 <script>
-import BreezeLabel from './Label.vue';
-import BreezeInput from './Input.vue';
-import BreezeButton from './Button.vue';
+import BreezeLabel from '../Label.vue';
+import BreezeInput from '../Input.vue';
+import BreezeButton from '../Button.vue';
 export default {
     name: "ContactItem",
     components: {

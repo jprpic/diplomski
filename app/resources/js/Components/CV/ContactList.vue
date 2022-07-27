@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import BreezeButton from './Button.vue';
-import ContactItem from "@/Components/ContactItem";
-import BreezeLabel from './Label.vue';
-import BreezeInput from './Input.vue';
+import BreezeButton from '../Button.vue';
+import ContactItem from "@/Components/CV/ContactItem";
+import BreezeLabel from '../Label.vue';
+import BreezeInput from '../Input.vue';
 export default {
     name: "ContactList",
     components:{

@@ -25,12 +25,17 @@
             </div>
         </div>
         <div class="flex flex-col grow mt-2 mx-4">
-            <BreezeLabel for="results" value="Results" class="flex-initial" />
-            <div v-for="(result, index) in results" :key="index">
+            <div class="flex justify-between items-end" >
+                <BreezeLabel for="results" value="Results"/>
+                <BreezeButton @click="$emit('remove-experience', expIndex)" type="button" class="-mr-2">Remove experience</BreezeButton>
+            </div>
+
+            <div v-for="(result, index) in results" :key="index" class="flex">
                 <BreezeInput id="source" type="text" class="mt-2 block w-full" required
                              v-model="results[index]"/>
+                <BreezeButton @click="removeResult(index)" type="button" class="ml-2 self-center mt-2">X</BreezeButton>
             </div>
-            <BreezeButton @click="addResult" type="button" class="w-32 mt-2">Add Result</BreezeButton>
+            <BreezeButton @click="addResult" type="button" class="my-2 text-center grid" style="width: fit-content;">Add Result</BreezeButton>
         </div>
 
 
@@ -39,9 +44,9 @@
 </template>
 
 <script>
-import BreezeLabel from './Label.vue';
-import BreezeInput from './Input.vue';
-import BreezeButton from './Button.vue';
+import BreezeLabel from '../Label.vue';
+import BreezeInput from '../Input.vue';
+import BreezeButton from '../Button.vue';
 export default {
     name: "Experience.vue",
     components: {
@@ -49,11 +54,16 @@ export default {
         BreezeInput,
         BreezeButton
     },
-    props: ['name','source','type','results'],
-    emits: ['update:name','update:source','update:type','update:results'],
+    props: ['name','source','type','results','expIndex'],
+    emits: ['update:name','update:source','update:type','update:results','remove-experience'],
     methods:{
         addResult(){
             this.results.push('')
+        },
+        removeResult(index){
+            if (index > -1) { // only splice array when item is found
+                this.results.splice(index, 1); // 2nd parameter means remove one item only
+            }
         }
     }
 }
