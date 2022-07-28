@@ -24,22 +24,47 @@ const form = useForm({
     references: '',
     experiences: [],
 });
+</script>
 
-const submit = () => {
-    form.post(route('create'));
-};
+<script>
+
+export default {
+    computed:{
+        CV(){
+            return this.$store.getters.cv;
+        }
+    },
+    methods:{
+        updateName(name){
+            this.$store.dispatch('updateName', name);
+        },
+        updateDescription(description){
+            this.$store.dispatch('updateDescription', description)
+        },
+        updateAddress(address){
+            this.$store.dispatch('updateAddress', address)
+        },
+        updateJob(job){
+            this.$store.dispatch('updateJob', job)
+        },
+        updateReferences(references){
+            this.$store.dispatch('updateReferences', references)
+        },
+        submit(){
+            console.log(this.CV);
+        }
+    }
+}
 </script>
 
 <template>
     <Head title="Create" />
-
     <BreezeAuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Create
             </h2>
         </template>
-
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -47,17 +72,19 @@ const submit = () => {
                         <form @submit.prevent="submit">
                             <div>
                                 <BreezeLabel for="name" value="First and Last name" />
-                                <BreezeInput id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus  />
+                                <BreezeInput id="name" type="text" class="mt-1 block w-full" required autofocus
+                                             :value="CV.name"
+                                             @input="updateName($event.target.value)"   />
                             </div>
 
                             <div class="mt-2">
                                 <BreezeLabel for="description" value="Profile description" />
-                                <BreezeTextArea id="description" rows="3" v-model="form.description" />
+                                <BreezeTextArea id="description" rows="3" :value="CV.description" @input="updateDescription($event.target.value)" />
                             </div>
 
                             <div class="mt-2">
                                 <BreezeLabel for="address" value="Address" />
-                                <BreezeInput id="address" type="text" class="mt-1 block w-full" v-model="form.address" required  />
+                                <BreezeInput id="address" type="text" class="mt-1 block w-full" :value="CV.address" @input="updateAddress($event.target.value)" required  />
                             </div>
 
                             <div class="mt-2">
@@ -67,7 +94,7 @@ const submit = () => {
 
                             <div class="mt-2">
                                 <BreezeLabel for="job" value="Job position" />
-                                <BreezeInput id="job" type="text" class="mt-1 block w-full" v-model="form.job" required />
+                                <BreezeInput id="job" type="text" class="mt-1 block w-full" :value="CV.job" @input="updateJob($event.target.value)" required />
                             </div>
 
                             <div class="mt-2">
@@ -82,7 +109,7 @@ const submit = () => {
 
                             <div class="mt-2">
                                 <BreezeLabel for="references" value="References" />
-                                <BreezeTextArea id="references" rows="2" v-model="form.references" />
+                                <BreezeTextArea id="references" rows="2" :value="CV.references" @input="updateReferences($event.target.value)" />
                             </div>
 
                             <div class="flex items-center justify-end mt-4">

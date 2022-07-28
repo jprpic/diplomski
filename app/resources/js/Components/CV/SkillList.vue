@@ -2,7 +2,7 @@
   <div class="border border-gray-200 rounded-md shadow-sm">
       <div v-for="(skill, index) in skills" class="flex">
           <div class="grow">
-              <SkillItem/>
+              <SkillItem :index="index"/>
           </div>
           <div class="flex-none mx-2 items-stretch flex">
               <BreezeButton @click="removeSkill(index)" type="button" class="self-center mt-6">X</BreezeButton>
@@ -23,26 +23,18 @@ export default {
         SkillItem,
         BreezeButton
     },
-    data(){
-        return{
-            skills:[{
-                type: '',
-                name: '',
-                level: ''
-            }]
+    computed:{
+        skills(){
+            return this.$store.getters.cv.skills;
         }
     },
     methods:{
         addSkill(){
-            this.skills.push({
-                type: '',
-                name: '',
-                level: ''
-            })
+            this.$store.dispatch('addSkill');
         },
         removeSkill(index){
             if (index > -1) { // only splice array when item is found
-                this.skills.splice(index, 1); // 2nd parameter means remove one item only
+                this.$store.dispatch('removeSkill', index)
             }
         }
     }

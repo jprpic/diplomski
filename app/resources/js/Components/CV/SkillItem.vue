@@ -3,24 +3,30 @@
       <div class="flex flex-none justify-center py-2 mx-2">
           <div class="grid justify-items-center mr-1">
               <BreezeLabel for="hard" value="Hard" />
-              <input type="radio" id="hard" name="type" value="hard" class="mt-2">
+              <input type="radio" id="hard" :name="radioButtonName" value="hard" class="mt-2"
+                     @input="updateSkill('type', $event.target.value)"
+                     :checked = "skill.type === 'hard'">
           </div>
 
           <div class="grid justify-items-center ml-1">
               <BreezeLabel for="soft" value="Soft" />
-              <input type="radio" id="soft" name="type" value="soft" class="mt-2">
+              <input type="radio" id="soft" :name="radioButtonName" value="soft" class="mt-2"
+                     @input="updateSkill('type', $event.target.value)"
+                     :checked = "skill.type === 'soft'">
           </div>
       </div>
       <div class="grow mt-2 mx-2">
           <BreezeLabel for="name" value="Name" />
-          <BreezeInput id="name" type="text" class="mt-1 block w-full" v-model="name" required autofocus  />
+          <BreezeInput id="name" type="text" class="mt-1 block w-full" required autofocus
+                       :value="skill.name"
+                       @input="updateSkill('name', $event.target.value)"/>
       </div>
       <div class="flex-none items-stretch mx-2 mt-2">
           <BreezeLabel for="level" value="Level" />
 
           <select name="level" id="level" class="mt-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                  :value="type"
-                  @input="$emit('update:type', $event.target.value)">
+                  :value="skill.level"
+                  @input="updateSkill('level', $event.target.value)">
               <option disabled value="">Please select one</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -44,12 +50,26 @@ export default {
         BreezeInput,
         BreezeButton
     },
-    data(){
-        return{
-            type: '',
-            name: '',
-            level: ''
+    props:['index'],
+    computed:{
+        skill(){
+            const skillClone = JSON.parse(JSON.stringify(this.$store.getters.cv.skills[this.index]));
+            skillClone.index = this.index;
+            return skillClone;
+        },
+        radioButtonName(){
+            return `skillType${this.index}`;
         }
+    },
+    methods:{
+        updateSkill(key, value){
+            // Check if contact has property that's being changed
+            if(this.skill.hasOwnProperty(key)){
+                this.skill[key] = value;
+                this.$store.dispatch('updateSkill', this.skill)
+            }
+        },
+
     }
 }
 </script>
