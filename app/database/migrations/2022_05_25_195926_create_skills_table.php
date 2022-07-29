@@ -15,10 +15,9 @@ return new class extends Migration
     {
         Schema::create('skills', function (Blueprint $table) {
             $table->smallIncrements('id');
-            // One-to-many relationship with Tags table (many)
-            $table->unsignedTinyInteger('tag_id');
-            $table->foreign('tag_id')->references('id')->on('tags');
             $table->string('name');
+            // Hard or Soft skill
+            $table->string('skill_type');
         });
     }
 
