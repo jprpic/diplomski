@@ -10,6 +10,9 @@ const getters = {
     },
     getContactByID: (state) => (id) => {
         return state.cv.contacts.find(contact => contact.id === id)
+    },
+    availableSkills(state){
+        return state.available_skills;
     }
 }
 

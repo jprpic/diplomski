@@ -43,6 +43,9 @@ const actions = {
     },
     removeSkill(context, index){
         context.commit('removeSkill', index);
+    },
+    setAvailableSkills(context, skills){
+        context.commit('setAvailableSkills', skills);
     }
 }
 

@@ -13,17 +13,12 @@ const props = defineProps({
     user: {
         type: Object,
         required: true
+    },
+    availableSkills : {
+        type: Array,
+        required: true
     }
 })
-
-const form = useForm({
-    name: '',
-    job: '',
-    description: '',
-    address: '',
-    references: '',
-    experiences: [],
-});
 </script>
 
 <script>
@@ -53,6 +48,9 @@ export default {
         submit(){
             console.log(this.CV);
         }
+    },
+    created() {
+        this.$store.dispatch('setAvailableSkills', this.availableSkills)
     }
 }
 </script>
@@ -113,7 +111,7 @@ export default {
                             </div>
 
                             <div class="flex items-center justify-end mt-4">
-                                <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                                <BreezeButton class="ml-4" >
                                     Submit
                                 </BreezeButton>
                             </div>

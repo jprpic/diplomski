@@ -11,7 +11,7 @@ class Skill extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'tag_id',
+        'type',
         'name'
     ];
 }

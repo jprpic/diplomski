@@ -23,10 +23,11 @@ class SkillSeeder extends Seeder
             'Object-Oriented Programming (OOP)',
             'Machine Learning',
             'Computer Vision',
-            'Training',
             'Programming Languages',
             'Natural Language Processing (NLP)',
-            'Back-End Web Development'
+            'Back-End Web Development',
+            'Front-End Web Development',
+            'Database Management'
         ];
         $tools_and_technologies = [
             'Laravel',
@@ -36,29 +37,68 @@ class SkillSeeder extends Seeder
             'C',
             'Bootstrap',
             'MySQL',
-            'Javascript'
+            'JavaScript',
+            'ASP.NET',
+            'PostgreSQL',
+            'NoSQL',
+            'MongoDB',
+            'C++',
+            'C#',
+            'TypeScript',
+            'Tailwind CSS',
+            'CSS',
+            'HTML',
+            'Angular',
+            'React',
+            'Express',
+            'Svelte',
+            'Java',
+            'Kotlin',
+            'Android Studio',
+            'Node.js',
+            'R (Programming Language)',
+            'Carbon',
+            'GoLang',
+            'Dart',
+            'Flutter'
         ];
         $interpersonal_skills = [
             'Analytical Skills',
             'Problem Solving',
-            'Communication'
+            'Communication',
+            'Cooperation',
+            'Work ethics',
+            'Social skills',
+            'Time management',
+            'Leadership',
+            'Attention to details',
+            'Critical thinking',
+            'Self-confidence',
+            'Handling pressure',
+            'Decision making',
+            'Negotiation',
+            'Motivation',
+            'Planning',
+            'Adaptability'
         ];
         $other_skills = [
             'English',
             'Croatian',
-            'German'
+            'German',
+            'French',
+            'Chinese'
         ];
 
-        $this->massPopulate($industry_knowledge, 1);
-        $this->massPopulate($tools_and_technologies, 2);
-        $this->massPopulate($interpersonal_skills, 3);
-        $this->massPopulate($other_skills, 4);
+        $this->populate($industry_knowledge, 'hard');
+        $this->populate($tools_and_technologies, 'hard');
+        $this->populate($interpersonal_skills, 'soft');
+        $this->populate($other_skills, 'soft');
     }
 
-    private function massPopulate($names, $tag_id){
+    private function populate($names, $type){
         foreach($names as $name){
             $skill = new Skill();
-            $skill->tag_id = $tag_id;
+            $skill->type = $type;
             $skill->name = $name;
             $skill->save();
         }

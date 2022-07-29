@@ -1,26 +1,21 @@
 <template>
   <div class="flex ml-2 pb-2">
-      <div class="flex flex-none justify-center py-2 mx-2">
-          <div class="grid justify-items-center mr-1">
-              <BreezeLabel for="hard" value="Hard" />
-              <input type="radio" id="hard" :name="radioButtonName" value="hard" class="mt-2"
-                     @input="updateSkill('type', $event.target.value)"
-                     :checked = "skill.type === 'hard'">
+      <div class="grow mt-2 mx-2 flex-col">
+          <div>
+              <BreezeLabel for="skill_name" value="Name" />
+              <BreezeInput id="skill_name" type="text" class="mt-1 block w-full" required autofocus
+                           :value="skill.name"
+                           @input="updateSkill('name', $event.target.value)"/>
           </div>
+          <div v-if="searchedSkills && searchedSkills.length > 0" class="overflow-auto max-h-40 px-4 pt-2 border border-gray-200 rounded-md shadow-sm">
+              <p class="my-1" v-for="skill in searchedSkills">
+                <button type="button" @click="updateSkill('name', skill.name)" >
+                    {{ skill.name }}
+                </button>
+              </p>
+          </div>
+      </div>
 
-          <div class="grid justify-items-center ml-1">
-              <BreezeLabel for="soft" value="Soft" />
-              <input type="radio" id="soft" :name="radioButtonName" value="soft" class="mt-2"
-                     @input="updateSkill('type', $event.target.value)"
-                     :checked = "skill.type === 'soft'">
-          </div>
-      </div>
-      <div class="grow mt-2 mx-2">
-          <BreezeLabel for="name" value="Name" />
-          <BreezeInput id="name" type="text" class="mt-1 block w-full" required autofocus
-                       :value="skill.name"
-                       @input="updateSkill('name', $event.target.value)"/>
-      </div>
       <div class="flex-none items-stretch mx-2 mt-2">
           <BreezeLabel for="level" value="Level" />
 
@@ -59,6 +54,16 @@ export default {
         },
         radioButtonName(){
             return `skillType${this.index}`;
+        },
+        availableSkills(){
+            return this.$store.getters.availableSkills.sort((a, b) => a.name.localeCompare(b.name));
+        },
+        searchedSkills(){
+            // If the input is empty or a name of an existing skill is entered, hide the autocompletes
+            if(this.skill.name === '' || this.availableSkills.filter(skill => skill.name === this.skill.name).length){
+                return null;
+            }
+            return this.availableSkills.filter(skill => skill.name.toLowerCase().includes(this.skill.name.toLowerCase()));
         }
     },
     methods:{

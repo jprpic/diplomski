@@ -20,7 +20,15 @@ const store = new Vuex.Store({
                     name: '',
                     source: '',
                     type: '',
-                    results: ['']
+                    results: [''],
+                    started_at: {
+                        month: null,
+                        year: null
+                    },
+                    finished_at: {
+                        month: null,
+                        year: null
+                    }
                 }],
                 skills:[{
                     type: '',

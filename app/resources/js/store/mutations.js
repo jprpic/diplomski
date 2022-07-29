@@ -36,7 +36,15 @@ const mutations = {
             name: '',
             source: '',
             type: '',
-            results: ['']
+            results: [''],
+            started_at: {
+                month: null,
+                year: null
+            },
+            finished_at: {
+                month: null,
+                year: null
+            }
         })
     },
     updateExperience(state, experience){
@@ -62,6 +70,11 @@ const mutations = {
     removeSkill(state, index){
         state.cv.skills.splice(index, 1); // 2nd parameter means remove one item only
     },
+    setAvailableSkills(state, skills){
+        if(state.available_skills === undefined){
+            state.available_skills = skills;
+        }
+    }
 }
 
 export default mutations;

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignId('cv_id')->constrained()->onDelete('cascade');
             // Composite primary key
             $table->primary(['contact_id','cv_id']);
-            $table->string('contact');
+            $table->string('url');
         });
     }
 
