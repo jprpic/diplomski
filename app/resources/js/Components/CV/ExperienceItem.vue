@@ -35,14 +35,14 @@
             <div class="flex flex-wrap justify-around items-center mt-2">
                 <div>
                     <BreezeLabel for="started_at" value="Started at"/>
-                    <DateInput id="started_at"
-                               :month="experience.started_at.month" :year="experience.started_at.year"
+                    <DateInput :id="`started_at_${index}`" :isRequired="true"
+                               :date = "experience.started_at"
                                @update:date="(date) => updateExperience('started_at', date)"/>
                 </div>
                 <div>
                     <BreezeLabel for="finished_at" value="Finished at"/>
-                    <DateInput id="finished_at"
-                               :month="experience.finished_at.month" :year="experience.finished_at.year"
+                    <DateInput :id="`finished_at_${index}`" :isRequired="false"
+                               :date = "experience.finished_at"
                                @update:date="(date) => updateExperience('finished_at', date)"/>
                 </div>
 
@@ -93,8 +93,8 @@ export default {
         }
     },
     methods:{
-        logItem(data){
-            console.log(data)
+        getDate(string){
+            return new Date(string);
         },
         updateExperience(key, value){
             // Check if contact has property that's being changed

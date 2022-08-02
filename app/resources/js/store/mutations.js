@@ -19,8 +19,8 @@ const mutations = {
     },
     addContact(state){
         state.cv.contacts.push({
-            type: '',
-            url: ''
+            id: '',
+            value: ''
         })
     },
     updateContact(state, contact){
@@ -57,9 +57,8 @@ const mutations = {
     },
     addSkill(state){
         state.cv.skills.push({
-            type: '',
-            name: '',
-            level: ''
+            id: '',
+            proficiency: ''
         })
     },
     updateSkill(state, skill){
@@ -71,9 +70,17 @@ const mutations = {
         state.cv.skills.splice(index, 1); // 2nd parameter means remove one item only
     },
     setAvailableSkills(state, skills){
-        if(state.available_skills === undefined){
+        if(state.available_skills === undefined) {
             state.available_skills = skills;
         }
+    },
+    setAvailableContacts(state, contacts){
+        if(state.available_contacts === undefined){
+            state.available_contacts = contacts;
+        }
+    },
+    setCV(state, cv){
+        state.cv = cv;
     }
 }
 

@@ -10,9 +10,10 @@ class Contact extends Model
     use HasFactory;
     public $timestamps = false;
 
-    public const CONTACT_PHONE = 1;
-    public const CONTACT_LINKEDIN = 2;
-    public const CONTACT_INSTAGRAM = 3;
-    public const CONTACT_TWITTER = 4;
-    public const CONTACT_FACEBOOK = 5;
+    public const CONTACT_EMAIL = 1;
+    public const CONTACT_PHONE = 2;
+    public const CONTACT_LINKEDIN = 3;
+    public const CONTACT_INSTAGRAM = 4;
+    public const CONTACT_TWITTER = 5;
+    public const CONTACT_FACEBOOK = 6;
 }

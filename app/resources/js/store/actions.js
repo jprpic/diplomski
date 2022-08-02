@@ -46,6 +46,12 @@ const actions = {
     },
     setAvailableSkills(context, skills){
         context.commit('setAvailableSkills', skills);
+    },
+    setAvailableContacts(context, contacts){
+        context.commit('setAvailableContacts', contacts);
+    },
+    setCV(context, cv){
+        context.commit('setCV', cv);
     }
 }
 

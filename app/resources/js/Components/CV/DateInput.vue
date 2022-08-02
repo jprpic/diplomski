@@ -2,20 +2,22 @@
     <div class="flex justify-center items-center my-2">
         <div class="flex-col">
             <BreezeLabel for="month" value="Month" class="text-xs"/>
-            <BreezeInput :id="monthId" type="text" class="w-12" required placeholder="06" pattern="[0-9]{2}"
-                         :value = this.month
-                         @input = "updateMonth($event.target.value)"
-                         :onkeyup="monthValidity"/>
+            <BreezeInput :id="monthId" type="text" class="w-12" placeholder="06" pattern="[0-9]{2}"
+                         :value="month"
+                         @input="updateMonth($event.target.value)"
+                         :onkeyup="updateDate"
+                         :required="isRequired"/>
 
         </div>
 
         <span class="mx-2 text-xl mt-4">/</span>
         <div>
             <BreezeLabel for="year" value="Year" class="text-xs"/>
-            <BreezeInput :id="yearId" type="text" class="w-16" required placeholder="2022" pattern="[0-9]{4}"
-                         :value = this.year
-                         @input = "updateYear($event.target.value)"
-                         :onkeyup="yearValidity"/>
+            <BreezeInput :id="yearId" type="text" class="w-16" placeholder="2022" pattern="[0-9]{4}"
+                         :value="year"
+                         @input="updateYear($event.target.value)"
+                         :onkeyup="updateDate"
+                         :required="isRequired"/>
 
         </div>
 
@@ -25,49 +27,66 @@
 <script>
 import BreezeLabel from '../Label.vue';
 import BreezeInput from '../Input.vue';
+
 export default {
     name: "DateInput.vue",
-    props: ['month','year','id'],
+    props: ['date', 'id', 'isRequired'],
     emits: ['update:date'],
+    data() {
+        return {
+            month: '',
+            year: '',
+        }
+    },
     computed: {
-        monthId(){
+        monthId() {
             return `${this.id}_month`;
         },
-        yearId(){
+        yearId() {
             return `${this.id}_year`;
-        }
+        },
     },
-    methods:{
-        updateMonth(month){
-            if(!(isNaN(month) || month < 0 || month > 12)){
-                this.$emit('update:date', {
-                    month: month,
-                    year: this.year
-                })
+    mounted() {
+        if (this.date === null) {
+            return;
+        }
+        console.log(this.date);
+        const date = new Date(this.date);
+
+        this.updateMonth(date.getMonth() + 1);
+        this.updateYear(date.getFullYear());
+    },
+    methods: {
+        getLength(number) {
+            return number.toString().length;
+        },
+        updateDate() {
+            const month = this.month;
+            const year = this.year;
+            if (!(isNaN(month) || month <= 0 || month > 12)
+                && this.getLength(year) === 4 && !(isNaN(year) || year < 0 || year > new Date().getFullYear())) {
+                this.$emit('update:date', new Date(year, parseInt(month) - 1))
             }
         },
-        updateYear(year){
-            if(!(isNaN(year) || year < 0 || year > new Date().getFullYear())){
-                this.$emit('update:date', {
-                    month: this.month,
-                    year: year
-                })
+        updateMonth(month) {
+            month = month.toLocaleString('en-US', {
+                minimumIntegerDigits: 2,
+                useGrouping: false
+            });
+            if (!(isNaN(month) || month < 0 || month > 12)) {
+                this.month = month;
             }
-        },
-        monthValidity(){
+            // Cancel input if invalid character is entered
             document.getElementById(this.monthId).value = this.month;
-            if(this.month.toString().length >= 2){
-                document.getElementById(this.yearId).focus();
-            }
         },
-        yearValidity(){
-            document.getElementById(this.yearId).value = this.year;
-            if(this.year.toString().length >= 4){
-                document.getElementById(this.yearId).blur();
+        updateYear(year) {
+            if (!(isNaN(year) || year < 0 || year > new Date().getFullYear())) {
+                this.year = year;
             }
+            document.getElementById(this.yearId).value = this.year;
         }
     },
-    components:{
+    components: {
         BreezeLabel,
         BreezeInput
     },

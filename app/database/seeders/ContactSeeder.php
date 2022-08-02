@@ -16,11 +16,11 @@ class ContactSeeder extends Seeder
     public function run()
     {
         $contact = new Contact();
-        $contact->name = 'Phone';
+        $contact->name = 'Email';
         $contact->save();
 
         $contact = new Contact();
-        $contact->name = 'Email';
+        $contact->name = 'Phone';
         $contact->save();
 
         $contact = new Contact();
@@ -29,6 +29,14 @@ class ContactSeeder extends Seeder
 
         $contact = new Contact();
         $contact->name = 'Instagram';
+        $contact->save();
+
+        $contact = new Contact();
+        $contact->name = 'Twitter';
+        $contact->save();
+
+        $contact = new Contact();
+        $contact->name = 'Facebook';
         $contact->save();
     }
 }

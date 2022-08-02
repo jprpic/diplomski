@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CVController;
+use App\Models\CV;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -26,9 +27,18 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    $cv = CV::getCurrentUser();
+    return Inertia::render('Dashboard',[
+        'user' => Auth()->user(),
+        'cv' => $cv
+    ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/create', [CVController::class, 'create'])->name('create');
+
+Route::prefix('cv')->group(function() {
+    Route::get('/create', [CVController::class, 'create'])->name('cv.create');
+    Route::post('/', [CVController::class, 'store'])->name('cv.store');
+});
+
 
 require __DIR__.'/auth.php';

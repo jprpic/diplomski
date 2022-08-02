@@ -13,6 +13,9 @@ const getters = {
     },
     availableSkills(state){
         return state.available_skills;
+    },
+    availableContacts(state){
+        return state.available_contacts;
     }
 }
 

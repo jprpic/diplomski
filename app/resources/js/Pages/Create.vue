@@ -18,12 +18,18 @@ const props = defineProps({
         type: Array,
         required: true
     }
+    ,
+    availableContacts : {
+        type: Array,
+        required: true
+    },
 })
 </script>
 
 <script>
-
+import { Inertia } from '@inertiajs/inertia';
 export default {
+
     computed:{
         CV(){
             return this.$store.getters.cv;
@@ -46,11 +52,12 @@ export default {
             this.$store.dispatch('updateReferences', references)
         },
         submit(){
-            console.log(this.CV);
+            Inertia.post('/cv/', this.CV);
         }
     },
     created() {
         this.$store.dispatch('setAvailableSkills', this.availableSkills)
+        this.$store.dispatch('setAvailableContacts', this.availableContacts)
     }
 }
 </script>
@@ -77,7 +84,7 @@ export default {
 
                             <div class="mt-2">
                                 <BreezeLabel for="description" value="Profile description" />
-                                <BreezeTextArea id="description" rows="3" :value="CV.description" @input="updateDescription($event.target.value)" />
+                                <BreezeTextArea id="description" rows="3" :value="CV.description" @input="updateDescription($event.target.value)" required />
                             </div>
 
                             <div class="mt-2">

@@ -2,22 +2,19 @@
     <div class="flex w-2/3  flex-wrap">
         <div class="flex-none items-stretch ml-4 mt-2">
             <BreezeLabel for="contacts" value="Type" />
-            <select name="contacts" id="contacts" class="mt-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                    :value="contact.type"
-                    @input="updateContact('type', $event.target.value)">
+            <select name="contacts" id="contacts" required class="mt-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                    :value="contact.id"
+                    @input="updateContact('id', $event.target.value)">
                 <option disabled value="">Please select one</option>
-                <option value="linkedin">Linked In</option>
-                <option value="twitter">Twitter</option>
-                <option value="instagram">Instagram</option>
+                <option v-for="contact in availableContacts" :value="contact.id" :key="contact.id"> {{ contact.name }}</option>
 
             </select>
         </div>
-
         <div class="grow ml-4 mt-2">
-            <BreezeLabel for="url" value="Url" />
-            <BreezeInput id="url" type="url" class="mt-1 w-full block" required autofocus
-                         :value="contact.url"
-                         @input="updateContact('url', $event.target.value)"/>
+            <BreezeLabel :for="contactInfo.type" :value="contactInfo.label" />
+            <BreezeInput :id="contactInfo.type" :type="contactInfo.type" class="mt-1 w-full block" required autofocus
+                         :value="contact.value"
+                         @input="updateContact('value', $event.target.value)"/>
         </div>
     </div>
 
@@ -41,6 +38,22 @@ export default {
             contactClone.index = this.index;
             return contactClone;
         },
+        contactInfo(){
+              const contact = this.availableContacts.find( contact => contact.id === parseInt(this.contact.id));
+              if(contact){
+                  if(contact.name === 'Email'){
+                      return { label:'E-mail address', type:'email'};
+                  }else if (contact.name === 'Phone'){
+                      return { label:'Phone Number', type:'text'};
+                  }else{
+                      return { label:'URL', type:'url'};
+                  }
+              }
+            return {label:'Value', type:'text'};
+        },
+        availableContacts(){
+            return this.$store.getters.availableContacts;
+        }
     },
     methods:{
         updateContact(key, value){

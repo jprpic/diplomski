@@ -3,19 +3,21 @@
 namespace App\Models\CV;
 
 use App\Models\CV;
+use App\Models\CV\Contact;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Experience extends Model
+class CV_Contact extends Model
 {
     use HasFactory;
-    public $timestamps = false;
 
-    protected $casts = [
-        'results' => 'array'
-    ];
+    protected $table = 'contact_cv';
+    public $timestamps = false;
 
     public function CV(){
         return $this->belongsTo(CV::class);
+    }
+    public function contact(){
+        return $this->belongsTo(Contact::class);
     }
 }

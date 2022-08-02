@@ -21978,6 +21978,40 @@ __webpack_require__.r(__webpack_exports__);
       var contactClone = JSON.parse(JSON.stringify(this.$store.getters.cv.contacts[this.index]));
       contactClone.index = this.index;
       return contactClone;
+    },
+    contactInfo: function contactInfo() {
+      var _this = this;
+
+      var contact = this.availableContacts.find(function (contact) {
+        return contact.id === parseInt(_this.contact.id);
+      });
+
+      if (contact) {
+        if (contact.name === 'Email') {
+          return {
+            label: 'E-mail address',
+            type: 'email'
+          };
+        } else if (contact.name === 'Phone') {
+          return {
+            label: 'Phone Number',
+            type: 'text'
+          };
+        } else {
+          return {
+            label: 'URL',
+            type: 'url'
+          };
+        }
+      }
+
+      return {
+        label: 'Value',
+        type: 'text'
+      };
+    },
+    availableContacts: function availableContacts() {
+      return this.$store.getters.availableContacts;
     }
   },
   methods: {
@@ -22032,6 +22066,9 @@ __webpack_require__.r(__webpack_exports__);
     updateEmail: function updateEmail(email) {
       this.$store.dispatch('updateEmail', email);
     },
+    updateNumber: function updateNumber(number) {
+      this.$store.dispatch('updateNumber', number);
+    },
     addContact: function addContact() {
       this.$store.dispatch('addContact');
     },
@@ -22063,8 +22100,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "DateInput.vue",
-  props: ['month', 'year', 'id'],
+  props: ['date', 'id', 'isRequired'],
   emits: ['update:date'],
+  data: function data() {
+    return {
+      month: '',
+      year: ''
+    };
+  },
   computed: {
     monthId: function monthId() {
       return "".concat(this.id, "_month");
@@ -22073,36 +22116,47 @@ __webpack_require__.r(__webpack_exports__);
       return "".concat(this.id, "_year");
     }
   },
+  mounted: function mounted() {
+    if (this.date === null) {
+      return;
+    }
+
+    console.log(this.date);
+    var date = new Date(this.date);
+    this.updateMonth(date.getMonth() + 1);
+    this.updateYear(date.getFullYear());
+  },
   methods: {
-    updateMonth: function updateMonth(month) {
-      if (!(isNaN(month) || month < 0 || month > 12)) {
-        this.$emit('update:date', {
-          month: month,
-          year: this.year
-        });
+    getLength: function getLength(number) {
+      return number.toString().length;
+    },
+    updateDate: function updateDate() {
+      var month = this.month;
+      var year = this.year;
+
+      if (!(isNaN(month) || month <= 0 || month > 12) && this.getLength(year) === 4 && !(isNaN(year) || year < 0 || year > new Date().getFullYear())) {
+        this.$emit('update:date', new Date(year, parseInt(month) - 1));
       }
+    },
+    updateMonth: function updateMonth(month) {
+      month = month.toLocaleString('en-US', {
+        minimumIntegerDigits: 2,
+        useGrouping: false
+      });
+
+      if (!(isNaN(month) || month < 0 || month > 12)) {
+        this.month = month;
+      } // Cancel input if invalid character is entered
+
+
+      document.getElementById(this.monthId).value = this.month;
     },
     updateYear: function updateYear(year) {
       if (!(isNaN(year) || year < 0 || year > new Date().getFullYear())) {
-        this.$emit('update:date', {
-          month: this.month,
-          year: year
-        });
+        this.year = year;
       }
-    },
-    monthValidity: function monthValidity() {
-      document.getElementById(this.monthId).value = this.month;
 
-      if (this.month.toString().length >= 2) {
-        document.getElementById(this.yearId).focus();
-      }
-    },
-    yearValidity: function yearValidity() {
       document.getElementById(this.yearId).value = this.year;
-
-      if (this.year.toString().length >= 4) {
-        document.getElementById(this.yearId).blur();
-      }
     }
   },
   components: {
@@ -22152,8 +22206,8 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    logItem: function logItem(data) {
-      console.log(data);
+    getDate: function getDate(string) {
+      return new Date(string);
     },
     updateExperience: function updateExperience(key, value) {
       // Check if contact has property that's being changed
@@ -22249,7 +22303,23 @@ __webpack_require__.r(__webpack_exports__);
     BreezeButton: _Button_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   props: ['index'],
+  data: function data() {
+    return {
+      name: ''
+    };
+  },
   computed: {
+    skillName: function skillName() {
+      var _this = this;
+
+      if (this.skill.id) {
+        return this.availableSkills.find(function (skill) {
+          return skill.id === _this.skill.id;
+        }).name;
+      }
+
+      return this.name;
+    },
     skill: function skill() {
       var skillClone = JSON.parse(JSON.stringify(this.$store.getters.cv.skills[this.index]));
       skillClone.index = this.index;
@@ -22264,17 +22334,17 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     searchedSkills: function searchedSkills() {
-      var _this = this;
+      var _this2 = this;
 
       // If the input is empty or a name of an existing skill is entered, hide the autocompletes
-      if (this.skill.name === '' || this.availableSkills.filter(function (skill) {
-        return skill.name === _this.skill.name;
+      if (this.name === '' || this.availableSkills.filter(function (skill) {
+        return skill.name === _this2.name;
       }).length) {
         return null;
       }
 
       return this.availableSkills.filter(function (skill) {
-        return skill.name.toLowerCase().includes(_this.skill.name.toLowerCase());
+        return skill.name.toLowerCase().includes(_this2.name.toLowerCase());
       });
     }
   },
@@ -23192,15 +23262,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Layouts_Authenticated_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/Authenticated.vue */ "./resources/js/Layouts/Authenticated.vue");
-/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
-/* harmony import */ var _Components_Input_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Input.vue */ "./resources/js/Components/Input.vue");
-/* harmony import */ var _Components_Button_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Button.vue */ "./resources/js/Components/Button.vue");
-/* harmony import */ var _Components_TextArea_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/TextArea.vue */ "./resources/js/Components/TextArea.vue");
-/* harmony import */ var _Components_Label_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/Label.vue */ "./resources/js/Components/Label.vue");
-/* harmony import */ var _Components_CV_ExperienceList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/CV/ExperienceList */ "./resources/js/Components/CV/ExperienceList.vue");
-/* harmony import */ var _Components_CV_ContactList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Components/CV/ContactList */ "./resources/js/Components/CV/ContactList.vue");
-/* harmony import */ var _Components_CV_SkillList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Components/CV/SkillList */ "./resources/js/Components/CV/SkillList.vue");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Layouts_Authenticated_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/Authenticated.vue */ "./resources/js/Layouts/Authenticated.vue");
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var _Components_Input_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/Input.vue */ "./resources/js/Components/Input.vue");
+/* harmony import */ var _Components_Button_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/Button.vue */ "./resources/js/Components/Button.vue");
+/* harmony import */ var _Components_TextArea_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/TextArea.vue */ "./resources/js/Components/TextArea.vue");
+/* harmony import */ var _Components_Label_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/Label.vue */ "./resources/js/Components/Label.vue");
+/* harmony import */ var _Components_CV_ExperienceList__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Components/CV/ExperienceList */ "./resources/js/Components/CV/ExperienceList.vue");
+/* harmony import */ var _Components_CV_ContactList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Components/CV/ContactList */ "./resources/js/Components/CV/ContactList.vue");
+/* harmony import */ var _Components_CV_SkillList__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/Components/CV/SkillList */ "./resources/js/Components/CV/SkillList.vue");
+
 var __default__ = {
   computed: {
     CV: function CV() {
@@ -23224,11 +23296,12 @@ var __default__ = {
       this.$store.dispatch('updateReferences', references);
     },
     submit: function submit() {
-      console.log(this.CV);
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.post('/cv/', this.CV);
     }
   },
   created: function created() {
     this.$store.dispatch('setAvailableSkills', this.availableSkills);
+    this.$store.dispatch('setAvailableContacts', this.availableContacts);
   }
 };
 
@@ -23250,6 +23323,10 @@ var __default__ = {
     availableSkills: {
       type: Array,
       required: true
+    },
+    availableContacts: {
+      type: Array,
+      required: true
     }
   },
   setup: function setup(__props, _ref) {
@@ -23258,16 +23335,17 @@ var __default__ = {
     var props = __props;
     var __returned__ = {
       props: props,
-      BreezeAuthenticatedLayout: _Layouts_Authenticated_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-      Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
-      useForm: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.useForm,
-      BreezeInput: _Components_Input_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-      BreezeButton: _Components_Button_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-      BreezeTextArea: _Components_TextArea_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-      BreezeLabel: _Components_Label_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-      ExperienceList: _Components_CV_ExperienceList__WEBPACK_IMPORTED_MODULE_6__["default"],
-      ContactList: _Components_CV_ContactList__WEBPACK_IMPORTED_MODULE_7__["default"],
-      SkillList: _Components_CV_SkillList__WEBPACK_IMPORTED_MODULE_8__["default"]
+      Inertia: _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia,
+      BreezeAuthenticatedLayout: _Layouts_Authenticated_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+      Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__.Head,
+      useForm: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__.useForm,
+      BreezeInput: _Components_Input_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+      BreezeButton: _Components_Button_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+      BreezeTextArea: _Components_TextArea_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+      BreezeLabel: _Components_Label_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+      ExperienceList: _Components_CV_ExperienceList__WEBPACK_IMPORTED_MODULE_7__["default"],
+      ContactList: _Components_CV_ContactList__WEBPACK_IMPORTED_MODULE_8__["default"],
+      SkillList: _Components_CV_SkillList__WEBPACK_IMPORTED_MODULE_9__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -23292,14 +23370,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Layouts_Authenticated_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/Authenticated.vue */ "./resources/js/Layouts/Authenticated.vue");
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var __default__ = {
+  computed: {
+    loadedCV: function loadedCV() {
+      return this.$store.getters.cv;
+    }
+  },
+  created: function created() {
+    var cv = JSON.parse(this.cv);
+    console.log(this.cv);
+
+    for (var _i = 0, _Object$entries = Object.entries(cv.experiences); _i < _Object$entries.length; _i++) {
+      var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+          index = _Object$entries$_i[0],
+          experience = _Object$entries$_i[1];
+
+      console.log(experience);
+    }
+
+    this.$store.dispatch('setCV', cv);
+  }
+};
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
   name: 'Dashboard',
+  props: {
+    user: {
+      type: Object,
+      required: true
+    },
+    cv: {
+      type: String,
+      required: false
+    }
+  },
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
+    var props = __props;
     var __returned__ = {
+      props: props,
       BreezeAuthenticatedLayout: _Layouts_Authenticated_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head
     };
@@ -23309,7 +23432,7 @@ __webpack_require__.r(__webpack_exports__);
     });
     return __returned__;
   }
-});
+}));
 
 /***/ }),
 
@@ -23435,26 +23558,8 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "linkedin"
-}, "Linked In", -1
-/* HOISTED */
-);
-
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "twitter"
-}, "Twitter", -1
-/* HOISTED */
-);
-
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
-  value: "instagram"
-}, "Instagram", -1
-/* HOISTED */
-);
-
-var _hoisted_8 = [_hoisted_4, _hoisted_5, _hoisted_6, _hoisted_7];
-var _hoisted_9 = {
+var _hoisted_5 = ["value"];
+var _hoisted_6 = {
   "class": "grow ml-4 mt-2"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -23468,29 +23573,41 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     name: "contacts",
     id: "contacts",
+    required: "",
     "class": "mt-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm",
-    value: $options.contact.type,
+    value: $options.contact.id,
     onInput: _cache[0] || (_cache[0] = function ($event) {
-      return $options.updateContact('type', $event.target.value);
+      return $options.updateContact('id', $event.target.value);
     })
-  }, _hoisted_8, 40
+  }, [_hoisted_4, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.availableContacts, function (contact) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
+      value: contact.id,
+      key: contact.id
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(contact.name), 9
+    /* TEXT, PROPS */
+    , _hoisted_5);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))], 40
   /* PROPS, HYDRATE_EVENTS */
-  , _hoisted_3)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeLabel, {
-    "for": "url",
-    value: "Url"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeInput, {
-    id: "url",
-    type: "url",
+  , _hoisted_3)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeLabel, {
+    "for": $options.contactInfo.type,
+    value: $options.contactInfo.label
+  }, null, 8
+  /* PROPS */
+  , ["for", "value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeInput, {
+    id: $options.contactInfo.type,
+    type: $options.contactInfo.type,
     "class": "mt-1 w-full block",
     required: "",
     autofocus: "",
-    value: $options.contact.url,
+    value: $options.contact.value,
     onInput: _cache[1] || (_cache[1] = function ($event) {
-      return $options.updateContact('url', $event.target.value);
+      return $options.updateContact('value', $event.target.value);
     })
   }, null, 8
   /* PROPS */
-  , ["value"])])]);
+  , ["id", "type", "value"])])]);
 }
 
 /***/ }),
@@ -23511,39 +23628,17 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "py-2 border border-gray-200 rounded-md shadow-sm"
 };
-var _hoisted_2 = {
-  "class": "ml-4"
-};
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("X");
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("X");
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Add Contact");
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Add Contact");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_BreezeLabel = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("BreezeLabel");
-
-  var _component_BreezeInput = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("BreezeInput");
-
   var _component_ContactItem = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ContactItem");
 
   var _component_BreezeButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("BreezeButton");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeLabel, {
-    "for": "email",
-    value: "E-mail"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeInput, {
-    id: "email",
-    type: "email",
-    "class": "mt-1 block",
-    required: "",
-    autofocus: "",
-    value: $options.email,
-    onInput: _cache[0] || (_cache[0] = function ($event) {
-      return $options.updateEmail($event.target.value);
-    })
-  }, null, 8
-  /* PROPS */
-  , ["value"])]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.contacts, function (contact, index) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.contacts, function (contact, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       key: index,
       "class": "flex items-stretch"
@@ -23559,7 +23654,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "class": "ml-2 h-1/2 self-center mt-8"
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-        return [_hoisted_3];
+        return [_hoisted_2];
       }),
       _: 2
       /* DYNAMIC */
@@ -23572,12 +23667,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeButton, {
     "class": "mt-2",
     type: "button",
-    onClick: _cache[1] || (_cache[1] = function ($event) {
+    onClick: _cache[0] || (_cache[0] = function ($event) {
       return $options.addContact();
     })
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_4];
+      return [_hoisted_3];
     }),
     _: 1
     /* STABLE */
@@ -23628,17 +23723,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: $options.monthId,
     type: "text",
     "class": "w-12",
-    required: "",
     placeholder: "06",
     pattern: "[0-9]{2}",
-    value: this.month,
+    value: $data.month,
     onInput: _cache[0] || (_cache[0] = function ($event) {
       return $options.updateMonth($event.target.value);
     }),
-    onkeyup: $options.monthValidity
+    onkeyup: $options.updateDate,
+    required: $props.isRequired
   }, null, 8
   /* PROPS */
-  , ["id", "value", "onkeyup"])]), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeLabel, {
+  , ["id", "value", "onkeyup", "required"])]), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeLabel, {
     "for": "year",
     value: "Year",
     "class": "text-xs"
@@ -23646,17 +23741,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: $options.yearId,
     type: "text",
     "class": "w-16",
-    required: "",
     placeholder: "2022",
     pattern: "[0-9]{4}",
-    value: this.year,
+    value: $data.year,
     onInput: _cache[1] || (_cache[1] = function ($event) {
       return $options.updateYear($event.target.value);
     }),
-    onkeyup: $options.yearValidity
+    onkeyup: $options.updateDate,
+    required: $props.isRequired
   }, null, 8
   /* PROPS */
-  , ["id", "value", "onkeyup"])])]);
+  , ["id", "value", "onkeyup", "required"])])]);
 }
 
 /***/ }),
@@ -23781,27 +23876,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "for": "started_at",
     value: "Started at"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DateInput, {
-    id: "started_at",
-    month: $options.experience.started_at.month,
-    year: $options.experience.started_at.year,
+    id: "started_at_".concat($props.index),
+    isRequired: true,
+    date: $options.experience.started_at,
     "onUpdate:date": _cache[4] || (_cache[4] = function (date) {
       return $options.updateExperience('started_at', date);
     })
   }, null, 8
   /* PROPS */
-  , ["month", "year"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeLabel, {
+  , ["id", "date"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeLabel, {
     "for": "finished_at",
     value: "Finished at"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DateInput, {
-    id: "finished_at",
-    month: $options.experience.finished_at.month,
-    year: $options.experience.finished_at.year,
+    id: "finished_at_".concat($props.index),
+    isRequired: false,
+    date: $options.experience.finished_at,
     "onUpdate:date": _cache[5] || (_cache[5] = function (date) {
       return $options.updateExperience('finished_at', date);
     })
   }, null, 8
   /* PROPS */
-  , ["month", "year"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeLabel, {
+  , ["id", "date"])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeLabel, {
     "for": "results",
     value: "Results"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeButton, {
@@ -23961,6 +24056,8 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVN
 
 var _hoisted_14 = [_hoisted_8];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _this = this;
+
   var _component_BreezeLabel = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("BreezeLabel");
 
   var _component_BreezeInput = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("BreezeInput");
@@ -23969,22 +24066,23 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "for": "skill_name",
     value: "Name"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_BreezeInput, {
-    id: "skill_name",
     type: "text",
     "class": "mt-1 block w-full",
     required: "",
     autofocus: "",
-    value: $options.skill.name,
-    onInput: _cache[0] || (_cache[0] = function ($event) {
-      return $options.updateSkill('name', $event.target.value);
-    })
+    modelValue: $data.name,
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.name = $event;
+    }),
+    value: $options.skillName
   }, null, 8
   /* PROPS */
-  , ["value"])]), $options.searchedSkills && $options.searchedSkills.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.searchedSkills, function (skill) {
+  , ["modelValue", "value"])]), $options.searchedSkills && $options.searchedSkills.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.searchedSkills, function (skill) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       type: "button",
-      onClick: function onClick($event) {
-        return $options.updateSkill('name', skill.name);
+      onClick: function onClick() {
+        $options.updateSkill('id', skill.id);
+        _this.name = skill.name;
       }
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(skill.name), 9
     /* TEXT, PROPS */
@@ -23997,10 +24095,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     name: "level",
     id: "level",
+    required: "",
     "class": "mt-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm",
-    value: $options.skill.level,
+    value: $options.skill.proficiency,
     onInput: _cache[1] || (_cache[1] = function ($event) {
-      return $options.updateSkill('level', $event.target.value);
+      return $options.updateSkill('proficiency', $event.target.value);
     })
   }, _hoisted_14, 40
   /* PROPS, HYDRATE_EVENTS */
@@ -24531,8 +24630,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, 8
   /* PROPS */
   , ["href", "active"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeNavLink"], {
-    href: _ctx.route('create'),
-    active: _ctx.route().current('create')
+    href: _ctx.route('cv.create'),
+    active: _ctx.route().current('cv.create')
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_9];
@@ -25409,7 +25508,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         value: $options.CV.description,
         onInput: _cache[1] || (_cache[1] = function ($event) {
           return $options.updateDescription($event.target.value);
-        })
+        }),
+        required: ""
       }, null, 8
       /* PROPS */
       , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
@@ -25495,18 +25595,18 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_2 = {
   "class": "py-12"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_3 = {
   "class": "max-w-7xl mx-auto sm:px-6 lg:px-8"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_4 = {
   "class": "bg-white overflow-hidden shadow-sm sm:rounded-lg"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_5 = {
   "class": "p-6 bg-white border-b border-gray-200"
-}, " You're logged in! ")])])], -1
-/* HOISTED */
-);
-
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
     title: "Dashboard"
@@ -25515,7 +25615,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [_hoisted_1];
     }),
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_2];
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, " You're logged in! " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.loadedCV), 1
+      /* TEXT */
+      )])])])];
     }),
     _: 1
     /* STABLE */
@@ -25768,6 +25870,12 @@ var actions = {
   },
   setAvailableSkills: function setAvailableSkills(context, skills) {
     context.commit('setAvailableSkills', skills);
+  },
+  setAvailableContacts: function setAvailableContacts(context, contacts) {
+    context.commit('setAvailableContacts', contacts);
+  },
+  setCV: function setCV(context, cv) {
+    context.commit('setCV', cv);
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (actions);
@@ -25804,6 +25912,9 @@ var getters = {
   },
   availableSkills: function availableSkills(state) {
     return state.available_skills;
+  },
+  availableContacts: function availableContacts(state) {
+    return state.available_contacts;
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getters);
@@ -25838,8 +25949,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_3__["default"].Store({
         address: '',
         email: '',
         contacts: [{
-          type: '',
-          url: ''
+          id: '',
+          value: ''
         }],
         job: '',
         experiences: [{
@@ -25847,19 +25958,12 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_3__["default"].Store({
           source: '',
           type: '',
           results: [''],
-          started_at: {
-            month: null,
-            year: null
-          },
-          finished_at: {
-            month: null,
-            year: null
-          }
+          started_at: null,
+          finished_at: null
         }],
         skills: [{
-          type: '',
-          name: '',
-          level: ''
+          id: '',
+          proficiency: ''
         }],
         references: ''
       }
@@ -25905,8 +26009,8 @@ var mutations = {
   },
   addContact: function addContact(state) {
     state.cv.contacts.push({
-      type: '',
-      url: ''
+      id: '',
+      value: ''
     });
   },
   updateContact: function updateContact(state, contact) {
@@ -25943,9 +26047,8 @@ var mutations = {
   },
   addSkill: function addSkill(state) {
     state.cv.skills.push({
-      type: '',
-      name: '',
-      level: ''
+      id: '',
+      proficiency: ''
     });
   },
   updateSkill: function updateSkill(state, skill) {
@@ -25960,6 +26063,14 @@ var mutations = {
     if (state.available_skills === undefined) {
       state.available_skills = skills;
     }
+  },
+  setAvailableContacts: function setAvailableContacts(state, contacts) {
+    if (state.available_contacts === undefined) {
+      state.available_contacts = contacts;
+    }
+  },
+  setCV: function setCV(state, cv) {
+    state.cv = cv;
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mutations);

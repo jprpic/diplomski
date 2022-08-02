@@ -17,10 +17,11 @@ return new class extends Migration
             $table->id();
             // One-to-one relationship with user
             // On delete User, delete the matching CV
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('job');
-            $table->string('address');
+            $table->foreignId('user_id')->unique()->constrained()->onDelete('cascade');
+            $table->string('name');
             $table->string('description');
+            $table->string('address');
+            $table->string('job');
             $table->string('references');
             $table->timestamps();
         });

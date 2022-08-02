@@ -1,12 +1,5 @@
 <template>
     <div class="py-2 border border-gray-200 rounded-md shadow-sm">
-        <div class="ml-4">
-            <BreezeLabel for="email" value="E-mail" />
-            <BreezeInput id="email" type="email" class="mt-1 block" required autofocus
-                         :value = "email"
-                         @input="updateEmail($event.target.value)"
-            />
-        </div>
         <div v-for="(contact, index) in contacts" :key="index" class="flex items-stretch">
             <ContactItem :index = "index" />
             <BreezeButton @click="removeContact(index)" type="button" class="ml-2 h-1/2 self-center mt-8">X</BreezeButton>
@@ -40,6 +33,9 @@ export default {
     methods:{
         updateEmail(email){
             this.$store.dispatch('updateEmail', email);
+        },
+        updateNumber(number){
+            this.$store.dispatch('updateNumber', number);
         },
         addContact() {
             this.$store.dispatch('addContact');
