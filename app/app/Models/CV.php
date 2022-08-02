@@ -29,12 +29,18 @@ class CV extends Model
         return $this->belongsToMany(Skill::class);
     }
 
+    public function user(){
+        return $this->hasOne(User::class);
+    }
+
     public static function getCurrentUser(){
         if(!Auth()->id()){
             return null;
         }
         $userID = Auth()->id();
-        $cvModel = self::find($userID);
+
+        $cvModel = User::find($userID)->cv;
+
         $cv = json_decode($cvModel);
         $cv->contacts = $cvModel->contacts;
         $cv->experiences = $cvModel->experiences;
@@ -58,7 +64,7 @@ class CV extends Model
         foreach($CVJson['contacts'] as $contact){
             $cvContact = new CV_Contact;
             $cvContact->cv_id = $cv->id;
-            $cvContact->contact_id = $contact['id'];
+            $cvContact->contact_id = $contact['contact_id'];
             $cvContact->value = $contact['value'];
             $cvContact->save();
         }
@@ -72,11 +78,11 @@ class CV extends Model
             $cvExperience->source = $experience['source'];
             $cvExperience->results = $experience['results'];
 
-            $started_at= new DateTime("{$experience['started_at']['year']}-{$experience['started_at']['month']}-01");
+            $started_at= new DateTime("{$experience['started_at']}");
             $cvExperience->started_at = $started_at;
 
-            if($experience['finished_at']['month']){
-                $finished_at = new DateTime("{$experience['finished_at']['year']}-{$experience['finished_at']['month']}-01");
+            if($experience['finished_at']){
+                $finished_at = new DateTime("{$experience['finished_at']}");
                 $cvExperience->finished_at = $finished_at;
             }
 
@@ -86,7 +92,7 @@ class CV extends Model
         foreach($CVJson['skills'] as $skill){
             $cvSkill = new CV_Skill;
             $cvSkill->cv_id = $cv->id;
-            $cvSkill->skill_id = $skill['id'];
+            $cvSkill->skill_id = $skill['skill_id'];
             $cvSkill->proficiency = $skill['proficiency'];
             $cvSkill->save();
         }

@@ -19,7 +19,7 @@ const mutations = {
     },
     addContact(state){
         state.cv.contacts.push({
-            id: '',
+            contact_id: '',
             value: ''
         })
     },
@@ -37,14 +37,8 @@ const mutations = {
             source: '',
             type: '',
             results: [''],
-            started_at: {
-                month: null,
-                year: null
-            },
-            finished_at: {
-                month: null,
-                year: null
-            }
+            started_at: null,
+            finished_at: null
         })
     },
     updateExperience(state, experience){
@@ -57,7 +51,7 @@ const mutations = {
     },
     addSkill(state){
         state.cv.skills.push({
-            id: '',
+            skill_id: '',
             proficiency: ''
         })
     },

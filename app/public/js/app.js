@@ -21977,13 +21977,14 @@ __webpack_require__.r(__webpack_exports__);
     contact: function contact() {
       var contactClone = JSON.parse(JSON.stringify(this.$store.getters.cv.contacts[this.index]));
       contactClone.index = this.index;
+      console.log(contactClone);
       return contactClone;
     },
     contactInfo: function contactInfo() {
       var _this = this;
 
       var contact = this.availableContacts.find(function (contact) {
-        return contact.id === parseInt(_this.contact.id);
+        return contact.id === parseInt(_this.contact.contact_id);
       });
 
       if (contact) {
@@ -22121,7 +22122,6 @@ __webpack_require__.r(__webpack_exports__);
       return;
     }
 
-    console.log(this.date);
     var date = new Date(this.date);
     this.updateMonth(date.getMonth() + 1);
     this.updateYear(date.getFullYear());
@@ -22312,9 +22312,9 @@ __webpack_require__.r(__webpack_exports__);
     skillName: function skillName() {
       var _this = this;
 
-      if (this.skill.id) {
+      if (this.skill.skill_id) {
         return this.availableSkills.find(function (skill) {
-          return skill.id === _this.skill.id;
+          return skill.id === _this.skill.skill_id;
         }).name;
       }
 
@@ -23575,9 +23575,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "contacts",
     required: "",
     "class": "mt-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm",
-    value: $options.contact.id,
+    value: $options.contact.contact_id,
     onInput: _cache[0] || (_cache[0] = function ($event) {
-      return $options.updateContact('id', $event.target.value);
+      return $options.updateContact('contact_id', $event.target.value);
     })
   }, [_hoisted_4, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.availableContacts, function (contact) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", {
@@ -24081,7 +24081,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       type: "button",
       onClick: function onClick() {
-        $options.updateSkill('id', skill.id);
+        $options.updateSkill('skill_id', skill.id);
         _this.name = skill.name;
       }
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(skill.name), 9
@@ -25949,7 +25949,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_3__["default"].Store({
         address: '',
         email: '',
         contacts: [{
-          id: '',
+          contact_id: '',
           value: ''
         }],
         job: '',
@@ -25962,7 +25962,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_3__["default"].Store({
           finished_at: null
         }],
         skills: [{
-          id: '',
+          skill_id: '',
           proficiency: ''
         }],
         references: ''
@@ -26009,7 +26009,7 @@ var mutations = {
   },
   addContact: function addContact(state) {
     state.cv.contacts.push({
-      id: '',
+      contact_id: '',
       value: ''
     });
   },
@@ -26027,14 +26027,8 @@ var mutations = {
       source: '',
       type: '',
       results: [''],
-      started_at: {
-        month: null,
-        year: null
-      },
-      finished_at: {
-        month: null,
-        year: null
-      }
+      started_at: null,
+      finished_at: null
     });
   },
   updateExperience: function updateExperience(state, experience) {
@@ -26047,7 +26041,7 @@ var mutations = {
   },
   addSkill: function addSkill(state) {
     state.cv.skills.push({
-      id: '',
+      skill_id: '',
       proficiency: ''
     });
   },

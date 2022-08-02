@@ -50,7 +50,6 @@ export default {
         if (this.date === null) {
             return;
         }
-        console.log(this.date);
         const date = new Date(this.date);
 
         this.updateMonth(date.getMonth() + 1);

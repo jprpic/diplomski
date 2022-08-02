@@ -8,7 +8,7 @@
           </div>
           <div v-if="searchedSkills && searchedSkills.length > 0" class="overflow-auto max-h-40 px-4 pt-2 border border-gray-200 rounded-md shadow-sm">
               <p class="my-1" v-for="skill in searchedSkills">
-                <button type="button" @click="() => {updateSkill('id', skill.id); this.name = skill.name;}" >
+                <button type="button" @click="() => {updateSkill('skill_id', skill.id); this.name = skill.name;}" >
                     {{ skill.name }}
                 </button>
               </p>
@@ -52,8 +52,8 @@ export default {
     },
     computed:{
         skillName(){
-            if(this.skill.id){
-                return this.availableSkills.find(skill => skill.id === this.skill.id).name;
+            if(this.skill.skill_id){
+                return this.availableSkills.find(skill => skill.id === this.skill.skill_id).name;
             }
             return this.name;
         },

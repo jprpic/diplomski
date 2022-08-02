@@ -12,7 +12,7 @@ const store = new Vuex.Store({
                 address: '',
                 email: '',
                 contacts: [{
-                    id: '',
+                    contact_id: '',
                     value: ''
                 }],
                 job: '',
@@ -25,7 +25,7 @@ const store = new Vuex.Store({
                     finished_at: null
                 }],
                 skills:[{
-                    id: '',
+                    skill_id: '',
                     proficiency: ''
                 }],
                 references: '',
