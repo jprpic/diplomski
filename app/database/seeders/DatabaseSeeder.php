@@ -24,7 +24,6 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             ContactSeeder::class,
-            TagSeeder::class,
             SkillSeeder::class
         ]);
     }

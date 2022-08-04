@@ -6,7 +6,7 @@ import BreezeDropdownLink from '@/Components/DropdownLink.vue';
 import BreezeNavLink from '@/Components/NavLink.vue';
 import BreezeResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/inertia-vue3';
-
+import { Inertia } from '@inertiajs/inertia';
 const showingNavigationDropdown = ref(false);
 </script>
 
@@ -30,8 +30,8 @@ const showingNavigationDropdown = ref(false);
                                 <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </BreezeNavLink>
-                                <BreezeNavLink :href="route('create')" :active="route().current('create')">
-                                    Create
+                                <BreezeNavLink :href="route(`cv.show`)" :active="route().current(`cv.show`)">
+                                    <span class="capitalize"> {{ CVRoute }}</span>
                                 </BreezeNavLink>
                             </div>
                         </div>
@@ -111,3 +111,36 @@ const showingNavigationDropdown = ref(false);
         </div>
     </div>
 </template>
+
+<script>
+import { usePage } from '@inertiajs/inertia-vue3'
+
+export default {
+    name: 'Authenticated.vue',
+    computed:{
+        user(){
+            return this.$store.getters.user;
+        },
+        CVRoute(){
+            if(usePage().props.value.auth.cv){
+                return 'edit'
+            }else{
+                return 'create'
+            }
+        }
+    },
+    beforeCreate(){
+        // If the user is logged in
+        // Authenticated layout is created on every page
+        // Store data can be initialized
+        if(this.$store.getters.user === null){
+            this.$store.dispatch('setUser', usePage().props.value.auth.user)
+            // If the authorized user has CV, initialize CV
+            if(JSON.parse(usePage().props.value.auth.cv) !== null){
+                this.$store.dispatch('setCV', JSON.parse(usePage().props.value.auth.cv));
+            }
+        }
+    }
+}
+
+</script>

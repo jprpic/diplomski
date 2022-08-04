@@ -9,6 +9,21 @@ defineProps({
 })
 </script>
 
+<script>
+import {usePage} from "@inertiajs/inertia-vue3";
+
+export default {
+    beforeCreate() {
+        if(usePage().props.value.auth.user === null && this.$store.getters.user !== null){
+            // Logout user
+            this.$store.dispatch('setUser', null);
+            this.$store.dispatch('removeCV');
+        }
+    }
+}
+
+</script>
+
 <template>
     <Head title="Welcome" />
 

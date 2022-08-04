@@ -10,28 +10,36 @@ import ContactList from "@/Components/CV/ContactList";
 import SkillList from "@/Components/CV/SkillList";
 
 const props = defineProps({
-    user: {
-        type: Object,
+    availableSkills : {
+        type: Array,
+        required: true
+    },
+    availableContacts : {
+        type: Array,
         required: true
     }
 })
-
-const form = useForm({
-    name: '',
-    job: '',
-    description: '',
-    address: '',
-    references: '',
-    experiences: [],
-});
 </script>
 
 <script>
+import { Inertia } from '@inertiajs/inertia';
+import {usePage} from "@inertiajs/inertia-vue3";
+import { toRaw } from 'vue';
 
 export default {
+    name: "Create",
     computed:{
         CV(){
             return this.$store.getters.cv;
+        },
+        validErrors(){
+            return toRaw(usePage().props.value.errors);
+        },
+        successFlash(){
+            return toRaw(usePage().props.value.flash.status)
+        },
+        isEdit(){
+            return Boolean(usePage().props.value.auth.cv);
         }
     },
     methods:{
@@ -51,7 +59,34 @@ export default {
             this.$store.dispatch('updateReferences', references)
         },
         submit(){
-            console.log(this.CV);
+            if(this.isEdit){
+                Inertia.post('/cv/edit', this.CV);
+            }else{
+                Inertia.post('/cv/', this.CV);
+            }
+        },
+
+    },
+    beforeCreate() {
+        // If a user wants to access edit but has no CV
+        this.$store.dispatch('setAvailableSkills', this.availableSkills)
+        this.$store.dispatch('setAvailableContacts', this.availableContacts)
+    },
+    beforeUpdate() {
+        // After sending POST req to edit CV
+        // Page will be reloaded and updated lifecycle hook
+        // Will be triggered, allowing the store CV to be reloaded
+        const cv = this.$store.getters.cv;
+        // Creating CV for the first time will update user'\s cv_id.
+        // If there is a validation error, prop CV will remain null
+        if(usePage().props.value.auth.cv){
+            if(!cv.id){
+                this.$store.dispatch('setUser', usePage().props.value.auth.user)
+            }
+            // Update CV if it'\s either just created or edited
+            if(!cv.id || (cv.id && cv.id !== JSON.parse(usePage().props.value.auth.cv).id)){
+                this.$store.dispatch('setCV', JSON.parse(usePage().props.value.auth.cv));
+            }
         }
     }
 }
@@ -62,13 +97,23 @@ export default {
     <BreezeAuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Create
+                <span v-if="isEdit">Edit</span>
+                <span v-else>Create</span>
             </h2>
         </template>
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
+                        <!-- Error -->
+                        <div v-if="Object.keys(this.validErrors).length !== 0" class="p-4 mb-4 text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+                            <span v-for="error in validErrors" class="font-medium">{{ error }}</span>
+                        </div>
+                        <!-- Success Flash -->
+                        <div v-if="this.successFlash" class="p-4 mb-4 text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
+                            <span class="font-medium">{{ successFlash }}</span>
+                        </div>
+
                         <form @submit.prevent="submit">
                             <div>
                                 <BreezeLabel for="name" value="First and Last name" />
@@ -79,7 +124,7 @@ export default {
 
                             <div class="mt-2">
                                 <BreezeLabel for="description" value="Profile description" />
-                                <BreezeTextArea id="description" rows="3" :value="CV.description" @input="updateDescription($event.target.value)" />
+                                <BreezeTextArea id="description" rows="3" :value="CV.description" @input="updateDescription($event.target.value)" required />
                             </div>
 
                             <div class="mt-2">
@@ -113,7 +158,7 @@ export default {
                             </div>
 
                             <div class="flex items-center justify-end mt-4">
-                                <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                                <BreezeButton class="ml-4" >
                                     Submit
                                 </BreezeButton>
                             </div>

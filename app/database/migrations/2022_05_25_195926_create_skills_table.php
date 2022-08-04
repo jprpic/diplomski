@@ -17,7 +17,7 @@ return new class extends Migration
             $table->smallIncrements('id');
             $table->string('name');
             // Hard or Soft skill
-            $table->string('skill_type');
+            $table->string('type');
         });
     }
 

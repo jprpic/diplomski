@@ -24,3 +24,4 @@ import { Head } from '@inertiajs/inertia-vue3';
         </div>
     </BreezeAuthenticatedLayout>
 </template>
+

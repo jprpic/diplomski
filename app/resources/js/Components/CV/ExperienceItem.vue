@@ -3,8 +3,8 @@
     <div class="flex">
         <div class="flex flex-col w-1/3 mt-2 ml-4">
             <div>
-                <BreezeLabel for="name" value="Name" />
-                <BreezeInput id="name" type="text" class="mt-1 block w-full" required autofocus
+                <BreezeLabel for="experience_name" value="Name" />
+                <BreezeInput id="experience_name" type="text" class="mt-1 block w-full" required
                          :value = "experience.name"
                          @input="updateExperience('name', $event.target.value)"
                 />
@@ -12,7 +12,7 @@
 
             <div class="mt-1">
                 <BreezeLabel for="source" value="Source" />
-                <BreezeInput id="source" type="text" class="mt-1 block w-full" required autofocus
+                <BreezeInput id="source" type="text" class="mt-1 block w-full" required
                              :value = "experience.source"
                              @input="updateExperience('source', $event.target.value)"
                 />
@@ -32,6 +32,21 @@
                            @input="updateExperience('type', $event.target.value)">
                 </div>
             </div>
+            <div class="flex flex-wrap justify-around items-center mt-2">
+                <div>
+                    <BreezeLabel for="started_at" value="Started at"/>
+                    <DateInput :id="`started_at_${index}`" :isRequired="true"
+                               :date = "experience.started_at"
+                               @update:date="(date) => updateExperience('started_at', date)"/>
+                </div>
+                <div>
+                    <BreezeLabel for="finished_at" value="Finished at"/>
+                    <DateInput :id="`finished_at_${index}`" :isRequired="false"
+                               :date = "experience.finished_at"
+                               @update:date="(date) => updateExperience('finished_at', date)"/>
+                </div>
+
+            </div>
         </div>
         <div class="flex flex-col grow mt-2 mx-4">
             <div class="flex justify-between items-end" >
@@ -40,7 +55,7 @@
             </div>
 
             <div v-for="(result, index) in experience.results" :key="index" class="flex">
-                <BreezeInput id="source" type="text" class="mt-2 block w-full" required
+                <BreezeInput id="result" type="text" class="mt-2 block w-full" required
                              :value = "experience.results[index]"
                              @input="updateResult(index, $event.target.value)"/>
                 <BreezeButton @click="removeResult(index)" type="button" class="ml-2 self-center mt-2">X</BreezeButton>
@@ -57,9 +72,11 @@
 import BreezeLabel from '../Label.vue';
 import BreezeInput from '../Input.vue';
 import BreezeButton from '../Button.vue';
+import DateInput from "@/Components/CV/DateInput";
 export default {
     name: "Experience.vue",
     components: {
+        DateInput,
         BreezeLabel,
         BreezeInput,
         BreezeButton
@@ -76,6 +93,9 @@ export default {
         }
     },
     methods:{
+        getDate(string){
+            return new Date(string);
+        },
         updateExperience(key, value){
             // Check if contact has property that's being changed
             if(this.experience.hasOwnProperty(key)){

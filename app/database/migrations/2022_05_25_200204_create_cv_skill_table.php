@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreign('skill_id')->references('id')->on('skills');
             $table->primary(['cv_id','skill_id']);
             // Skill level range 1-5
-            $table->tinyInteger('skill_level');
+            $table->tinyInteger('proficiency');
         });
     }
 

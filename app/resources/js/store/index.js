@@ -6,26 +6,28 @@ import getters from './getters';
 const store = new Vuex.Store({
     state () {
         return {
+            user: null,
             cv:{
                 name: '',
                 description: '',
                 address: '',
                 email: '',
                 contacts: [{
-                    type: '',
-                    url: ''
+                    contact_id: '',
+                    value: ''
                 }],
                 job: '',
                 experiences: [{
                     name: '',
                     source: '',
                     type: '',
-                    results: ['']
+                    results: [''],
+                    started_at: null,
+                    finished_at: null
                 }],
                 skills:[{
-                    type: '',
-                    name: '',
-                    level: ''
+                    skill_id: '',
+                    proficiency: ''
                 }],
                 references: '',
             }

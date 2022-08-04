@@ -1,32 +1,26 @@
 <template>
   <div class="flex ml-2 pb-2">
-      <div class="flex flex-none justify-center py-2 mx-2">
-          <div class="grid justify-items-center mr-1">
-              <BreezeLabel for="hard" value="Hard" />
-              <input type="radio" id="hard" :name="radioButtonName" value="hard" class="mt-2"
-                     @input="updateSkill('type', $event.target.value)"
-                     :checked = "skill.type === 'hard'">
+      <div class="grow mt-2 mx-2 flex-col">
+          <div>
+              <BreezeLabel for="skill_name" value="Name" />
+              <BreezeInput type="text" class="mt-1 block w-full" required
+                           v-model="name"/>
           </div>
+          <div v-if="searchedSkills && searchedSkills.length > 0" class="overflow-auto max-h-40 px-4 pt-2 border border-gray-200 rounded-md shadow-sm">
+              <p class="my-1" v-for="skill in searchedSkills">
+                <button type="button" @click="() => {updateSkill('skill_id', skill.id); this.name = skill.name;}" >
+                    {{ skill.name }}
+                </button>
+              </p>
+          </div>
+      </div>
 
-          <div class="grid justify-items-center ml-1">
-              <BreezeLabel for="soft" value="Soft" />
-              <input type="radio" id="soft" :name="radioButtonName" value="soft" class="mt-2"
-                     @input="updateSkill('type', $event.target.value)"
-                     :checked = "skill.type === 'soft'">
-          </div>
-      </div>
-      <div class="grow mt-2 mx-2">
-          <BreezeLabel for="name" value="Name" />
-          <BreezeInput id="name" type="text" class="mt-1 block w-full" required autofocus
-                       :value="skill.name"
-                       @input="updateSkill('name', $event.target.value)"/>
-      </div>
       <div class="flex-none items-stretch mx-2 mt-2">
           <BreezeLabel for="level" value="Level" />
 
-          <select name="level" id="level" class="mt-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                  :value="skill.level"
-                  @input="updateSkill('level', $event.target.value)">
+          <select name="level" id="level" required class="mt-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                  :value="skill.proficiency"
+                  @input="updateSkill('proficiency', $event.target.value)">
               <option disabled value="">Please select one</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -51,7 +45,18 @@ export default {
         BreezeButton
     },
     props:['index'],
+    data(){
+        return{
+            name: '',
+        }
+    },
     computed:{
+        skillName(){
+            if(this.skill.skill_id){
+                return this.availableSkills.find(skill => skill.id === this.skill.skill_id).name;
+            }
+            return this.name;
+        },
         skill(){
             const skillClone = JSON.parse(JSON.stringify(this.$store.getters.cv.skills[this.index]));
             skillClone.index = this.index;
@@ -59,6 +64,16 @@ export default {
         },
         radioButtonName(){
             return `skillType${this.index}`;
+        },
+        availableSkills(){
+            return this.$store.getters.availableSkills.sort((a, b) => a.name.localeCompare(b.name));
+        },
+        searchedSkills(){
+            // If the input is empty or a name of an existing skill is entered, hide the autocompletes
+            if(this.name === '' || this.availableSkills.filter(skill => skill.name === this.name).length){
+                return null;
+            }
+            return this.availableSkills.filter(skill => skill.name.toLowerCase().includes(this.name.toLowerCase()));
         }
     },
     methods:{
@@ -69,7 +84,9 @@ export default {
                 this.$store.dispatch('updateSkill', this.skill)
             }
         },
-
+    },
+    mounted(){
+        this.name = this.skillName;
     }
 }
 </script>

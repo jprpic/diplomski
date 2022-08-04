@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('type');
             // Name of the event/job/education programme
             $table->string('name');
-            // From where was the experience obtained
+            // Where was the experience obtained
             $table->string('source');
             // Skills obtained or responsibilities held
             $table->json('results');
