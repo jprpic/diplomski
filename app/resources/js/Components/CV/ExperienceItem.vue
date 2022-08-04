@@ -4,7 +4,7 @@
         <div class="flex flex-col w-1/3 mt-2 ml-4">
             <div>
                 <BreezeLabel for="experience_name" value="Name" />
-                <BreezeInput id="experience_name" type="text" class="mt-1 block w-full" required autofocus
+                <BreezeInput id="experience_name" type="text" class="mt-1 block w-full" required
                          :value = "experience.name"
                          @input="updateExperience('name', $event.target.value)"
                 />
@@ -12,7 +12,7 @@
 
             <div class="mt-1">
                 <BreezeLabel for="source" value="Source" />
-                <BreezeInput id="source" type="text" class="mt-1 block w-full" required autofocus
+                <BreezeInput id="source" type="text" class="mt-1 block w-full" required
                              :value = "experience.source"
                              @input="updateExperience('source', $event.target.value)"
                 />

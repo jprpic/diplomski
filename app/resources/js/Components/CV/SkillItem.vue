@@ -3,8 +3,8 @@
       <div class="grow mt-2 mx-2 flex-col">
           <div>
               <BreezeLabel for="skill_name" value="Name" />
-              <BreezeInput type="text" class="mt-1 block w-full" required autofocus
-                           v-model="name" :value="skillName"/>
+              <BreezeInput type="text" class="mt-1 block w-full" required
+                           v-model="name"/>
           </div>
           <div v-if="searchedSkills && searchedSkills.length > 0" class="overflow-auto max-h-40 px-4 pt-2 border border-gray-200 rounded-md shadow-sm">
               <p class="my-1" v-for="skill in searchedSkills">
@@ -85,6 +85,9 @@ export default {
             }
         },
     },
+    mounted(){
+        this.name = this.skillName;
+    }
 }
 </script>
 

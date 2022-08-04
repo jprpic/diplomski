@@ -6,7 +6,7 @@ import BreezeDropdownLink from '@/Components/DropdownLink.vue';
 import BreezeNavLink from '@/Components/NavLink.vue';
 import BreezeResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/inertia-vue3';
-
+import { Inertia } from '@inertiajs/inertia';
 const showingNavigationDropdown = ref(false);
 </script>
 
@@ -30,8 +30,8 @@ const showingNavigationDropdown = ref(false);
                                 <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </BreezeNavLink>
-                                <BreezeNavLink :href="route('cv.create')" :active="route().current('cv.create')">
-                                    Create
+                                <BreezeNavLink :href="route(`cv.${CVRoute}`)" :active="route().current(`cv.${CVRoute}`)">
+                                    <span class="capitalize"> {{ CVRoute }}</span>
                                 </BreezeNavLink>
                             </div>
                         </div>
@@ -111,3 +111,36 @@ const showingNavigationDropdown = ref(false);
         </div>
     </div>
 </template>
+
+<script>
+import { usePage } from '@inertiajs/inertia-vue3'
+
+export default {
+    name: 'Authenticated.vue',
+    computed:{
+        user(){
+            return this.$store.getters.user;
+        },
+        CVRoute(){
+            if(this.user && this.user.cv_id){
+                return 'edit'
+            }else{
+                return 'create'
+            }
+        }
+    },
+    beforeCreate(){
+        // If the user is logged in
+        // Authenticated layout is created on every page
+        // Store data can be initialized
+
+        if(this.$store.getters.user === null){
+            this.$store.dispatch('setUser', usePage().props.value.auth.user)
+            if(JSON.parse(usePage().props.value.auth.cv) !== null){
+                this.$store.dispatch('setCV', JSON.parse(usePage().props.value.auth.cv));
+            }
+        }
+    }
+}
+
+</script>

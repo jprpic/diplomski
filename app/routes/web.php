@@ -27,17 +27,15 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    $cv = CV::getCurrentUser();
-    return Inertia::render('Dashboard',[
-        'user' => Auth()->user(),
-        'cv' => $cv
-    ]);
+    return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::prefix('cv')->group(function() {
-    Route::get('/create', [CVController::class, 'create'])->name('cv.create');
     Route::post('/', [CVController::class, 'store'])->name('cv.store');
+    Route::post('/edit', [CVController::class, 'update'])->name('cv.update');
+    Route::get('/create', [CVController::class, 'create'])->name('cv.create');
+    Route::get('/edit', [CVController::class, 'edit'])->name('cv.edit');
 });
 
 

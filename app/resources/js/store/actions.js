@@ -52,6 +52,12 @@ const actions = {
     },
     setCV(context, cv){
         context.commit('setCV', cv);
+    },
+    removeCV(context){
+        context.commit('removeCV')
+    },
+    setUser(context, user){
+        context.commit('setUser', user);
     }
 }
 

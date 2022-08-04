@@ -6,6 +6,7 @@ import getters from './getters';
 const store = new Vuex.Store({
     state () {
         return {
+            user: null,
             cv:{
                 name: '',
                 description: '',

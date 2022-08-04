@@ -75,6 +75,35 @@ const mutations = {
     },
     setCV(state, cv){
         state.cv = cv;
+    },
+    removeCV(state){
+        state.cv = {
+            name: '',
+            description: '',
+            address: '',
+            email: '',
+            contacts: [{
+                contact_id: '',
+                value: ''
+            }],
+            job: '',
+            experiences: [{
+                name: '',
+                source: '',
+                type: '',
+                results: [''],
+                started_at: null,
+                finished_at: null
+            }],
+            skills:[{
+                skill_id: '',
+                proficiency: ''
+            }],
+            references: '',
+        }
+    },
+    setUser(state, user){
+        state.user = user;
     }
 }
 

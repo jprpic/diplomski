@@ -33,14 +33,16 @@ class CV extends Model
         return $this->hasOne(User::class);
     }
 
-    public static function getCurrentUser(){
+    public static function getCurrentUserCV(){
         if(!Auth()->id()){
             return null;
         }
         $userID = Auth()->id();
 
         $cvModel = User::find($userID)->cv;
-
+        if(!$cvModel){
+            return null;
+        }
         $cv = json_decode($cvModel);
         $cv->contacts = $cvModel->contacts;
         $cv->experiences = $cvModel->experiences;
@@ -49,10 +51,29 @@ class CV extends Model
         return $cv;
     }
 
+    public static function edit($CVJson){
+        // Editing CV is deleting CV and all associated entries
+        // And then recreating CV and associated entries
+        $cv = CV::find($CVJson['id']);
+        if($cv == null){
+            return;
+        }
+
+        // Unlink existing CV from current user
+        $user = User::find(Auth()->id());
+        $user->cv_id = null;
+        $user->save();
+
+        // Delete CV and all relationship entries
+        // And create new CV
+        $cv->delete();
+        CV::store($CVJson);
+    }
+
     public static function store($CVJson){
         $user_id = Auth()->id();
-
         $cv = new self;
+        // Create new CV
         $cv->user_id = $user_id;
         $cv->name = $CVJson['name'];
         $cv->description = $CVJson['description'];
@@ -61,6 +82,12 @@ class CV extends Model
         $cv->references = $CVJson['references'];
         $cv->save();
 
+        // Link new CV to authorized user
+        $user = User::find($user_id);
+        $user->cv_id = $cv->id;
+        $user->save();
+
+        // Fill in one-to-many relationships
         foreach($CVJson['contacts'] as $contact){
             $cvContact = new CV_Contact;
             $cvContact->cv_id = $cv->id;
@@ -96,8 +123,5 @@ class CV extends Model
             $cvSkill->proficiency = $skill['proficiency'];
             $cvSkill->save();
         }
-
-        // TODO complete cv creation with foreign keys too
-        dd($cv);
     }
 }

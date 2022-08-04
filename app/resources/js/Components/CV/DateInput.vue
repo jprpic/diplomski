@@ -2,7 +2,7 @@
     <div class="flex justify-center items-center my-2">
         <div class="flex-col">
             <BreezeLabel for="month" value="Month" class="text-xs"/>
-            <BreezeInput :id="monthId" type="text" class="w-12" placeholder="06" pattern="[0-9]{2}"
+            <BreezeInput :id="monthId" type="text" class="w-12" :placeholder="formatNumber(new Date().getMonth() + 1, 2)" pattern="[0-9]{2}"
                          :value="month"
                          @input="updateMonth($event.target.value)"
                          :onkeyup="updateDate"
@@ -13,7 +13,7 @@
         <span class="mx-2 text-xl mt-4">/</span>
         <div>
             <BreezeLabel for="year" value="Year" class="text-xs"/>
-            <BreezeInput :id="yearId" type="text" class="w-16" placeholder="2022" pattern="[0-9]{4}"
+            <BreezeInput :id="yearId" type="text" class="w-16" :placeholder="new Date().getFullYear()" pattern="[0-9]{4}"
                          :value="year"
                          @input="updateYear($event.target.value)"
                          :onkeyup="updateDate"
@@ -56,6 +56,12 @@ export default {
         this.updateYear(date.getFullYear());
     },
     methods: {
+        formatNumber(number, minimumIntegerDigits){
+            return number.toLocaleString('en-US', {
+                minimumIntegerDigits: minimumIntegerDigits,
+                useGrouping: false
+            });
+        },
         getLength(number) {
             return number.toString().length;
         },
@@ -68,10 +74,7 @@ export default {
             }
         },
         updateMonth(month) {
-            month = month.toLocaleString('en-US', {
-                minimumIntegerDigits: 2,
-                useGrouping: false
-            });
+            month = this.formatNumber(month, 2);
             if (!(isNaN(month) || month < 0 || month > 12)) {
                 this.month = month;
             }

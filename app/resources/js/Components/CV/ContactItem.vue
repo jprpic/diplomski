@@ -12,7 +12,7 @@
         </div>
         <div class="grow ml-4 mt-2">
             <BreezeLabel :for="contactInfo.type" :value="contactInfo.label" />
-            <BreezeInput :id="contactInfo.type" :type="contactInfo.type" class="mt-1 w-full block" required autofocus
+            <BreezeInput :id="contactInfo.type" :type="contactInfo.type" class="mt-1 w-full block" required
                          :value="contact.value"
                          @input="updateContact('value', $event.target.value)"/>
         </div>
@@ -36,7 +36,6 @@ export default {
         contact(){
             const contactClone = JSON.parse(JSON.stringify(this.$store.getters.cv.contacts[this.index]));
             contactClone.index = this.index;
-            console.log(contactClone);
             return contactClone;
         },
         contactInfo(){

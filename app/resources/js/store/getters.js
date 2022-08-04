@@ -16,6 +16,9 @@ const getters = {
     },
     availableContacts(state){
         return state.available_contacts;
+    },
+    user(state){
+        return state.user;
     }
 }
 

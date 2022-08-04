@@ -10,10 +10,6 @@ import ContactList from "@/Components/CV/ContactList";
 import SkillList from "@/Components/CV/SkillList";
 
 const props = defineProps({
-    user: {
-        type: Object,
-        required: true
-    },
     availableSkills : {
         type: Array,
         required: true
@@ -23,13 +19,18 @@ const props = defineProps({
         type: Array,
         required: true
     },
+    isEdit: {
+        type: Boolean,
+        required: false
+    }
 })
 </script>
 
 <script>
 import { Inertia } from '@inertiajs/inertia';
+import {usePage} from "@inertiajs/inertia-vue3";
 export default {
-
+    name: "Create",
     computed:{
         CV(){
             return this.$store.getters.cv;
@@ -52,12 +53,36 @@ export default {
             this.$store.dispatch('updateReferences', references)
         },
         submit(){
-            Inertia.post('/cv/', this.CV);
-        }
+            if(this.isEdit){
+                Inertia.post('/cv/edit', this.CV);
+            }else{
+                Inertia.post('/cv/', this.CV);
+            }
+        },
+
     },
     created() {
+        // If a user wants to access edit but has no CV
+        if(!this.$store.getters.cv.id && this.isEdit){
+            Inertia.visit('/cv/create');
+        }
         this.$store.dispatch('setAvailableSkills', this.availableSkills)
         this.$store.dispatch('setAvailableContacts', this.availableContacts)
+    },
+    beforeUpdate() {
+        // After sending POST req to edit CV
+        // Page will be reloaded and updated lifecycle hook
+        // Will be triggered, allowing the store CV to be reloaded
+        const cv = this.$store.getters.cv;
+        // Creating CV for the first time will update user'\s cv_id.
+        if(!cv.id){
+            this.$store.dispatch('setUser', usePage().props.value.auth.user)
+        }
+        // Update CV if it'\s either just created or edited
+        if(!cv.id || (cv.id && cv.id !== JSON.parse(usePage().props.value.auth.cv).id)){
+            console.log('Updating old CV');
+            this.$store.dispatch('setCV', JSON.parse(usePage().props.value.auth.cv));
+        }
     }
 }
 </script>
@@ -67,7 +92,8 @@ export default {
     <BreezeAuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Create
+                <span v-if="isEdit">Edit</span>
+                <span v-else>Create</span>
             </h2>
         </template>
         <div class="py-12">
