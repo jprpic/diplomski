@@ -30,7 +30,7 @@ const showingNavigationDropdown = ref(false);
                                 <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </BreezeNavLink>
-                                <BreezeNavLink :href="route(`cv.${CVRoute}`)" :active="route().current(`cv.${CVRoute}`)">
+                                <BreezeNavLink :href="route(`cv.show`)" :active="route().current(`cv.show`)">
                                     <span class="capitalize"> {{ CVRoute }}</span>
                                 </BreezeNavLink>
                             </div>
@@ -122,7 +122,7 @@ export default {
             return this.$store.getters.user;
         },
         CVRoute(){
-            if(this.user && this.user.cv_id){
+            if(usePage().props.value.auth.cv){
                 return 'edit'
             }else{
                 return 'create'
@@ -133,9 +133,9 @@ export default {
         // If the user is logged in
         // Authenticated layout is created on every page
         // Store data can be initialized
-
         if(this.$store.getters.user === null){
             this.$store.dispatch('setUser', usePage().props.value.auth.user)
+            // If the authorized user has CV, initialize CV
             if(JSON.parse(usePage().props.value.auth.cv) !== null){
                 this.$store.dispatch('setCV', JSON.parse(usePage().props.value.auth.cv));
             }

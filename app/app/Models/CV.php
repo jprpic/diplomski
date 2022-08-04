@@ -9,12 +9,39 @@ use App\Models\CV\Skill;
 use DateTime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class CV extends Model
 {
     use HasFactory;
 
     protected $table = 'cvs';
+    const VALID_RULES = [
+        'name' => 'required|max:255',
+        'description' => 'required|max:255',
+        'address' => 'required|max:255',
+        'job' => 'required|max:255',
+        'references' => 'required|max:255',
+
+        'contacts.*.contact_id' => 'required|distinct|numeric',
+        'contacts.*.value' => 'required|max:255',
+
+        'experiences.*.name' => 'required|max:255',
+        'experiences.*.source' => 'required|max:255',
+        'experiences.*.type' => 'required|alpha',
+        'experiences.*.results.*' => 'required|max:255',
+        'experiences.*.started_at' => 'required|date',
+
+        'skills.*.skill_id' => 'required|distinct|numeric',
+        'skills.*.proficiency' => 'required|numeric'
+    ];
+    const VALID_MSGS = [
+        'contacts.*.contact_id.distinct' => 'There is a repeating type of contact.',
+        'skills.*.skill_id.distinct' => 'There is a same skill repeating.',
+        'skills.*.skill_id.required' => 'Please choose an existing skill.',
+    ];
 
     public function skillProficiencies(){
         return $this->hasMany(CV_Skill::class , 'cv_id', 'id');

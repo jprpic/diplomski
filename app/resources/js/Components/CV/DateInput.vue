@@ -70,7 +70,7 @@ export default {
             const year = this.year;
             if (!(isNaN(month) || month <= 0 || month > 12)
                 && this.getLength(year) === 4 && !(isNaN(year) || year < 0 || year > new Date().getFullYear())) {
-                this.$emit('update:date', new Date(year, parseInt(month) - 1))
+                this.$emit('update:date', new Date(year, parseInt(month)))
             }
         },
         updateMonth(month) {

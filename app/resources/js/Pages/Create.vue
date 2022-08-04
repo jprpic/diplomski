@@ -13,15 +13,10 @@ const props = defineProps({
     availableSkills : {
         type: Array,
         required: true
-    }
-    ,
+    },
     availableContacts : {
         type: Array,
         required: true
-    },
-    isEdit: {
-        type: Boolean,
-        required: false
     }
 })
 </script>
@@ -29,11 +24,22 @@ const props = defineProps({
 <script>
 import { Inertia } from '@inertiajs/inertia';
 import {usePage} from "@inertiajs/inertia-vue3";
+import { toRaw } from 'vue';
+
 export default {
     name: "Create",
     computed:{
         CV(){
             return this.$store.getters.cv;
+        },
+        validErrors(){
+            return toRaw(usePage().props.value.errors);
+        },
+        successFlash(){
+            return toRaw(usePage().props.value.flash.status)
+        },
+        isEdit(){
+            return Boolean(usePage().props.value.auth.cv);
         }
     },
     methods:{
@@ -61,11 +67,8 @@ export default {
         },
 
     },
-    created() {
+    beforeCreate() {
         // If a user wants to access edit but has no CV
-        if(!this.$store.getters.cv.id && this.isEdit){
-            Inertia.visit('/cv/create');
-        }
         this.$store.dispatch('setAvailableSkills', this.availableSkills)
         this.$store.dispatch('setAvailableContacts', this.availableContacts)
     },
@@ -75,13 +78,15 @@ export default {
         // Will be triggered, allowing the store CV to be reloaded
         const cv = this.$store.getters.cv;
         // Creating CV for the first time will update user'\s cv_id.
-        if(!cv.id){
-            this.$store.dispatch('setUser', usePage().props.value.auth.user)
-        }
-        // Update CV if it'\s either just created or edited
-        if(!cv.id || (cv.id && cv.id !== JSON.parse(usePage().props.value.auth.cv).id)){
-            console.log('Updating old CV');
-            this.$store.dispatch('setCV', JSON.parse(usePage().props.value.auth.cv));
+        // If there is a validation error, prop CV will remain null
+        if(usePage().props.value.auth.cv){
+            if(!cv.id){
+                this.$store.dispatch('setUser', usePage().props.value.auth.user)
+            }
+            // Update CV if it'\s either just created or edited
+            if(!cv.id || (cv.id && cv.id !== JSON.parse(usePage().props.value.auth.cv).id)){
+                this.$store.dispatch('setCV', JSON.parse(usePage().props.value.auth.cv));
+            }
         }
     }
 }
@@ -100,6 +105,15 @@ export default {
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
+                        <!-- Error -->
+                        <div v-if="Object.keys(this.validErrors).length !== 0" class="p-4 mb-4 text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+                            <span v-for="error in validErrors" class="font-medium">{{ error }}</span>
+                        </div>
+                        <!-- Success Flash -->
+                        <div v-if="this.successFlash" class="p-4 mb-4 text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
+                            <span class="font-medium">{{ successFlash }}</span>
+                        </div>
+
                         <form @submit.prevent="submit">
                             <div>
                                 <BreezeLabel for="name" value="First and Last name" />

@@ -34,8 +34,7 @@ Route::get('/dashboard', function () {
 Route::prefix('cv')->group(function() {
     Route::post('/', [CVController::class, 'store'])->name('cv.store');
     Route::post('/edit', [CVController::class, 'update'])->name('cv.update');
-    Route::get('/create', [CVController::class, 'create'])->name('cv.create');
-    Route::get('/edit', [CVController::class, 'edit'])->name('cv.edit');
+    Route::get('/', [CVController::class, 'show'])->name('cv.show');
 });
 
 

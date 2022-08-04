@@ -38,7 +38,10 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => $request->user(),
-                'cv' => fn() => $request->user() ? CV::getCurrentUserCV() : null
+                'cv' => fn() => $request->user() ? CV::getCurrentUserCV() : null,
+            ],
+            'flash' => [
+                'status' => fn () => $request->session()->get('status')
             ],
             'ziggy' => function () {
                 return (new Ziggy)->toArray();
