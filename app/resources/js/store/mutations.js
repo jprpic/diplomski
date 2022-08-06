@@ -104,6 +104,20 @@ const mutations = {
     },
     setUser(state, user){
         state.user = user;
+    },
+    restartSearch(state){
+        state.search = {
+            ageBot: 0,
+            ageTop: 100,
+            skills: [],
+            city: ''
+        }
+    },
+    addSearchSkill(state, skill) {
+        state.search.skills.push(skill);
+    },
+    removeSearchSkill(state, index){
+        state.search.skills.splice(index, 1); // 2nd parameter means remove one item only
     }
 }
 

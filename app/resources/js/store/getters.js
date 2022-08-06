@@ -19,6 +19,9 @@ const getters = {
     },
     user(state){
         return state.user;
+    },
+    search(state){
+        return state.search;
     }
 }
 

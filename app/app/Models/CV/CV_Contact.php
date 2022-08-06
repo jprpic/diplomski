@@ -3,7 +3,6 @@
 namespace App\Models\CV;
 
 use App\Models\CV;
-use App\Models\CV\Contact;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CVController;
+use App\Http\Controllers\SearchController;
 use App\Models\CV;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,9 @@ Route::prefix('cv')->group(function() {
     Route::post('/edit', [CVController::class, 'update'])->name('cv.update');
     Route::get('/', [CVController::class, 'show'])->name('cv.show');
 });
+
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+Route::post('/search', [SearchController::class, 'search'])->name('search.results');
 
 
 require __DIR__.'/auth.php';

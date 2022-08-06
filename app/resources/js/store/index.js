@@ -30,6 +30,12 @@ const store = new Vuex.Store({
                     proficiency: ''
                 }],
                 references: '',
+            },
+            search : {
+                ageBot: 0,
+                ageTop: 100,
+                skills: [],
+                city: ''
             }
         }
     },

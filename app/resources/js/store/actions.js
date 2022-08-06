@@ -58,6 +58,15 @@ const actions = {
     },
     setUser(context, user){
         context.commit('setUser', user);
+    },
+    addSearchSkill(context, skill){
+        context.commit('addSearchSkill', skill)
+    },
+    restartSearch(context) {
+        context.commit('restartSearch');
+    },
+    removeSearchSkill(context, index){
+        context.commit('removeSearchSkill', index);
     }
 }
 

@@ -40,6 +40,7 @@ class HandleInertiaRequests extends Middleware
                 'user' => $request->user(),
                 'cv' => fn() => $request->user() ? CV::getCurrentUserCV() : null,
             ],
+            'availableSkills' => CV\Skill::all(),
             'flash' => [
                 'status' => fn () => $request->session()->get('status')
             ],
