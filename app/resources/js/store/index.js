@@ -9,9 +9,13 @@ const store = new Vuex.Store({
             user: null,
             cv:{
                 name: '',
+                sex: '',
+                birthdate: '',
                 description: '',
-                address: '',
-                email: '',
+                address: {
+                    street: '',
+                    postcode: ''
+                },
                 contacts: [{
                     contact_id: '',
                     value: ''

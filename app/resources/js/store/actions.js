@@ -5,8 +5,11 @@ const actions = {
     updateDescription(context, description){
         context.commit('updateDescription', description);
     },
-    updateAddress(context, address){
-        context.commit('updateAddress', address);
+    updateAddressStreet(context, street){
+        context.commit('updateAddressStreet', street);
+    },
+    updatePostcode(context, code){
+        context.commit('updatePostcode', code);
     },
     updateEmail(context, email){
         context.commit('updateEmail', email);
@@ -67,7 +70,8 @@ const actions = {
     },
     removeSearchSkill(context, index){
         context.commit('removeSearchSkill', index);
-    }
+    },
+
 }
 
 export default actions;

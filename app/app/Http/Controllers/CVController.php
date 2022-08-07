@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CV;
 use App\Models\CV\Contact;
 use App\Models\CV\Skill;
+use App\Models\Postcode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
@@ -13,11 +14,11 @@ use Illuminate\Support\Facades\Validator;
 class CVController extends Controller
 {
     function show(){
-        $availableSkills = Skill::all();
         $availableContacts = Contact::all();
+        $availablePostcodes = Postcode::all();
         return Inertia::render('Create', [
-            'availableSkills' => $availableSkills,
-            'availableContacts' => $availableContacts
+            'postcodes' => $availablePostcodes,
+            'availableContacts' => $availableContacts,
         ]);
     }
 

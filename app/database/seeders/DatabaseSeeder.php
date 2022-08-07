@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             ContactSeeder::class,
-            SkillSeeder::class
+            SkillSeeder::class,
+            PostcodeSeeder::class
         ]);
     }
 }

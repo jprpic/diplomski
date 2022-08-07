@@ -5,8 +5,11 @@ const mutations = {
     updateDescription(state, description){
         state.cv.description = description;
     },
-    updateAddress(state, address){
-        state.cv.address = address;
+    updateAddressStreet(state, street){
+        state.cv.address.street = street;
+    },
+    updatePostcode(state, code){
+        state.cv.address.postcode = code;
     },
     updateEmail(state, email){
         state.cv.email = email;
@@ -80,7 +83,10 @@ const mutations = {
         state.cv = {
             name: '',
             description: '',
-            address: '',
+            address: {
+                street: '',
+                postcode: ''
+            },
             email: '',
             contacts: [{
                 contact_id: '',

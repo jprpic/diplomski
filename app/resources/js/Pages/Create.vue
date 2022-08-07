@@ -8,9 +8,10 @@ import BreezeLabel from '@/Components/Label.vue';
 import ExperienceList from "@/Components/CV/ExperienceList";
 import ContactList from "@/Components/CV/ContactList";
 import SkillList from "@/Components/CV/SkillList";
+import AddressInput from "@/Components/CV/AddressInput"
 
 const props = defineProps({
-    availableSkills : {
+    postcodes : {
         type: Array,
         required: true
     },
@@ -49,9 +50,6 @@ export default {
         updateDescription(description){
             this.$store.dispatch('updateDescription', description)
         },
-        updateAddress(address){
-            this.$store.dispatch('updateAddress', address)
-        },
         updateJob(job){
             this.$store.dispatch('updateJob', job)
         },
@@ -69,7 +67,6 @@ export default {
     },
     beforeCreate() {
         // If a user wants to access edit but has no CV
-        this.$store.dispatch('setAvailableSkills', this.availableSkills)
         this.$store.dispatch('setAvailableContacts', this.availableContacts)
     },
     beforeUpdate() {
@@ -122,14 +119,11 @@ export default {
                                              @input="updateName($event.target.value)"   />
                             </div>
 
+                            <AddressInput :postcodes="postcodes"></AddressInput>
+
                             <div class="mt-2">
                                 <BreezeLabel for="description" value="Profile description" />
                                 <BreezeTextArea id="description" rows="3" :value="CV.description" @input="updateDescription($event.target.value)" required />
-                            </div>
-
-                            <div class="mt-2">
-                                <BreezeLabel for="address" value="Address" />
-                                <BreezeInput id="address" type="text" class="mt-1 block w-full" :value="CV.address" @input="updateAddress($event.target.value)" required  />
                             </div>
 
                             <div class="mt-2">
