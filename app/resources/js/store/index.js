@@ -10,7 +10,8 @@ const store = new Vuex.Store({
             cv:{
                 name: '',
                 sex: '',
-                birthdate: '',
+                birthdate: null,
+                years_of_exp: '',
                 description: '',
                 address: {
                     street: '',

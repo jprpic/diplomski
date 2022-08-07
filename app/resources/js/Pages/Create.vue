@@ -9,6 +9,7 @@ import ExperienceList from "@/Components/CV/ExperienceList";
 import ContactList from "@/Components/CV/ContactList";
 import SkillList from "@/Components/CV/SkillList";
 import AddressInput from "@/Components/CV/AddressInput"
+import AgeInput from "@/Components/CV/AgeInput";
 
 const props = defineProps({
     postcodes : {
@@ -52,6 +53,9 @@ export default {
         },
         updateJob(job){
             this.$store.dispatch('updateJob', job)
+        },
+        updateSex(value){
+            this.$store.dispatch('updateSex', value)
         },
         updateReferences(references){
             this.$store.dispatch('updateReferences', references)
@@ -118,6 +122,21 @@ export default {
                                              :value="CV.name"
                                              @input="updateName($event.target.value)"   />
                             </div>
+
+                            <div class="flex">
+                                <div class="mt-6">
+                                    <BreezeLabel for="sex" value="Sex" />
+                                    <select name="sex" id="sex" required class="mt-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                                            :value="CV.sex"
+                                            @input="updateSex($event.target.value)">
+                                        <option disabled value="">Please select one</option>
+                                        <option value="M"> Male </option>
+                                        <option value="F"> Female </option>
+                                    </select>
+                                </div>
+                                <AgeInput></AgeInput>
+                            </div>
+
 
                             <AddressInput :postcodes="postcodes"></AddressInput>
 

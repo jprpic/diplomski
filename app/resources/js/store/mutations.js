@@ -11,8 +11,14 @@ const mutations = {
     updatePostcode(state, code){
         state.cv.address.postcode = code;
     },
-    updateEmail(state, email){
-        state.cv.email = email;
+    updateBirthdate(state, date){
+        state.cv.birthdate = date;
+    },
+    updateYearsOfExp(state, value){
+        state.cv.years_of_exp = value;
+    },
+    updateSex(state, sex){
+        state.cv.sex = sex;
     },
     updateJob(state, job){
         state.cv.job = job;

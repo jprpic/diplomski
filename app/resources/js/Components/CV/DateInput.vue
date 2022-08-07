@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center items-center my-2">
+    <div class="flex justify-center items-center mt-1 mb-2">
         <div class="flex-col">
             <BreezeLabel for="month" value="Month" class="text-xs"/>
             <BreezeInput :id="monthId" type="text" class="w-12" :placeholder="formatNumber(new Date().getMonth() + 1, 2)" pattern="[0-9]{2}"
@@ -70,7 +70,7 @@ export default {
             const year = this.year;
             if (!(isNaN(month) || month <= 0 || month > 12)
                 && this.getLength(year) === 4 && !(isNaN(year) || year < 0 || year > new Date().getFullYear())) {
-                this.$emit('update:date', new Date(year, parseInt(month)))
+                this.$emit('update:date', new Date(year, parseInt(month) - 1, 2))
             }
         },
         updateMonth(month) {

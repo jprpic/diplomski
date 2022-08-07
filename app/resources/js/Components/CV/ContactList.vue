@@ -31,9 +31,6 @@ export default {
         }
     },
     methods:{
-        updateEmail(email){
-            this.$store.dispatch('updateEmail', email);
-        },
         updateNumber(number){
             this.$store.dispatch('updateNumber', number);
         },

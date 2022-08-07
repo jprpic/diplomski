@@ -24,6 +24,7 @@ class CVController extends Controller
 
     function store(Request $request){
         $reqCV = $request->json()->all();
+        dd($reqCV);
         $validator = Validator::make($reqCV, CV::VALID_RULES, CV::VALID_MSGS);
         if ($validator->stopOnFirstFailure()->fails()) {
             return Redirect::route('cv.show')->withErrors($validator);

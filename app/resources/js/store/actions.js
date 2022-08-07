@@ -8,11 +8,17 @@ const actions = {
     updateAddressStreet(context, street){
         context.commit('updateAddressStreet', street);
     },
+    updateBirthdate(context, date){
+        context.commit('updateBirthdate', date);
+    },
+    updateYearsOfExp(context, value){
+        context.commit('updateYearsOfExp', value);
+    },
     updatePostcode(context, code){
         context.commit('updatePostcode', code);
     },
-    updateEmail(context, email){
-        context.commit('updateEmail', email);
+    updateSex(context, sex){
+        context.commit('updateSex', sex)
     },
     updateJob(context, job){
         context.commit('updateJob', job);
