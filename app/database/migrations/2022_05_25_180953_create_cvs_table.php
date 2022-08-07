@@ -20,7 +20,6 @@ return new class extends Migration
             $table->foreignId('user_id')->unique()->constrained()->onDelete('cascade');
             $table->string('name');
             $table->string('description');
-            $table->string('address');
             $table->string('job');
             $table->string('references');
             $table->timestamps();

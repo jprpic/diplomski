@@ -51,7 +51,6 @@ export default {
             return;
         }
         const date = new Date(this.date);
-
         this.updateMonth(date.getMonth() + 1);
         this.updateYear(date.getFullYear());
     },

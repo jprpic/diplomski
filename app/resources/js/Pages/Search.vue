@@ -49,7 +49,6 @@ export default {
     beforeCreate() {
         if(this.search === null){
             this.$store.dispatch('restartSearch');
-            console.log(this.search)
         }
     }
 }

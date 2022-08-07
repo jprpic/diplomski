@@ -9,7 +9,7 @@ import DateInput from "@/Components/CV/DateInput";
     <div class="mt-2 ml-1 flex">
         <div class="ml-4">
             <BreezeLabel for="birth_date" value="Date of birth"/>
-            <DateInput  id="`birth_date`" :isRequired="true"
+            <DateInput id="birth_date" :isRequired="true"
                        :date = "CV.birthdate"
                        @update:date="(date) => updateBirthdate(date)"/>
         </div>
@@ -34,7 +34,6 @@ export default {
     },
     methods:{
         updateBirthdate(date){
-            console.log(date);
             this.$store.dispatch('updateBirthdate', date);
         },
         updateYearsOfExp(value){

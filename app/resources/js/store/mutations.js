@@ -6,10 +6,10 @@ const mutations = {
         state.cv.description = description;
     },
     updateAddressStreet(state, street){
-        state.cv.address.street = street;
+        state.cv.street = street;
     },
     updatePostcode(state, code){
-        state.cv.address.postcode = code;
+        state.cv.postcode = code;
     },
     updateBirthdate(state, date){
         state.cv.birthdate = date;

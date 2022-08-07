@@ -8,7 +8,7 @@ import BreezeInput from "@/Components/Input";
     <div class="mt-2 flex w-full flex-wrap w-full">
         <div class="grow-0">
             <BreezeLabel for="address" value="Street" />
-            <BreezeInput id="address" type="text" class="mt-1 block" :value="CV.address.street" @input="updateAddressStreet($event.target.value)" required  />
+            <BreezeInput id="address" type="text" class="mt-1 block" :value="CV.street" @input="updateAddressStreet($event.target.value)" required  />
         </div>
 
         <div class="ml-4 flex flex-col w-fit grow">
@@ -55,7 +55,6 @@ export default {
             return this.$store.getters.cv;
         },
         searchedCode(){
-            console.log(typeof this.code)
             // If the input is empty or a name of an existing skill is entered, hide the autocompletes
             if(this.code === '' || this.postcodes.filter(postcode => postcode.code.toString() === this.code).length){
                 return null;
@@ -79,8 +78,11 @@ export default {
             }
         }
     },
-    created() {
-        console.log(this.postcodes);
+    mounted() {
+        if(this.CV.postcode){
+            this.code = this.CV.postcode.toString();
+            this.fillAddress();
+        }
     }
 }
 </script>

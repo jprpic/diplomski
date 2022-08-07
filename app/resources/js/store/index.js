@@ -13,10 +13,8 @@ const store = new Vuex.Store({
                 birthdate: null,
                 years_of_exp: '',
                 description: '',
-                address: {
-                    street: '',
-                    postcode: ''
-                },
+                street: '',
+                postcode: '',
                 contacts: [{
                     contact_id: '',
                     value: ''

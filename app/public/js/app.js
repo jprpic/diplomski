@@ -21962,8 +21962,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _Components_Label__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Label */ "./resources/js/Components/Label.vue");
 /* harmony import */ var _Components_Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Input */ "./resources/js/Components/Input.vue");
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-
 
 var __default__ = {
   name: "AddressInput.vue",
@@ -21980,8 +21978,7 @@ var __default__ = {
     searchedCode: function searchedCode() {
       var _this = this;
 
-      console.log(_typeof(this.code)); // If the input is empty or a name of an existing skill is entered, hide the autocompletes
-
+      // If the input is empty or a name of an existing skill is entered, hide the autocompletes
       if (this.code === '' || this.postcodes.filter(function (postcode) {
         return postcode.code.toString() === _this.code;
       }).length) {
@@ -22014,8 +22011,11 @@ var __default__ = {
       }
     }
   },
-  created: function created() {
-    console.log(this.postcodes);
+  mounted: function mounted() {
+    if (this.CV.postcode) {
+      this.code = this.CV.postcode.toString();
+      this.fillAddress();
+    }
   }
 };
 
@@ -22062,7 +22062,6 @@ var __default__ = {
   },
   methods: {
     updateBirthdate: function updateBirthdate(date) {
-      console.log(date);
       this.$store.dispatch('updateBirthdate', date);
     },
     updateYearsOfExp: function updateYearsOfExp(value) {
@@ -23794,7 +23793,6 @@ var __default__ = {
   beforeCreate: function beforeCreate() {
     if (this.search === null) {
       this.$store.dispatch('restartSearch');
-      console.log(this.search);
     }
   }
 };
@@ -23973,7 +23971,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "address",
     type: "text",
     "class": "mt-1 block",
-    value: $options.CV.address.street,
+    value: $options.CV.street,
     onInput: _cache[0] || (_cache[0] = function ($event) {
       return $options.updateAddressStreet($event.target.value);
     }),
@@ -24067,7 +24065,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "for": "birth_date",
     value: "Date of birth"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["DateInput"], {
-    id: "`birth_date`",
+    id: "birth_date",
     isRequired: true,
     date: $options.CV.birthdate,
     "onUpdate:date": _cache[0] || (_cache[0] = function (date) {
@@ -26855,10 +26853,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_3__["default"].Store({
         birthdate: null,
         years_of_exp: '',
         description: '',
-        address: {
-          street: '',
-          postcode: ''
-        },
+        street: '',
+        postcode: '',
         contacts: [{
           contact_id: '',
           value: ''
@@ -26913,10 +26909,10 @@ var mutations = {
     state.cv.description = description;
   },
   updateAddressStreet: function updateAddressStreet(state, street) {
-    state.cv.address.street = street;
+    state.cv.street = street;
   },
   updatePostcode: function updatePostcode(state, code) {
-    state.cv.address.postcode = code;
+    state.cv.postcode = code;
   },
   updateBirthdate: function updateBirthdate(state, date) {
     state.cv.birthdate = date;
