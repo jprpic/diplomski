@@ -35,8 +35,10 @@ const store = new Vuex.Store({
                 references: '',
             },
             search : {
-                ageBot: 0,
-                ageTop: 100,
+                ageRange:{
+                    bottom: 0,
+                    top: 100
+                },
                 skills: [],
                 city: ''
             }

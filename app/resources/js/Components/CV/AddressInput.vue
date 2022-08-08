@@ -5,7 +5,7 @@ import BreezeInput from "@/Components/Input";
 </script>
 
 <template>
-    <div class="mt-2 flex w-full flex-wrap w-full">
+    <div class=" flex w-full flex-wrap w-full">
         <div class="grow-0">
             <BreezeLabel for="address" value="Street" />
             <BreezeInput id="address" type="text" class="mt-1 block" :value="CV.street" @input="updateAddressStreet($event.target.value)" required  />
@@ -14,7 +14,7 @@ import BreezeInput from "@/Components/Input";
         <div class="ml-4 flex flex-col w-fit grow">
             <div>
                 <BreezeLabel for="code" value="Postal Code" />
-                <BreezeInput id="code" type="text" class="mt-1 block w-full" v-model="code" autocomplete="off"
+                <BreezeInput id="code" type="number" class="mt-1 block w-full" v-model="code" autocomplete="off"
                              @keyup="fillAddress($event.target.value)" required  />
             </div>
             <div v-if="searchedCode && searchedCode.length > 0" class="overflow-auto max-h-40 px-4 pt-2 border border-gray-200 rounded-md shadow-sm">
@@ -33,6 +33,7 @@ import BreezeInput from "@/Components/Input";
 
         <div class="mx-2 grow">
             <BreezeLabel for="county" value="County" />
+            <span></span>
             <BreezeInput id="county" type="text" class="mt-1 block w-full" disabled required  />
         </div>
 

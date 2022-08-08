@@ -12,35 +12,40 @@ class SearchController extends Controller
 {
     //
 
-    public function index(){
-        return Inertia::render('Search');
+    public function index(Request $request){
+        $options = $request->query->all();
+        if(!$options){
+            return Inertia::render('Search');
+        }
+        $targets = self::filterCVs($options);
+
+        return Inertia::render('Search', [
+            'targets' => $targets
+        ]);
     }
 
-    public function search(Request $request){
-        // Get CVs by ID, proficiencySum and
-        $searchParams = $request->json()->all();
-        $skillIDs = [];
-        foreach([...$searchParams['skills']] as $skill){
-            array_push($skillIDs, $skill['id']);
-        }
+    private function filterCVs($options){
+        $searchedSkills = $options['skills'];
+
+        dd($options);
         $targets = [];
         foreach(CV::all() as $cv){
-            $skills = $cv->skillProficiencies->whereIn('skill_id',$skillIDs)->toArray();
+            // Calculate ratio of found user skills and all user'\s skills.
+            // Calculate average proficiency level among found skills.
+            $userSkills = $cv->skillProficiencies->toArray();
+            $foundSkills = $cv->skillProficiencies->whereIn('skill_id', $searchedSkills)->all();
             array_push($targets, [
                 'cv' => [
                     'id' => $cv->id,
                     'name' => $cv->name,
-                    'address' => $cv->address
                 ],
-                'proficiencySum' => array_sum(array_column($skills, 'proficiency')),
-                'skills' => $skills
+                'skillRatio' => count($foundSkills)/count($userSkills),
+                'avgProficiency' => array_sum(array_column($foundSkills, 'proficiency')) / (count($foundSkills) ?: 1),
+                'skills' => array_column($foundSkills, 'skill_id')
             ]);
         }
-        usort($targets, function ($a, $b) { return $a['proficiencySum']<$b['proficiencySum'];});
 
-        return Inertia::render('Search',[
-            'targets' => $targets
-        ]);
+        return $targets;
     }
 
 }

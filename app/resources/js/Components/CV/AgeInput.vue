@@ -7,7 +7,7 @@ import DateInput from "@/Components/CV/DateInput";
 
 <template>
     <div class="mt-2 ml-1 flex">
-        <div class="ml-4">
+        <div class="ml-4 mt-1">
             <BreezeLabel for="birth_date" value="Date of birth"/>
             <DateInput id="birth_date" :isRequired="true"
                        :date = "CV.birthdate"
