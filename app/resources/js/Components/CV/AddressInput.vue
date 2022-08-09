@@ -41,8 +41,6 @@ import BreezeInput from "@/Components/Input";
 </template>
 
 <script>
-import {toRaw} from "vue";
-
 export default {
     name: "AddressInput.vue",
     props:['postcodes'],
@@ -57,7 +55,7 @@ export default {
         },
         searchedCode(){
             // If the input is empty or a name of an existing skill is entered, hide the autocompletes
-            if(this.code === '' || this.postcodes.filter(postcode => postcode.code.toString() === this.code).length){
+            if(this.code === '' || this.postcodes.find(postcode => postcode.code.toString() === this.code)){
                 return null;
             }
             return this.postcodes.filter(postcode => postcode.code.toString().startsWith(this.code));

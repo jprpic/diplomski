@@ -5,7 +5,7 @@ import BreezeLabel from "@/Components/Label.vue"
 </script>
 
 <template>
-    <div>
+    <div class="mt-2">
         <div>
             <BreezeLabel for="skill_name" value="Skill name" />
             <BreezeInput type="text" class="mt-1 block w-full"

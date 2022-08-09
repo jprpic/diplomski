@@ -36,11 +36,16 @@ const store = new Vuex.Store({
             },
             search : {
                 ageRange:{
-                    bottom: 0,
-                    top: 100
+                    bot: 20,
+                    top: 40
+                },
+                expRange: {
+                    bot: 0,
+                    top: 3
                 },
                 skills: [],
-                city: ''
+                county: null,
+                city: null
             }
         }
     },

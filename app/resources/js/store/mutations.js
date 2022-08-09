@@ -130,7 +130,19 @@ const mutations = {
     },
     removeSearchSkill(state, index){
         state.search.skills.splice(index, 1); // 2nd parameter means remove one item only
-    }
+    },
+    updateAgeRange(state, ageRange){
+        state.search.ageRange = ageRange;
+    },
+    updateExpRange(state, expRange){
+        state.search.expRange = expRange;
+    },
+    updateSearchCounty(state, county){
+    state.search.county = county;
+    },
+    updateSearchCity(state, city){
+        state.search.city = city;
+    },
 }
 
 export default mutations;

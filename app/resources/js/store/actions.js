@@ -77,6 +77,19 @@ const actions = {
     removeSearchSkill(context, index){
         context.commit('removeSearchSkill', index);
     },
+    updateAgeRange(context, ageRange){
+        context.commit('updateAgeRange', ageRange)
+    },
+    updateExpRange(context, expRange){
+        context.commit('updateExpRange', expRange);
+    },
+    updateSearchCounty(context, county){
+        context.commit('updateSearchCounty', county);
+    },
+    updateSearchCity(context, city){
+        context.commit('updateSearchCity', city)
+    }
+
 
 }
 

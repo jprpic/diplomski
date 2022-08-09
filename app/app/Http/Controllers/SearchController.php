@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CV;
 use App\Models\CV\Skill;
+use App\Models\Postcode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
@@ -15,19 +16,23 @@ class SearchController extends Controller
     public function index(Request $request){
         $options = $request->query->all();
         if(!$options){
-            return Inertia::render('Search');
+            return Inertia::render('Search',[
+                'postcodes' => Postcode::all()
+            ]);
         }
         $targets = self::filterCVs($options);
 
         return Inertia::render('Search', [
-            'targets' => $targets
+            'targets' => $targets,
+            'postcodes' => Postcode::all()
         ]);
     }
 
     private function filterCVs($options){
-        $searchedSkills = $options['skills'];
 
+        $searchedSkills = array_column($options, 'skills') ?: null;
         dd($options);
+
         $targets = [];
         foreach(CV::all() as $cv){
             // Calculate ratio of found user skills and all user'\s skills.
