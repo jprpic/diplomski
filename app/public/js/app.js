@@ -21929,7 +21929,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Input_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/Input.vue */ "./resources/js/Components/Input.vue");
 var __default__ = {
   name: "Autocomplete.vue",
-  props: ['items', 'updateStoreFunction'],
+  props: ['items', 'updateStoreFunction', 'initVal'],
   emits: ['btnClick'],
   data: function data() {
     return {
@@ -21958,7 +21958,7 @@ var __default__ = {
       this.input = value;
 
       if (this.input === '') {
-        this.$store.dispatch("".concat(this.updateStoreFunction), '');
+        this.$store.dispatch("".concat(this.updateStoreFunction), null);
       }
 
       var item = this.items.find(function (item) {
@@ -21974,6 +21974,9 @@ var __default__ = {
         return item.index === index;
       }).name);
     }
+  },
+  created: function created() {
+    this.input = this.initVal ? this.initVal : '';
   }
 };
 
@@ -23041,12 +23044,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 var __default__ = {
   name: "LocationInput.vue",
   props: ['postcodes'],
-  data: function data() {
-    return {
-      county: '',
-      city: ''
-    };
-  },
   computed: {
     searchCounty: function searchCounty() {
       return this.$store.getters.search.county;
@@ -23079,39 +23076,6 @@ var __default__ = {
           index: i
         };
       });
-    },
-    searchedCounties: function searchedCounties() {
-      var _this = this;
-
-      if (this.county === '' || this.counties.find(function (county) {
-        return county.name.toLowerCase() === _this.county.toLowerCase();
-      })) {
-        return null;
-      }
-
-      return this.counties.filter(function (county) {
-        return county.name.toLowerCase().startsWith(_this.county.toLowerCase());
-      });
-    },
-    searchedCities: function searchedCities() {
-      var _this2 = this;
-
-      if (this.city === '' || this.cities.find(function (city) {
-        return city.name.toLowerCase() === _this2.city.toLowerCase();
-      })) {
-        return null;
-      }
-
-      return this.cities.filter(function (city) {
-        return city.name.toLowerCase().startsWith(_this2.city.toLowerCase());
-      });
-    }
-  },
-  methods: {
-    updateSearchCity: function updateSearchCity(index) {
-      this.$store.dispatch('updateSearchCity', this.cities.find(function (city) {
-        return city.index === index;
-      }).name);
     }
   }
 };
@@ -25450,6 +25414,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "county_autocomplete",
     items: $options.counties,
     updateStoreFunction: "updateSearchCounty",
+    initVal: $options.searchCounty,
     "class": "grow-0 max-h-40"
   }, {
     item: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref) {
@@ -25464,13 +25429,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["items"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+  , ["items", "initVal"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
     "for": "city",
     value: "City"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AutocompleteInput"], {
     id: "city_autocomplete",
     items: $options.cities,
     updateStoreFunction: "updateSearchCity",
+    initVal: $options.searchCity,
     "class": "grow-0 max-h-40"
   }, {
     item: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (_ref2) {
@@ -25485,9 +25451,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["items"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.searchCounty) + " " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.searchCity), 1
-  /* TEXT */
-  )]);
+  , ["items", "initVal"])])]);
 }
 
 /***/ }),
@@ -27467,9 +27431,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_3__["default"].Store({
           bot: 0,
           top: 3
         },
-        skills: [],
-        county: null,
-        city: null
+        skills: []
       }
     };
   },

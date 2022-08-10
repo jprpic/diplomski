@@ -44,8 +44,6 @@ const store = new Vuex.Store({
                     top: 3
                 },
                 skills: [],
-                county: null,
-                city: null
             }
         }
     },

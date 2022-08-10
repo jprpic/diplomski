@@ -45,10 +45,10 @@ class User extends Authenticatable
 
     public function role()
     {
-        return $this->belongsTo(Role::class);
+        return $this->belongsTo(Role::class,'id', 'role_id');
     }
 
     public function cv(){
-        return $this->hasOne(CV::class);
+        return $this->hasOne(CV::class, 'id', 'cv_id');
     }
 }

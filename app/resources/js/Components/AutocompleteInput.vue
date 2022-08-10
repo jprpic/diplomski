@@ -19,7 +19,7 @@ import BreezeInput from "@/Components/Input.vue"
 <script>
 export default {
     name: "Autocomplete.vue",
-    props:['items', 'updateStoreFunction'],
+    props:['items', 'updateStoreFunction', 'initVal'],
     emits:['btnClick'],
     data(){
         return {
@@ -38,7 +38,7 @@ export default {
         updateInput(value){
           this.input = value;
           if(this.input === ''){
-              this.$store.dispatch(`${this.updateStoreFunction}`, '');
+              this.$store.dispatch(`${this.updateStoreFunction}`, null);
           }
           const item = this.items.find(item => item.name.toLowerCase() === this.input.toLowerCase());
           if(item){
@@ -48,6 +48,9 @@ export default {
         updateStore(index){
             this.$store.dispatch(`${this.updateStoreFunction}`, this.items.find( item => item.index === index).name);
         },
+    },
+    created() {
+        this.input = this.initVal ? this.initVal : '';
     }
 }
 </script>
