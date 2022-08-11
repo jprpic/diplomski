@@ -22,6 +22,7 @@ class CV extends Model
 
     const VALID_RULES = [
         'name' => 'required|max:255',
+        'img_url' => 'required|url',
         'sex' => 'required|alpha|size:1',
         'birthdate' => 'required|date',
         'years_of_exp' => 'required|min:0|max:50|numeric',
@@ -113,6 +114,7 @@ class CV extends Model
         // Create new CV
         $cv->user_id = $user_id;
         $cv->name = $CVJson['name'];
+        $cv->img_url = $CVJson['img_url'];
         $cv->description = $CVJson['description'];
         $cv->street = $CVJson['street'];
         $cv->postcode = $CVJson['postcode'];

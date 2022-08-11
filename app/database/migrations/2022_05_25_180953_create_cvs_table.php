@@ -19,6 +19,7 @@ return new class extends Migration
             // On delete User, delete the matching CV
             $table->foreignId('user_id')->unique()->constrained()->onDelete('cascade');
             $table->string('name');
+            $table->string('img_url', 500);
             $table->string('description');
             $table->string('job');
             $table->string('references');

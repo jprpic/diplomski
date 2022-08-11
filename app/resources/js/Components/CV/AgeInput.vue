@@ -14,8 +14,8 @@ import DateInput from "@/Components/CV/DateInput";
                        @update:date="(date) => updateBirthdate(date)"/>
         </div>
 
-        <div class="ml-4 mt-4">
-            <BreezeLabel for="years_of_exp" value="Years of experience"/>
+        <div class="ml-4 w-min mt-1">
+            <BreezeLabel for="years_of_exp" value="Years of experience" class="text-sm whitespace-normal leading-4"/>
             <BreezeInput id="years_of_exp" type="number" min="0" max="50" class="mt-1 block" required
                          :value = "CV.years_of_exp"
                          @input="updateYearsOfExp($event.target.value)"/>

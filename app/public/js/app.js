@@ -23917,6 +23917,9 @@ var __default__ = {
     updateName: function updateName(name) {
       this.$store.dispatch('updateName', name);
     },
+    updateImgUrl: function updateImgUrl(imgUrl) {
+      this.$store.dispatch('updateImgUrl', imgUrl);
+    },
     updateDescription: function updateDescription(description) {
       this.$store.dispatch('updateDescription', description);
     },
@@ -24400,7 +24403,7 @@ var _hoisted_2 = {
   "class": "ml-4 mt-1"
 };
 var _hoisted_3 = {
-  "class": "ml-4 mt-4"
+  "class": "ml-4 w-min mt-1"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
@@ -24417,7 +24420,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["date"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
     "for": "years_of_exp",
-    value: "Years of experience"
+    value: "Years of experience",
+    "class": "text-sm whitespace-normal leading-4"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
     id: "years_of_exp",
     type: "number",
@@ -26733,7 +26737,7 @@ var _hoisted_11 = {
   "class": "font-medium"
 };
 var _hoisted_12 = {
-  "class": "flex"
+  "class": "flex w-full flex-wrap"
 };
 var _hoisted_13 = {
   "class": "mt-6"
@@ -26761,49 +26765,52 @@ var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 
 var _hoisted_18 = [_hoisted_15, _hoisted_16, _hoisted_17];
 var _hoisted_19 = {
-  "class": "mt-2"
+  "class": "mt-6 ml-4 w-1/3"
 };
 var _hoisted_20 = {
   "class": "mt-2"
 };
+var _hoisted_21 = {
+  "class": "mt-2"
+};
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "font-medium text-sm text-gray-700"
 }, "Contacts", -1
 /* HOISTED */
 );
 
-var _hoisted_22 = {
-  "class": "mt-2"
-};
 var _hoisted_23 = {
   "class": "mt-2"
 };
+var _hoisted_24 = {
+  "class": "mt-2"
+};
 
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "font-medium text-sm text-gray-700 pb-2"
 }, "Experiences", -1
 /* HOISTED */
 );
 
-var _hoisted_25 = {
+var _hoisted_26 = {
   "class": "mt-2"
 };
 
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "font-medium text-sm text-gray-700 pb-2"
 }, "Skills", -1
 /* HOISTED */
 );
 
-var _hoisted_27 = {
+var _hoisted_28 = {
   "class": "mt-2"
 };
-var _hoisted_28 = {
+var _hoisted_29 = {
   "class": "flex items-center justify-end mt-4"
 };
 
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Submit ");
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Submit ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
@@ -26824,7 +26831,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success Flash "), _this.successFlash ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.successFlash), 1
       /* TEXT */
       )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-        onSubmit: _cache[5] || (_cache[5] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+        onSubmit: _cache[6] || (_cache[6] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
           return $options.submit && $options.submit.apply($options, arguments);
         }, ["prevent"]))
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
@@ -26856,24 +26863,38 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         })
       }, _hoisted_18, 40
       /* PROPS, HYDRATE_EVENTS */
-      , _hoisted_14)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AgeInput"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AddressInput"], {
+      , _hoisted_14)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AgeInput"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+        "for": "img_url",
+        value: "Profile picture URL"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
+        id: "img_url",
+        type: "url",
+        "class": "mt-1 w-full",
+        required: "",
+        value: $options.CV.img_url,
+        onInput: _cache[2] || (_cache[2] = function ($event) {
+          return $options.updateImgUrl($event.target.value);
+        })
+      }, null, 8
+      /* PROPS */
+      , ["value"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AddressInput"], {
         postcodes: $props.postcodes
       }, null, 8
       /* PROPS */
-      , ["postcodes"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+      , ["postcodes"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
         "for": "description",
         value: "Profile description"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeTextArea"], {
         id: "description",
         rows: "3",
         value: $options.CV.description,
-        onInput: _cache[2] || (_cache[2] = function ($event) {
+        onInput: _cache[3] || (_cache[3] = function ($event) {
           return $options.updateDescription($event.target.value);
         }),
         required: ""
       }, null, 8
       /* PROPS */
-      , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ContactList"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+      , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ContactList"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
         "for": "job",
         value: "Job position"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
@@ -26881,29 +26902,29 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         type: "text",
         "class": "mt-1 block w-full",
         value: $options.CV.job,
-        onInput: _cache[3] || (_cache[3] = function ($event) {
+        onInput: _cache[4] || (_cache[4] = function ($event) {
           return $options.updateJob($event.target.value);
         }),
         required: ""
       }, null, 8
       /* PROPS */
-      , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [_hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ExperienceList"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SkillList"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+      , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ExperienceList"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SkillList"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
         "for": "references",
         value: "References"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeTextArea"], {
         id: "references",
         rows: "2",
         value: $options.CV.references,
-        onInput: _cache[4] || (_cache[4] = function ($event) {
+        onInput: _cache[5] || (_cache[5] = function ($event) {
           return $options.updateReferences($event.target.value);
         })
       }, null, 8
       /* PROPS */
-      , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeButton"], {
+      , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeButton"], {
         "class": "ml-4"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_29];
+          return [_hoisted_30];
         }),
         _: 1
         /* STABLE */
@@ -27235,6 +27256,9 @@ var actions = {
   updateName: function updateName(context, name) {
     context.commit('updateName', name);
   },
+  updateImgUrl: function updateImgUrl(context, url) {
+    context.commit('updateImgUrl', url);
+  },
   updateDescription: function updateDescription(context, description) {
     context.commit('updateDescription', description);
   },
@@ -27397,9 +27421,10 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_3__["default"].Store({
       user: null,
       cv: {
         name: '',
+        img_url: '',
         sex: '',
         birthdate: null,
-        years_of_exp: '',
+        years_of_exp: 0,
         description: '',
         street: '',
         postcode: '',
@@ -27457,6 +27482,9 @@ __webpack_require__.r(__webpack_exports__);
 var mutations = {
   updateName: function updateName(state, name) {
     state.cv.name = name;
+  },
+  updateImgUrl: function updateImgUrl(state, url) {
+    state.cv.img_url = url;
   },
   updateDescription: function updateDescription(state, description) {
     state.cv.description = description;

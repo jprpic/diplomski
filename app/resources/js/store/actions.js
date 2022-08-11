@@ -2,6 +2,9 @@ const actions = {
     updateName(context, name){
         context.commit('updateName', name);
     },
+    updateImgUrl(context, url) {
+        context.commit('updateImgUrl', url);
+    },
     updateDescription(context, description){
         context.commit('updateDescription', description);
     },

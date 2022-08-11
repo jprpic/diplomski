@@ -2,6 +2,9 @@ const mutations = {
     updateName(state, name){
         state.cv.name = name;
     },
+    updateImgUrl(state, url){
+        state.cv.img_url = url;
+    },
     updateDescription(state, description){
         state.cv.description = description;
     },

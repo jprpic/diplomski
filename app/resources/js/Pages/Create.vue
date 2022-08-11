@@ -48,6 +48,9 @@ export default {
         updateName(name){
             this.$store.dispatch('updateName', name);
         },
+        updateImgUrl(imgUrl){
+          this.$store.dispatch('updateImgUrl', imgUrl);
+        },
         updateDescription(description){
             this.$store.dispatch('updateDescription', description)
         },
@@ -123,7 +126,7 @@ export default {
                                              @input="updateName($event.target.value)"   />
                             </div>
 
-                            <div class="flex">
+                            <div class="flex w-full flex-wrap">
                                 <div class="mt-6">
                                     <BreezeLabel for="sex" value="Sex" />
                                     <select name="sex" id="sex" required class="mt-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
@@ -135,6 +138,12 @@ export default {
                                     </select>
                                 </div>
                                 <AgeInput></AgeInput>
+                                <div class="mt-6 ml-4 w-1/3">
+                                    <BreezeLabel for="img_url" value="Profile picture URL" />
+                                    <BreezeInput id="img_url" type="url" class="mt-1 w-full" required
+                                                 :value="CV.img_url"
+                                                 @input="updateImgUrl($event.target.value)"   />
+                                </div>
                             </div>
 
 

@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CV;
-use App\Models\CV\Skill;
 use App\Models\Postcode;
-use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -13,22 +11,16 @@ use Inertia\Inertia;
 
 class SearchController extends Controller
 {
-    //
-
     public function index(Request $request){
         $options = $request->query->all();
-
-        $dateNow = Carbon::now();
-        $birthdate = User::find(Auth()->id());
-        //dd($dateNow->diffInYears($birthdate->cv->birthdate));
 
         if(!$options){
             return Inertia::render('Search',[
                 'postcodes' => Postcode::all()
             ]);
         }
-        $targets = self::filterCVs($options);
 
+        $targets = self::filterCVs($options);
         return Inertia::render('Search', [
             'targets' => $targets,
             'postcodes' => Postcode::all()
@@ -76,7 +68,12 @@ class SearchController extends Controller
             }
             // Sort by amount of found skill / amount of searched skills
             usort($targets, function ($a, $b) {
-                return $a['skillRatio'] < $b['skillRatio'];
+                if($a['skillRatio'] != $b['skillRatio']){
+                    return $a['skillRatio'] < $b['skillRatio'];
+                }
+                else{
+                    return $a['avgProficiency'] < $b['avgProficiency'];
+                }
             });
         }else{
             $targets = $cvs->toArray();

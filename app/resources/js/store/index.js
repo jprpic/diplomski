@@ -9,9 +9,10 @@ const store = new Vuex.Store({
             user: null,
             cv:{
                 name: '',
+                img_url: '',
                 sex: '',
                 birthdate: null,
-                years_of_exp: '',
+                years_of_exp: 0,
                 description: '',
                 street: '',
                 postcode: '',
