@@ -122,11 +122,19 @@ const mutations = {
     },
     restartSearch(state){
         state.search = {
-            ageBot: 0,
-            ageTop: 100,
+            ageRange:{
+                bot: 20,
+                top: 40
+            },
+            expRange: {
+                bot: 0,
+                top: 3
+            },
             skills: [],
-            city: ''
         }
+    },
+    setSearch(state, search){
+        state.search = search;
     },
     addSearchSkill(state, skill) {
         state.search.skills.push(skill);

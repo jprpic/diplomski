@@ -20,8 +20,8 @@ import { Head } from '@inertiajs/inertia-vue3';
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <SearchBox :postcodes = "postcodes"></SearchBox>
-                        <div v-for="target in targets">
-                            <SearchItem :target="target"></SearchItem>
+                        <div class="flex justify-center" v-for="target in targets">
+                            <SearchItem class="mt-2 w-2/3" :target="target"></SearchItem>
                         </div>
                     </div>
                 </div>
@@ -50,10 +50,29 @@ export default {
       }
     },
     beforeCreate() {
-        if(this.search === null){
-            this.$store.dispatch('restartSearch');
+        const queryString = window.location.search;
+        if(queryString){
+            const urlParams = new URLSearchParams(queryString);
+            const search = {
+                ageRange:{
+                    bot: urlParams.get('ageRange[bot]'),
+                    top: urlParams.get('ageRange[top]')
+                },
+                expRange: {
+                    bot: urlParams.get('expRange[bot]'),
+                    top: urlParams.get('expRange[top]')
+                },
+                skills: urlParams.getAll('skills[]').map( skill => { return Number(skill); }),
+            }
+            if(urlParams.has('county')){
+                search.county = urlParams.get('county');
+            }
+            if(urlParams.has('city')){
+                search.city = urlParams.get('city');
+            }
+            this.$store.dispatch('setSearch', search);
         }
-    }
+    },
 }
 </script>
 

@@ -77,6 +77,9 @@ const actions = {
     restartSearch(context) {
         context.commit('restartSearch');
     },
+    setSearch(context, search){
+        context.commit('setSearch', search)
+    },
     removeSearchSkill(context, index){
         context.commit('removeSearchSkill', index);
     },

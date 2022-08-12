@@ -48,10 +48,14 @@ class SearchController extends Controller
                 ...$locationClauses
             ])
             ->get();
+        // Transform DB Query Collection to Model Objects
         $cvs = CV::hydrate($cvs->all());
+        // Calculate age on backend
+        foreach($cvs as $cv){
+            $cv->age = Carbon::now()->diffInYears($cv->birthdate);
+        }
         $searchedSkills = array_key_exists('skills', $options) ? $options['skills'] : null;
         if($searchedSkills){
-
             foreach($cvs as $cv){
                 // Calculate ratio of found user skills and all user'\s skills.
                 // Calculate average proficiency level among found skills.
@@ -75,7 +79,7 @@ class SearchController extends Controller
                     return $a['avgProficiency'] < $b['avgProficiency'];
                 }
             });
-        }else{
+        }else {
             $targets = $cvs->toArray();
         }
         return $targets;
