@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             ContactSeeder::class,
             SkillSeeder::class,
-            PostcodeSeeder::class
+            PostcodeSeeder::class,
         ]);
 
         $creations = 50;
@@ -48,5 +48,8 @@ class DatabaseSeeder extends Seeder
                 ->linked(), 'experiences'
             )
             ->create();
+
+        // Factory has to be called first.
+        $this->call(UserSeeder::class);
     }
 }
