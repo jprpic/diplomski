@@ -46,8 +46,16 @@ export default {
             return unique_counties.map((v, i) => ({ name: v, index: i }));
         },
         cities(){
-            let cityArray = this.postcodes.map(function(value) { return value['name']; });
-            return cityArray.map((v, i) => ({ name: v, index: i }));
+            if(!this.searchCounty){
+                const cityArray = this.postcodes.map(function(value) { return value['name']; });
+                let unique_cities = [...new Set(cityArray)];
+                return unique_cities.map((v, i) => ({ name: v, index: i }));
+            }else{
+                let countyCities = this.postcodes.filter( el => el.county === this.searchCounty)
+                countyCities = countyCities.map(function(value) { return value['name']; });
+                let unique_cities = [...new Set(countyCities)];
+                return [...new Set(unique_cities.map((v, i) => ({ name: v, index: i })))]
+            }
         },
     }
 }

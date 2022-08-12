@@ -60,7 +60,7 @@ class CV extends Model
         return $this->hasMany(CV_Contact::class, 'cv_id', 'id');
     }
     public function skills(){
-        return $this->belongsToMany(Skill::class);
+        return $this->belongsToMany(Skill::class, 'cv_skill', 'cv_id', 'skill_id');
     }
 
     public function user(){

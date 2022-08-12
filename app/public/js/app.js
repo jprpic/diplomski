@@ -23067,15 +23067,38 @@ var __default__ = {
       });
     },
     cities: function cities() {
-      var cityArray = this.postcodes.map(function (value) {
-        return value['name'];
-      });
-      return cityArray.map(function (v, i) {
-        return {
-          name: v,
-          index: i
-        };
-      });
+      var _this = this;
+
+      if (!this.searchCounty) {
+        var cityArray = this.postcodes.map(function (value) {
+          return value['name'];
+        });
+
+        var unique_cities = _toConsumableArray(new Set(cityArray));
+
+        return unique_cities.map(function (v, i) {
+          return {
+            name: v,
+            index: i
+          };
+        });
+      } else {
+        var countyCities = this.postcodes.filter(function (el) {
+          return el.county === _this.searchCounty;
+        });
+        countyCities = countyCities.map(function (value) {
+          return value['name'];
+        });
+
+        var _unique_cities = _toConsumableArray(new Set(countyCities));
+
+        return _toConsumableArray(new Set(_unique_cities.map(function (v, i) {
+          return {
+            name: v,
+            index: i
+          };
+        })));
+      }
     }
   }
 };
@@ -23309,39 +23332,51 @@ var __default__ = {
     },
     removeSkill: function removeSkill(index) {
       this.$store.dispatch('removeSearchSkill', index);
+    },
+    updateInput: function updateInput(value) {
+      var _this = this;
+
+      this.name = value;
+      var skill = this.availableSkills.find(function (skill) {
+        return skill.name.toLowerCase() === _this.name.toLowerCase();
+      });
+
+      if (skill) {
+        this.addSkill(skill.id);
+      }
     }
   },
   computed: {
     searchedSkills: function searchedSkills() {
-      var _this = this;
+      var _this2 = this;
 
       // If the input is empty or a name of an existing skill is entered, hide the autocompletes
       if (this.name === '' || this.availableSkills.filter(function (skill) {
-        return skill.name === _this.name;
+        return skill.name === _this2.name;
       }).length) {
         return null;
       }
 
       return this.availableSkills.filter(function (skill) {
-        return skill.name.toLowerCase().includes(_this.name.toLowerCase());
+        return skill.name.toLowerCase().startsWith(_this2.name.toLowerCase());
       });
     },
     availableSkills: function availableSkills() {
-      var _this2 = this;
+      var _this3 = this;
 
       // Exclude already added skills from available skills
       return (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.usePage)().props.value.availableSkills.filter(function (el) {
-        return !_this2.userSkills.includes(el.id);
+        return !_this3.userSkills.includes(el.id);
       });
     },
     userSkills: function userSkills() {
       return this.$store.getters.search.skills;
     },
     addedSkills: function addedSkills() {
-      var _this3 = this;
+      var _this4 = this;
 
       return (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.usePage)().props.value.availableSkills.filter(function (el) {
-        return _this3.userSkills.includes(el.id);
+        return _this4.userSkills.includes(el.id);
       });
     }
   }
@@ -25784,13 +25819,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
     type: "text",
     "class": "mt-1 block w-full",
-    modelValue: $data.name,
-    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return $data.name = $event;
+    value: $data.name,
+    onInput: _cache[0] || (_cache[0] = function ($event) {
+      return $options.updateInput($event.target.value);
     })
   }, null, 8
   /* PROPS */
-  , ["modelValue"])]), $options.searchedSkills && $options.searchedSkills.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.searchedSkills, function (skill) {
+  , ["value"])]), $options.searchedSkills && $options.searchedSkills.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.searchedSkills, function (skill) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", {
       "class": "my-1",
       key: skill.id
@@ -27182,7 +27217,7 @@ var _hoisted_3 = {
   "class": "max-w-7xl mx-auto sm:px-6 lg:px-8"
 };
 var _hoisted_4 = {
-  "class": "bg-white overflow-hidden shadow-sm sm:rounded-lg"
+  "class": "bg-white shadow-sm sm:rounded-lg"
 };
 var _hoisted_5 = {
   "class": "p-6 bg-white border-b border-gray-200"

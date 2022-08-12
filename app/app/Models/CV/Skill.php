@@ -17,6 +17,6 @@ class Skill extends Model
     ];
 
     public function cvs(){
-        return $this->belongsToMany(CV::Class);
+        return $this->belongsToMany(CV::Class, 'cv_skill', 'skill_id', 'cv_id');
     }
 }

@@ -9,7 +9,8 @@ import BreezeLabel from "@/Components/Label.vue"
         <div>
             <BreezeLabel for="skill_name" value="Skill name" />
             <BreezeInput type="text" class="mt-1 block w-full"
-                         v-model="name"/>
+                         :value="name"
+                         @input="updateInput($event.target.value)" />
         </div>
         <div v-if="searchedSkills && searchedSkills.length > 0" class="overflow-auto max-h-40 px-4 pt-2 border border-gray-200 rounded-md shadow-sm">
             <p class="my-1" v-for="skill in searchedSkills" :key="skill.id">
@@ -38,13 +39,20 @@ export default {
         }
     },
     methods:{
-      addSkill(skill){
-          this.$store.dispatch('addSearchSkill', skill);
-          this.name= '';
-      },
-    removeSkill(index){
-        this.$store.dispatch('removeSearchSkill', index);
-    },
+        addSkill(skill){
+            this.$store.dispatch('addSearchSkill', skill);
+            this.name= '';
+        },
+        removeSkill(index){
+            this.$store.dispatch('removeSearchSkill', index);
+        },
+        updateInput(value){
+            this.name = value;
+            const skill = this.availableSkills.find(skill => skill.name.toLowerCase() === this.name.toLowerCase());
+            if(skill){
+                this.addSkill(skill.id);
+            }
+        }
     },
     computed:{
         searchedSkills(){
@@ -52,7 +60,7 @@ export default {
             if(this.name === '' || this.availableSkills.filter(skill => skill.name === this.name).length){
                 return null;
             }
-            return this.availableSkills.filter(skill => skill.name.toLowerCase().includes(this.name.toLowerCase()));
+            return this.availableSkills.filter(skill => skill.name.toLowerCase().startsWith(this.name.toLowerCase()));
         },
         availableSkills(){
             // Exclude already added skills from available skills
