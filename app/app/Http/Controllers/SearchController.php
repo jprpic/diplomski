@@ -13,7 +13,6 @@ class SearchController extends Controller
 {
     public function index(Request $request){
         $options = $request->query->all();
-
         if(!$options){
             return Inertia::render('Search',[
                 'postcodes' => Postcode::all()
@@ -25,6 +24,19 @@ class SearchController extends Controller
             'targets' => $targets,
             'postcodes' => Postcode::all()
         ]);
+    }
+
+    public function apiSearch(Request $request){
+        $options = $request->query->all();
+        if(!$options){
+           return response('Missing search params.', 400)
+                ->header('Content-Type', 'text/plain');
+        }
+
+        $targets = self::filterCVs($options);
+        var_dump($targets);
+        return response()->json($targets);
+
     }
 
     private function filterCVs($options){
@@ -46,8 +58,8 @@ class SearchController extends Controller
                 ['cvs.years_of_exp', '>=', $options['expRange']['bot']],
                 ['cvs.years_of_exp', '<=', $options['expRange']['top']],
                 ...$locationClauses
-            ])
-            ->get();
+            ])->get();
+
         // Transform DB Query Collection to Model Objects
         $cvs = CV::hydrate($cvs->all());
         // Calculate age on backend

@@ -1,10 +1,9 @@
 <script setup>
 import BreezeButton from "@/Components/Button.vue"
-import BreezeInput from "@/Components/Input.vue"
-import BreezeLabel from "@/Components/Label.vue"
 import SkillInput from "@/Components/Search/SkillInput.vue"
 import AgeRangeInput from "@/Components/Search/AgeRangeInput";
 import LocationInput from "@/Components/Search/LocationInput"
+import SearchItem from "@/Components/Search/SearchItem";
 </script>
 
 <template>
@@ -20,23 +19,59 @@ import LocationInput from "@/Components/Search/LocationInput"
         </div>
     </form>
 
+    <div ref="scrollComponent" class="flex justify-center" v-for="target in currentTargets">
+        <SearchItem class="mt-2 w-2/3" :target="target"></SearchItem>
+    </div>
+
 </template>
 
 <script>
 import {Inertia} from "@inertiajs/inertia";
 export default {
     name: "SearchBox",
-    props:['postcodes'],
+    props:['postcodes','targets'],
+    data(){
+        return{
+            currentTargets: [],
+            page: -1
+        }
+    },
     computed:{
         addedSkills(){
             return this.$store.getters.search.skills;
+        },
+        search(){
+            return this.$store.getters.search;
         }
     },
     methods:{
+        getData(){
+            // Append data only if the new page is loaded
+            const page = Math.round(this.currentTargets.length / 15);
+            if(page > this.page){
+                this.page = page;
+                this.currentTargets = this.currentTargets.concat(this.targets.slice(page*15,(page+1)*15))
+            }
+
+        },
         submit(){
             Inertia.get('/search', this.$store.getters.search);
+        },
+        handleScroll(e){
+            let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
+
+            if (bottomOfWindow) {
+                this.getData();
+            }
         }
-    }
+    },
+    mounted(){
+        this.getData();
+        window.addEventListener("scroll", this.handleScroll);
+    },
+    unmounted(){
+        window.removeEventListener("scroll", this.handleScroll)
+    },
 }
 </script>
 

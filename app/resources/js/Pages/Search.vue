@@ -19,10 +19,7 @@ import { Head } from '@inertiajs/inertia-vue3';
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
-                        <SearchBox :postcodes = "postcodes"></SearchBox>
-                            <div class="flex justify-center" v-for="target in targets">
-                                <SearchItem class="mt-2 w-2/3" :target="target"></SearchItem>
-                            </div>
+                        <SearchBox :targets = "targets" :postcodes = "postcodes"></SearchBox>
                     </div>
                 </div>
             </div>
@@ -50,6 +47,7 @@ export default {
       }
     },
     beforeCreate() {
+        // Get params from URL and update store search with the object
         const queryString = window.location.search;
         if(queryString){
             const urlParams = new URLSearchParams(queryString);
@@ -64,6 +62,7 @@ export default {
                 },
                 skills: urlParams.getAll('skills[]').map( skill => { return Number(skill); }),
             }
+            // Optional params
             if(urlParams.has('county')){
                 search.county = urlParams.get('county');
             }
