@@ -50,7 +50,21 @@ export default {
             const page = Math.round(this.currentTargets.length / 15);
             if(page > this.page){
                 this.page = page;
-                this.currentTargets = this.currentTargets.concat(this.targets.slice(page*15,(page+1)*15))
+                // this.currentTargets = this.currentTargets.concat(this.targets.slice(page*15,(page+1)*15))
+                axios.get('/api/search', {
+                    params:{
+                        'ageRange[bot]' : this.search.ageRange.bot,
+                        'ageRange[top]' : this.search.ageRange.top,
+                        'expRange[bot]' : this.search.expRange.bot,
+                        'expRange[top]' : this.search.expRange.top,
+                        skills: this.search.skills,
+                        county: this.search.county ? this.search.county : null,
+                        city: this.search.city ? this.search.city : null,
+                        page: this.page
+                    }
+                }).then(response => {
+                    this.currentTargets = this.currentTargets.concat(response.data);
+                })
             }
 
         },

@@ -34,7 +34,6 @@ class SearchController extends Controller
         }
 
         $targets = self::filterCVs($options);
-        var_dump($targets);
         return response()->json($targets);
 
     }
@@ -58,10 +57,10 @@ class SearchController extends Controller
                 ['cvs.years_of_exp', '>=', $options['expRange']['bot']],
                 ['cvs.years_of_exp', '<=', $options['expRange']['top']],
                 ...$locationClauses
-            ])->get();
+            ])->get()->toArray();
 
         // Transform DB Query Collection to Model Objects
-        $cvs = CV::hydrate($cvs->all());
+        $cvs = CV::hydrate($cvs);
         // Calculate age on backend
         foreach($cvs as $cv){
             $cv->age = Carbon::now()->diffInYears($cv->birthdate);
@@ -94,6 +93,11 @@ class SearchController extends Controller
         }else {
             $targets = $cvs->toArray();
         }
+
+        if(isset($options['page'])){
+            $targets = array_splice($targets, $options['page']*15, 15);
+        }
+
         return $targets;
     }
 
