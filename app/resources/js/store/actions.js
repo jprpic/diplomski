@@ -2,14 +2,26 @@ const actions = {
     updateName(context, name){
         context.commit('updateName', name);
     },
+    updateImgUrl(context, url) {
+        context.commit('updateImgUrl', url);
+    },
     updateDescription(context, description){
         context.commit('updateDescription', description);
     },
-    updateAddress(context, address){
-        context.commit('updateAddress', address);
+    updateAddressStreet(context, street){
+        context.commit('updateAddressStreet', street);
     },
-    updateEmail(context, email){
-        context.commit('updateEmail', email);
+    updateBirthdate(context, date){
+        context.commit('updateBirthdate', date);
+    },
+    updateYearsOfExp(context, value){
+        context.commit('updateYearsOfExp', value);
+    },
+    updatePostcode(context, code){
+        context.commit('updatePostcode', code);
+    },
+    updateSex(context, sex){
+        context.commit('updateSex', sex)
     },
     updateJob(context, job){
         context.commit('updateJob', job);
@@ -58,7 +70,33 @@ const actions = {
     },
     setUser(context, user){
         context.commit('setUser', user);
+    },
+    addSearchSkill(context, skill){
+        context.commit('addSearchSkill', skill)
+    },
+    restartSearch(context) {
+        context.commit('restartSearch');
+    },
+    setSearch(context, search){
+        context.commit('setSearch', search)
+    },
+    removeSearchSkill(context, index){
+        context.commit('removeSearchSkill', index);
+    },
+    updateAgeRange(context, ageRange){
+        context.commit('updateAgeRange', ageRange)
+    },
+    updateExpRange(context, expRange){
+        context.commit('updateExpRange', expRange);
+    },
+    updateSearchCounty(context, county){
+        context.commit('updateSearchCounty', county);
+    },
+    updateSearchCity(context, city){
+        context.commit('updateSearchCity', city)
     }
+
+
 }
 
 export default actions;

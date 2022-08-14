@@ -3,6 +3,7 @@
 namespace App\Models\CV;
 
 use App\Models\CV;
+use Database\Factories\ExperienceFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,5 +18,10 @@ class Experience extends Model
 
     public function CV(){
         return $this->belongsTo(CV::class);
+    }
+
+    protected static function newFactory()
+    {
+        return new ExperienceFactory();
     }
 }

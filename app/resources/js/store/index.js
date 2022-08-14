@@ -9,9 +9,13 @@ const store = new Vuex.Store({
             user: null,
             cv:{
                 name: '',
+                img_url: '',
+                sex: '',
+                birthdate: null,
+                years_of_exp: 0,
                 description: '',
-                address: '',
-                email: '',
+                street: '',
+                postcode: '',
                 contacts: [{
                     contact_id: '',
                     value: ''
@@ -30,6 +34,17 @@ const store = new Vuex.Store({
                     proficiency: ''
                 }],
                 references: '',
+            },
+            search : {
+                ageRange:{
+                    bot: 20,
+                    top: 40
+                },
+                expRange: {
+                    bot: 0,
+                    top: 3
+                },
+                skills: [],
             }
         }
     },

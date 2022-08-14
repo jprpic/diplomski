@@ -8,9 +8,11 @@ import BreezeLabel from '@/Components/Label.vue';
 import ExperienceList from "@/Components/CV/ExperienceList";
 import ContactList from "@/Components/CV/ContactList";
 import SkillList from "@/Components/CV/SkillList";
+import AddressInput from "@/Components/CV/AddressInput"
+import AgeInput from "@/Components/CV/AgeInput";
 
 const props = defineProps({
-    availableSkills : {
+    postcodes : {
         type: Array,
         required: true
     },
@@ -46,14 +48,17 @@ export default {
         updateName(name){
             this.$store.dispatch('updateName', name);
         },
+        updateImgUrl(imgUrl){
+          this.$store.dispatch('updateImgUrl', imgUrl);
+        },
         updateDescription(description){
             this.$store.dispatch('updateDescription', description)
         },
-        updateAddress(address){
-            this.$store.dispatch('updateAddress', address)
-        },
         updateJob(job){
             this.$store.dispatch('updateJob', job)
+        },
+        updateSex(value){
+            this.$store.dispatch('updateSex', value)
         },
         updateReferences(references){
             this.$store.dispatch('updateReferences', references)
@@ -69,7 +74,6 @@ export default {
     },
     beforeCreate() {
         // If a user wants to access edit but has no CV
-        this.$store.dispatch('setAvailableSkills', this.availableSkills)
         this.$store.dispatch('setAvailableContacts', this.availableContacts)
     },
     beforeUpdate() {
@@ -122,14 +126,32 @@ export default {
                                              @input="updateName($event.target.value)"   />
                             </div>
 
+                            <div class="flex w-full flex-wrap">
+                                <div class="mt-6">
+                                    <BreezeLabel for="sex" value="Sex" />
+                                    <select name="sex" id="sex" required class="mt-1 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                                            :value="CV.sex"
+                                            @input="updateSex($event.target.value)">
+                                        <option disabled value="">Please select one</option>
+                                        <option value="M"> Male </option>
+                                        <option value="F"> Female </option>
+                                    </select>
+                                </div>
+                                <AgeInput></AgeInput>
+                                <div class="mt-6 ml-4 w-1/3">
+                                    <BreezeLabel for="img_url" value="Profile picture URL" />
+                                    <BreezeInput id="img_url" type="url" class="mt-1 w-full" required
+                                                 :value="CV.img_url"
+                                                 @input="updateImgUrl($event.target.value)"   />
+                                </div>
+                            </div>
+
+
+                            <AddressInput :postcodes="postcodes"></AddressInput>
+
                             <div class="mt-2">
                                 <BreezeLabel for="description" value="Profile description" />
                                 <BreezeTextArea id="description" rows="3" :value="CV.description" @input="updateDescription($event.target.value)" required />
-                            </div>
-
-                            <div class="mt-2">
-                                <BreezeLabel for="address" value="Address" />
-                                <BreezeInput id="address" type="text" class="mt-1 block w-full" :value="CV.address" @input="updateAddress($event.target.value)" required  />
                             </div>
 
                             <div class="mt-2">

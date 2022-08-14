@@ -2,14 +2,26 @@ const mutations = {
     updateName(state, name){
         state.cv.name = name;
     },
+    updateImgUrl(state, url){
+        state.cv.img_url = url;
+    },
     updateDescription(state, description){
         state.cv.description = description;
     },
-    updateAddress(state, address){
-        state.cv.address = address;
+    updateAddressStreet(state, street){
+        state.cv.street = street;
     },
-    updateEmail(state, email){
-        state.cv.email = email;
+    updatePostcode(state, code){
+        state.cv.postcode = code;
+    },
+    updateBirthdate(state, date){
+        state.cv.birthdate = date;
+    },
+    updateYearsOfExp(state, value){
+        state.cv.years_of_exp = value;
+    },
+    updateSex(state, sex){
+        state.cv.sex = sex;
     },
     updateJob(state, job){
         state.cv.job = job;
@@ -60,8 +72,8 @@ const mutations = {
         delete skill.index;
         state.cv.skills[index] = skill;
     },
-    removeSkill(state, index){
-        state.cv.skills.splice(index, 1); // 2nd parameter means remove one item only
+    removeSkill(state, skill_id){
+        state.cv.skills = state.cv.skills.filter(skill => skill.skill_id !== skill_id);
     },
     setAvailableSkills(state, skills){
         if(state.available_skills === undefined) {
@@ -80,7 +92,10 @@ const mutations = {
         state.cv = {
             name: '',
             description: '',
-            address: '',
+            address: {
+                street: '',
+                postcode: ''
+            },
             email: '',
             contacts: [{
                 contact_id: '',
@@ -104,7 +119,41 @@ const mutations = {
     },
     setUser(state, user){
         state.user = user;
-    }
+    },
+    restartSearch(state){
+        state.search = {
+            ageRange:{
+                bot: 20,
+                top: 40
+            },
+            expRange: {
+                bot: 0,
+                top: 3
+            },
+            skills: [],
+        }
+    },
+    setSearch(state, search){
+        state.search = search;
+    },
+    addSearchSkill(state, skill) {
+        state.search.skills.push(skill);
+    },
+    removeSearchSkill(state, skill_id){
+        state.search.skills = state.search.skills.filter(id => id !== skill_id);
+    },
+    updateAgeRange(state, ageRange){
+        state.search.ageRange = ageRange;
+    },
+    updateExpRange(state, expRange){
+        state.search.expRange = expRange;
+    },
+    updateSearchCounty(state, county){
+    state.search.county = county;
+    },
+    updateSearchCity(state, city){
+        state.search.city = city;
+    },
 }
 
 export default mutations;

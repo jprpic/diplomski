@@ -34,7 +34,7 @@ class SkillSeeder extends Seeder
             'Vue.js',
             'PHP',
             'Python (Programming Language)',
-            'C',
+            'C (Programming Language)',
             'Bootstrap',
             'MySQL',
             'JavaScript',

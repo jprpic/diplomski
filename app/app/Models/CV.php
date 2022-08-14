@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\CV\Contact;
 use App\Models\CV\CV_Contact;
 use App\Models\CV\CV_Skill;
 use App\Models\CV\Experience;
@@ -9,19 +10,26 @@ use App\Models\CV\Skill;
 use DateTime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
+
 
 class CV extends Model
 {
     use HasFactory;
 
     protected $table = 'cvs';
+    protected $casts = [
+        'address' => 'array'
+    ];
+
     const VALID_RULES = [
         'name' => 'required|max:255',
+        'img_url' => 'required|url',
+        'sex' => 'required|alpha|size:1',
+        'birthdate' => 'required|date',
+        'years_of_exp' => 'required|min:0|max:50|numeric',
         'description' => 'required|max:255',
-        'address' => 'required|max:255',
+        'street' => 'required|max:255',
+        'postcode' => 'required|digits:5',
         'job' => 'required|max:255',
         'references' => 'required|max:255',
 
@@ -53,11 +61,18 @@ class CV extends Model
         return $this->hasMany(CV_Contact::class, 'cv_id', 'id');
     }
     public function skills(){
-        return $this->belongsToMany(Skill::class);
+        return $this->belongsToMany(Skill::class, 'cv_skill', 'cv_id', 'skill_id');
+    }
+    public function contactInfo(){
+        return $this->belongsToMany(Contact::class, 'contact_cv', 'cv_id', 'contact_id');
     }
 
     public function user(){
-        return $this->hasOne(User::class);
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
+
+    public function age(){
+        return $this->birthdate;
     }
 
     public static function getCurrentUserCV(){
@@ -103,8 +118,13 @@ class CV extends Model
         // Create new CV
         $cv->user_id = $user_id;
         $cv->name = $CVJson['name'];
+        $cv->img_url = $CVJson['img_url'];
         $cv->description = $CVJson['description'];
-        $cv->address = $CVJson['address'];
+        $cv->street = $CVJson['street'];
+        $cv->postcode = $CVJson['postcode'];
+        $cv->sex = $CVJson['sex'];
+        $cv->birthdate = new DateTime("{$CVJson['birthdate']}");
+        $cv->years_of_exp = $CVJson['years_of_exp'];
         $cv->job = $CVJson['job'];
         $cv->references = $CVJson['references'];
         $cv->save();

@@ -37,6 +37,7 @@
 import BreezeLabel from '../Label.vue';
 import BreezeInput from '../Input.vue';
 import BreezeButton from '../Button.vue';
+import {usePage} from "@inertiajs/inertia-vue3";
 export default {
     name: "SkillItem.vue",
     components: {
@@ -66,7 +67,7 @@ export default {
             return `skillType${this.index}`;
         },
         availableSkills(){
-            return this.$store.getters.availableSkills.sort((a, b) => a.name.localeCompare(b.name));
+            return usePage().props.value.availableSkills.sort((a, b) => a.name.localeCompare(b.name));
         },
         searchedSkills(){
             // If the input is empty or a name of an existing skill is entered, hide the autocompletes
