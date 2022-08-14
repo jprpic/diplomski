@@ -4,11 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\CV;
 use App\Models\CV\CV_Contact;
-use App\Models\CV\Skill;
 use App\Models\User;
-use Database\Factories\SkillFactory;
-use Faker\Factory;
-use Faker\Generator;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -44,7 +40,7 @@ class DatabaseSeeder extends Seeder
                 ->url(), 'contacts'
             )
             ->has(CV\Experience::factory()
-                ->count(1)
+                ->count(3)
                 ->linked(), 'experiences'
             )
             ->create();

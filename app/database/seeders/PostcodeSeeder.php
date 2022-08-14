@@ -17,4627 +17,4627 @@ class PostcodeSeeder extends Seeder
     {
         $jayParsedAry = [
             [
-                "PostCode" => "10000",
-                "Name" => "Zagreb",
-                "County" => "Zagreb"
+                "code" => "10000",
+                "name" => "Zagreb",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10010",
-                "Name" => "Zagreb-Sloboština",
-                "County" => "Zagreb"
+                "code" => "10010",
+                "name" => "Zagreb-Sloboština",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10020",
-                "Name" => "Zagreb-Novi Zagreb",
-                "County" => "Zagreb"
+                "code" => "10020",
+                "name" => "Zagreb-Novi Zagreb",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10040",
-                "Name" => "Dubrava",
-                "County" => "Zagreb"
+                "code" => "10040",
+                "name" => "Dubrava",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10090",
-                "Name" => "Zagreb-Susedgrad",
-                "County" => "Zagreb"
+                "code" => "10090",
+                "name" => "Zagreb-Susedgrad",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10110",
-                "Name" => "Zagreb",
-                "County" => "Zagreb"
+                "code" => "10110",
+                "name" => "Zagreb",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10250",
-                "Name" => "Lučko",
-                "County" => "Zagreb"
+                "code" => "10250",
+                "name" => "Lučko",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10251",
-                "Name" => "Hrvatski Leskovac",
-                "County" => "Zagreb"
+                "code" => "10251",
+                "name" => "Hrvatski Leskovac",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10253",
-                "Name" => "Donji Dragonožec",
-                "County" => "Zagreb"
+                "code" => "10253",
+                "name" => "Donji Dragonožec",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10255",
-                "Name" => "Gornji Stupnik",
-                "County" => "Zagreb County"
+                "code" => "10255",
+                "name" => "Gornji Stupnik",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10257",
-                "Name" => "Brezovica",
-                "County" => "Zagreb"
+                "code" => "10257",
+                "name" => "Brezovica",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10290",
-                "Name" => "Zaprešić",
-                "County" => "Zagreb County"
+                "code" => "10290",
+                "name" => "Zaprešić",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10291",
-                "Name" => "Prigorje Brdovečko",
-                "County" => "Zagreb County"
+                "code" => "10291",
+                "name" => "Prigorje Brdovečko",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10292",
-                "Name" => "Šenkovec",
-                "County" => "Zagreb County"
+                "code" => "10292",
+                "name" => "Šenkovec",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10293",
-                "Name" => "Dubravica",
-                "County" => "Zagreb County"
+                "code" => "10293",
+                "name" => "Dubravica",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10294",
-                "Name" => "Donja Pušća",
-                "County" => "Zagreb County"
+                "code" => "10294",
+                "name" => "Donja Pušća",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10295",
-                "Name" => "Kupljenovo",
-                "County" => "Zagreb County"
+                "code" => "10295",
+                "name" => "Kupljenovo",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10296",
-                "Name" => "Luka",
-                "County" => "Zagreb County"
+                "code" => "10296",
+                "name" => "Luka",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10297",
-                "Name" => "Jakovlje",
-                "County" => "Zagreb County"
+                "code" => "10297",
+                "name" => "Jakovlje",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10298",
-                "Name" => "Donja Bistra",
-                "County" => "Zagreb County"
+                "code" => "10298",
+                "name" => "Donja Bistra",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10299",
-                "Name" => "Marija Gorica",
-                "County" => "Zagreb County"
+                "code" => "10299",
+                "name" => "Marija Gorica",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10310",
-                "Name" => "Ivanić-Grad",
-                "County" => "Zagreb County"
+                "code" => "10310",
+                "name" => "Ivanić-Grad",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10311",
-                "Name" => "Posavski Bregi",
-                "County" => "Zagreb County"
+                "code" => "10311",
+                "name" => "Posavski Bregi",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10312",
-                "Name" => "Kloštar Ivanić",
-                "County" => "Zagreb County"
+                "code" => "10312",
+                "name" => "Kloštar Ivanić",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10313",
-                "Name" => "Graberje Ivaničko",
-                "County" => "Zagreb County"
+                "code" => "10313",
+                "name" => "Graberje Ivaničko",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10314",
-                "Name" => "Križ",
-                "County" => "Zagreb County"
+                "code" => "10314",
+                "name" => "Križ",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10315",
-                "Name" => "Novoselec",
-                "County" => "Zagreb"
+                "code" => "10315",
+                "name" => "Novoselec",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10316",
-                "Name" => "Lijevi Dubrovčak",
-                "County" => "Zagreb County"
+                "code" => "10316",
+                "name" => "Lijevi Dubrovčak",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10340",
-                "Name" => "Vrbovec",
-                "County" => "Zagreb County"
+                "code" => "10340",
+                "name" => "Vrbovec",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10341",
-                "Name" => "Lonjica",
-                "County" => "Zagreb County"
+                "code" => "10341",
+                "name" => "Lonjica",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10342",
-                "Name" => "Dubrava",
-                "County" => "Zagreb County"
+                "code" => "10342",
+                "name" => "Dubrava",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10343",
-                "Name" => "Nova Kapela",
-                "County" => "Zagreb County"
+                "code" => "10343",
+                "name" => "Nova Kapela",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10344",
-                "Name" => "Farkaševac",
-                "County" => "Zagreb County"
+                "code" => "10344",
+                "name" => "Farkaševac",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10345",
-                "Name" => "Gradec",
-                "County" => "Zagreb County"
+                "code" => "10345",
+                "name" => "Gradec",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10346",
-                "Name" => "Preseka",
-                "County" => "Zagreb County"
+                "code" => "10346",
+                "name" => "Preseka",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10347",
-                "Name" => "Rakovec",
-                "County" => "Zagreb County"
+                "code" => "10347",
+                "name" => "Rakovec",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10360",
-                "Name" => "Zagreb-Sesvete",
-                "County" => "Zagreb"
+                "code" => "10360",
+                "name" => "Zagreb-Sesvete",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10361",
-                "Name" => "Sesvete-Kraljevec",
-                "County" => "Zagreb"
+                "code" => "10361",
+                "name" => "Sesvete-Kraljevec",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10362",
-                "Name" => "Zagreb-Kašina",
-                "County" => "Zagreb"
+                "code" => "10362",
+                "name" => "Zagreb-Kašina",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10363",
-                "Name" => "Belovar",
-                "County" => "Zagreb"
+                "code" => "10363",
+                "name" => "Belovar",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10370",
-                "Name" => "Dugo Selo",
-                "County" => "Zagreb County"
+                "code" => "10370",
+                "name" => "Dugo Selo",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10372",
-                "Name" => "Oborovo",
-                "County" => "Zagreb County"
+                "code" => "10372",
+                "name" => "Oborovo",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10373",
-                "Name" => "Ivanja Reka",
-                "County" => "Zagreb"
+                "code" => "10373",
+                "name" => "Ivanja Reka",
+                "county" => "Zagreb"
             ],
             [
-                "PostCode" => "10380",
-                "Name" => "Sveti Ivan Zelina",
-                "County" => "Zagreb County"
+                "code" => "10380",
+                "name" => "Sveti Ivan Zelina",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10381",
-                "Name" => "Bedenica",
-                "County" => "Zagreb County"
+                "code" => "10381",
+                "name" => "Bedenica",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10382",
-                "Name" => "Donja Zelina",
-                "County" => "Zagreb County"
+                "code" => "10382",
+                "name" => "Donja Zelina",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10383",
-                "Name" => "Komin",
-                "County" => "Zagreb County"
+                "code" => "10383",
+                "name" => "Komin",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10408",
-                "Name" => "Velika Mlaka",
-                "County" => "Zagreb County"
+                "code" => "10408",
+                "name" => "Velika Mlaka",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10410",
-                "Name" => "Velika Gorica",
-                "County" => "Zagreb County"
+                "code" => "10410",
+                "name" => "Velika Gorica",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10411",
-                "Name" => "Orle",
-                "County" => "Zagreb County"
+                "code" => "10411",
+                "name" => "Orle",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10412",
-                "Name" => "Donja Lomnica",
-                "County" => "Zagreb County"
+                "code" => "10412",
+                "name" => "Donja Lomnica",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10413",
-                "Name" => "Kravarsko",
-                "County" => "Zagreb County"
+                "code" => "10413",
+                "name" => "Kravarsko",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10414",
-                "Name" => "Pokupsko",
-                "County" => "Zagreb County"
+                "code" => "10414",
+                "name" => "Pokupsko",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10415",
-                "Name" => "Novo Čiče",
-                "County" => "Zagreb County"
+                "code" => "10415",
+                "name" => "Novo Čiče",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10417",
-                "Name" => "Buševec",
-                "County" => "Zagreb County"
+                "code" => "10417",
+                "name" => "Buševec",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10418",
-                "Name" => "Dubranec",
-                "County" => "Zagreb County"
+                "code" => "10418",
+                "name" => "Dubranec",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10419",
-                "Name" => "Vukovina",
-                "County" => "Zagreb County"
+                "code" => "10419",
+                "name" => "Vukovina",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10430",
-                "Name" => "Samobor",
-                "County" => "Zagreb County"
+                "code" => "10430",
+                "name" => "Samobor",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10431",
-                "Name" => "Sveta Nedjelja",
-                "County" => "Zagreb County"
+                "code" => "10431",
+                "name" => "Sveta Nedjelja",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10432",
-                "Name" => "Bregana",
-                "County" => "Zagreb County"
+                "code" => "10432",
+                "name" => "Bregana",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10434",
-                "Name" => "Strmec Samoborski",
-                "County" => "Zagreb County"
+                "code" => "10434",
+                "name" => "Strmec Samoborski",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10435",
-                "Name" => "Sveti Martin pod Okićem",
-                "County" => "Zagreb County"
+                "code" => "10435",
+                "name" => "Sveti Martin pod Okićem",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10436",
-                "Name" => "Rakov Potok",
-                "County" => "Zagreb County"
+                "code" => "10436",
+                "name" => "Rakov Potok",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10437",
-                "Name" => "Bestovje",
-                "County" => "Zagreb County"
+                "code" => "10437",
+                "name" => "Bestovje",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10450",
-                "Name" => "Jastrebarsko",
-                "County" => "Zagreb County"
+                "code" => "10450",
+                "name" => "Jastrebarsko",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10451",
-                "Name" => "Pisarovina",
-                "County" => "Zagreb County"
+                "code" => "10451",
+                "name" => "Pisarovina",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10453",
-                "Name" => "Gorica Svetojanska",
-                "County" => "Zagreb County"
+                "code" => "10453",
+                "name" => "Gorica Svetojanska",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10454",
-                "Name" => "Krašić",
-                "County" => "Zagreb County"
+                "code" => "10454",
+                "name" => "Krašić",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10455",
-                "Name" => "Kostanjevac",
-                "County" => "Zagreb County"
+                "code" => "10455",
+                "name" => "Kostanjevac",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10456",
-                "Name" => "Kalje",
-                "County" => "Zagreb County"
+                "code" => "10456",
+                "name" => "Kalje",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "10457",
-                "Name" => "Sošice",
-                "County" => "Zagreb County"
+                "code" => "10457",
+                "name" => "Sošice",
+                "county" => "Zagreb county"
             ],
             [
-                "PostCode" => "20000",
-                "Name" => "Dubrovnik",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20000",
+                "name" => "Dubrovnik",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20205",
-                "Name" => "Topolo",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20205",
+                "name" => "Topolo",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20207",
-                "Name" => "Mlini",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20207",
+                "name" => "Mlini",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20210",
-                "Name" => "Cavtat",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20210",
+                "name" => "Cavtat",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20213",
-                "Name" => "Čilipi",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20213",
+                "name" => "Čilipi",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20215",
-                "Name" => "Gruda",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20215",
+                "name" => "Gruda",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20216",
-                "Name" => "Dubravka",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20216",
+                "name" => "Dubravka",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20217",
-                "Name" => "Pridvorje",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20217",
+                "name" => "Pridvorje",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20218",
-                "Name" => "Pločice",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20218",
+                "name" => "Pločice",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20221",
-                "Name" => "Koločep",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20221",
+                "name" => "Koločep",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20222",
-                "Name" => "Lopud",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20222",
+                "name" => "Lopud",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20223",
-                "Name" => "Šipanjska Luka",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20223",
+                "name" => "Šipanjska Luka",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20224",
-                "Name" => "Maranovići",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20224",
+                "name" => "Maranovići",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20225",
-                "Name" => "Babino Polje",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20225",
+                "name" => "Babino Polje",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20226",
-                "Name" => "Goveđari",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20226",
+                "name" => "Goveđari",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20230",
-                "Name" => "Ston",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20230",
+                "name" => "Ston",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20231",
-                "Name" => "Doli",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20231",
+                "name" => "Doli",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20232",
-                "Name" => "Slano",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20232",
+                "name" => "Slano",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20233",
-                "Name" => "Trsteno",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20233",
+                "name" => "Trsteno",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20234",
-                "Name" => "Orašac",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20234",
+                "name" => "Orašac",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20235",
-                "Name" => "Zaton Veliki",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20235",
+                "name" => "Zaton Veliki",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20236",
-                "Name" => "Mokošica",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20236",
+                "name" => "Mokošica",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20240",
-                "Name" => "Trpanj",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20240",
+                "name" => "Trpanj",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20242",
-                "Name" => "Oskorušno",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20242",
+                "name" => "Oskorušno",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20243",
-                "Name" => "Kuna",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20243",
+                "name" => "Kuna",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20244",
-                "Name" => "Potomje",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20244",
+                "name" => "Potomje",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20245",
-                "Name" => "Trstenik",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20245",
+                "name" => "Trstenik",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20246",
-                "Name" => "Janjina",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20246",
+                "name" => "Janjina",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20247",
-                "Name" => "Žuljana",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20247",
+                "name" => "Žuljana",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20248",
-                "Name" => "Putniković",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20248",
+                "name" => "Putniković",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20250",
-                "Name" => "Orebić",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20250",
+                "name" => "Orebić",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20260",
-                "Name" => "Korčula",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20260",
+                "name" => "Korčula",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20263",
-                "Name" => "Lumbarda",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20263",
+                "name" => "Lumbarda",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20264",
-                "Name" => "Račišće",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20264",
+                "name" => "Račišće",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20267",
-                "Name" => "Kućište",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20267",
+                "name" => "Kućište",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20269",
-                "Name" => "Lovište",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20269",
+                "name" => "Lovište",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20270",
-                "Name" => "Vela Luka",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20270",
+                "name" => "Vela Luka",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20271",
-                "Name" => "Blato",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20271",
+                "name" => "Blato",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20272",
-                "Name" => "Smokvica",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20272",
+                "name" => "Smokvica",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20273",
-                "Name" => "Čara",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20273",
+                "name" => "Čara",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20274",
-                "Name" => "Pupnat",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20274",
+                "name" => "Pupnat",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20275",
-                "Name" => "Žrnovo",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20275",
+                "name" => "Žrnovo",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20278",
-                "Name" => "Nova Sela",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20278",
+                "name" => "Nova Sela",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20290",
-                "Name" => "Lastovo",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20290",
+                "name" => "Lastovo",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20340",
-                "Name" => "Ploče",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20340",
+                "name" => "Ploče",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20341",
-                "Name" => "Kula Norinska",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20341",
+                "name" => "Kula Norinska",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20342",
-                "Name" => "Otrić Seoci",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20342",
+                "name" => "Otrić Seoci",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20343",
-                "Name" => "Rogotin",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20343",
+                "name" => "Rogotin",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20344",
-                "Name" => "Komin (Dalma)",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20344",
+                "name" => "Komin (Dalma)",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20345",
-                "Name" => "Staševica",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20345",
+                "name" => "Staševica",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20350",
-                "Name" => "Metković",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20350",
+                "name" => "Metković",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20352",
-                "Name" => "Vid",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20352",
+                "name" => "Vid",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20353",
-                "Name" => "Mlinište",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20353",
+                "name" => "Mlinište",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20355",
-                "Name" => "Opuzen",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20355",
+                "name" => "Opuzen",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20356",
-                "Name" => "Klek",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20356",
+                "name" => "Klek",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "20357",
-                "Name" => "Blace",
-                "County" => "Dubrovnik-Neretva County"
+                "code" => "20357",
+                "name" => "Blace",
+                "county" => "Dubrovnik-Neretva county"
             ],
             [
-                "PostCode" => "21000",
-                "Name" => "Split",
-                "County" => "Split-Dalmatia County"
+                "code" => "21000",
+                "name" => "Split",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21201",
-                "Name" => "Prgomet",
-                "County" => "Split-Dalmatia County"
+                "code" => "21201",
+                "name" => "Prgomet",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21202",
-                "Name" => "Lećevica",
-                "County" => "Split-Dalmatia County"
+                "code" => "21202",
+                "name" => "Lećevica",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21203",
-                "Name" => "Donji Muć",
-                "County" => "Split-Dalmatia County"
+                "code" => "21203",
+                "name" => "Donji Muć",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21204",
-                "Name" => "Dugopolje",
-                "County" => "Split-Dalmatia County"
+                "code" => "21204",
+                "name" => "Dugopolje",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21205",
-                "Name" => "Donji Dolac",
-                "County" => "Split-Dalmatia County"
+                "code" => "21205",
+                "name" => "Donji Dolac",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21206",
-                "Name" => "Donje Ogorje",
-                "County" => "Split-Dalmatia County"
+                "code" => "21206",
+                "name" => "Donje Ogorje",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21207",
-                "Name" => "Kostanje",
-                "County" => "Split-Dalmatia County"
+                "code" => "21207",
+                "name" => "Kostanje",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21208",
-                "Name" => "Kučiće",
-                "County" => "Split-Dalmatia County"
+                "code" => "21208",
+                "name" => "Kučiće",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21209",
-                "Name" => "Mravince",
-                "County" => "Split-Dalmatia County"
+                "code" => "21209",
+                "name" => "Mravince",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21210",
-                "Name" => "Solin",
-                "County" => "Split-Dalmatia County"
+                "code" => "21210",
+                "name" => "Solin",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21211",
-                "Name" => "Vranjic",
-                "County" => "Split-Dalmatia County"
+                "code" => "21211",
+                "name" => "Vranjic",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21212",
-                "Name" => "Kaštel Sućurac",
-                "County" => "Split-Dalmatia County"
+                "code" => "21212",
+                "name" => "Kaštel Sućurac",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21213",
-                "Name" => "Kaštel Gomilica",
-                "County" => "Split-Dalmatia County"
+                "code" => "21213",
+                "name" => "Kaštel Gomilica",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21214",
-                "Name" => "Kaštel Kambelovac",
-                "County" => "Split-Dalmatia County"
+                "code" => "21214",
+                "name" => "Kaštel Kambelovac",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21215",
-                "Name" => "Kaštel Lukšić",
-                "County" => "Split-Dalmatia County"
+                "code" => "21215",
+                "name" => "Kaštel Lukšić",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21216",
-                "Name" => "Kaštel Stari",
-                "County" => "Split-Dalmatia County"
+                "code" => "21216",
+                "name" => "Kaštel Stari",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21218",
-                "Name" => "Seget Donji",
-                "County" => "Split-Dalmatia County"
+                "code" => "21218",
+                "name" => "Seget Donji",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21220",
-                "Name" => "Trogir",
-                "County" => "Split-Dalmatia County"
+                "code" => "21220",
+                "name" => "Trogir",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21222",
-                "Name" => "Marina",
-                "County" => "Split-Dalmatia County"
+                "code" => "21222",
+                "name" => "Marina",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21223",
-                "Name" => "Okrug Gornji",
-                "County" => "Split-Dalmatia County"
+                "code" => "21223",
+                "name" => "Okrug Gornji",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21224",
-                "Name" => "Slatine",
-                "County" => "Split-Dalmatia County"
+                "code" => "21224",
+                "name" => "Slatine",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21225",
-                "Name" => "Drvenik Veliki",
-                "County" => "Split-Dalmatia County"
+                "code" => "21225",
+                "name" => "Drvenik Veliki",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21226",
-                "Name" => "Vinišće",
-                "County" => "Split-Dalmatia County"
+                "code" => "21226",
+                "name" => "Vinišće",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21227",
-                "Name" => "Primorski Dolac",
-                "County" => "Split-Dalmatia County"
+                "code" => "21227",
+                "name" => "Primorski Dolac",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21228",
-                "Name" => "Blizna Donja",
-                "County" => "Split-Dalmatia County"
+                "code" => "21228",
+                "name" => "Blizna Donja",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21229",
-                "Name" => "Crivac",
-                "County" => "Split-Dalmatia County"
+                "code" => "21229",
+                "name" => "Crivac",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21230",
-                "Name" => "Sinj",
-                "County" => "Split-Dalmatia County"
+                "code" => "21230",
+                "name" => "Sinj",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21231",
-                "Name" => "Klis",
-                "County" => "Split-Dalmatia County"
+                "code" => "21231",
+                "name" => "Klis",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21232",
-                "Name" => "Dicmo",
-                "County" => "Split-Dalmatia County"
+                "code" => "21232",
+                "name" => "Dicmo",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21233",
-                "Name" => "Hrvace",
-                "County" => "Split-Dalmatia County"
+                "code" => "21233",
+                "name" => "Hrvace",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21236",
-                "Name" => "Vrlika",
-                "County" => "Split-Dalmatia County"
+                "code" => "21236",
+                "name" => "Vrlika",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21238",
-                "Name" => "Otok",
-                "County" => "Split-Dalmatia County"
+                "code" => "21238",
+                "name" => "Otok",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21240",
-                "Name" => "Trilj",
-                "County" => "Split-Dalmatia County"
+                "code" => "21240",
+                "name" => "Trilj",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21241",
-                "Name" => "Obrovac Sinjski",
-                "County" => "Split-Dalmatia County"
+                "code" => "21241",
+                "name" => "Obrovac Sinjski",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21242",
-                "Name" => "Grab",
-                "County" => "Split-Dalmatia County"
+                "code" => "21242",
+                "name" => "Grab",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21243",
-                "Name" => "Ugljane",
-                "County" => "Split-Dalmatia County"
+                "code" => "21243",
+                "name" => "Ugljane",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21244",
-                "Name" => "Cista Velika",
-                "County" => "Split-Dalmatia County"
+                "code" => "21244",
+                "name" => "Cista Velika",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21245",
-                "Name" => "Tijarica",
-                "County" => "Split-Dalmatia County"
+                "code" => "21245",
+                "name" => "Tijarica",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21246",
-                "Name" => "Aržano",
-                "County" => "Split-Dalmatia County"
+                "code" => "21246",
+                "name" => "Aržano",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21247",
-                "Name" => "Neorić",
-                "County" => "Split-Dalmatia County"
+                "code" => "21247",
+                "name" => "Neorić",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21250",
-                "Name" => "Šestanovac",
-                "County" => "Split-Dalmatia County"
+                "code" => "21250",
+                "name" => "Šestanovac",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21251",
-                "Name" => "Žrnovnica",
-                "County" => "Split-Dalmatia County"
+                "code" => "21251",
+                "name" => "Žrnovnica",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21252",
-                "Name" => "Tugare",
-                "County" => "Split-Dalmatia County"
+                "code" => "21252",
+                "name" => "Tugare",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21253",
-                "Name" => "Gata",
-                "County" => "Split-Dalmatia County"
+                "code" => "21253",
+                "name" => "Gata",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21254",
-                "Name" => "Blato na Cetini",
-                "County" => "Split-Dalmatia County"
+                "code" => "21254",
+                "name" => "Blato na Cetini",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21255",
-                "Name" => "Zadvarje",
-                "County" => "Split-Dalmatia County"
+                "code" => "21255",
+                "name" => "Zadvarje",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21256",
-                "Name" => "Cista Provo",
-                "County" => "Split-Dalmatia County"
+                "code" => "21256",
+                "name" => "Cista Provo",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21257",
-                "Name" => "Lovreć",
-                "County" => "Split-Dalmatia County"
+                "code" => "21257",
+                "name" => "Lovreć",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21260",
-                "Name" => "Imotski",
-                "County" => "Split-Dalmatia County"
+                "code" => "21260",
+                "name" => "Imotski",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21261",
-                "Name" => "Runovići",
-                "County" => "Split-Dalmatia County"
+                "code" => "21261",
+                "name" => "Runovići",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21262",
-                "Name" => "Kamenmost",
-                "County" => "Split-Dalmatia County"
+                "code" => "21262",
+                "name" => "Kamenmost",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21263",
-                "Name" => "Krivodol",
-                "County" => "Split-Dalmatia County"
+                "code" => "21263",
+                "name" => "Krivodol",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21264",
-                "Name" => "Donji Proložac",
-                "County" => "Split-Dalmatia County"
+                "code" => "21264",
+                "name" => "Donji Proložac",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21265",
-                "Name" => "Studenci",
-                "County" => "Split-Dalmatia County"
+                "code" => "21265",
+                "name" => "Studenci",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21266",
-                "Name" => "Zmijavci",
-                "County" => "Split-Dalmatia County"
+                "code" => "21266",
+                "name" => "Zmijavci",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21267",
-                "Name" => "Ričice",
-                "County" => "Split-Dalmatia County"
+                "code" => "21267",
+                "name" => "Ričice",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21270",
-                "Name" => "Zagvozd",
-                "County" => "Split-Dalmatia County"
+                "code" => "21270",
+                "name" => "Zagvozd",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21271",
-                "Name" => "Grabovac",
-                "County" => "Split-Dalmatia County"
+                "code" => "21271",
+                "name" => "Grabovac",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21272",
-                "Name" => "Slivno",
-                "County" => "Split-Dalmatia County"
+                "code" => "21272",
+                "name" => "Slivno",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21273",
-                "Name" => "Župa",
-                "County" => "Split-Dalmatia County"
+                "code" => "21273",
+                "name" => "Župa",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21275",
-                "Name" => "Dragljane",
-                "County" => "Split-Dalmatia County"
+                "code" => "21275",
+                "name" => "Dragljane",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21276",
-                "Name" => "Vrgorac",
-                "County" => "Split-Dalmatia County"
+                "code" => "21276",
+                "name" => "Vrgorac",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21277",
-                "Name" => "Veliki Prolog",
-                "County" => "Split-Dalmatia County"
+                "code" => "21277",
+                "name" => "Veliki Prolog",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21292",
-                "Name" => "Srinjine",
-                "County" => "Split-Dalmatia County"
+                "code" => "21292",
+                "name" => "Srinjine",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21300",
-                "Name" => "Makarska",
-                "County" => "Split-Dalmatia County"
+                "code" => "21300",
+                "name" => "Makarska",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21310",
-                "Name" => "Omiš",
-                "County" => "Split-Dalmatia County"
+                "code" => "21310",
+                "name" => "Omiš",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21311",
-                "Name" => "Stobreč",
-                "County" => "Split-Dalmatia County"
+                "code" => "21311",
+                "name" => "Stobreč",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21312",
-                "Name" => "Podstrana",
-                "County" => "Split-Dalmatia County"
+                "code" => "21312",
+                "name" => "Podstrana",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21314",
-                "Name" => "Jesenice",
-                "County" => "Split-Dalmatia County"
+                "code" => "21314",
+                "name" => "Jesenice",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21315",
-                "Name" => "Dugi Rat",
-                "County" => "Split-Dalmatia County"
+                "code" => "21315",
+                "name" => "Dugi Rat",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21317",
-                "Name" => "Lokva Rogoznica",
-                "County" => "Split-Dalmatia County"
+                "code" => "21317",
+                "name" => "Lokva Rogoznica",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21318",
-                "Name" => "Mimice",
-                "County" => "Split-Dalmatia County"
+                "code" => "21318",
+                "name" => "Mimice",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21320",
-                "Name" => "Baška Voda",
-                "County" => "Split-Dalmatia County"
+                "code" => "21320",
+                "name" => "Baška Voda",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21322",
-                "Name" => "Brela",
-                "County" => "Split-Dalmatia County"
+                "code" => "21322",
+                "name" => "Brela",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21325",
-                "Name" => "Tučepi",
-                "County" => "Split-Dalmatia County"
+                "code" => "21325",
+                "name" => "Tučepi",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21327",
-                "Name" => "Podgora",
-                "County" => "Split-Dalmatia County"
+                "code" => "21327",
+                "name" => "Podgora",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21328",
-                "Name" => "Drašnice",
-                "County" => "Split-Dalmatia County"
+                "code" => "21328",
+                "name" => "Drašnice",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21329",
-                "Name" => "Igrane",
-                "County" => "Split-Dalmatia County"
+                "code" => "21329",
+                "name" => "Igrane",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21330",
-                "Name" => "Gradac",
-                "County" => "Split-Dalmatia County"
+                "code" => "21330",
+                "name" => "Gradac",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21333",
-                "Name" => "Drvenik",
-                "County" => "Split-Dalmatia County"
+                "code" => "21333",
+                "name" => "Drvenik",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21334",
-                "Name" => "Zaostrog",
-                "County" => "Split-Dalmatia County"
+                "code" => "21334",
+                "name" => "Zaostrog",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21335",
-                "Name" => "Podaca",
-                "County" => "Split-Dalmatia County"
+                "code" => "21335",
+                "name" => "Podaca",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21400",
-                "Name" => "Supetar",
-                "County" => "Split-Dalmatia County"
+                "code" => "21400",
+                "name" => "Supetar",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21403",
-                "Name" => "Sutivan",
-                "County" => "Split-Dalmatia County"
+                "code" => "21403",
+                "name" => "Sutivan",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21404",
-                "Name" => "Ložišća",
-                "County" => "Split-Dalmatia County"
+                "code" => "21404",
+                "name" => "Ložišća",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21405",
-                "Name" => "Milna",
-                "County" => "Split-Dalmatia County"
+                "code" => "21405",
+                "name" => "Milna",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21410",
-                "Name" => "Postira",
-                "County" => "Split-Dalmatia County"
+                "code" => "21410",
+                "name" => "Postira",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21412",
-                "Name" => "Pučišća",
-                "County" => "Split-Dalmatia County"
+                "code" => "21412",
+                "name" => "Pučišća",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21413",
-                "Name" => "Povlja",
-                "County" => "Split-Dalmatia County"
+                "code" => "21413",
+                "name" => "Povlja",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21420",
-                "Name" => "Bol",
-                "County" => "Split-Dalmatia County"
+                "code" => "21420",
+                "name" => "Bol",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21423",
-                "Name" => "Nerežišća",
-                "County" => "Split-Dalmatia County"
+                "code" => "21423",
+                "name" => "Nerežišća",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21424",
-                "Name" => "Pražnica",
-                "County" => "Split-Dalmatia County"
+                "code" => "21424",
+                "name" => "Pražnica",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21425",
-                "Name" => "Selca",
-                "County" => "Split-Dalmatia County"
+                "code" => "21425",
+                "name" => "Selca",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21426",
-                "Name" => "Sumartin",
-                "County" => "Split-Dalmatia County"
+                "code" => "21426",
+                "name" => "Sumartin",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21430",
-                "Name" => "Grohote",
-                "County" => "Split-Dalmatia County"
+                "code" => "21430",
+                "name" => "Grohote",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21432",
-                "Name" => "Stomorska",
-                "County" => "Split-Dalmatia County"
+                "code" => "21432",
+                "name" => "Stomorska",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21450",
-                "Name" => "Hvar",
-                "County" => "Split-Dalmatia County"
+                "code" => "21450",
+                "name" => "Hvar",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21454",
-                "Name" => "Brusje",
-                "County" => "Split-Dalmatia County"
+                "code" => "21454",
+                "name" => "Brusje",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21460",
-                "Name" => "Stari Grad",
-                "County" => "Split-Dalmatia County"
+                "code" => "21460",
+                "name" => "Stari Grad",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21462",
-                "Name" => "Vrbanj",
-                "County" => "Split-Dalmatia County"
+                "code" => "21462",
+                "name" => "Vrbanj",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21463",
-                "Name" => "Vrboska",
-                "County" => "Split-Dalmatia County"
+                "code" => "21463",
+                "name" => "Vrboska",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21465",
-                "Name" => "Jelsa",
-                "County" => "Split-Dalmatia County"
+                "code" => "21465",
+                "name" => "Jelsa",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21466",
-                "Name" => "Zastražišće",
-                "County" => "Split-Dalmatia County"
+                "code" => "21466",
+                "name" => "Zastražišće",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21467",
-                "Name" => "Gdinj",
-                "County" => "Split-Dalmatia County"
+                "code" => "21467",
+                "name" => "Gdinj",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21469",
-                "Name" => "Sućuraj",
-                "County" => "Split-Dalmatia County"
+                "code" => "21469",
+                "name" => "Sućuraj",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21480",
-                "Name" => "Vis",
-                "County" => "Split-Dalmatia County"
+                "code" => "21480",
+                "name" => "Vis",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21483",
-                "Name" => "Podšpilje",
-                "County" => "Split-Dalmatia County"
+                "code" => "21483",
+                "name" => "Podšpilje",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "21485",
-                "Name" => "Komiža",
-                "County" => "Split-Dalmatia County"
+                "code" => "21485",
+                "name" => "Komiža",
+                "county" => "Split-Dalmatia county"
             ],
             [
-                "PostCode" => "22000",
-                "Name" => "Šibenik",
-                "County" => "Šibenik-Knin County"
+                "code" => "22000",
+                "name" => "Šibenik",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22010",
-                "Name" => "Šibenik-Brodarica",
-                "County" => "Šibenik-Knin County"
+                "code" => "22010",
+                "name" => "Šibenik-Brodarica",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22020",
-                "Name" => "Šibenik-Ražine",
-                "County" => "Šibenik-Knin County"
+                "code" => "22020",
+                "name" => "Šibenik-Ražine",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22030",
-                "Name" => "Šibenik-Zablaće",
-                "County" => "Šibenik-Knin County"
+                "code" => "22030",
+                "name" => "Šibenik-Zablaće",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22202",
-                "Name" => "Primošten",
-                "County" => "Šibenik-Knin County"
+                "code" => "22202",
+                "name" => "Primošten",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22203",
-                "Name" => "Rogoznica",
-                "County" => "Šibenik-Knin County"
+                "code" => "22203",
+                "name" => "Rogoznica",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22204",
-                "Name" => "Široke",
-                "County" => "Šibenik-Knin County"
+                "code" => "22204",
+                "name" => "Široke",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22205",
-                "Name" => "Perković",
-                "County" => "Šibenik-Knin County"
+                "code" => "22205",
+                "name" => "Perković",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22206",
-                "Name" => "Boraja",
-                "County" => "Šibenik-Knin County"
+                "code" => "22206",
+                "name" => "Boraja",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22211",
-                "Name" => "Vodice",
-                "County" => "Šibenik-Knin County"
+                "code" => "22211",
+                "name" => "Vodice",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22212",
-                "Name" => "Tribunj",
-                "County" => "Šibenik-Knin County"
+                "code" => "22212",
+                "name" => "Tribunj",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22213",
-                "Name" => "Pirovac",
-                "County" => "Šibenik-Knin County"
+                "code" => "22213",
+                "name" => "Pirovac",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22214",
-                "Name" => "Čista Velika",
-                "County" => "Šibenik-Knin County"
+                "code" => "22214",
+                "name" => "Čista Velika",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22215",
-                "Name" => "Zaton",
-                "County" => "Šibenik-Knin County"
+                "code" => "22215",
+                "name" => "Zaton",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22221",
-                "Name" => "Lozovac",
-                "County" => "Šibenik-Knin County"
+                "code" => "22221",
+                "name" => "Lozovac",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22222",
-                "Name" => "Skradin",
-                "County" => "Šibenik-Knin County"
+                "code" => "22222",
+                "name" => "Skradin",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22232",
-                "Name" => "Zlarin",
-                "County" => "Šibenik-Knin County"
+                "code" => "22232",
+                "name" => "Zlarin",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22233",
-                "Name" => "Prvić Luka",
-                "County" => "Šibenik-Knin County"
+                "code" => "22233",
+                "name" => "Prvić Luka",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22234",
-                "Name" => "Prvić Šepurine",
-                "County" => "Šibenik-Knin County"
+                "code" => "22234",
+                "name" => "Prvić Šepurine",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22235",
-                "Name" => "Kaprije",
-                "County" => "Šibenik-Knin County"
+                "code" => "22235",
+                "name" => "Kaprije",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22236",
-                "Name" => "Žirje",
-                "County" => "Šibenik-Knin County"
+                "code" => "22236",
+                "name" => "Žirje",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22240",
-                "Name" => "Tisno",
-                "County" => "Šibenik-Knin County"
+                "code" => "22240",
+                "name" => "Tisno",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22242",
-                "Name" => "Jezera",
-                "County" => "Šibenik-Knin County"
+                "code" => "22242",
+                "name" => "Jezera",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22243",
-                "Name" => "Murter",
-                "County" => "Šibenik-Knin County"
+                "code" => "22243",
+                "name" => "Murter",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22244",
-                "Name" => "Betina",
-                "County" => "Šibenik-Knin County"
+                "code" => "22244",
+                "name" => "Betina",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22300",
-                "Name" => "Knin",
-                "County" => "Šibenik-Knin County"
+                "code" => "22300",
+                "name" => "Knin",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22301",
-                "Name" => "Golubić",
-                "County" => "Šibenik-Knin County"
+                "code" => "22301",
+                "name" => "Golubić",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22303",
-                "Name" => "Oklaj",
-                "County" => "Šibenik-Knin County"
+                "code" => "22303",
+                "name" => "Oklaj",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22305",
-                "Name" => "Kistanje",
-                "County" => "Šibenik-Knin County"
+                "code" => "22305",
+                "name" => "Kistanje",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22310",
-                "Name" => "Kijevo",
-                "County" => "Šibenik-Knin County"
+                "code" => "22310",
+                "name" => "Kijevo",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22320",
-                "Name" => "Drniš",
-                "County" => "Šibenik-Knin County"
+                "code" => "22320",
+                "name" => "Drniš",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22323",
-                "Name" => "Unešić",
-                "County" => "Šibenik-Knin County"
+                "code" => "22323",
+                "name" => "Unešić",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22321",
-                "Name" => "Siverić",
-                "County" => "Šibenik-Knin County"
+                "code" => "22321",
+                "name" => "Siverić",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22322",
-                "Name" => "Ružić",
-                "County" => "Šibenik-Knin County"
+                "code" => "22322",
+                "name" => "Ružić",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "22324",
-                "Name" => "Drinovci",
-                "County" => "Šibenik-Knin County"
+                "code" => "22324",
+                "name" => "Drinovci",
+                "county" => "Šibenik-Knin county"
             ],
             [
-                "PostCode" => "23000",
-                "Name" => "Zadar",
-                "County" => "Zadar County"
+                "code" => "23000",
+                "name" => "Zadar",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23205",
-                "Name" => "Bibinje",
-                "County" => "Zadar County"
+                "code" => "23205",
+                "name" => "Bibinje",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23206",
-                "Name" => "Sukošan",
-                "County" => "Zadar County"
+                "code" => "23206",
+                "name" => "Sukošan",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23207",
-                "Name" => "Sveti Filip i Jakov",
-                "County" => "Zadar County"
+                "code" => "23207",
+                "name" => "Sveti Filip i Jakov",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23210",
-                "Name" => "Biograd na moru",
-                "County" => "Zadar County"
+                "code" => "23210",
+                "name" => "Biograd na moru",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23211",
-                "Name" => "Pakoštane",
-                "County" => "Zadar County"
+                "code" => "23211",
+                "name" => "Pakoštane",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23212",
-                "Name" => "Tkon",
-                "County" => "Zadar County"
+                "code" => "23212",
+                "name" => "Tkon",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23222",
-                "Name" => "Zemunik",
-                "County" => "Zadar County"
+                "code" => "23222",
+                "name" => "Zemunik",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23223",
-                "Name" => "Škabrnja",
-                "County" => "Zadar County"
+                "code" => "23223",
+                "name" => "Škabrnja",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23226",
-                "Name" => "Pridraga",
-                "County" => "Zadar County"
+                "code" => "23226",
+                "name" => "Pridraga",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23231",
-                "Name" => "Petrčane",
-                "County" => "Zadar County"
+                "code" => "23231",
+                "name" => "Petrčane",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23232",
-                "Name" => "Nin",
-                "County" => "Zadar County"
+                "code" => "23232",
+                "name" => "Nin",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23233",
-                "Name" => "Privlaka (Dalmacija)",
-                "County" => "Zadar County"
+                "code" => "23233",
+                "name" => "Privlaka (Dalmacija)",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23234",
-                "Name" => "Vir",
-                "County" => "Zadar County"
+                "code" => "23234",
+                "name" => "Vir",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23235",
-                "Name" => "Vrsi",
-                "County" => "Zadar County"
+                "code" => "23235",
+                "name" => "Vrsi",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23241",
-                "Name" => "Poličnik",
-                "County" => "Zadar County"
+                "code" => "23241",
+                "name" => "Poličnik",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23242",
-                "Name" => "Posedarje",
-                "County" => "Zadar County"
+                "code" => "23242",
+                "name" => "Posedarje",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23243",
-                "Name" => "Jasenice",
-                "County" => "Zadar County"
+                "code" => "23243",
+                "name" => "Jasenice",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23244",
-                "Name" => "Starigrad Paklenica",
-                "County" => "Zadar County"
+                "code" => "23244",
+                "name" => "Starigrad Paklenica",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23245",
-                "Name" => "Tribanj",
-                "County" => "Zadar County"
+                "code" => "23245",
+                "name" => "Tribanj",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23247",
-                "Name" => "Vinjerac",
-                "County" => "Zadar County"
+                "code" => "23247",
+                "name" => "Vinjerac",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23248",
-                "Name" => "Ražanac",
-                "County" => "Zadar County"
+                "code" => "23248",
+                "name" => "Ražanac",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23249",
-                "Name" => "Povljana",
-                "County" => "Zadar County"
+                "code" => "23249",
+                "name" => "Povljana",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23250",
-                "Name" => "Pag",
-                "County" => "Zadar County"
+                "code" => "23250",
+                "name" => "Pag",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23251",
-                "Name" => "Kolan",
-                "County" => "Zadar County"
+                "code" => "23251",
+                "name" => "Kolan",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23262",
-                "Name" => "Pašman",
-                "County" => "Zadar County"
+                "code" => "23262",
+                "name" => "Pašman",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23263",
-                "Name" => "Ždrelac",
-                "County" => "Zadar County"
+                "code" => "23263",
+                "name" => "Ždrelac",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23264",
-                "Name" => "Neviđane",
-                "County" => "Zadar County"
+                "code" => "23264",
+                "name" => "Neviđane",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23271",
-                "Name" => "Kukljica",
-                "County" => "Zadar County"
+                "code" => "23271",
+                "name" => "Kukljica",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23272",
-                "Name" => "Kali",
-                "County" => "Zadar County"
+                "code" => "23272",
+                "name" => "Kali",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23273",
-                "Name" => "Preko",
-                "County" => "Zadar County"
+                "code" => "23273",
+                "name" => "Preko",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23274",
-                "Name" => "Lukoran",
-                "County" => "Zadar County"
+                "code" => "23274",
+                "name" => "Lukoran",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23275",
-                "Name" => "Ugljan",
-                "County" => "Zadar County"
+                "code" => "23275",
+                "name" => "Ugljan",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23281",
-                "Name" => "Sali",
-                "County" => "Zadar County"
+                "code" => "23281",
+                "name" => "Sali",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23282",
-                "Name" => "Žman",
-                "County" => "Zadar County"
+                "code" => "23282",
+                "name" => "Žman",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23283",
-                "Name" => "Rava",
-                "County" => "Zadar County"
+                "code" => "23283",
+                "name" => "Rava",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23284",
-                "Name" => "Veli Iž",
-                "County" => "Zadar County"
+                "code" => "23284",
+                "name" => "Veli Iž",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23285",
-                "Name" => "Brbinj",
-                "County" => "Zadar County"
+                "code" => "23285",
+                "name" => "Brbinj",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23286",
-                "Name" => "Božava",
-                "County" => "Zadar County"
+                "code" => "23286",
+                "name" => "Božava",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23287",
-                "Name" => "Veli Rat",
-                "County" => "Zadar County"
+                "code" => "23287",
+                "name" => "Veli Rat",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23291",
-                "Name" => "Sestrunj",
-                "County" => "Zadar County"
+                "code" => "23291",
+                "name" => "Sestrunj",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23292",
-                "Name" => "Molat",
-                "County" => "Zadar County"
+                "code" => "23292",
+                "name" => "Molat",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23293",
-                "Name" => "Ist",
-                "County" => "Zadar County"
+                "code" => "23293",
+                "name" => "Ist",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23294",
-                "Name" => "Premuda",
-                "County" => "Zadar County"
+                "code" => "23294",
+                "name" => "Premuda",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23295",
-                "Name" => "Silba",
-                "County" => "Zadar County"
+                "code" => "23295",
+                "name" => "Silba",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23296",
-                "Name" => "Olib",
-                "County" => "Zadar County"
+                "code" => "23296",
+                "name" => "Olib",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23312",
-                "Name" => "Novigrad (Dalmacija)",
-                "County" => "Zadar County"
+                "code" => "23312",
+                "name" => "Novigrad (Dalmacija)",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23420",
-                "Name" => "Benkovac",
-                "County" => "Zadar County"
+                "code" => "23420",
+                "name" => "Benkovac",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23422",
-                "Name" => "Stankovci",
-                "County" => "Zadar County"
+                "code" => "23422",
+                "name" => "Stankovci",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23423",
-                "Name" => "Polača",
-                "County" => "Zadar County"
+                "code" => "23423",
+                "name" => "Polača",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23440",
-                "Name" => "Gračac",
-                "County" => "Zadar County"
+                "code" => "23440",
+                "name" => "Gračac",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23445",
-                "Name" => "Srb",
-                "County" => "Zadar County"
+                "code" => "23445",
+                "name" => "Srb",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23450",
-                "Name" => "Obrovac",
-                "County" => "Zadar County"
+                "code" => "23450",
+                "name" => "Obrovac",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "23452",
-                "Name" => "Karin",
-                "County" => "Zadar County"
+                "code" => "23452",
+                "name" => "Karin",
+                "county" => "Zadar county"
             ],
             [
-                "PostCode" => "31000",
-                "Name" => "Osijek",
-                "County" => "Osijek-Baranja County"
+                "code" => "31000",
+                "name" => "Osijek",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31204",
-                "Name" => "Bijelo Brdo",
-                "County" => "Osijek-Baranja County"
+                "code" => "31204",
+                "name" => "Bijelo Brdo",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31205",
-                "Name" => "Aljmaš",
-                "County" => "Osijek-Baranja County"
+                "code" => "31205",
+                "name" => "Aljmaš",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31206",
-                "Name" => "Erdut",
-                "County" => "Osijek-Baranja County"
+                "code" => "31206",
+                "name" => "Erdut",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31207",
-                "Name" => "Tenja",
-                "County" => "Osijek-Baranja County"
+                "code" => "31207",
+                "name" => "Tenja",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31208",
-                "Name" => "Petrijevci",
-                "County" => "Osijek-Baranja County"
+                "code" => "31208",
+                "name" => "Petrijevci",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31214",
-                "Name" => "Laslovo",
-                "County" => "Osijek-Baranja County"
+                "code" => "31214",
+                "name" => "Laslovo",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31215",
-                "Name" => "Ernestinovo",
-                "County" => "Osijek-Baranja County"
+                "code" => "31215",
+                "name" => "Ernestinovo",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31216",
-                "Name" => "Antunovac",
-                "County" => "Osijek-Baranja County"
+                "code" => "31216",
+                "name" => "Antunovac",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31220",
-                "Name" => "Višnjevac",
-                "County" => "Osijek-Baranja County"
+                "code" => "31220",
+                "name" => "Višnjevac",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31221",
-                "Name" => "Josipovac",
-                "County" => "Osijek-Baranja County"
+                "code" => "31221",
+                "name" => "Josipovac",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31222",
-                "Name" => "Bizovac",
-                "County" => "Osijek-Baranja County"
+                "code" => "31222",
+                "name" => "Bizovac",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31223",
-                "Name" => "Brođanci",
-                "County" => "Osijek-Baranja County"
+                "code" => "31223",
+                "name" => "Brođanci",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31224",
-                "Name" => "Koška",
-                "County" => "Osijek-Baranja County"
+                "code" => "31224",
+                "name" => "Koška",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31225",
-                "Name" => "Breznica Našička",
-                "County" => "Osijek-Baranja County"
+                "code" => "31225",
+                "name" => "Breznica Našička",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31226",
-                "Name" => "Dalj",
-                "County" => "Osijek-Baranja County"
+                "code" => "31226",
+                "name" => "Dalj",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31227",
-                "Name" => "Zelčin",
-                "County" => "Osijek-Baranja County"
+                "code" => "31227",
+                "name" => "Zelčin",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31300",
-                "Name" => "Beli Manastir",
-                "County" => "Osijek-Baranja County"
+                "code" => "31300",
+                "name" => "Beli Manastir",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31301",
-                "Name" => "Branjin Vrh",
-                "County" => "Osijek-Baranja County"
+                "code" => "31301",
+                "name" => "Branjin Vrh",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31302",
-                "Name" => "Kneževo",
-                "County" => "Osijek-Baranja County"
+                "code" => "31302",
+                "name" => "Kneževo",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31303",
-                "Name" => "Popovac",
-                "County" => "Osijek-Baranja County"
+                "code" => "31303",
+                "name" => "Popovac",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31304",
-                "Name" => "Duboševica",
-                "County" => "Osijek-Baranja County"
+                "code" => "31304",
+                "name" => "Duboševica",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31305",
-                "Name" => "Draž",
-                "County" => "Osijek-Baranja County"
+                "code" => "31305",
+                "name" => "Draž",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31306",
-                "Name" => "Batina",
-                "County" => "Osijek-Baranja County"
+                "code" => "31306",
+                "name" => "Batina",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31307",
-                "Name" => "Zmajevac",
-                "County" => "Osijek-Baranja County"
+                "code" => "31307",
+                "name" => "Zmajevac",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31308",
-                "Name" => "Suza",
-                "County" => "Osijek-Baranja County"
+                "code" => "31308",
+                "name" => "Suza",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31309",
-                "Name" => "Kneževi Vinogradi",
-                "County" => "Osijek-Baranja County"
+                "code" => "31309",
+                "name" => "Kneževi Vinogradi",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31315",
-                "Name" => "Karanac",
-                "County" => "Osijek-Baranja County"
+                "code" => "31315",
+                "name" => "Karanac",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31321",
-                "Name" => "Petlovac",
-                "County" => "Osijek-Baranja County"
+                "code" => "31321",
+                "name" => "Petlovac",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31322",
-                "Name" => "Baranjsko Petrovo Selo",
-                "County" => "Osijek-Baranja County"
+                "code" => "31322",
+                "name" => "Baranjsko Petrovo Selo",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31323",
-                "Name" => "Bolman",
-                "County" => "Osijek-Baranja County"
+                "code" => "31323",
+                "name" => "Bolman",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31324",
-                "Name" => "Jagodnjak",
-                "County" => "Osijek-Baranja County"
+                "code" => "31324",
+                "name" => "Jagodnjak",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31325",
-                "Name" => "Čeminac",
-                "County" => "Osijek-Baranja County"
+                "code" => "31325",
+                "name" => "Čeminac",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31326",
-                "Name" => "Darda",
-                "County" => "Osijek-Baranja County"
+                "code" => "31326",
+                "name" => "Darda",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31327",
-                "Name" => "Bilje",
-                "County" => "Osijek-Baranja County"
+                "code" => "31327",
+                "name" => "Bilje",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31328",
-                "Name" => "Lug",
-                "County" => "Osijek-Baranja County"
+                "code" => "31328",
+                "name" => "Lug",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31400",
-                "Name" => "Đakovo",
-                "County" => "Osijek-Baranja County"
+                "code" => "31400",
+                "name" => "Đakovo",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31401",
-                "Name" => "Viškovci",
-                "County" => "Osijek-Baranja County"
+                "code" => "31401",
+                "name" => "Viškovci",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31402",
-                "Name" => "Semeljci",
-                "County" => "Osijek-Baranja County"
+                "code" => "31402",
+                "name" => "Semeljci",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31403",
-                "Name" => "Vuka",
-                "County" => "Osijek-Baranja County"
+                "code" => "31403",
+                "name" => "Vuka",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31404",
-                "Name" => "Vladislavci",
-                "County" => "Osijek-Baranja County"
+                "code" => "31404",
+                "name" => "Vladislavci",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31410",
-                "Name" => "Strizivojna",
-                "County" => "Osijek-Baranja County"
+                "code" => "31410",
+                "name" => "Strizivojna",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31411",
-                "Name" => "Trnava",
-                "County" => "Osijek-Baranja County"
+                "code" => "31411",
+                "name" => "Trnava",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31415",
-                "Name" => "Selci Đakovački",
-                "County" => "Osijek-Baranja County"
+                "code" => "31415",
+                "name" => "Selci Đakovački",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31416",
-                "Name" => "Levanjska Varoš",
-                "County" => "Osijek-Baranja County"
+                "code" => "31416",
+                "name" => "Levanjska Varoš",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31417",
-                "Name" => "Piškorevci",
-                "County" => "Osijek-Baranja County"
+                "code" => "31417",
+                "name" => "Piškorevci",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31418",
-                "Name" => "Drenje",
-                "County" => "Osijek-Baranja County"
+                "code" => "31418",
+                "name" => "Drenje",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31421",
-                "Name" => "Satnica Đakovačka",
-                "County" => "Osijek-Baranja County"
+                "code" => "31421",
+                "name" => "Satnica Đakovačka",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31422",
-                "Name" => "Gorjani",
-                "County" => "Osijek-Baranja County"
+                "code" => "31422",
+                "name" => "Gorjani",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31423",
-                "Name" => "Bračevci",
-                "County" => "Osijek-Baranja County"
+                "code" => "31423",
+                "name" => "Bračevci",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31424",
-                "Name" => "Punitovci",
-                "County" => "Osijek-Baranja County"
+                "code" => "31424",
+                "name" => "Punitovci",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31431",
-                "Name" => "Čepin",
-                "County" => "Osijek-Baranja County"
+                "code" => "31431",
+                "name" => "Čepin",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31432",
-                "Name" => "Budimci",
-                "County" => "Osijek-Baranja County"
+                "code" => "31432",
+                "name" => "Budimci",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31433",
-                "Name" => "Podgorač",
-                "County" => "Osijek-Baranja County"
+                "code" => "31433",
+                "name" => "Podgorač",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31500",
-                "Name" => "Našice",
-                "County" => "Osijek-Baranja County"
+                "code" => "31500",
+                "name" => "Našice",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31511",
-                "Name" => "Đurđenovac",
-                "County" => "Osijek-Baranja County"
+                "code" => "31511",
+                "name" => "Đurđenovac",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31512",
-                "Name" => "Feričanci",
-                "County" => "Osijek-Baranja County"
+                "code" => "31512",
+                "name" => "Feričanci",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31513",
-                "Name" => "Donja Motičina",
-                "County" => "Osijek-Baranja County"
+                "code" => "31513",
+                "name" => "Donja Motičina",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31530",
-                "Name" => "Podravska Moslavina",
-                "County" => "Osijek-Baranja County"
+                "code" => "31530",
+                "name" => "Podravska Moslavina",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31531",
-                "Name" => "Viljevo",
-                "County" => "Osijek-Baranja County"
+                "code" => "31531",
+                "name" => "Viljevo",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31540",
-                "Name" => "Donji Miholjac",
-                "County" => "Osijek-Baranja County"
+                "code" => "31540",
+                "name" => "Donji Miholjac",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31542",
-                "Name" => "Magadenovac",
-                "County" => "Osijek-Baranja County"
+                "code" => "31542",
+                "name" => "Magadenovac",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31543",
-                "Name" => "Miholjački Poreč",
-                "County" => "Osijek-Baranja County"
+                "code" => "31543",
+                "name" => "Miholjački Poreč",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31550",
-                "Name" => "Valpovo",
-                "County" => "Osijek-Baranja County"
+                "code" => "31550",
+                "name" => "Valpovo",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31551",
-                "Name" => "Belišće",
-                "County" => "Osijek-Baranja County"
+                "code" => "31551",
+                "name" => "Belišće",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31552",
-                "Name" => "Podgajci Podravski",
-                "County" => "Osijek-Baranja County"
+                "code" => "31552",
+                "name" => "Podgajci Podravski",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31553",
-                "Name" => "Črnkovci",
-                "County" => "Osijek-Baranja County"
+                "code" => "31553",
+                "name" => "Črnkovci",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31554",
-                "Name" => "Gat",
-                "County" => "Osijek-Baranja County"
+                "code" => "31554",
+                "name" => "Gat",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "31555",
-                "Name" => "Marijanci",
-                "County" => "Osijek-Baranja County"
+                "code" => "31555",
+                "name" => "Marijanci",
+                "county" => "Osijek-Baranja county"
             ],
             [
-                "PostCode" => "32000",
-                "Name" => "Vukovar",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32000",
+                "name" => "Vukovar",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32010",
-                "Name" => "Vukovar",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32010",
+                "name" => "Vukovar",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32100",
-                "Name" => "Vinkovci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32100",
+                "name" => "Vinkovci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32211",
-                "Name" => "Ostrovo",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32211",
+                "name" => "Ostrovo",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32212",
-                "Name" => "Gaboš",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32212",
+                "name" => "Gaboš",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32213",
-                "Name" => "Markušica",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32213",
+                "name" => "Markušica",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32214",
-                "Name" => "Tordinci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32214",
+                "name" => "Tordinci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32221",
-                "Name" => "Nuštar",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32221",
+                "name" => "Nuštar",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32222",
-                "Name" => "Bršadin",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32222",
+                "name" => "Bršadin",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32224",
-                "Name" => "Trpinja",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32224",
+                "name" => "Trpinja",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32225",
-                "Name" => "Bobota",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32225",
+                "name" => "Bobota",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32227",
-                "Name" => "Borovo",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32227",
+                "name" => "Borovo",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32229",
-                "Name" => "Petrovci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32229",
+                "name" => "Petrovci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32232",
-                "Name" => "Sotin",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32232",
+                "name" => "Sotin",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32233",
-                "Name" => "Opatovac",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32233",
+                "name" => "Opatovac",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32234",
-                "Name" => "Šarengrad",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32234",
+                "name" => "Šarengrad",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32235",
-                "Name" => "Bapska",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32235",
+                "name" => "Bapska",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32236",
-                "Name" => "Ilok",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32236",
+                "name" => "Ilok",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32237",
-                "Name" => "Lovas",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32237",
+                "name" => "Lovas",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32238",
-                "Name" => "Čakovci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32238",
+                "name" => "Čakovci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32239",
-                "Name" => "Negoslavci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32239",
+                "name" => "Negoslavci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32241",
-                "Name" => "Stari Jankovci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32241",
+                "name" => "Stari Jankovci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32242",
-                "Name" => "Slakovci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32242",
+                "name" => "Slakovci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32243",
-                "Name" => "Orolik",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32243",
+                "name" => "Orolik",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32244",
-                "Name" => "Đeletovci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32244",
+                "name" => "Đeletovci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32245",
-                "Name" => "Nijemci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32245",
+                "name" => "Nijemci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32246",
-                "Name" => "Lipovac",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32246",
+                "name" => "Lipovac",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32247",
-                "Name" => "Banovci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32247",
+                "name" => "Banovci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32248",
-                "Name" => "Ilača",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32248",
+                "name" => "Ilača",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32249",
-                "Name" => "Tovarnik",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32249",
+                "name" => "Tovarnik",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32251",
-                "Name" => "Privlaka",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32251",
+                "name" => "Privlaka",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32252",
-                "Name" => "Otok",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32252",
+                "name" => "Otok",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32253",
-                "Name" => "Komletinci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32253",
+                "name" => "Komletinci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32254",
-                "Name" => "Vrbanja",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32254",
+                "name" => "Vrbanja",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32255",
-                "Name" => "Soljani",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32255",
+                "name" => "Soljani",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32256",
-                "Name" => "Strošinci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32256",
+                "name" => "Strošinci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32257",
-                "Name" => "Drenovci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32257",
+                "name" => "Drenovci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32258",
-                "Name" => "Posavski Podgajci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32258",
+                "name" => "Posavski Podgajci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32260",
-                "Name" => "Gunja",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32260",
+                "name" => "Gunja",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32261",
-                "Name" => "Rajevo Selo",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32261",
+                "name" => "Rajevo Selo",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32262",
-                "Name" => "Račinovci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32262",
+                "name" => "Račinovci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32263",
-                "Name" => "Đurići",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32263",
+                "name" => "Đurići",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32270",
-                "Name" => "Županja",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32270",
+                "name" => "Županja",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32271",
-                "Name" => "Rokovci Andrijaševci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32271",
+                "name" => "Rokovci Andrijaševci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32272",
-                "Name" => "Cerna",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32272",
+                "name" => "Cerna",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32273",
-                "Name" => "Gradište",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32273",
+                "name" => "Gradište",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32274",
-                "Name" => "Štitar",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32274",
+                "name" => "Štitar",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32275",
-                "Name" => "Bošnjaci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32275",
+                "name" => "Bošnjaci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32276",
-                "Name" => "Babina Greda",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32276",
+                "name" => "Babina Greda",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32280",
-                "Name" => "Jarmina",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32280",
+                "name" => "Jarmina",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32281",
-                "Name" => "Ivankovo",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32281",
+                "name" => "Ivankovo",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32282",
-                "Name" => "Retkovci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32282",
+                "name" => "Retkovci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32283",
-                "Name" => "Vođinci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32283",
+                "name" => "Vođinci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "32284",
-                "Name" => "Stari Mikanovci",
-                "County" => "Vukovar-Syrmia County"
+                "code" => "32284",
+                "name" => "Stari Mikanovci",
+                "county" => "Vukovar-Syrmia county"
             ],
             [
-                "PostCode" => "33000",
-                "Name" => "Virovitica",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33000",
+                "name" => "Virovitica",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33404",
-                "Name" => "Špišić Bukovica",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33404",
+                "name" => "Špišić Bukovica",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33405",
-                "Name" => "Pitomača",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33405",
+                "name" => "Pitomača",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33406",
-                "Name" => "Lukač",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33406",
+                "name" => "Lukač",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33407",
-                "Name" => "Gornje Bazje",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33407",
+                "name" => "Gornje Bazje",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33410",
-                "Name" => "Suhopolje",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33410",
+                "name" => "Suhopolje",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33411",
-                "Name" => "Gradina",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33411",
+                "name" => "Gradina",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33412",
-                "Name" => "Cabuna",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33412",
+                "name" => "Cabuna",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33507",
-                "Name" => "Crnac",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33507",
+                "name" => "Crnac",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33513",
-                "Name" => "Zdenci",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33513",
+                "name" => "Zdenci",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33514",
-                "Name" => "Čačinci",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33514",
+                "name" => "Čačinci",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33515",
-                "Name" => "Orahovica",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33515",
+                "name" => "Orahovica",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33517",
-                "Name" => "Mikleuš",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33517",
+                "name" => "Mikleuš",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33518",
-                "Name" => "Nova Bukovica",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33518",
+                "name" => "Nova Bukovica",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33520",
-                "Name" => "Slatina",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33520",
+                "name" => "Slatina",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33522",
-                "Name" => "Voćin",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33522",
+                "name" => "Voćin",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33523",
-                "Name" => "Čađavica",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33523",
+                "name" => "Čađavica",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33525",
-                "Name" => "Sopje",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33525",
+                "name" => "Sopje",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "33533",
-                "Name" => "Pivnica Slavonska",
-                "County" => "Virovitica-Podravina County"
+                "code" => "33533",
+                "name" => "Pivnica Slavonska",
+                "county" => "Virovitica-Podravina county"
             ],
             [
-                "PostCode" => "34000",
-                "Name" => "Požega",
-                "County" => "Požega-Slavonia County"
+                "code" => "34000",
+                "name" => "Požega",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34308",
-                "Name" => "Jakšić",
-                "County" => "Požega-Slavonia County"
+                "code" => "34308",
+                "name" => "Jakšić",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34310",
-                "Name" => "Pleternica",
-                "County" => "Požega-Slavonia County"
+                "code" => "34310",
+                "name" => "Pleternica",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34311",
-                "Name" => "Kuzmica",
-                "County" => "Požega-Slavonia County"
+                "code" => "34311",
+                "name" => "Kuzmica",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34312",
-                "Name" => "Sesvete (kod Požege)",
-                "County" => "Požega-Slavonia County"
+                "code" => "34312",
+                "name" => "Sesvete (kod Požege)",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34315",
-                "Name" => "Ratkovica",
-                "County" => "Požega-Slavonia County"
+                "code" => "34315",
+                "name" => "Ratkovica",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34322",
-                "Name" => "Brestovac",
-                "County" => "Požega-Slavonia County"
+                "code" => "34322",
+                "name" => "Brestovac",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34330",
-                "Name" => "Velika",
-                "County" => "Požega-Slavonia County"
+                "code" => "34330",
+                "name" => "Velika",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34334",
-                "Name" => "Kaptol",
-                "County" => "Požega-Slavonia County"
+                "code" => "34334",
+                "name" => "Kaptol",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34335",
-                "Name" => "Vetovo",
-                "County" => "Požega-Slavonia County"
+                "code" => "34335",
+                "name" => "Vetovo",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34340",
-                "Name" => "Kutjevo",
-                "County" => "Požega-Slavonia County"
+                "code" => "34340",
+                "name" => "Kutjevo",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34343",
-                "Name" => "Bektež",
-                "County" => "Požega-Slavonia County"
+                "code" => "34343",
+                "name" => "Bektež",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34350",
-                "Name" => "Čaglin",
-                "County" => "Požega-Slavonia County"
+                "code" => "34350",
+                "name" => "Čaglin",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34543",
-                "Name" => "Poljana",
-                "County" => "Požega-Slavonia County"
+                "code" => "34543",
+                "name" => "Poljana",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34550",
-                "Name" => "Pakrac",
-                "County" => "Požega-Slavonia County"
+                "code" => "34550",
+                "name" => "Pakrac",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34551",
-                "Name" => "Lipik",
-                "County" => "Požega-Slavonia County"
+                "code" => "34551",
+                "name" => "Lipik",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34552",
-                "Name" => "Badljevina",
-                "County" => "Požega-Slavonia County"
+                "code" => "34552",
+                "name" => "Badljevina",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "34553",
-                "Name" => "Bučje",
-                "County" => "Požega-Slavonia County"
+                "code" => "34553",
+                "name" => "Bučje",
+                "county" => "Požega-Slavonia county"
             ],
             [
-                "PostCode" => "35000",
-                "Name" => "Slavonski Brod",
-                "County" => "Brod-Posavina County"
+                "code" => "35000",
+                "name" => "Slavonski Brod",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35105",
-                "Name" => "Slavonski Brod",
-                "County" => "Brod-Posavina County"
+                "code" => "35105",
+                "name" => "Slavonski Brod",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35106",
-                "Name" => "Slavonski Brod",
-                "County" => "Brod-Posavina County"
+                "code" => "35106",
+                "name" => "Slavonski Brod",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35107",
-                "Name" => "Podvinje",
-                "County" => "Brod-Posavina County"
+                "code" => "35107",
+                "name" => "Podvinje",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35201",
-                "Name" => "Podcrkavlje",
-                "County" => "Brod-Posavina County"
+                "code" => "35201",
+                "name" => "Podcrkavlje",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35207",
-                "Name" => "Gornja Vrba",
-                "County" => "Brod-Posavina County"
+                "code" => "35207",
+                "name" => "Gornja Vrba",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35208",
-                "Name" => "Ruščica",
-                "County" => "Brod-Posavina County"
+                "code" => "35208",
+                "name" => "Ruščica",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35209",
-                "Name" => "Bukovlje",
-                "County" => "Brod-Posavina County"
+                "code" => "35209",
+                "name" => "Bukovlje",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35210",
-                "Name" => "Vrpolje",
-                "County" => "Brod-Posavina County"
+                "code" => "35210",
+                "name" => "Vrpolje",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35211",
-                "Name" => "Trnjani",
-                "County" => "Brod-Posavina County"
+                "code" => "35211",
+                "name" => "Trnjani",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35212",
-                "Name" => "Garčin",
-                "County" => "Brod-Posavina County"
+                "code" => "35212",
+                "name" => "Garčin",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35213",
-                "Name" => "Oprisavci",
-                "County" => "Brod-Posavina County"
+                "code" => "35213",
+                "name" => "Oprisavci",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35214",
-                "Name" => "Donji Andrijevci",
-                "County" => "Brod-Posavina County"
+                "code" => "35214",
+                "name" => "Donji Andrijevci",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35216",
-                "Name" => "Prnjavor",
-                "County" => "Brod-Posavina County"
+                "code" => "35216",
+                "name" => "Prnjavor",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35220",
-                "Name" => "Slavonski Šamac",
-                "County" => "Brod-Posavina County"
+                "code" => "35220",
+                "name" => "Slavonski Šamac",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35221",
-                "Name" => "Velika Kopanica",
-                "County" => "Brod-Posavina County"
+                "code" => "35221",
+                "name" => "Velika Kopanica",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35222",
-                "Name" => "Gundinci",
-                "County" => "Brod-Posavina County"
+                "code" => "35222",
+                "name" => "Gundinci",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35224",
-                "Name" => "Sikirevci",
-                "County" => "Brod-Posavina County"
+                "code" => "35224",
+                "name" => "Sikirevci",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35250",
-                "Name" => "Oriovac",
-                "County" => "Brod-Posavina County"
+                "code" => "35250",
+                "name" => "Oriovac",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35252",
-                "Name" => "Sibinj",
-                "County" => "Brod-Posavina County"
+                "code" => "35252",
+                "name" => "Sibinj",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35253",
-                "Name" => "Brodski Stupnik",
-                "County" => "Brod-Posavina County"
+                "code" => "35253",
+                "name" => "Brodski Stupnik",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35254",
-                "Name" => "Bebrina",
-                "County" => "Brod-Posavina County"
+                "code" => "35254",
+                "name" => "Bebrina",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35255",
-                "Name" => "Slavonski Kobaš",
-                "County" => "Brod-Posavina County"
+                "code" => "35255",
+                "name" => "Slavonski Kobaš",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35257",
-                "Name" => "Lužani",
-                "County" => "Brod-Posavina County"
+                "code" => "35257",
+                "name" => "Lužani",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35400",
-                "Name" => "Nova Gradiška",
-                "County" => "Brod-Posavina County"
+                "code" => "35400",
+                "name" => "Nova Gradiška",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35403",
-                "Name" => "Rešetari",
-                "County" => "Brod-Posavina County"
+                "code" => "35403",
+                "name" => "Rešetari",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35404",
-                "Name" => "Cernik",
-                "County" => "Brod-Posavina County"
+                "code" => "35404",
+                "name" => "Cernik",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35410",
-                "Name" => "Nova Kapela",
-                "County" => "Brod-Posavina County"
+                "code" => "35410",
+                "name" => "Nova Kapela",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35414",
-                "Name" => "Vrbova",
-                "County" => "Brod-Posavina County"
+                "code" => "35414",
+                "name" => "Vrbova",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35420",
-                "Name" => "Staro Petrovo Selo",
-                "County" => "Brod-Posavina County"
+                "code" => "35420",
+                "name" => "Staro Petrovo Selo",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35422",
-                "Name" => "Zapolje",
-                "County" => "Brod-Posavina County"
+                "code" => "35422",
+                "name" => "Zapolje",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35423",
-                "Name" => "Vrbje",
-                "County" => "Brod-Posavina County"
+                "code" => "35423",
+                "name" => "Vrbje",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35424",
-                "Name" => "Orubica",
-                "County" => "Brod-Posavina County"
+                "code" => "35424",
+                "name" => "Orubica",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35425",
-                "Name" => "Davor",
-                "County" => "Brod-Posavina County"
+                "code" => "35425",
+                "name" => "Davor",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35428",
-                "Name" => "Dragalić",
-                "County" => "Brod-Posavina County"
+                "code" => "35428",
+                "name" => "Dragalić",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35429",
-                "Name" => "Gornji Bogićevci",
-                "County" => "Brod-Posavina County"
+                "code" => "35429",
+                "name" => "Gornji Bogićevci",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35430",
-                "Name" => "Okučani",
-                "County" => "Brod-Posavina County"
+                "code" => "35430",
+                "name" => "Okučani",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "35435",
-                "Name" => "Stara Gradiška",
-                "County" => "Brod-Posavina County"
+                "code" => "35435",
+                "name" => "Stara Gradiška",
+                "county" => "Brod-Posavina county"
             ],
             [
-                "PostCode" => "40000",
-                "Name" => "Čakovec",
-                "County" => "Međimurje County"
+                "code" => "40000",
+                "name" => "Čakovec",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40305",
-                "Name" => "Nedelišće",
-                "County" => "Međimurje County"
+                "code" => "40305",
+                "name" => "Nedelišće",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40306",
-                "Name" => "Macinec",
-                "County" => "Međimurje County"
+                "code" => "40306",
+                "name" => "Macinec",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40311",
-                "Name" => "Lopatinec",
-                "County" => "Međimurje County"
+                "code" => "40311",
+                "name" => "Lopatinec",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40312",
-                "Name" => "Štrigova",
-                "County" => "Međimurje County"
+                "code" => "40312",
+                "name" => "Štrigova",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40313",
-                "Name" => "Sveti Martin na Muri",
-                "County" => "Međimurje County"
+                "code" => "40313",
+                "name" => "Sveti Martin na Muri",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40314",
-                "Name" => "Selnica",
-                "County" => "Međimurje County"
+                "code" => "40314",
+                "name" => "Selnica",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40315",
-                "Name" => "Mursko Središče",
-                "County" => "Međimurje County"
+                "code" => "40315",
+                "name" => "Mursko Središče",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40316",
-                "Name" => "Vratišinec",
-                "County" => "Međimurje County"
+                "code" => "40316",
+                "name" => "Vratišinec",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40317",
-                "Name" => "Podturen",
-                "County" => "Međimurje County"
+                "code" => "40317",
+                "name" => "Podturen",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40318",
-                "Name" => "Dekanovec",
-                "County" => "Međimurje County"
+                "code" => "40318",
+                "name" => "Dekanovec",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40319",
-                "Name" => "Belica",
-                "County" => "Međimurje County"
+                "code" => "40319",
+                "name" => "Belica",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40320",
-                "Name" => "Donji Kraljevec",
-                "County" => "Međimurje County"
+                "code" => "40320",
+                "name" => "Donji Kraljevec",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40321",
-                "Name" => "Mala Subotica",
-                "County" => "Međimurje County"
+                "code" => "40321",
+                "name" => "Mala Subotica",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40322",
-                "Name" => "Orehovica",
-                "County" => "Međimurje County"
+                "code" => "40322",
+                "name" => "Orehovica",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40323",
-                "Name" => "Prelog",
-                "County" => "Međimurje County"
+                "code" => "40323",
+                "name" => "Prelog",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40324",
-                "Name" => "Goričan",
-                "County" => "Međimurje County"
+                "code" => "40324",
+                "name" => "Goričan",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40325",
-                "Name" => "Draškovec",
-                "County" => "Međimurje County"
+                "code" => "40325",
+                "name" => "Draškovec",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40326",
-                "Name" => "Sveta Marija",
-                "County" => "Međimurje County"
+                "code" => "40326",
+                "name" => "Sveta Marija",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40327",
-                "Name" => "Donji Vidovec",
-                "County" => "Međimurje County"
+                "code" => "40327",
+                "name" => "Donji Vidovec",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40328",
-                "Name" => "Donja Dubrava",
-                "County" => "Međimurje County"
+                "code" => "40328",
+                "name" => "Donja Dubrava",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "40329",
-                "Name" => "Kotoriba",
-                "County" => "Međimurje County"
+                "code" => "40329",
+                "name" => "Kotoriba",
+                "county" => "Međimurje county"
             ],
             [
-                "PostCode" => "42000",
-                "Name" => "Varaždin",
-                "County" => "Varaždin County"
+                "code" => "42000",
+                "name" => "Varaždin",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42201",
-                "Name" => "Beretinec",
-                "County" => "Varaždin County"
+                "code" => "42201",
+                "name" => "Beretinec",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42202",
-                "Name" => "Trnovec Bartolovečki",
-                "County" => "Varaždin County"
+                "code" => "42202",
+                "name" => "Trnovec Bartolovečki",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42203",
-                "Name" => "Jalžabet",
-                "County" => "Varaždin County"
+                "code" => "42203",
+                "name" => "Jalžabet",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42204",
-                "Name" => "Turčin",
-                "County" => "Varaždin County"
+                "code" => "42204",
+                "name" => "Turčin",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42205",
-                "Name" => "Vidovec",
-                "County" => "Varaždin County"
+                "code" => "42205",
+                "name" => "Vidovec",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42206",
-                "Name" => "Petrijanec",
-                "County" => "Varaždin County"
+                "code" => "42206",
+                "name" => "Petrijanec",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42207",
-                "Name" => "Vinica",
-                "County" => "Varaždin County"
+                "code" => "42207",
+                "name" => "Vinica",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42208",
-                "Name" => "Cestica",
-                "County" => "Varaždin County"
+                "code" => "42208",
+                "name" => "Cestica",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42209",
-                "Name" => "Sračinec",
-                "County" => "Varaždin County"
+                "code" => "42209",
+                "name" => "Sračinec",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42214",
-                "Name" => "Sveti Ilija",
-                "County" => "Varaždin County"
+                "code" => "42214",
+                "name" => "Sveti Ilija",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42220",
-                "Name" => "Novi Marof",
-                "County" => "Varaždin County"
+                "code" => "42220",
+                "name" => "Novi Marof",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42222",
-                "Name" => "Ljubeščica",
-                "County" => "Varaždin County"
+                "code" => "42222",
+                "name" => "Ljubeščica",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42223",
-                "Name" => "Varaždinske Toplice",
-                "County" => "Varaždin County"
+                "code" => "42223",
+                "name" => "Varaždinske Toplice",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42224",
-                "Name" => "Visoko",
-                "County" => "Varaždin County"
+                "code" => "42224",
+                "name" => "Visoko",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42225",
-                "Name" => "Breznički Hum",
-                "County" => "Varaždin County"
+                "code" => "42225",
+                "name" => "Breznički Hum",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42226",
-                "Name" => "Bisag",
-                "County" => "Varaždin County"
+                "code" => "42226",
+                "name" => "Bisag",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42230",
-                "Name" => "Ludbreg",
-                "County" => "Varaždin County"
+                "code" => "42230",
+                "name" => "Ludbreg",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42231",
-                "Name" => "Mali Bukovec",
-                "County" => "Varaždin County"
+                "code" => "42231",
+                "name" => "Mali Bukovec",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42232",
-                "Name" => "Donji Martijanec",
-                "County" => "Varaždin County"
+                "code" => "42232",
+                "name" => "Donji Martijanec",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42233",
-                "Name" => "Sveti Đurđ",
-                "County" => "Varaždin County"
+                "code" => "42233",
+                "name" => "Sveti Đurđ",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42240",
-                "Name" => "Ivanec",
-                "County" => "Varaždin County"
+                "code" => "42240",
+                "name" => "Ivanec",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42242",
-                "Name" => "Radovan",
-                "County" => "Varaždin County"
+                "code" => "42242",
+                "name" => "Radovan",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42243",
-                "Name" => "Maruševec",
-                "County" => "Varaždin County"
+                "code" => "42243",
+                "name" => "Maruševec",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42244",
-                "Name" => "Klenovnik",
-                "County" => "Varaždin County"
+                "code" => "42244",
+                "name" => "Klenovnik",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42245",
-                "Name" => "Donja Voća",
-                "County" => "Varaždin County"
+                "code" => "42245",
+                "name" => "Donja Voća",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42250",
-                "Name" => "Lepoglava",
-                "County" => "Varaždin County"
+                "code" => "42250",
+                "name" => "Lepoglava",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42253",
-                "Name" => "Bednja",
-                "County" => "Varaždin County"
+                "code" => "42253",
+                "name" => "Bednja",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42254",
-                "Name" => "Trakošćan",
-                "County" => "Varaždin County"
+                "code" => "42254",
+                "name" => "Trakošćan",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "42255",
-                "Name" => "Donja Višnjica",
-                "County" => "Varaždin County"
+                "code" => "42255",
+                "name" => "Donja Višnjica",
+                "county" => "Varaždin county"
             ],
             [
-                "PostCode" => "43000",
-                "Name" => "Bjelovar",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43000",
+                "name" => "Bjelovar",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43202",
-                "Name" => "Zrinski Topolovac",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43202",
+                "name" => "Zrinski Topolovac",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43203",
-                "Name" => "Kapela",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43203",
+                "name" => "Kapela",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43211",
-                "Name" => "Predavac",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43211",
+                "name" => "Predavac",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43212",
-                "Name" => "Rovišće",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43212",
+                "name" => "Rovišće",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43226",
-                "Name" => "Veliko Trojstvo",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43226",
+                "name" => "Veliko Trojstvo",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43227",
-                "Name" => "Šandrovac",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43227",
+                "name" => "Šandrovac",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43231",
-                "Name" => "Ivanska",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43231",
+                "name" => "Ivanska",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43232",
-                "Name" => "Berek",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43232",
+                "name" => "Berek",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43233",
-                "Name" => "Trnovitički Popovac",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43233",
+                "name" => "Trnovitički Popovac",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43240",
-                "Name" => "Čazma",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43240",
+                "name" => "Čazma",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43245",
-                "Name" => "Gornji Draganec",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43245",
+                "name" => "Gornji Draganec",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43246",
-                "Name" => "Štefanje",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43246",
+                "name" => "Štefanje",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43247",
-                "Name" => "Narta",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43247",
+                "name" => "Narta",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43251",
-                "Name" => "Gudovac",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43251",
+                "name" => "Gudovac",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43252",
-                "Name" => "Prgomelje",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43252",
+                "name" => "Prgomelje",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43270",
-                "Name" => "Veliki Grđevac",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43270",
+                "name" => "Veliki Grđevac",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43271",
-                "Name" => "Velika Pisanica",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43271",
+                "name" => "Velika Pisanica",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43272",
-                "Name" => "Nova Rača",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43272",
+                "name" => "Nova Rača",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43273",
-                "Name" => "Bulinac",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43273",
+                "name" => "Bulinac",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43274",
-                "Name" => "Severin",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43274",
+                "name" => "Severin",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43280",
-                "Name" => "Garešnica",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43280",
+                "name" => "Garešnica",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43282",
-                "Name" => "Veliko Vukovje",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43282",
+                "name" => "Veliko Vukovje",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43283",
-                "Name" => "Kaniška Iva",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43283",
+                "name" => "Kaniška Iva",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43284",
-                "Name" => "Hercegovac",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43284",
+                "name" => "Hercegovac",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43285",
-                "Name" => "Velika Trnovitica",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43285",
+                "name" => "Velika Trnovitica",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43290",
-                "Name" => "Grubišno Polje",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43290",
+                "name" => "Grubišno Polje",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43293",
-                "Name" => "Veliki Zdenci",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43293",
+                "name" => "Veliki Zdenci",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43500",
-                "Name" => "Daruvar",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43500",
+                "name" => "Daruvar",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43505",
-                "Name" => "Končanica (Končenice)",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43505",
+                "name" => "Končanica (Končenice)",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43506",
-                "Name" => "Dežanovac",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43506",
+                "name" => "Dežanovac",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43507",
-                "Name" => "Uljanik",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43507",
+                "name" => "Uljanik",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43531",
-                "Name" => "Veliki Bastaji",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43531",
+                "name" => "Veliki Bastaji",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43532",
-                "Name" => "Đulovac",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43532",
+                "name" => "Đulovac",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "43541",
-                "Name" => "Sirač",
-                "County" => "Bjelovar-Bilogora County"
+                "code" => "43541",
+                "name" => "Sirač",
+                "county" => "Bjelovar-Bilogora county"
             ],
             [
-                "PostCode" => "44000",
-                "Name" => "Sisak",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44000",
+                "name" => "Sisak",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44010",
-                "Name" => "Sisak-Caprag",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44010",
+                "name" => "Sisak-Caprag",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44201",
-                "Name" => "Martinska Ves",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44201",
+                "name" => "Martinska Ves",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44202",
-                "Name" => "Topolovac",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44202",
+                "name" => "Topolovac",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44203",
-                "Name" => "Gušće",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44203",
+                "name" => "Gušće",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44213",
-                "Name" => "Kratečko",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44213",
+                "name" => "Kratečko",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44204",
-                "Name" => "Jabukovac",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44204",
+                "name" => "Jabukovac",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44210",
-                "Name" => "Sunja",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44210",
+                "name" => "Sunja",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44211",
-                "Name" => "Blinjski Kut",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44211",
+                "name" => "Blinjski Kut",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44214",
-                "Name" => "Bobovac",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44214",
+                "name" => "Bobovac",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44222",
-                "Name" => "Šaš",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44222",
+                "name" => "Šaš",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44250",
-                "Name" => "Petrinja",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44250",
+                "name" => "Petrinja",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44253",
-                "Name" => "Mošćenica",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44253",
+                "name" => "Mošćenica",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44271",
-                "Name" => "Letovanić",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44271",
+                "name" => "Letovanić",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44272",
-                "Name" => "Lekenik",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44272",
+                "name" => "Lekenik",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44273",
-                "Name" => "Sela",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44273",
+                "name" => "Sela",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44316",
-                "Name" => "Velika Ludina",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44316",
+                "name" => "Velika Ludina",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44317",
-                "Name" => "Popovača",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44317",
+                "name" => "Popovača",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44318",
-                "Name" => "Voloder",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44318",
+                "name" => "Voloder",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44320",
-                "Name" => "Kutina",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44320",
+                "name" => "Kutina",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44321",
-                "Name" => "Banova Jaruga",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44321",
+                "name" => "Banova Jaruga",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44322",
-                "Name" => "Lipovljani",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44322",
+                "name" => "Lipovljani",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44323",
-                "Name" => "Rajić",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44323",
+                "name" => "Rajić",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44324",
-                "Name" => "Jasenovac",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44324",
+                "name" => "Jasenovac",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44325",
-                "Name" => "Krapje",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44325",
+                "name" => "Krapje",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44330",
-                "Name" => "Novska",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44330",
+                "name" => "Novska",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44400",
-                "Name" => "Glina",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44400",
+                "name" => "Glina",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44410",
-                "Name" => "Gvozd",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44410",
+                "name" => "Gvozd",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44415",
-                "Name" => "Topusko",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44415",
+                "name" => "Topusko",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44430",
-                "Name" => "Hrvatska Kostajnica",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44430",
+                "name" => "Hrvatska Kostajnica",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44431",
-                "Name" => "Donji Kukuruzari",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44431",
+                "name" => "Donji Kukuruzari",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44435",
-                "Name" => "Divuša",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44435",
+                "name" => "Divuša",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44440",
-                "Name" => "Dvor",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44440",
+                "name" => "Dvor",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "44450",
-                "Name" => "Hrvatska Dubica",
-                "County" => "Sisak-Moslavina County"
+                "code" => "44450",
+                "name" => "Hrvatska Dubica",
+                "county" => "Sisak-Moslavina county"
             ],
             [
-                "PostCode" => "47000",
-                "Name" => "Karlovac",
-                "County" => "Karlovac County"
+                "code" => "47000",
+                "name" => "Karlovac",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47201",
-                "Name" => "Draganići",
-                "County" => "Karlovac County"
+                "code" => "47201",
+                "name" => "Draganići",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47203",
-                "Name" => "Rečica",
-                "County" => "Karlovac County"
+                "code" => "47203",
+                "name" => "Rečica",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47204",
-                "Name" => "Šišljavić",
-                "County" => "Karlovac County"
+                "code" => "47204",
+                "name" => "Šišljavić",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47206",
-                "Name" => "Lasinja",
-                "County" => "Karlovac County"
+                "code" => "47206",
+                "name" => "Lasinja",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47212",
-                "Name" => "Skakavac",
-                "County" => "Karlovac County"
+                "code" => "47212",
+                "name" => "Skakavac",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47220",
-                "Name" => "Vojnić",
-                "County" => "Karlovac County"
+                "code" => "47220",
+                "name" => "Vojnić",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47222",
-                "Name" => "Cetingrad",
-                "County" => "Karlovac County"
+                "code" => "47222",
+                "name" => "Cetingrad",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47240",
-                "Name" => "Slunj",
-                "County" => "Karlovac County"
+                "code" => "47240",
+                "name" => "Slunj",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47241",
-                "Name" => "Cerovac Vukmanički",
-                "County" => "Karlovac County"
+                "code" => "47241",
+                "name" => "Cerovac Vukmanički",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47242",
-                "Name" => "Krnjak",
-                "County" => "Karlovac County"
+                "code" => "47242",
+                "name" => "Krnjak",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47245",
-                "Name" => "Rakovica",
-                "County" => "Karlovac County"
+                "code" => "47245",
+                "name" => "Rakovica",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47246",
-                "Name" => "Drežnik Grad",
-                "County" => "Karlovac County"
+                "code" => "47246",
+                "name" => "Drežnik Grad",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47250",
-                "Name" => "Duga Resa",
-                "County" => "Karlovac County"
+                "code" => "47250",
+                "name" => "Duga Resa",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47251",
-                "Name" => "Bosiljevo",
-                "County" => "Karlovac County"
+                "code" => "47251",
+                "name" => "Bosiljevo",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47252",
-                "Name" => "Barilović",
-                "County" => "Karlovac County"
+                "code" => "47252",
+                "name" => "Barilović",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47261",
-                "Name" => "Zvečaj",
-                "County" => "Karlovac County"
+                "code" => "47261",
+                "name" => "Zvečaj",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47262",
-                "Name" => "Generalski Stol",
-                "County" => "Karlovac County"
+                "code" => "47262",
+                "name" => "Generalski Stol",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47264",
-                "Name" => "Tounj",
-                "County" => "Karlovac County"
+                "code" => "47264",
+                "name" => "Tounj",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47271",
-                "Name" => "Netretić",
-                "County" => "Karlovac County"
+                "code" => "47271",
+                "name" => "Netretić",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47272",
-                "Name" => "Ribnik",
-                "County" => "Karlovac County"
+                "code" => "47272",
+                "name" => "Ribnik",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47276",
-                "Name" => "Žakanje",
-                "County" => "Karlovac County"
+                "code" => "47276",
+                "name" => "Žakanje",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47280",
-                "Name" => "Ozalj",
-                "County" => "Karlovac County"
+                "code" => "47280",
+                "name" => "Ozalj",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47281",
-                "Name" => "Mali Erjavec",
-                "County" => "Karlovac County"
+                "code" => "47281",
+                "name" => "Mali Erjavec",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47282",
-                "Name" => "Kamanje",
-                "County" => "Karlovac County"
+                "code" => "47282",
+                "name" => "Kamanje",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47283",
-                "Name" => "Vivodina",
-                "County" => "Karlovac County"
+                "code" => "47283",
+                "name" => "Vivodina",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47284",
-                "Name" => "Kašt",
-                "County" => "Karlovac County"
+                "code" => "47284",
+                "name" => "Kašt",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47285",
-                "Name" => "Radatovići",
-                "County" => "Karlovac County"
+                "code" => "47285",
+                "name" => "Radatovići",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47286",
-                "Name" => "Mahično",
-                "County" => "Karlovac County"
+                "code" => "47286",
+                "name" => "Mahično",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47300",
-                "Name" => "Ogulin",
-                "County" => "Karlovac County"
+                "code" => "47300",
+                "name" => "Ogulin",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47302",
-                "Name" => "Oštarije",
-                "County" => "Karlovac County"
+                "code" => "47302",
+                "name" => "Oštarije",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47303",
-                "Name" => "Josipdol",
-                "County" => "Karlovac County"
+                "code" => "47303",
+                "name" => "Josipdol",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47304",
-                "Name" => "Plaški",
-                "County" => "Karlovac County"
+                "code" => "47304",
+                "name" => "Plaški",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47306",
-                "Name" => "Saborsko",
-                "County" => "Karlovac County"
+                "code" => "47306",
+                "name" => "Saborsko",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47307",
-                "Name" => "Gornje Zagorje",
-                "County" => "Karlovac County"
+                "code" => "47307",
+                "name" => "Gornje Zagorje",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47313",
-                "Name" => "Drežnica",
-                "County" => "Karlovac County"
+                "code" => "47313",
+                "name" => "Drežnica",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "47314",
-                "Name" => "Jasenak",
-                "County" => "Karlovac County"
+                "code" => "47314",
+                "name" => "Jasenak",
+                "county" => "Karlovac county"
             ],
             [
-                "PostCode" => "48000",
-                "Name" => "Koprivnica",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48000",
+                "name" => "Koprivnica",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48213",
-                "Name" => "Cirkvena",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48213",
+                "name" => "Cirkvena",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48214",
-                "Name" => "Sveti Ivan Žabno",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48214",
+                "name" => "Sveti Ivan Žabno",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48260",
-                "Name" => "Križevci",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48260",
+                "name" => "Križevci",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48264",
-                "Name" => "Kloštar Vojakovački",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48264",
+                "name" => "Kloštar Vojakovački",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48265",
-                "Name" => "Raven",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48265",
+                "name" => "Raven",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48267",
-                "Name" => "Orehovec",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48267",
+                "name" => "Orehovec",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48268",
-                "Name" => "Gornja Rijeka",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48268",
+                "name" => "Gornja Rijeka",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48269",
-                "Name" => "Kalnik",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48269",
+                "name" => "Kalnik",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48306",
-                "Name" => "Sokolovac",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48306",
+                "name" => "Sokolovac",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48311",
-                "Name" => "Kunovec",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48311",
+                "name" => "Kunovec",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48312",
-                "Name" => "Rasinja",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48312",
+                "name" => "Rasinja",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48314",
-                "Name" => "Koprivnički Ivanec",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48314",
+                "name" => "Koprivnički Ivanec",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48316",
-                "Name" => "Đelekovec",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48316",
+                "name" => "Đelekovec",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48317",
-                "Name" => "Legrad",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48317",
+                "name" => "Legrad",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48321",
-                "Name" => "Peteranec",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48321",
+                "name" => "Peteranec",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48322",
-                "Name" => "Drnje",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48322",
+                "name" => "Drnje",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48323",
-                "Name" => "Hlebine",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48323",
+                "name" => "Hlebine",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48324",
-                "Name" => "Koprivnički Bregi",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48324",
+                "name" => "Koprivnički Bregi",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48325",
-                "Name" => "Novigrad Podravski",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48325",
+                "name" => "Novigrad Podravski",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48326",
-                "Name" => "Virje",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48326",
+                "name" => "Virje",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48327",
-                "Name" => "Molve",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48327",
+                "name" => "Molve",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48331",
-                "Name" => "Gola",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48331",
+                "name" => "Gola",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48332",
-                "Name" => "Ždala",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48332",
+                "name" => "Ždala",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48350",
-                "Name" => "Đurđevac",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48350",
+                "name" => "Đurđevac",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48355",
-                "Name" => "Novo Virje",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48355",
+                "name" => "Novo Virje",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48356",
-                "Name" => "Ferdinandovac",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48356",
+                "name" => "Ferdinandovac",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48361",
-                "Name" => "Kalinovac",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48361",
+                "name" => "Kalinovac",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48362",
-                "Name" => "Kloštar Podravski",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48362",
+                "name" => "Kloštar Podravski",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "48363",
-                "Name" => "Podravske Sesvete",
-                "County" => "Koprivnica-Križevci County"
+                "code" => "48363",
+                "name" => "Podravske Sesvete",
+                "county" => "Koprivnica-Križevci county"
             ],
             [
-                "PostCode" => "49000",
-                "Name" => "Krapina",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49000",
+                "name" => "Krapina",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49210",
-                "Name" => "Zabok",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49210",
+                "name" => "Zabok",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49214",
-                "Name" => "Veliko Trgovišće",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49214",
+                "name" => "Veliko Trgovišće",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49215",
-                "Name" => "Tuhelj",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49215",
+                "name" => "Tuhelj",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49216",
-                "Name" => "Desinić",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49216",
+                "name" => "Desinić",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49217",
-                "Name" => "Krapinske Toplice",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49217",
+                "name" => "Krapinske Toplice",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49218",
-                "Name" => "Pregrada",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49218",
+                "name" => "Pregrada",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49221",
-                "Name" => "Bedekovčina",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49221",
+                "name" => "Bedekovčina",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49222",
-                "Name" => "Poznanovec",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49222",
+                "name" => "Poznanovec",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49223",
-                "Name" => "Sveti Križ Začretje",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49223",
+                "name" => "Sveti Križ Začretje",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49224",
-                "Name" => "Lepajci",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49224",
+                "name" => "Lepajci",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49225",
-                "Name" => "Đurmanec",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49225",
+                "name" => "Đurmanec",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49228",
-                "Name" => "Brestovec Orehovički",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49228",
+                "name" => "Brestovec Orehovički",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49231",
-                "Name" => "Hum na Sutli",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49231",
+                "name" => "Hum na Sutli",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49232",
-                "Name" => "Radoboj",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49232",
+                "name" => "Radoboj",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49233",
-                "Name" => "Gornje Jesenje",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49233",
+                "name" => "Gornje Jesenje",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49234",
-                "Name" => "Petrovsko",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49234",
+                "name" => "Petrovsko",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49240",
-                "Name" => "Donja Stubica",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49240",
+                "name" => "Donja Stubica",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49243",
-                "Name" => "Oroslavje",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49243",
+                "name" => "Oroslavje",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49244",
-                "Name" => "Stubičke Toplice",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49244",
+                "name" => "Stubičke Toplice",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49245",
-                "Name" => "Gornja Stubica",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49245",
+                "name" => "Gornja Stubica",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49246",
-                "Name" => "Marija Bistrica",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49246",
+                "name" => "Marija Bistrica",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49247",
-                "Name" => "Zlatar Bistrica",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49247",
+                "name" => "Zlatar Bistrica",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49250",
-                "Name" => "Zlatar",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49250",
+                "name" => "Zlatar",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49251",
-                "Name" => "Mače",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49251",
+                "name" => "Mače",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49252",
-                "Name" => "Mihovljan",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49252",
+                "name" => "Mihovljan",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49253",
-                "Name" => "Lobor",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49253",
+                "name" => "Lobor",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49254",
-                "Name" => "Belec",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49254",
+                "name" => "Belec",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49255",
-                "Name" => "Novi Golubovec",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49255",
+                "name" => "Novi Golubovec",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49282",
-                "Name" => "Konjščina",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49282",
+                "name" => "Konjščina",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49283",
-                "Name" => "Hraščina-Trgovišće",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49283",
+                "name" => "Hraščina-Trgovišće",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49284",
-                "Name" => "Budinšćina",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49284",
+                "name" => "Budinšćina",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49290",
-                "Name" => "Klanjec",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49290",
+                "name" => "Klanjec",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49294",
-                "Name" => "Kraljevec na Sutli",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49294",
+                "name" => "Kraljevec na Sutli",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49295",
-                "Name" => "Kumrovec",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49295",
+                "name" => "Kumrovec",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "49296",
-                "Name" => "Zagorska Sela",
-                "County" => "Krapina-Zagorje County"
+                "code" => "49296",
+                "name" => "Zagorska Sela",
+                "county" => "Krapina-Zagorje county"
             ],
             [
-                "PostCode" => "51000",
-                "Name" => "Rijeka",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51000",
+                "name" => "Rijeka",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51211",
-                "Name" => "Matulji",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51211",
+                "name" => "Matulji",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51212",
-                "Name" => "Vele Mune",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51212",
+                "name" => "Vele Mune",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51213",
-                "Name" => "Jurdani",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51213",
+                "name" => "Jurdani",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51214",
-                "Name" => "Šapjane",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51214",
+                "name" => "Šapjane",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51215",
-                "Name" => "Kastav",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51215",
+                "name" => "Kastav",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51216",
-                "Name" => "Viškovo",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51216",
+                "name" => "Viškovo",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51217",
-                "Name" => "Klana",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51217",
+                "name" => "Klana",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51218",
-                "Name" => "Dražice",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51218",
+                "name" => "Dražice",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51219",
-                "Name" => "Čavle",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51219",
+                "name" => "Čavle",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51221",
-                "Name" => "Kostrena",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51221",
+                "name" => "Kostrena",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51222",
-                "Name" => "Bakar",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51222",
+                "name" => "Bakar",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51223",
-                "Name" => "Škrljevo",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51223",
+                "name" => "Škrljevo",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51224",
-                "Name" => "Krasica",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51224",
+                "name" => "Krasica",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51225",
-                "Name" => "Praputnjak",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51225",
+                "name" => "Praputnjak",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51226",
-                "Name" => "Hreljin",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51226",
+                "name" => "Hreljin",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51241",
-                "Name" => "Križišće",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51241",
+                "name" => "Križišće",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51242",
-                "Name" => "Drivenik",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51242",
+                "name" => "Drivenik",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51243",
-                "Name" => "Tribalj",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51243",
+                "name" => "Tribalj",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51244",
-                "Name" => "Grižane",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51244",
+                "name" => "Grižane",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51250",
-                "Name" => "Novi Vinodolski",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51250",
+                "name" => "Novi Vinodolski",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51251",
-                "Name" => "Ledenice",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51251",
+                "name" => "Ledenice",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51252",
-                "Name" => "Klenovica",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51252",
+                "name" => "Klenovica",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51253",
-                "Name" => "Bribir",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51253",
+                "name" => "Bribir",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51260",
-                "Name" => "Crikvenica",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51260",
+                "name" => "Crikvenica",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51261",
-                "Name" => "Bakarac",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51261",
+                "name" => "Bakarac",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51262",
-                "Name" => "Kraljevica",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51262",
+                "name" => "Kraljevica",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51263",
-                "Name" => "Šmrika",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51263",
+                "name" => "Šmrika",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51264",
-                "Name" => "Jadranovo",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51264",
+                "name" => "Jadranovo",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51265",
-                "Name" => "Dramalj",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51265",
+                "name" => "Dramalj",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51266",
-                "Name" => "Selce",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51266",
+                "name" => "Selce",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51280",
-                "Name" => "Rab",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51280",
+                "name" => "Rab",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51281",
-                "Name" => "Lopar",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51281",
+                "name" => "Lopar",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51300",
-                "Name" => "Delnice",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51300",
+                "name" => "Delnice",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51301",
-                "Name" => "Brod na Kupi",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51301",
+                "name" => "Brod na Kupi",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51302",
-                "Name" => "Kuželj",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51302",
+                "name" => "Kuželj",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51303",
-                "Name" => "Plešce",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51303",
+                "name" => "Plešce",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51304",
-                "Name" => "Gerovo",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51304",
+                "name" => "Gerovo",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51305",
-                "Name" => "Tršće",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51305",
+                "name" => "Tršće",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51306",
-                "Name" => "Čabar",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51306",
+                "name" => "Čabar",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51307",
-                "Name" => "Prezid",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51307",
+                "name" => "Prezid",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51311",
-                "Name" => "Skrad",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51311",
+                "name" => "Skrad",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51312",
-                "Name" => "Brod Moravice",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51312",
+                "name" => "Brod Moravice",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51313",
-                "Name" => "Kupjak",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51313",
+                "name" => "Kupjak",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51314",
-                "Name" => "Ravna Gora",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51314",
+                "name" => "Ravna Gora",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51315",
-                "Name" => "Mrkopalj",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51315",
+                "name" => "Mrkopalj",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51316",
-                "Name" => "Lokve",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51316",
+                "name" => "Lokve",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51317",
-                "Name" => "Crni Lug",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51317",
+                "name" => "Crni Lug",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51321",
-                "Name" => "Vrata",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51321",
+                "name" => "Vrata",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51322",
-                "Name" => "Fužine",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51322",
+                "name" => "Fužine",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51323",
-                "Name" => "Lič",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51323",
+                "name" => "Lič",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51324",
-                "Name" => "Zlobin",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51324",
+                "name" => "Zlobin",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51325",
-                "Name" => "Moravice",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51325",
+                "name" => "Moravice",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51326",
-                "Name" => "Vrbovsko",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51326",
+                "name" => "Vrbovsko",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51327",
-                "Name" => "Gomirje",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51327",
+                "name" => "Gomirje",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51328",
-                "Name" => "Lukovdol",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51328",
+                "name" => "Lukovdol",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51329",
-                "Name" => "Severin na Kupi",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51329",
+                "name" => "Severin na Kupi",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51410",
-                "Name" => "Opatija",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51410",
+                "name" => "Opatija",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51414",
-                "Name" => "Ičići",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51414",
+                "name" => "Ičići",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51415",
-                "Name" => "Lovran",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51415",
+                "name" => "Lovran",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51417",
-                "Name" => "Mošćenička Draga",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51417",
+                "name" => "Mošćenička Draga",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51418",
-                "Name" => "Brseč",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51418",
+                "name" => "Brseč",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51500",
-                "Name" => "Krk",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51500",
+                "name" => "Krk",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51511",
-                "Name" => "Malinska",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51511",
+                "name" => "Malinska",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51512",
-                "Name" => "Njivice",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51512",
+                "name" => "Njivice",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51513",
-                "Name" => "Omišalj",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51513",
+                "name" => "Omišalj",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51514",
-                "Name" => "Dobrinj",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51514",
+                "name" => "Dobrinj",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51515",
-                "Name" => "Šilo",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51515",
+                "name" => "Šilo",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51516",
-                "Name" => "Vrbnik",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51516",
+                "name" => "Vrbnik",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51517",
-                "Name" => "Kornić",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51517",
+                "name" => "Kornić",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51521",
-                "Name" => "Punat",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51521",
+                "name" => "Punat",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51522",
-                "Name" => "Draga Bašćanska",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51522",
+                "name" => "Draga Bašćanska",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51523",
-                "Name" => "Baška",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51523",
+                "name" => "Baška",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51550",
-                "Name" => "Mali Lošinj",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51550",
+                "name" => "Mali Lošinj",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51551",
-                "Name" => "Veli Lošinj",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51551",
+                "name" => "Veli Lošinj",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51552",
-                "Name" => "Ilovik",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51552",
+                "name" => "Ilovik",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51554",
-                "Name" => "Nerezine",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51554",
+                "name" => "Nerezine",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51555",
-                "Name" => "Belej",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51555",
+                "name" => "Belej",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51556",
-                "Name" => "Martinšćica",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51556",
+                "name" => "Martinšćica",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51557",
-                "Name" => "Cres",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51557",
+                "name" => "Cres",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51559",
-                "Name" => "Beli",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51559",
+                "name" => "Beli",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51561",
-                "Name" => "Susak",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51561",
+                "name" => "Susak",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51562",
-                "Name" => "Unije",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51562",
+                "name" => "Unije",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "51564",
-                "Name" => "Ćunski",
-                "County" => "Primorje-Gorski Kotar County"
+                "code" => "51564",
+                "name" => "Ćunski",
+                "county" => "Primorje-Gorski Kotar county"
             ],
             [
-                "PostCode" => "52000",
-                "Name" => "Pazin",
-                "County" => "Istria County"
+                "code" => "52000",
+                "name" => "Pazin",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52100",
-                "Name" => "Pula (Pola)",
-                "County" => "Istria County"
+                "code" => "52100",
+                "name" => "Pula (Pola)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52104",
-                "Name" => "Pula (Pola)",
-                "County" => "Istria County"
+                "code" => "52104",
+                "name" => "Pula (Pola)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52105",
-                "Name" => "Pula (Pola)",
-                "County" => "Istria County"
+                "code" => "52105",
+                "name" => "Pula (Pola)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52106",
-                "Name" => "Pula (Pola)",
-                "County" => "Istria County"
+                "code" => "52106",
+                "name" => "Pula (Pola)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52107",
-                "Name" => "Pula (Pola)",
-                "County" => "Istria County"
+                "code" => "52107",
+                "name" => "Pula (Pola)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52203",
-                "Name" => "Medulin",
-                "County" => "Istria County"
+                "code" => "52203",
+                "name" => "Medulin",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52206",
-                "Name" => "Marčana",
-                "County" => "Istria County"
+                "code" => "52206",
+                "name" => "Marčana",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52207",
-                "Name" => "Barban",
-                "County" => "Istria County"
+                "code" => "52207",
+                "name" => "Barban",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52208",
-                "Name" => "Krnica",
-                "County" => "Istria County"
+                "code" => "52208",
+                "name" => "Krnica",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52210",
-                "Name" => "Rovinj (Rovigno)",
-                "County" => "Istria County"
+                "code" => "52210",
+                "name" => "Rovinj (Rovigno)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52211",
-                "Name" => "Bale (Valle)",
-                "County" => "Istria County"
+                "code" => "52211",
+                "name" => "Bale (Valle)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52212",
-                "Name" => "Fažana (Fasana)",
-                "County" => "Istria County"
+                "code" => "52212",
+                "name" => "Fažana (Fasana)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52215",
-                "Name" => "Vodnjan (Dignano)",
-                "County" => "Istria County"
+                "code" => "52215",
+                "name" => "Vodnjan (Dignano)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52216",
-                "Name" => "Galižana (Gallesano)",
-                "County" => "Istria County"
+                "code" => "52216",
+                "name" => "Galižana (Gallesano)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52220",
-                "Name" => "Labin",
-                "County" => "Istria County"
+                "code" => "52220",
+                "name" => "Labin",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52221",
-                "Name" => "Rabac",
-                "County" => "Istria County"
+                "code" => "52221",
+                "name" => "Rabac",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52222",
-                "Name" => "Koromačno",
-                "County" => "Istria County"
+                "code" => "52222",
+                "name" => "Koromačno",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52223",
-                "Name" => "Raša",
-                "County" => "Istria County"
+                "code" => "52223",
+                "name" => "Raša",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52224",
-                "Name" => "Trget",
-                "County" => "Istria County"
+                "code" => "52224",
+                "name" => "Trget",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52231",
-                "Name" => "Nedešćina",
-                "County" => "Istria County"
+                "code" => "52231",
+                "name" => "Nedešćina",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52232",
-                "Name" => "Kršan",
-                "County" => "Istria County"
+                "code" => "52232",
+                "name" => "Kršan",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52233",
-                "Name" => "Šušnjevica",
-                "County" => "Istria County"
+                "code" => "52233",
+                "name" => "Šušnjevica",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52234",
-                "Name" => "Plomin",
-                "County" => "Istria County"
+                "code" => "52234",
+                "name" => "Plomin",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52332",
-                "Name" => "Pićan",
-                "County" => "Istria County"
+                "code" => "52332",
+                "name" => "Pićan",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52333",
-                "Name" => "Podpićan",
-                "County" => "Istria County"
+                "code" => "52333",
+                "name" => "Podpićan",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52341",
-                "Name" => "Žminj",
-                "County" => "Istria County"
+                "code" => "52341",
+                "name" => "Žminj",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52342",
-                "Name" => "Svetvinčenat",
-                "County" => "Istria County"
+                "code" => "52342",
+                "name" => "Svetvinčenat",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52352",
-                "Name" => "Kanfanar",
-                "County" => "Istria County"
+                "code" => "52352",
+                "name" => "Kanfanar",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52402",
-                "Name" => "Cerovlje",
-                "County" => "Istria County"
+                "code" => "52402",
+                "name" => "Cerovlje",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52403",
-                "Name" => "Gračišće",
-                "County" => "Istria County"
+                "code" => "52403",
+                "name" => "Gračišće",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52404",
-                "Name" => "Sveti Petar u šumi",
-                "County" => "Istria County"
+                "code" => "52404",
+                "name" => "Sveti Petar u šumi",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52420",
-                "Name" => "Buzet",
-                "County" => "Istria County"
+                "code" => "52420",
+                "name" => "Buzet",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52422",
-                "Name" => "Lanišće",
-                "County" => "Istria County"
+                "code" => "52422",
+                "name" => "Lanišće",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52423",
-                "Name" => "Karojba",
-                "County" => "Istria County"
+                "code" => "52423",
+                "name" => "Karojba",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52424",
-                "Name" => "Motovun (Montana)",
-                "County" => "Istria County"
+                "code" => "52424",
+                "name" => "Motovun (Montana)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52425",
-                "Name" => "Roč",
-                "County" => "Istria County"
+                "code" => "52425",
+                "name" => "Roč",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52426",
-                "Name" => "Lupoglav",
-                "County" => "Istria County"
+                "code" => "52426",
+                "name" => "Lupoglav",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52427",
-                "Name" => "Livade (Levade)",
-                "County" => "Istria County"
+                "code" => "52427",
+                "name" => "Livade (Levade)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52428",
-                "Name" => "Oprtalj (Portole)",
-                "County" => "Istria County"
+                "code" => "52428",
+                "name" => "Oprtalj (Portole)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52429",
-                "Name" => "Grožnjan (Grisignana)",
-                "County" => "Istria County"
+                "code" => "52429",
+                "name" => "Grožnjan (Grisignana)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52434",
-                "Name" => "Boljun",
-                "County" => "Istria County"
+                "code" => "52434",
+                "name" => "Boljun",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52440",
-                "Name" => "Poreč (Parenzo)",
-                "County" => "Istria County"
+                "code" => "52440",
+                "name" => "Poreč (Parenzo)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52444",
-                "Name" => "Tinjan",
-                "County" => "Istria County"
+                "code" => "52444",
+                "name" => "Tinjan",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52445",
-                "Name" => "Baderna",
-                "County" => "Istria County"
+                "code" => "52445",
+                "name" => "Baderna",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52446",
-                "Name" => "Nova Vas",
-                "County" => "Istria County"
+                "code" => "52446",
+                "name" => "Nova Vas",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52447",
-                "Name" => "Vižinada (Visinada)",
-                "County" => "Istria County"
+                "code" => "52447",
+                "name" => "Vižinada (Visinada)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52448",
-                "Name" => "Sveti Lovreč",
-                "County" => "Istria County"
+                "code" => "52448",
+                "name" => "Sveti Lovreč",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52449",
-                "Name" => "Červar Porat",
-                "County" => "Istria County"
+                "code" => "52449",
+                "name" => "Červar Porat",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52450",
-                "Name" => "Vrsar (Orsera)",
-                "County" => "Istria County"
+                "code" => "52450",
+                "name" => "Vrsar (Orsera)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52452",
-                "Name" => "Funtana (Fontane)",
-                "County" => "Istria County"
+                "code" => "52452",
+                "name" => "Funtana (Fontane)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52460",
-                "Name" => "Buje (Buie)",
-                "County" => "Istria County"
+                "code" => "52460",
+                "name" => "Buje (Buie)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52462",
-                "Name" => "Momjan (Momiano)",
-                "County" => "Istria County"
+                "code" => "52462",
+                "name" => "Momjan (Momiano)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52463",
-                "Name" => "Višnjan (Visignano)",
-                "County" => "Istria County"
+                "code" => "52463",
+                "name" => "Višnjan (Visignano)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52464",
-                "Name" => "Kaštelir (Castelliere)",
-                "County" => "Istria County"
+                "code" => "52464",
+                "name" => "Kaštelir (Castelliere)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52465",
-                "Name" => "Tar (Torre)",
-                "County" => "Istria County"
+                "code" => "52465",
+                "name" => "Tar (Torre)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52466",
-                "Name" => "Novigrad (Cittanova)",
-                "County" => "Istria County"
+                "code" => "52466",
+                "name" => "Novigrad (Cittanova)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52470",
-                "Name" => "Umag (Umago)",
-                "County" => "Istria County"
+                "code" => "52470",
+                "name" => "Umag (Umago)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52474",
-                "Name" => "Brtonigla (Verteneglio)",
-                "County" => "Istria County"
+                "code" => "52474",
+                "name" => "Brtonigla (Verteneglio)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "52475",
-                "Name" => "Savudrija (Salvore)",
-                "County" => "Istria County"
+                "code" => "52475",
+                "name" => "Savudrija (Salvore)",
+                "county" => "Istria county"
             ],
             [
-                "PostCode" => "53000",
-                "Name" => "Gospić",
-                "County" => "Lika-Senj County"
+                "code" => "53000",
+                "name" => "Gospić",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53201",
-                "Name" => "Lički Osik",
-                "County" => "Lika-Senj County"
+                "code" => "53201",
+                "name" => "Lički Osik",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53202",
-                "Name" => "Perušić",
-                "County" => "Lika-Senj County"
+                "code" => "53202",
+                "name" => "Perušić",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53203",
-                "Name" => "Kosinj",
-                "County" => "Lika-Senj County"
+                "code" => "53203",
+                "name" => "Kosinj",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53206",
-                "Name" => "Brušane",
-                "County" => "Lika-Senj County"
+                "code" => "53206",
+                "name" => "Brušane",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53211",
-                "Name" => "Smiljan",
-                "County" => "Lika-Senj County"
+                "code" => "53211",
+                "name" => "Smiljan",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53212",
-                "Name" => "Klanac",
-                "County" => "Lika-Senj County"
+                "code" => "53212",
+                "name" => "Klanac",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53213",
-                "Name" => "Donje Pazarište",
-                "County" => "Lika-Senj County"
+                "code" => "53213",
+                "name" => "Donje Pazarište",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53220",
-                "Name" => "Otočac",
-                "County" => "Lika-Senj County"
+                "code" => "53220",
+                "name" => "Otočac",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53223",
-                "Name" => "Vrhovine",
-                "County" => "Lika-Senj County"
+                "code" => "53223",
+                "name" => "Vrhovine",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53224",
-                "Name" => "Ličko Lešće",
-                "County" => "Lika-Senj County"
+                "code" => "53224",
+                "name" => "Ličko Lešće",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53230",
-                "Name" => "Korenica",
-                "County" => "Lika-Senj County"
+                "code" => "53230",
+                "name" => "Korenica",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53231",
-                "Name" => "Plitvička Jezera",
-                "County" => "Lika-Senj County"
+                "code" => "53231",
+                "name" => "Plitvička Jezera",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53233",
-                "Name" => "Ličko Petrovo Selo",
-                "County" => "Lika-Senj County"
+                "code" => "53233",
+                "name" => "Ličko Petrovo Selo",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53234",
-                "Name" => "Udbina",
-                "County" => "Lika-Senj County"
+                "code" => "53234",
+                "name" => "Udbina",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53236",
-                "Name" => "Podlapača",
-                "County" => "Lika-Senj County"
+                "code" => "53236",
+                "name" => "Podlapača",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53244",
-                "Name" => "Lovinac",
-                "County" => "Lika-Senj County"
+                "code" => "53244",
+                "name" => "Lovinac",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53250",
-                "Name" => "Donji Lapac",
-                "County" => "Lika-Senj County"
+                "code" => "53250",
+                "name" => "Donji Lapac",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53260",
-                "Name" => "Brinje",
-                "County" => "Lika-Senj County"
+                "code" => "53260",
+                "name" => "Brinje",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53261",
-                "Name" => "Križpolje",
-                "County" => "Lika-Senj County"
+                "code" => "53261",
+                "name" => "Križpolje",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53262",
-                "Name" => "Jezerane",
-                "County" => "Lika-Senj County"
+                "code" => "53262",
+                "name" => "Jezerane",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53270",
-                "Name" => "Senj",
-                "County" => "Lika-Senj County"
+                "code" => "53270",
+                "name" => "Senj",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53271",
-                "Name" => "Krivi Put",
-                "County" => "Lika-Senj County"
+                "code" => "53271",
+                "name" => "Krivi Put",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53273",
-                "Name" => "Vratnik",
-                "County" => "Lika-Senj County"
+                "code" => "53273",
+                "name" => "Vratnik",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53274",
-                "Name" => "Krasno",
-                "County" => "Lika-Senj County"
+                "code" => "53274",
+                "name" => "Krasno",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53284",
-                "Name" => "Sveti Juraj",
-                "County" => "Lika-Senj County"
+                "code" => "53284",
+                "name" => "Sveti Juraj",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53287",
-                "Name" => "Jablanac",
-                "County" => "Lika-Senj County"
+                "code" => "53287",
+                "name" => "Jablanac",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53288",
-                "Name" => "Karlobag",
-                "County" => "Lika-Senj County"
+                "code" => "53288",
+                "name" => "Karlobag",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53289",
-                "Name" => "Lukovo Šugarje",
-                "County" => "Lika-Senj County"
+                "code" => "53289",
+                "name" => "Lukovo Šugarje",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53291",
-                "Name" => "Novalja",
-                "County" => "Lika-Senj County"
+                "code" => "53291",
+                "name" => "Novalja",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53294",
-                "Name" => "Lun",
-                "County" => "Lika-Senj County"
+                "code" => "53294",
+                "name" => "Lun",
+                "county" => "Lika-Senj county"
             ],
             [
-                "PostCode" => "53296",
-                "Name" => "Zubovići",
-                "County" => "Lika-Senj County"
+                "code" => "53296",
+                "name" => "Zubovići",
+                "county" => "Lika-Senj county"
             ]
         ];
 
         foreach($jayParsedAry as $entry){
             $city = new Postcode;
-            $city->code = $entry['PostCode'];
-            $city->name = $entry['Name'];
-            $city->county = $entry['County'];
+            $city->code = $entry['code'];
+            $city->name = $entry['name'];
+            $city->county = $entry['county'];
             $city->save();
         }
     }

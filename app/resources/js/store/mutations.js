@@ -72,8 +72,8 @@ const mutations = {
         delete skill.index;
         state.cv.skills[index] = skill;
     },
-    removeSkill(state, index){
-        state.cv.skills.splice(index, 1); // 2nd parameter means remove one item only
+    removeSkill(state, skill_id){
+        state.cv.skills = state.cv.skills.filter(skill => skill.skill_id !== skill_id);
     },
     setAvailableSkills(state, skills){
         if(state.available_skills === undefined) {
@@ -139,8 +139,8 @@ const mutations = {
     addSearchSkill(state, skill) {
         state.search.skills.push(skill);
     },
-    removeSearchSkill(state, index){
-        state.search.skills.splice(index, 1); // 2nd parameter means remove one item only
+    removeSearchSkill(state, skill_id){
+        state.search.skills = state.search.skills.filter(id => id !== skill_id);
     },
     updateAgeRange(state, ageRange){
         state.search.ageRange = ageRange;

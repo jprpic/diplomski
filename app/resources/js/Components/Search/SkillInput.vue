@@ -21,9 +21,9 @@ import BreezeLabel from "@/Components/Label.vue"
         </div>
     </div>
     <div class="flex mt-2 flex-wrap">
-        <div v-for="(skill, index) in addedSkills" :key="skill" class="flex items-center px-2 py-1 bg-white border border-gray-200 rounded-lg m-1">
+        <div v-for="(skill, index) in addedSkills" :key="skill.id" class="flex items-center px-2 py-1 bg-white border border-gray-200 rounded-lg m-1">
             {{ skill.name }}
-            <svg @click="removeSkill(index)" class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+            <svg @click="removeSkill(skill.id)" class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
         </div>
     </div>
 </template>
@@ -43,8 +43,8 @@ export default {
             this.$store.dispatch('addSearchSkill', skill);
             this.name= '';
         },
-        removeSkill(index){
-            this.$store.dispatch('removeSearchSkill', index);
+        removeSkill(skill_id){
+            this.$store.dispatch('removeSearchSkill', skill_id);
         },
         updateInput(value){
             this.name = value;

@@ -4,28 +4,30 @@
             <div class="flex-initial">
                 <img :src="target.img_url" alt="Profile picture" class="object-contain h-20 w-20 rounded-full"/>
             </div>
-
-            <div class="grow flex justify-between text-gray-700">
-                <div class="flex flex-col ml-2">
-                    <div>
-                        <span class="text-xl font-semibold">{{ target.name }}</span>
+            <div class="grow">
+                <div class="flex w-full text-gray-700">
+                    <div class="flex flex-col ml-2 w-2/3">
+                        <div>
+                            <span class="text-xl font-semibold">{{ target.name }}</span>
+                        </div>
+                        <div>
+                            {{ target.age }}, <span class="font-semibold">{{ target.sex }}</span>
+                        </div>
+                        <div>
+                            <span>{{ target['postcodes.name'] }}, {{ target['postcodes.county'] }}</span>
+                        </div>
                     </div>
-                    <div>
-                        {{ target.age }}, <span class="font-semibold">{{ target.sex }}</span>
-                    </div>
-                    <div>
-                        <span>{{ target['postcodes.name'] }}, {{ target['postcodes.county'] }}</span>
-                    </div>
-                </div>
-                <div class="flex flex-col text-right">
-                    <div>
-                        <span class="text-xl font-semibold"> {{ target.job }}</span>
-                    </div>
-                    <div>
-                        <span class="text-md">Years of experience:</span> {{ target.years_of_exp }}
+                    <div class="flex flex-col text-right w-1/3">
+                        <div>
+                            <span class="text-xl font-semibold whitespace-normal"> {{ target.job }}</span>
+                        </div>
+                        <div>
+                            <span class="text-md">Years of experience:</span> {{ target.years_of_exp }}
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
         <div v-if="searchedSkills.length" class="mt-2 flex w-full justify-center">
             <div class="text-md font-medium w-1/3 rounded-lg bg-gradient-to-r from-lime-400/50 flex flex-col text-center py-2">

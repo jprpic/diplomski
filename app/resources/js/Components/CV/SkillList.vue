@@ -1,11 +1,11 @@
 <template>
   <div class="border border-gray-200 rounded-md shadow-sm">
-      <div v-for="(skill, index) in skills" class="flex">
+      <div v-for="(skill, index) in skills" :key="skill.skill_id" class="flex">
           <div class="grow">
               <SkillItem :index="index"/>
           </div>
           <div class="flex-none mx-2 items-stretch flex">
-              <BreezeButton @click="removeSkill(index)" type="button" class="self-center mt-6">X</BreezeButton>
+              <BreezeButton @click="removeSkill(skill.skill_id)" type="button" class="self-center mt-6">X</BreezeButton>
           </div>
       </div>
   </div>

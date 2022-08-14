@@ -24,7 +24,7 @@ class CVFactory extends Factory
             'user_id' => $this->faker->unique()->numberBetween(1, User::all()->count()),
             'name' => $this->faker->name(),
             'img_url' => $this->faker->imageUrl(360, 360, 'person', true, 'profile'),
-            'description' => $this->faker->paragraph(),
+            'description' => $this->faker->paragraph(6),
             'job' => $this->faker->jobTitle(),
             'references' => $this->faker->paragraph(2),
             'postcode' => $this->faker->randomElement([10000, 10040, 31000, 35105, 35000, 51000]),

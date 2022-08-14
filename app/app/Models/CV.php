@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\CV\Contact;
 use App\Models\CV\CV_Contact;
 use App\Models\CV\CV_Skill;
 use App\Models\CV\Experience;
@@ -61,6 +62,9 @@ class CV extends Model
     }
     public function skills(){
         return $this->belongsToMany(Skill::class, 'cv_skill', 'cv_id', 'skill_id');
+    }
+    public function contactInfo(){
+        return $this->belongsToMany(Contact::class, 'contact_cv', 'cv_id', 'contact_id');
     }
 
     public function user(){

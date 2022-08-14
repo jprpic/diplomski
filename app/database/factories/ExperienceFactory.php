@@ -30,7 +30,7 @@ class ExperienceFactory extends Factory
                 'type' => $this->faker->randomElement(['employment', 'education']),
                 'name' => $this->faker->jobTitle(),
                 'source' => $this->faker->company(),
-                'results' => json_encode($this->faker->sentences()),
+                'results' => [$this->faker->sentences(5,true), $this->faker->sentences(3,true),$this->faker->sentences(5,true)],
                 'started_at' => $this->faker->dateTimeBetween('-20 years'),
                 'finished_at' => $this->faker->dateTimeBetween('-10 years')
             ];

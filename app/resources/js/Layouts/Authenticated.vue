@@ -30,7 +30,7 @@ const showingNavigationDropdown = ref(false);
                                 <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </BreezeNavLink>
-                                <BreezeNavLink :href="route(`cv.show`)" :active="route().current(`cv.show`)">
+                                <BreezeNavLink :href="route(`cv.create`)" :active="route().current(`cv.create`)">
                                     <span class="capitalize"> {{ CVRoute }}</span>
                                 </BreezeNavLink>
                                 <BreezeNavLink :href="route(`search`)" :active="route().current(`search`)">
@@ -82,7 +82,7 @@ const showingNavigationDropdown = ref(false);
                         <BreezeResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </BreezeResponsiveNavLink>
-                        <BreezeResponsiveNavLink :href="route(`cv.show`)" :active="route().current(`cv.show`)">
+                        <BreezeResponsiveNavLink :href="route(`cv.create`)" :active="route().current(`cv.create`)">
                             <span class="capitalize"> {{ CVRoute }}</span>
                         </BreezeResponsiveNavLink>
                         <BreezeResponsiveNavLink :href="route('search')" :active="route().current('search')">

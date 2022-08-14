@@ -19,8 +19,11 @@ import SearchItem from "@/Components/Search/SearchItem";
         </div>
     </form>
 
-    <div ref="scrollComponent" class="flex justify-center" v-for="target in currentTargets">
-        <SearchItem class="mt-2 w-2/3" :target="target"></SearchItem>
+    <div class="flex justify-center" v-for="target in currentTargets" :key="target.id">
+        <button class="mt-2 w-2/3" type="button" @click="showCV(target.id)">
+            <SearchItem :target="target"></SearchItem>
+        </button>
+
     </div>
 
 </template>
@@ -45,6 +48,9 @@ export default {
         }
     },
     methods:{
+        showCV(id){
+          Inertia.get(`/cv/${id}`);
+        },
         getData(){
             // Append data only if the new page is loaded
             const page = Math.round(this.currentTargets.length / 15);
