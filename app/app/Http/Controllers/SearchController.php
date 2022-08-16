@@ -35,7 +35,6 @@ class SearchController extends Controller
 
         $targets = self::filterCVs($options);
         return response()->json($targets);
-
     }
 
     private function filterCVs($options){

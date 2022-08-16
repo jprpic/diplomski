@@ -56,7 +56,6 @@ export default {
             const page = Math.round(this.currentTargets.length / 15);
             if(page > this.page){
                 this.page = page;
-                // this.currentTargets = this.currentTargets.concat(this.targets.slice(page*15,(page+1)*15))
                 axios.get('/api/search', {
                     params:{
                         'ageRange[bot]' : this.search.ageRange.bot,
@@ -81,6 +80,7 @@ export default {
             let bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
 
             if (bottomOfWindow) {
+                console.log('getting data');
                 this.getData();
             }
         }

@@ -80,7 +80,7 @@ import { Head } from '@inertiajs/inertia-vue3';
                                 <!--  Contacts  -->
                                 <div class="p-4 flex flex-col w-full bg-gray-400 rounded-lg border border-gray-600/75 shadow-lg">
                                     <div class="flex flex-row items-center my-1">
-                                        <img :src="'/images/location.png'" alt="contact icon" class="object-contain h-6 w-6"> <span class="ml-2">{{ location.name }}</span>
+                                        <img :src="'/images/location.png'" alt="contact icon" class="object-contain h-6 w-6"> <span class="ml-2">{{ CV.location.name }}</span>
                                     </div>
                                     <div class="flex flex-row items-center my-1" v-for="contact in CV.contacts" :key="contact.contact_id">
                                         <img :src="getImgUrl(contact.contact_id)" alt="contact icon" class="object-contain h-6 w-6">
@@ -100,17 +100,12 @@ import { Head } from '@inertiajs/inertia-vue3';
                                        </li>
                                     </ul>
                                 </div>
-
                             </div>
-
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
-
     </EmptyLayout>
 
 
@@ -119,7 +114,7 @@ import { Head } from '@inertiajs/inertia-vue3';
 <script>
 export default {
     name: "CV.vue",
-    props:['CV', 'location'],
+    props:['CV'],
     computed:{
         sortedSkills(){
             return this.CV.skill_proficiencies.sort((a, b) => { return b.proficiency - a.proficiency } );

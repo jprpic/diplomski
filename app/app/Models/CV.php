@@ -67,6 +67,11 @@ class CV extends Model
         return $this->belongsToMany(Contact::class, 'contact_cv', 'cv_id', 'contact_id');
     }
 
+    public function location()
+    {
+        return $this->belongsTo(Postcode::class,'postcode', 'code');
+    }
+
     public function user(){
         return $this->hasOne(User::class, 'id', 'user_id');
     }

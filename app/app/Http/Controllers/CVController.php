@@ -32,7 +32,7 @@ class CVController extends Controller
     }
 
     function show(Request $request, $id){
-        $CV = CV::with(['contacts','contactInfo', 'experiences','skills', 'skillProficiencies'])->find($id);
+        $CV = CV::with(['contacts','contactInfo', 'experiences','skills', 'skillProficiencies','location'])->find($id);
         return Inertia::Render('CV',[
             'CV' => $CV,
             'location' => Postcode::find($CV->postcode)

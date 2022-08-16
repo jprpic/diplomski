@@ -23206,8 +23206,7 @@ var __default__ = {
       var page = Math.round(this.currentTargets.length / 15);
 
       if (page > this.page) {
-        this.page = page; // this.currentTargets = this.currentTargets.concat(this.targets.slice(page*15,(page+1)*15))
-
+        this.page = page;
         axios.get('/api/search', {
           params: {
             'ageRange[bot]': this.search.ageRange.bot,
@@ -23231,6 +23230,7 @@ var __default__ = {
       var bottomOfWindow = document.documentElement.scrollTop + window.innerHeight === document.documentElement.offsetHeight;
 
       if (bottomOfWindow) {
+        console.log('getting data');
         this.getData();
       }
     }
@@ -24031,7 +24031,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
 var __default__ = {
   name: "CV.vue",
-  props: ['CV', 'location'],
+  props: ['CV'],
   computed: {
     sortedSkills: function sortedSkills() {
       return this.CV.skill_proficiencies.sort(function (a, b) {
@@ -27327,7 +27327,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "object-contain h-6 w-6"
       }, null, 8
       /* PROPS */
-      , _hoisted_42), _hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_44, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.location.name), 1
+      , _hoisted_42), _hoisted_43, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_44, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.CV.location.name), 1
       /* TEXT */
       )]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.CV.contacts, function (contact) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
