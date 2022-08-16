@@ -36,14 +36,10 @@ const store = new Vuex.Store({
                 references: '',
             },
             search : {
-                ageRange:{
-                    bot: 20,
-                    top: 40
-                },
-                expRange: {
-                    bot: 0,
-                    top: 3
-                },
+                minAge: 20,
+                maxAge: 50,
+                minExp: 0,
+                maxExp: 5,
                 skills: [],
             }
         }

@@ -122,14 +122,10 @@ const mutations = {
     },
     restartSearch(state){
         state.search = {
-            ageRange:{
-                bot: 20,
-                top: 40
-            },
-            expRange: {
-                bot: 0,
-                top: 3
-            },
+            minAge: 20,
+            maxAge: 50,
+            minExp: 0,
+            maxExp: 5,
             skills: [],
         }
     },
@@ -142,11 +138,18 @@ const mutations = {
     removeSearchSkill(state, skill_id){
         state.search.skills = state.search.skills.filter(id => id !== skill_id);
     },
-    updateAgeRange(state, ageRange){
-        state.search.ageRange = ageRange;
+    updateMinAge(state, minAge){
+        state.search.minAge = minAge;
     },
-    updateExpRange(state, expRange){
-        state.search.expRange = expRange;
+    updateMaxAge(state, maxAge){
+        console.log(maxAge);
+        state.search.maxAge = maxAge;
+    },
+    updateMinExp(state, minExp){
+        state.search.minExp = minExp;
+    },
+    updateMaxExp(state, maxExp){
+        state.search.maxExp = maxExp;
     },
     updateSearchCounty(state, county){
     state.search.county = county;

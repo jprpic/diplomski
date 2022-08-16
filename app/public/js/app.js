@@ -22961,37 +22961,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Components_Search_RangeInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Search/RangeInput */ "./resources/js/Components/Search/RangeInput.vue");
 var __default__ = {
   name: "AgeRangeInput.vue",
+  data: function data() {
+    return {
+      minAge: 20,
+      maxAge: 50,
+      minExp: 0,
+      maxExp: 5
+    };
+  },
   computed: {
-    ageRange: function ageRange() {
-      return this.$store.getters.search.ageRange;
-    },
-    expRange: function expRange() {
-      return this.$store.getters.search.expRange;
+    search: function search() {
+      return this.$store.getters.search;
     }
   },
   methods: {
-    updateBot: function updateBot(value) {
-      this.ageRange.bot = value;
-      this.updateAgeRange();
+    updateMinAge: function updateMinAge(value) {
+      this.minAge = value;
+      this.$store.dispatch('updateMinAge', this.minAge);
     },
-    updateTop: function updateTop(value) {
-      this.ageRange.top = value;
-      this.updateAgeRange();
+    updateMaxAge: function updateMaxAge(value) {
+      this.maxAge = value;
+      this.$store.dispatch('updateMaxAge', this.maxAge);
     },
-    updateAgeRange: function updateAgeRange() {
-      this.$store.dispatch('updateAgeRange', this.ageRange);
+    updateMinExp: function updateMinExp(value) {
+      this.minExp = value;
+      this.$store.dispatch('updateMinExp', this.minExp);
     },
-    updateExpBot: function updateExpBot(value) {
-      this.expRange.bot = value;
-      this.updateExpRange();
-    },
-    updateExpTop: function updateExpTop(value) {
-      this.expRange.top = value;
-      this.updateExpRange();
-    },
-    updateExpRange: function updateExpRange() {
-      this.$store.dispatch('updateExpRange', this.expRange);
+    updateMaxExp: function updateMaxExp(value) {
+      this.maxExp = value;
+      this.$store.dispatch('updateMaxExp', this.maxExp);
     }
+  },
+  mounted: function mounted() {
+    this.minAge = this.search.minAge;
+    this.maxAge = this.search.maxAge;
+    this.minExp = this.search.minExp;
+    this.maxExp = this.search.maxExp;
   }
 };
 
@@ -23133,22 +23138,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Components_Label__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/Label */ "./resources/js/Components/Label.vue");
-/* harmony import */ var _Components_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Input */ "./resources/js/Components/Input.vue");
+/* harmony import */ var _Components_Input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/Input */ "./resources/js/Components/Input.vue");
 var __default__ = {
   name: "RangeInput.vue",
-  props: ['value'],
-  emits: ['update:bot', 'update:top']
+  props: ['min', 'max'],
+  emits: ['update:min', 'update:max']
 };
-
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
     var __returned__ = {
-      BreezeLabel: _Components_Label__WEBPACK_IMPORTED_MODULE_0__["default"],
-      BreezeInput: _Components_Input__WEBPACK_IMPORTED_MODULE_1__["default"]
+      BreezeInput: _Components_Input__WEBPACK_IMPORTED_MODULE_0__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -23209,10 +23211,10 @@ var __default__ = {
         this.page = page;
         axios.get('/api/search', {
           params: {
-            'ageRange[bot]': this.search.ageRange.bot,
-            'ageRange[top]': this.search.ageRange.top,
-            'expRange[bot]': this.search.expRange.bot,
-            'expRange[top]': this.search.expRange.top,
+            'minAge': this.search.minAge,
+            'maxAge': this.search.maxAge,
+            'minExp': this.search.minExp,
+            'maxExp': this.search.maxExp,
             skills: this.search.skills,
             county: this.search.county ? this.search.county : null,
             city: this.search.city ? this.search.city : null,
@@ -24318,14 +24320,10 @@ var __default__ = {
     if (queryString) {
       var urlParams = new URLSearchParams(queryString);
       var search = {
-        ageRange: {
-          bot: urlParams.get('ageRange[bot]'),
-          top: urlParams.get('ageRange[top]')
-        },
-        expRange: {
-          bot: urlParams.get('expRange[bot]'),
-          top: urlParams.get('expRange[top]')
-        },
+        minAge: urlParams.get('minAge'),
+        maxAge: urlParams.get('maxAge'),
+        minExp: urlParams.get('minExp'),
+        maxExp: urlParams.get('maxExp'),
         skills: urlParams.getAll('skills[]').map(function (skill) {
           return Number(skill);
         })
@@ -25613,29 +25611,31 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "for": "age_range",
     value: "Age range"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["RangeInput"], {
-    value: $options.ageRange,
-    "onUpdate:top": _cache[0] || (_cache[0] = function (value) {
-      return $options.updateTop(value);
+    min: $data.minAge,
+    max: $data.maxAge,
+    "onUpdate:max": _cache[0] || (_cache[0] = function (value) {
+      return $options.updateMaxAge(value);
     }),
-    "onUpdate:bot": _cache[1] || (_cache[1] = function (value) {
-      return $options.updateBot(value);
+    "onUpdate:min": _cache[1] || (_cache[1] = function (value) {
+      return $options.updateMinAge(value);
     })
   }, null, 8
   /* PROPS */
-  , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+  , ["min", "max"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
     "for": "years_of_exp",
     value: "Years of experience range"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["RangeInput"], {
-    value: $options.expRange,
-    "onUpdate:top": _cache[2] || (_cache[2] = function (value) {
-      return $options.updateExpTop(value);
+    min: $data.minExp,
+    max: $data.maxExp,
+    "onUpdate:max": _cache[2] || (_cache[2] = function (value) {
+      return $options.updateMaxExp(value);
     }),
-    "onUpdate:bot": _cache[3] || (_cache[3] = function (value) {
-      return $options.updateExpBot(value);
+    "onUpdate:min": _cache[3] || (_cache[3] = function (value) {
+      return $options.updateMinExp(value);
     })
   }, null, 8
   /* PROPS */
-  , ["value"])])]);
+  , ["min", "max"])])]);
 }
 
 /***/ }),
@@ -25743,21 +25743,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "number",
     "class": "block w-fit grow-0",
     min: "0",
-    max: $props.value.top ? $props.value.top : 100,
-    value: $props.value.bot,
+    max: $props.max ? $props.max : 100,
+    value: $props.min,
     onInput: _cache[0] || (_cache[0] = function ($event) {
-      return _ctx.$emit('update:bot', $event.target.value);
+      return _ctx.$emit('update:min', $event.target.value);
     })
   }, null, 8
   /* PROPS */
   , ["max", "value"]), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
     type: "number",
     "class": "block w-fit grow-0",
-    min: $props.value.bot ? $props.value.bot : 0,
+    min: $props.min ? $props.min : 0,
     max: "100",
-    value: $props.value.top,
+    value: $props.max,
     onInput: _cache[1] || (_cache[1] = function ($event) {
-      return _ctx.$emit('update:top', $event.target.value);
+      return _ctx.$emit('update:max', $event.target.value);
     })
   }, null, 8
   /* PROPS */
@@ -28028,11 +28028,17 @@ var actions = {
   removeSearchSkill: function removeSearchSkill(context, index) {
     context.commit('removeSearchSkill', index);
   },
-  updateAgeRange: function updateAgeRange(context, ageRange) {
-    context.commit('updateAgeRange', ageRange);
+  updateMinAge: function updateMinAge(context, minAge) {
+    context.commit('updateMinAge', minAge);
   },
-  updateExpRange: function updateExpRange(context, expRange) {
-    context.commit('updateExpRange', expRange);
+  updateMaxAge: function updateMaxAge(context, maxAge) {
+    context.commit('updateMaxAge', maxAge);
+  },
+  updateMinExp: function updateMinExp(context, minExp) {
+    context.commit('updateMinExp', minExp);
+  },
+  updateMaxExp: function updateMaxExp(context, maxExp) {
+    context.commit('updateMaxExp', maxExp);
   },
   updateSearchCounty: function updateSearchCounty(context, county) {
     context.commit('updateSearchCounty', county);
@@ -28142,14 +28148,10 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_3__["default"].Store({
         references: ''
       },
       search: {
-        ageRange: {
-          bot: 20,
-          top: 40
-        },
-        expRange: {
-          bot: 0,
-          top: 3
-        },
+        minAge: 20,
+        maxAge: 50,
+        minExp: 0,
+        maxExp: 5,
         skills: []
       }
     };
@@ -28299,14 +28301,10 @@ var mutations = {
   },
   restartSearch: function restartSearch(state) {
     state.search = {
-      ageRange: {
-        bot: 20,
-        top: 40
-      },
-      expRange: {
-        bot: 0,
-        top: 3
-      },
+      minAge: 20,
+      maxAge: 50,
+      minExp: 0,
+      maxExp: 5,
       skills: []
     };
   },
@@ -28321,11 +28319,18 @@ var mutations = {
       return id !== skill_id;
     });
   },
-  updateAgeRange: function updateAgeRange(state, ageRange) {
-    state.search.ageRange = ageRange;
+  updateMinAge: function updateMinAge(state, minAge) {
+    state.search.minAge = minAge;
   },
-  updateExpRange: function updateExpRange(state, expRange) {
-    state.search.expRange = expRange;
+  updateMaxAge: function updateMaxAge(state, maxAge) {
+    console.log(maxAge);
+    state.search.maxAge = maxAge;
+  },
+  updateMinExp: function updateMinExp(state, minExp) {
+    state.search.minExp = minExp;
+  },
+  updateMaxExp: function updateMaxExp(state, maxExp) {
+    state.search.maxExp = maxExp;
   },
   updateSearchCounty: function updateSearchCounty(state, county) {
     state.search.county = county;

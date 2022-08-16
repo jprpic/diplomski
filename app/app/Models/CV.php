@@ -17,9 +17,6 @@ class CV extends Model
     use HasFactory;
 
     protected $table = 'cvs';
-    protected $casts = [
-        'address' => 'array'
-    ];
 
     const VALID_RULES = [
         'name' => 'required|max:255',

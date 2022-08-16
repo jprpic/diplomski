@@ -52,14 +52,10 @@ export default {
         if(queryString){
             const urlParams = new URLSearchParams(queryString);
             const search = {
-                ageRange:{
-                    bot: urlParams.get('ageRange[bot]'),
-                    top: urlParams.get('ageRange[top]')
-                },
-                expRange: {
-                    bot: urlParams.get('expRange[bot]'),
-                    top: urlParams.get('expRange[top]')
-                },
+                minAge: urlParams.get('minAge'),
+                maxAge: urlParams.get('maxAge'),
+                minExp: urlParams.get('minExp'),
+                maxExp: urlParams.get('maxExp'),
                 skills: urlParams.getAll('skills[]').map( skill => { return Number(skill); }),
             }
             // Optional params

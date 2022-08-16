@@ -83,11 +83,17 @@ const actions = {
     removeSearchSkill(context, index){
         context.commit('removeSearchSkill', index);
     },
-    updateAgeRange(context, ageRange){
-        context.commit('updateAgeRange', ageRange)
+    updateMinAge(context, minAge){
+        context.commit('updateMinAge', minAge)
     },
-    updateExpRange(context, expRange){
-        context.commit('updateExpRange', expRange);
+    updateMaxAge(context, maxAge){
+        context.commit('updateMaxAge', maxAge);
+    },
+    updateMinExp(context, minExp){
+        context.commit('updateMinExp', minExp)
+    },
+    updateMaxExp(context, maxExp){
+        context.commit('updateMaxExp', maxExp);
     },
     updateSearchCounty(context, county){
         context.commit('updateSearchCounty', county);

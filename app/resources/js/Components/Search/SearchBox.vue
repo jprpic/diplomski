@@ -58,10 +58,10 @@ export default {
                 this.page = page;
                 axios.get('/api/search', {
                     params:{
-                        'ageRange[bot]' : this.search.ageRange.bot,
-                        'ageRange[top]' : this.search.ageRange.top,
-                        'expRange[bot]' : this.search.expRange.bot,
-                        'expRange[top]' : this.search.expRange.top,
+                        'minAge' : this.search.minAge,
+                        'maxAge' : this.search.maxAge,
+                        'minExp' : this.search.minExp,
+                        'maxExp' : this.search.maxExp,
                         skills: this.search.skills,
                         county: this.search.county ? this.search.county : null,
                         city: this.search.city ? this.search.city : null,
