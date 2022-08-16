@@ -1,5 +1,5 @@
 <script setup>
-import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+import BreezeAuthenticatedLayout from '@/Layouts/AuthUser.vue';
 import SearchBox from "@/Components/Search/SearchBox";
 import SearchItem from "@/Components/Search/SearchItem";
 import { Head } from '@inertiajs/inertia-vue3';
@@ -66,6 +66,9 @@ export default {
                 search.city = urlParams.get('city');
             }
             this.$store.dispatch('setSearch', search);
+        }
+        else if(this.$store.getters.search === null){
+            this.$store.dispatch('refreshSearch');
         }
     },
 }

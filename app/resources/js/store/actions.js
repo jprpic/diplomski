@@ -65,8 +65,8 @@ const actions = {
     setCV(context, cv){
         context.commit('setCV', cv);
     },
-    removeCV(context){
-        context.commit('removeCV')
+    refreshCV(context){
+        context.commit('refreshCV')
     },
     setUser(context, user){
         context.commit('setUser', user);
@@ -74,8 +74,8 @@ const actions = {
     addSearchSkill(context, skill){
         context.commit('addSearchSkill', skill)
     },
-    restartSearch(context) {
-        context.commit('restartSearch');
+    refreshSearch(context) {
+        context.commit('refreshSearch');
     },
     setSearch(context, search){
         context.commit('setSearch', search)

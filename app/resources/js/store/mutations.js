@@ -88,7 +88,7 @@ const mutations = {
     setCV(state, cv){
         state.cv = cv;
     },
-    removeCV(state){
+    refreshCV(state){
         state.cv = {
             name: '',
             description: '',
@@ -120,7 +120,7 @@ const mutations = {
     setUser(state, user){
         state.user = user;
     },
-    restartSearch(state){
+    refreshSearch(state){
         state.search = {
             minAge: 20,
             maxAge: 50,
@@ -142,7 +142,6 @@ const mutations = {
         state.search.minAge = minAge;
     },
     updateMaxAge(state, maxAge){
-        console.log(maxAge);
         state.search.maxAge = maxAge;
     },
     updateMinExp(state, minExp){

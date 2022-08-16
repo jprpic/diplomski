@@ -7,41 +7,8 @@ const store = new Vuex.Store({
     state () {
         return {
             user: null,
-            cv:{
-                name: '',
-                img_url: '',
-                sex: '',
-                birthdate: null,
-                years_of_exp: 0,
-                description: '',
-                street: '',
-                postcode: '',
-                contacts: [{
-                    contact_id: '',
-                    value: ''
-                }],
-                job: '',
-                experiences: [{
-                    name: '',
-                    source: '',
-                    type: '',
-                    results: [''],
-                    started_at: null,
-                    finished_at: null
-                }],
-                skills:[{
-                    skill_id: '',
-                    proficiency: ''
-                }],
-                references: '',
-            },
-            search : {
-                minAge: 20,
-                maxAge: 50,
-                minExp: 0,
-                maxExp: 5,
-                skills: [],
-            }
+            cv: null,
+            search : null
         }
     },
     getters: getters,
