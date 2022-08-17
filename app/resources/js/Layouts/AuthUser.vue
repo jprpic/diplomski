@@ -147,7 +147,8 @@ export default {
             // If the authorized user has CV, initialize CV
             if(JSON.parse(usePage().props.value.auth.cv) !== null){
                 this.$store.dispatch('setCV', JSON.parse(usePage().props.value.auth.cv));
-            }else if(this.$store.getters.cv === null){
+            }
+            else if( this.$store.getters.cv === null){
                 this.$store.dispatch('refreshCV');
             }
         }

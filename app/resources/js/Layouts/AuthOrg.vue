@@ -30,9 +30,6 @@ const showingNavigationDropdown = ref(false);
                                 <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </BreezeNavLink>
-                                <BreezeNavLink :href="route(`cv.create`)" :active="route().current(`cv.create`)">
-                                    <span class="capitalize"> {{ CVRoute }}</span>
-                                </BreezeNavLink>
                                 <BreezeNavLink :href="route(`search`)" :active="route().current(`search`)">
                                     Search
                                 </BreezeNavLink>
@@ -82,9 +79,6 @@ const showingNavigationDropdown = ref(false);
                         <BreezeResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </BreezeResponsiveNavLink>
-                        <BreezeResponsiveNavLink :href="route(`cv.create`)" :active="route().current(`cv.create`)">
-                            <span class="capitalize"> {{ CVRoute }}</span>
-                        </BreezeResponsiveNavLink>
                         <BreezeResponsiveNavLink :href="route('search')" :active="route().current('search')">
                             Search
                         </BreezeResponsiveNavLink>
@@ -129,13 +123,6 @@ export default {
     computed:{
         user(){
             return this.$store.getters.user;
-        },
-        CVRoute(){
-            if(usePage().props.value.auth.cv){
-                return 'edit'
-            }else{
-                return 'create'
-            }
         }
     },
     beforeCreate(){
@@ -144,10 +131,6 @@ export default {
         // Store data can be initialized
         if(this.$store.getters.user === null){
             this.$store.dispatch('setUser', usePage().props.value.auth.user)
-            // If the authorized user has CV, initialize CV
-            if(JSON.parse(usePage().props.value.auth.cv) !== null){
-                this.$store.dispatch('setCV', JSON.parse(usePage().props.value.auth.cv));
-            }
         }
     }
 }

@@ -11,10 +11,10 @@ class Role extends Model
     public $timestamps = false;
 
     public const ROLE_EMPLOYEE = 1;
-    public const ROLE_EMPLOYER = 2;
+    public const ROLE_ORGANIZATION = 2;
     public const ROLE_ADMIN = 3;
 
     public function users(){
-        return $this->hasMany(User::class);
+        return $this->hasMany(User::class, 'role_id', 'id');
     }
 }

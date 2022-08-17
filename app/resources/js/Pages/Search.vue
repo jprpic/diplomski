@@ -1,14 +1,12 @@
 <script setup>
-import BreezeAuthenticatedLayout from '@/Layouts/AuthUser.vue';
 import SearchBox from "@/Components/Search/SearchBox";
-import SearchItem from "@/Components/Search/SearchItem";
 import { Head } from '@inertiajs/inertia-vue3';
 </script>
 
 <template>
     <Head title="Dashboard" />
 
-    <BreezeAuthenticatedLayout>
+    <component v-bind:is="layout">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Search
@@ -24,14 +22,20 @@ import { Head } from '@inertiajs/inertia-vue3';
                 </div>
             </div>
         </div>
-    </BreezeAuthenticatedLayout>
+    </component>
 </template>
 
 
 
 <script>
+import AuthOrg from '@/Layouts/AuthOrg.vue';
+import AuthUser from '@/Layouts/AuthUser.vue';
+import {usePage} from "@inertiajs/inertia-vue3";
 export default {
     name: "Search.vue",
+    components:{
+        AuthUser, AuthOrg
+    },
     props: {
         targets:{
             type: Object,
@@ -44,6 +48,14 @@ export default {
     computed:{
       search(){
           return this.$store.getters.search;
+      },
+      layout(){
+          const role_id = usePage().props.value.auth.user.role_id;
+          if(role_id === 1){
+            return 'auth-user';
+          }else if(role_id === 2){
+            return 'auth-org';
+        }
       }
     },
     beforeCreate() {

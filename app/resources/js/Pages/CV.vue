@@ -1,11 +1,9 @@
 <script setup>
-import BreezeAuthenticatedLayout from '@/Layouts/AuthUser.vue';
-import EmptyLayout from '@/Layouts/Empty.vue';
 import { Head } from '@inertiajs/inertia-vue3';
 </script>
 <template>
     <Head title="CV" />
-    <EmptyLayout>
+    <component v-bind:is="layout">
         <div class="py-12">
             <div class="mx-auto sm:px-6 lg:px-8" style="max-width: 80rem">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -106,18 +104,36 @@ import { Head } from '@inertiajs/inertia-vue3';
                 </div>
             </div>
         </div>
-    </EmptyLayout>
+    </component>
 
 
 </template>
 
 <script>
+import {usePage} from "@inertiajs/inertia-vue3";
+import AuthUser from "@/Layouts/AuthUser";
+import AuthOrg from "@/Layouts/AuthOrg";
+import Empty from '@/Layouts/Empty.vue';
 export default {
     name: "CV.vue",
+    components:{
+        AuthUser, AuthOrg, Empty
+    },
     props:['CV'],
     computed:{
         sortedSkills(){
             return this.CV.skill_proficiencies.sort((a, b) => { return b.proficiency - a.proficiency } );
+        },
+        layout(){
+            if(!usePage().props.value.auth.user){
+                return 'empty';
+            }
+            const role_id = usePage().props.value.auth.user.role_id;
+            if(role_id === 1){
+                return 'auth-user';
+            }else if(role_id === 2){
+                return 'auth-org';
+            }
         }
     },
     methods:{

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CV;
 use App\Models\CV\Contact;
 use App\Models\Postcode;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
