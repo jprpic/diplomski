@@ -100,6 +100,36 @@ const actions = {
     },
     updateSearchCity(context, city){
         context.commit('updateSearchCity', city)
+    },
+    addJobSkill(context, skill){
+        context.commit('addJobSkill', skill)
+    },
+    refreshJobAd(context) {
+        context.commit('refreshJobAd');
+    },
+    setJobAd(context, search){
+        context.commit('setJobAd', search)
+    },
+    removeJobSkill(context, index){
+        context.commit('removeJobSkill', index);
+    },
+    updateJobMinAge(context, minAge){
+        context.commit('updateJobMinAge', minAge)
+    },
+    updateJobMaxAge(context, maxAge){
+        context.commit('updateJobMaxAge', maxAge);
+    },
+    updateJobMinExp(context, minExp){
+        context.commit('updateJobMinExp', minExp)
+    },
+    updateJobMaxExp(context, maxExp){
+        context.commit('updateJobMaxExp', maxExp);
+    },
+    updateJobCounty(context, county){
+        context.commit('updateJobCounty', county);
+    },
+    updateJobCity(context, city){
+        context.commit('updateJobCity', city)
     }
 
 

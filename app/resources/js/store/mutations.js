@@ -151,10 +151,46 @@ const mutations = {
         state.search.maxExp = maxExp;
     },
     updateSearchCounty(state, county){
-    state.search.county = county;
+        state.search.county = county;
     },
     updateSearchCity(state, city){
         state.search.city = city;
+    },
+    updateJobMinAge(state, minAge){
+        state.job.minAge = minAge;
+    },
+    updateJobMaxAge(state, maxAge){
+        state.job.maxAge = maxAge;
+    },
+    updateJobMinExp(state, minExp){
+        state.job.minExp = minExp;
+    },
+    updateJobMaxExp(state, maxExp){
+        state.job.maxExp = maxExp;
+    },
+    updateJobCounty(state, county){
+        state.job.county = county;
+    },
+    updateJobCity(state, city){
+        state.job.city = city;
+    },
+    refreshJobAd(state){
+        state.job = {
+            minAge: 20,
+            maxAge: 50,
+            minExp: 0,
+            maxExp: 5,
+            skills: [],
+        }
+    },
+    setJobAd(state, search){
+        state.job = search;
+    },
+    addJobSkill(state, skill) {
+        state.job.skills.push(skill);
+    },
+    removeJobSkill(state, skill_id){
+        state.job.skills = state.job.skills.filter(id => id !== skill_id);
     },
 }
 

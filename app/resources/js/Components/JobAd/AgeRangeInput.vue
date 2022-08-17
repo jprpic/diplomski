@@ -28,33 +28,33 @@ export default {
         }
     },
     computed:{
-      search(){
-          return this.$store.getters.search;
+        job(){
+          return this.$store.getters.job;
         }
     },
     methods:{
         updateMinAge(value){
             this.minAge = value;
-            this.$store.dispatch('updateMinAge', this.minAge);
+            this.$store.dispatch('updateJobMinAge', this.minAge);
         },
         updateMaxAge(value){
             this.maxAge = value;
-            this.$store.dispatch('updateMaxAge', this.maxAge);
+            this.$store.dispatch('updateJobMaxAge', this.maxAge);
         },
         updateMinExp(value){
             this.minExp = value;
-            this.$store.dispatch('updateMinExp', this.minExp);
+            this.$store.dispatch('updateJobMinExp', this.minExp);
         },
         updateMaxExp(value){
             this.maxExp = value;
-            this.$store.dispatch('updateMaxExp', this.maxExp);
+            this.$store.dispatch('updateJobMaxExp', this.maxExp);
         },
     },
     mounted(){
-        this.minAge = this.search.minAge;
-        this.maxAge = this.search.maxAge;
-        this.minExp = this.search.minExp;
-        this.maxExp = this.search.maxExp;
+        this.minAge = this.job.minAge;
+        this.maxAge = this.job.maxAge;
+        this.minExp = this.job.minExp;
+        this.maxExp = this.job.maxExp;
     }
 }
 </script>

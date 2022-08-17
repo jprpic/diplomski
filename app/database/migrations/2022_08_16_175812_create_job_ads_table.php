@@ -20,8 +20,8 @@ return new class extends Migration
             $table->unsignedTinyInteger('maxAge');
             $table->unsignedTinyInteger('minExp');
             $table->unsignedTinyInteger('maxExp');
-            $table->string('county');
-            $table->string('city');
+            $table->string('county')->nullable();
+            $table->string('city')->nullable();
             $table->json('skill_ids');
             $table->timestamps();
         });
