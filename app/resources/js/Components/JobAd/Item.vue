@@ -13,8 +13,8 @@
                 <p>Years of experience: <span class="font-semibold">{{ jobAd.minExp }}</span> - <span class="font-semibold">{{ jobAd.maxExp }}</span></p>
             </div>
             <div class="flex flex-row" v-if="jobAd.county">
-                <p>{{ jobAd.county }}</p>
-                <p v-if="jobAd.city"> {{ jobAd.city}}</p>
+                <p>County: <span class="font-semibold">{{ jobAd.county }}</span></p>
+                <p v-if="jobAd.city" class="ml-2"> City: <span class="font-semibold">{{ jobAd.city }}</span></p>
             </div>
             <div>
                 <p> Wanted skills: <span class="font-semibold">{{ wantedSkills }}</span> </p>

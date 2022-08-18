@@ -40,10 +40,10 @@ class JobAd extends Model
         $job->maxAge = $options['maxAge'];
         $job->minExp = $options['minExp'];
         $job->maxExp = $options['maxExp'];
-        if(isset($options->county)){
+        if(isset($options['county'])){
             $job->county = $options['county'];
         }
-        if(isset($options->city)){
+        if(isset($options['city'])){
             $job->city = $options['city'];
         }
         $job->skills = $options['skills'];
