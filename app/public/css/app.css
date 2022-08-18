@@ -629,6 +629,9 @@ select {
 .m-1 {
   margin: 0.25rem;
 }
+.m-2 {
+  margin: 0.5rem;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -637,6 +640,10 @@ select {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -644,10 +651,6 @@ select {
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-}
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -711,6 +714,12 @@ select {
 }
 .mr-1 {
   margin-right: 0.25rem;
+}
+.-mb-2 {
+  margin-bottom: -0.5rem;
+}
+.-mt-2 {
+  margin-top: -0.5rem;
 }
 .block {
   display: block;
@@ -781,6 +790,11 @@ select {
 .w-full {
   width: 100%;
 }
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 .w-4 {
   width: 1rem;
 }
@@ -804,11 +818,6 @@ select {
 }
 .w-12 {
   width: 3rem;
-}
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 .w-min {
   width: -webkit-min-content;
@@ -844,11 +853,11 @@ select {
 .shrink-0 {
   flex-shrink: 0;
 }
-.grow {
-  flex-grow: 1;
-}
 .grow-0 {
   flex-grow: 0;
+}
+.grow {
+  flex-grow: 1;
 }
 .origin-top-left {
   transform-origin: top left;
@@ -1164,6 +1173,10 @@ select {
   font-size: 0.75rem;
   line-height: 1rem;
 }
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1171,10 +1184,6 @@ select {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 .font-medium {
   font-weight: 500;
@@ -1268,13 +1277,13 @@ select {
   --tw-text-opacity: 1;
   color: rgb(21 128 61 / var(--tw-text-opacity));
 }
-.text-lime-900 {
-  --tw-text-opacity: 1;
-  color: rgb(54 83 20 / var(--tw-text-opacity));
-}
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+.text-lime-900 {
+  --tw-text-opacity: 1;
+  color: rgb(54 83 20 / var(--tw-text-opacity));
 }
 .text-green-600 {
   --tw-text-opacity: 1;
@@ -1380,6 +1389,9 @@ select {
 }
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+.hover\:invisible:hover {
+  visibility: hidden;
 }
 .hover\:whitespace-normal:hover {
   white-space: normal;

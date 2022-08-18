@@ -50,18 +50,10 @@ import {usePage} from "@inertiajs/inertia-vue3";
 
 export default {
     name: "SearchItem.vue",
-    props:['target'],
+    props:['target', 'searchedSkills'],
     computed:{
         availableSkills(){
             return usePage().props.value.availableSkills;
-        },
-        searchedSkills(){
-            const queryString = window.location.search;
-            if(queryString){
-                const urlParams = new URLSearchParams(queryString);
-                return urlParams.getAll('skills[]').map( skill => { return Number(skill); });
-            }
-            return [];
         },
         foundSkills(){
             if(!this.target.skill_proficiencies){

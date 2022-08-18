@@ -11,7 +11,7 @@ use Inertia\Inertia;
 class JobAdController extends Controller
 {
     public function create(){
-        return Inertia::render('JobAdCreate',[
+        return Inertia::render('JobAd/Create',[
             'postcodes' => Postcode::all(),
         ]);
     }
@@ -24,5 +24,21 @@ class JobAdController extends Controller
         }
         JobAd::store($options);
         return Redirect::route('job.create')->with('status', 'Job Ad successfully created!');
+    }
+
+    public function index(Request $request){
+        return Inertia::render('JobAd/Index',[
+            'jobAds' => Auth()->user()->jobAds
+        ]);
+    }
+
+    public function show(Request $request, $id){
+        $jobAd = JobAd::find($id);
+        if($jobAd->user_id !== Auth()->id()){
+            return response('Unauthorized.')->setStatusCode(401)->send();
+        }
+        return Inertia::render('JobAd/Show',[
+            'jobAd' => $jobAd
+        ]);
     }
 }

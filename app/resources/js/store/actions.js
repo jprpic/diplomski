@@ -130,6 +130,9 @@ const actions = {
     },
     updateJobCity(context, city){
         context.commit('updateJobCity', city)
+    },
+    updateJobName(context, name){
+        context.commit('updateJobName', name);
     }
 
 

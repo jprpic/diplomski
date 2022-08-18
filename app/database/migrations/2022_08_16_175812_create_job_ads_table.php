@@ -16,13 +16,14 @@ return new class extends Migration
         Schema::create('job_ads', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('name');
             $table->unsignedTinyInteger('minAge');
             $table->unsignedTinyInteger('maxAge');
             $table->unsignedTinyInteger('minExp');
             $table->unsignedTinyInteger('maxExp');
             $table->string('county')->nullable();
             $table->string('city')->nullable();
-            $table->json('skill_ids');
+            $table->json('skills');
             $table->timestamps();
         });
     }

@@ -192,6 +192,9 @@ const mutations = {
     removeJobSkill(state, skill_id){
         state.job.skills = state.job.skills.filter(id => id !== skill_id);
     },
+    updateJobName(state, name){
+        state.job.name = name;
+    }
 }
 
 export default mutations;

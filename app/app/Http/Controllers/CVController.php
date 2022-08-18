@@ -16,7 +16,7 @@ class CVController extends Controller
     function create(){
         $availableContacts = Contact::all();
         $availablePostcodes = Postcode::all();
-        return Inertia::render('Create', [
+        return Inertia::render('CV/Create', [
             'postcodes' => $availablePostcodes,
             'availableContacts' => $availableContacts,
         ]);
@@ -34,7 +34,7 @@ class CVController extends Controller
 
     function show(Request $request, $id){
         $CV = CV::with(['contacts','contactInfo', 'experiences','skills', 'skillProficiencies','location'])->find($id);
-        return Inertia::Render('CV',[
+        return Inertia::Render('CV/CV',[
             'CV' => $CV,
             'location' => Postcode::find($CV->postcode)
         ]);

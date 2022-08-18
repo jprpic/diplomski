@@ -10,10 +10,11 @@ class JobAd extends Model
     use HasFactory;
 
     protected $casts = [
-        'skill_ids' => 'array'
+        'skills' => 'array'
     ];
 
     const VALID_RULES = [
+        'name' => 'required|max:255',
         'minAge' => 'required|numeric|min:18|max:65',
         'maxAge' => 'required|numeric|min:18|max:65',
         'minExp' => 'required|numeric|min:0|max:50',
@@ -27,9 +28,14 @@ class JobAd extends Model
         'skills.*' => 'Potrebno je unijeti tražene vještine.'
     ];
 
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
     public static function store($options){
         $job = new JobAd;
         $job->user_id = auth()->id();
+        $job->name = $options['name'];
         $job->minAge = $options['minAge'];
         $job->maxAge = $options['maxAge'];
         $job->minExp = $options['minExp'];
@@ -40,7 +46,7 @@ class JobAd extends Model
         if(isset($options->city)){
             $job->city = $options['city'];
         }
-        $job->skill_ids = $options['skills'];
+        $job->skills = $options['skills'];
         $job->save();
     }
 }

@@ -39,9 +39,11 @@ Route::prefix('/cv')->middleware(['auth','employee'])->group(function() {
 });
 Route::get('/cv/{id}', [CVController::class, 'show'])->name('cv.show');
 
-Route::prefix('/job-ad')->middleware(['auth'])->group(function() {
+Route::prefix('/job-ad')->middleware(['auth', 'organization'])->group(function() {
     Route::get('/create', [JobAdController::class, 'create'])->name('job.create');
     Route::post('/', [JobAdController::class, 'store'])->name('job.store');
+    Route::get('/', [JobAdController::class, 'index'])->name('job.index');
+    Route::get('/{id}',[JobAdController::class, 'show'])->name('job.show');
 });
 
 

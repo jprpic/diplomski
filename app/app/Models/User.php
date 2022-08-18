@@ -51,4 +51,8 @@ class User extends Authenticatable
     public function cv(){
         return $this->hasOne(CV::class, 'id', 'cv_id');
     }
+
+    public function jobAds(){
+        return $this->hasMany(JobAd::class, 'user_id', 'id');
+    }
 }
