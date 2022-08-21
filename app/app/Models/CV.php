@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\CV\Contact;
 use App\Models\CV\CV_Contact;
 use App\Models\CV\CV_Skill;
 use App\Models\CV\Experience;
@@ -91,8 +90,7 @@ class CV extends Model
         $cv->contacts = $cvModel->contacts;
         $cv->experiences = $cvModel->experiences;
         $cv->skills = $cvModel->skillProficiencies;
-        $cv = json_encode($cv);
-        return $cv;
+        return json_encode($cv);
     }
 
     public static function edit($CVJson){

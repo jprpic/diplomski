@@ -12,7 +12,7 @@ class JobAdController extends Controller
 {
     public function create(){
         return Inertia::render('JobAd/Create',[
-            'postcodes' => Postcode::all(),
+            'postcodes' => Postcode::all()
         ]);
     }
 

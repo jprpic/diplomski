@@ -1,6 +1,6 @@
 <script setup>
 import AuthOrg from '@/Layouts/AuthOrg.vue';
-import JobAdItem from '@/Components/JobAd/Item.vue'
+import JobAdItem from '@/Components/JobAd/ItemDetail.vue'
 </script>
 
 <template>

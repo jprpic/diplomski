@@ -21,7 +21,7 @@ class CVFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->unique()->numberBetween(1, User::all()->count()),
+            'user_id' => $this->faker->unique()->numberBetween(1, User::all()->count() - 10),
             'name' => $this->faker->name(),
             'img_url' => $this->faker->imageUrl(360, 360, 'person', true, 'profile'),
             'description' => $this->faker->paragraph(6),

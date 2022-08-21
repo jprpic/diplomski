@@ -1,22 +1,20 @@
 <?php
 
-namespace App\Models\CV;
+namespace App\Models\OrgCV;
 
 use App\Models\Contact;
-use App\Models\CV;
-use Database\Factories\CV_ContactFactory;
+use App\Models\OrgCV;
+use Database\Factories\OrgCV_ContactFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CV_Contact extends Model
+class Contact_OrgCV extends Model
 {
     use HasFactory;
-
-    protected $table = 'contact_cv';
     public $timestamps = false;
 
-    public function CV(){
-        return $this->belongsTo(CV::class);
+    public function orgCV(){
+        return $this->belongsTo(OrgCV::class);
     }
     public function contact(){
         return $this->belongsTo(Contact::class);
@@ -24,6 +22,6 @@ class CV_Contact extends Model
 
     protected static function newFactory()
     {
-        return new CV_ContactFactory();
+        return new OrgCV_ContactFactory();
     }
 }

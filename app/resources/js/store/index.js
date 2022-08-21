@@ -9,7 +9,8 @@ const store = new Vuex.Store({
             user: null,
             cv: null,
             search : null,
-            job : null
+            job : null,
+            orgCv: null
         }
     },
     getters: getters,

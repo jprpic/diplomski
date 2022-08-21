@@ -36,6 +36,9 @@ const showingNavigationDropdown = ref(false);
                                 <BreezeNavLink :href="route('job.create')" :active="route().current('job.create')">
                                     Create Ad
                                 </BreezeNavLink>
+                                <BreezeNavLink :href="route('org-cv.create')" :active="route().current('org-cv.create')">
+                                    About us
+                                </BreezeNavLink>
                                 <BreezeNavLink :href="route(`search`)" :active="route().current(`search`)">
                                     Search
                                 </BreezeNavLink>
@@ -91,6 +94,9 @@ const showingNavigationDropdown = ref(false);
                         <BreezeResponsiveNavLink :href="route('job.create')" :active="route().current('job.create')">
                             Create Ad
                         </BreezeResponsiveNavLink>
+                        <BreezeResponsiveNavLink :href="route('org-cv.create')" :active="route().current('org-cv.create')">
+                            About us
+                        </BreezeResponsiveNavLink>
                         <BreezeResponsiveNavLink :href="route('search')" :active="route().current('search')">
                             Search
                         </BreezeResponsiveNavLink>
@@ -143,6 +149,12 @@ export default {
         // Store data can be initialized
         if(this.$store.getters.user === null){
             this.$store.dispatch('setUser', usePage().props.value.auth.user)
+        }
+        if(JSON.parse(usePage().props.value.auth.orgCv) !== null){
+            this.$store.dispatch('setOrgCv', JSON.parse(usePage().props.value.auth.orgCv));
+        }
+        else if( this.$store.getters.cv === null){
+            this.$store.dispatch('refreshOrgCV');
         }
     }
 }

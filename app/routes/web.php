@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CVController;
 use App\Http\Controllers\JobAdController;
+use App\Http\Controllers\OrgCVController;
 use App\Http\Controllers\SearchController;
 use App\Models\CV;
 use Illuminate\Foundation\Application;
@@ -44,6 +45,12 @@ Route::prefix('/job-ad')->middleware(['auth', 'organization'])->group(function()
     Route::post('/', [JobAdController::class, 'store'])->name('job.store');
     Route::get('/', [JobAdController::class, 'index'])->name('job.index');
     Route::get('/{id}',[JobAdController::class, 'show'])->name('job.show');
+});
+
+Route::prefix('/org-cv')->middleware(['auth', 'organization'])->group(function(){
+    Route::get('/create', [OrgCVController::class, 'create'])->name('org-cv.create');
+    Route::post('/', [OrgCVController::class, 'store'])->name('org-cv.store');
+    Route::post('/edit', [OrgCVController::class, 'update'])->name('org-cv.update');
 });
 
 

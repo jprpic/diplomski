@@ -11,7 +11,7 @@
 
 <script>
 import BreezeButton from '../Button.vue';
-import ContactItem from "@/Components/CV/ContactItem";
+import ContactItem from "@/Components/OrgCv/ContactItem";
 import BreezeLabel from '../Label.vue';
 import BreezeInput from '../Input.vue';
 export default {
@@ -24,19 +24,16 @@ export default {
     },
     computed:{
         contacts(){
-            return this.$store.getters.cv.contacts;
+            return this.$store.getters.orgCv.contacts;
         }
     },
     methods:{
-        updateNumber(number){
-            this.$store.dispatch('updateNumber', number);
-        },
         addContact() {
-            this.$store.dispatch('addContact');
+            this.$store.dispatch('addOrgContact');
         },
         removeContact(index){
             if (index > -1) { // only splice array when item is found
-                this.$store.dispatch('removeContact', index);
+                this.$store.dispatch('removeOrgContact', index);
             }
         }
 

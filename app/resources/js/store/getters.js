@@ -16,6 +16,9 @@ const getters = {
     },
     job(state){
         return state.job;
+    },
+    orgCv(state){
+        return state.orgCv;
     }
 }
 

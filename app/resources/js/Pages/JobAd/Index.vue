@@ -1,5 +1,6 @@
 <script setup>
 import AuthOrg from '@/Layouts/AuthOrg.vue';
+import JobAd from '@/Components/JobAd/Item.vue';
 </script>
 
 <template>
@@ -8,9 +9,12 @@ import AuthOrg from '@/Layouts/AuthOrg.vue';
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
-                        <div v-for="ad in jobAds" :key="ad.id">
-                            <button type="button" @click="showAd(ad.id)">
-                                {{ ad }}
+                        <p class="mb-4 text-2xl font-bold">
+                            Your Job Ads
+                        </p>
+                        <div  v-for="ad in jobAds" :key="ad.id">
+                            <button class="w-full" type="button" @click="showAd(ad.id)">
+                                <JobAd :jobAd="ad"></JobAd>
                             </button>
                         </div>
                     </div>

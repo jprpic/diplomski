@@ -96,7 +96,6 @@ const mutations = {
                 street: '',
                 postcode: ''
             },
-            email: '',
             contacts: [{
                 contact_id: '',
                 value: ''
@@ -194,7 +193,55 @@ const mutations = {
     },
     updateJobName(state, name){
         state.job.name = name;
-    }
+    },
+    refreshOrgCV(state){
+        state.orgCv = {
+            name: '',
+            contacts: [{
+                contact_id: '',
+                value: ''
+            }],
+            description: '',
+            img_url: '',
+            postcode: '',
+            street: ''
+        }
+    },
+    updateOrgName(state, name){
+        state.orgCv.name = name;
+    },
+    updateOrgEmail(state, email){
+        state.orgCv.email = email;
+    },
+    updateOrgDescription(state, description){
+        state.orgCv.description = description;
+    },
+    updateOrgImgUrl(state, img_url){
+        state.orgCv.img_url = img_url;
+    },
+    updateOrgPostcode(state, postcode) {
+        state.orgCv.postcode = postcode;
+    },
+    updateOrgStreet(state, street){
+        state.orgCv.street = street;
+    },
+    setOrgCv(state, orgCv){
+        state.orgCv = orgCv;
+    },
+    addOrgContact(state){
+        state.orgCv.contacts.push({
+            contact_id: '',
+            value: ''
+        })
+    },
+    updateOrgContact(state, contact){
+        const index = contact.index;
+        delete contact.index;
+        state.orgCv.contacts[index] = contact;
+    },
+    removeOrgContact(state, index){
+        state.orgCv.contacts.splice(index, 1); // 2nd parameter means remove one item only
+    },
 }
 
 export default mutations;

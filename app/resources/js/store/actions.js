@@ -133,7 +133,40 @@ const actions = {
     },
     updateJobName(context, name){
         context.commit('updateJobName', name);
-    }
+    },
+    refreshOrgCV(context){
+        context.commit('refreshOrgCV');
+    },
+    updateOrgName(context, name){
+        context.commit('updateOrgName', name);
+    },
+    updateOrgEmail(context, email){
+        context.commit('updateOrgEmail', email);
+    },
+    updateOrgDescription(context, description){
+        context.commit('updateOrgDescription', description);
+    },
+    updateOrgImgUrl(context, img_url){
+        context.commit('updateOrgImgUrl', img_url);
+    },
+    updateOrgPostcode(context, postcode) {
+        context.commit('updateOrgPostcode', postcode);
+    },
+    updateOrgStreet(context, street){
+        context.commit('updateOrgStreet', street);
+    },
+    setOrgCv(context, cv){
+        context.commit('setOrgCv', cv);
+    },
+    addOrgContact(context){
+        context.commit('addOrgContact');
+    },
+    updateOrgContact(context, contact){
+        context.commit('updateOrgContact', contact);
+    },
+    removeOrgContact(context, index){
+        context.commit('removeOrgContact', index);
+    },
 
 
 }

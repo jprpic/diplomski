@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\CV;
 use App\Models\CV\CV_Contact;
+use App\Models\OrgCV;
+use App\Models\OrgCV\Contact_OrgCV;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -26,7 +28,8 @@ class DatabaseSeeder extends Seeder
         $creations = 50;
 
         User::factory($creations)->create();
-        CV::factory($creations)
+        // $creations of users, but only last 10 are companies
+        CV::factory($creations - 10)
             ->has(CV_Contact::factory()
                 ->count(1)
                 ->email(), 'contacts'
@@ -45,7 +48,22 @@ class DatabaseSeeder extends Seeder
             )
             ->create();
 
-        // Factory has to be called first.
+        // Last 10 users are company users
+        OrgCV::factory(10)
+            ->has(Contact_OrgCV::factory()
+                ->count(1)
+                ->email(), 'contacts'
+            )
+            ->has(Contact_OrgCV::factory()
+                ->count(1)
+                ->phone(), 'contacts'
+            )
+            ->has(Contact_OrgCV::factory()
+                ->count(1)
+                ->url(), 'contacts'
+            )
+            ->create();
+        // User factory has to be called first.
         $this->call(UserSeeder::class);
     }
 }

@@ -14,10 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedTinyInteger('role_id');
-            $table->foreign('role_id')->references('id')->on('roles');
-            // Zero or One-to-one relationship with CV
-            $table->foreignId('cv_id')->nullable()->constrained()->onDelete('set null');
+            // Zero or One-to-one relationship with Org CV (About us)
+            $table->foreignId('org_c_v_s_id')->nullable()->constrained()->onDelete('set null');
         });
     }
 
@@ -28,8 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign(['role_id','cv_id']);
+        Schema::table('cvs', function (Blueprint $table) {
+            $table->dropForeign(['org_c_v_s_id']);
         });
     }
 };
