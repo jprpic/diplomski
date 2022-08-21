@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\OrgCV;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -28,10 +29,10 @@ class OrgCVFactory extends Factory
     }
 
     public function configure(){
-        return $this->afterCreating(function ($CV){
+        return $this->afterCreating(function (OrgCV $OrgCV){
             // Link the newly created CV to an existing user
-            $user = User::find($CV['user_id']);
-            $user->org_c_v_s_id = $CV['user_id'];
+            $user = User::find($OrgCV['user_id']);
+            $user->org_c_v_s_id = $OrgCV->id;
             $user->save();
         });
     }

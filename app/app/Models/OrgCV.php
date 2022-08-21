@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Models\OrgCV\Contact_OrgCV;
-use Database\Factories\OrgCVFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -33,10 +32,10 @@ class OrgCV extends Model
         return $this->hasMany(Contact_OrgCV::class, 'org_c_v_s_id', 'id');
     }
 
-    protected static function newFactory()
-    {
-        return new OrgCVFactory();
+    public function jobAds(){
+        return $this->hasMany(JobAd::class, 'org_c_v_s_id', 'id');
     }
+
 
     public static function store($CVJson){
         $user_id = Auth()->id();

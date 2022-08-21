@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('job_ads', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('org_c_v_s_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->unsignedTinyInteger('minAge');
             $table->unsignedTinyInteger('maxAge');

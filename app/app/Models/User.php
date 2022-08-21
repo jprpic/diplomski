@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -54,9 +53,5 @@ class User extends Authenticatable
 
     public function orgCv(){
         return $this->hasOne(OrgCV::class, 'id', 'org_c_v_s_id');
-    }
-
-    public function jobAds(){
-        return $this->hasMany(JobAd::class, 'user_id', 'id');
     }
 }

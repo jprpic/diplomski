@@ -28,13 +28,13 @@ class JobAdController extends Controller
 
     public function index(Request $request){
         return Inertia::render('JobAd/Index',[
-            'jobAds' => Auth()->user()->jobAds
+            'jobAds' => Auth()->user()->orgCv->jobAds
         ]);
     }
 
     public function show(Request $request, $id){
         $jobAd = JobAd::find($id);
-        if($jobAd->user_id !== Auth()->id()){
+        if($jobAd->org_c_v_s_id !== Auth()->user()->orgCv->id){
             return response('Unauthorized.')->setStatusCode(401)->send();
         }
         return Inertia::render('JobAd/Show',[

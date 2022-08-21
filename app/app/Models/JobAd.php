@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Database\Factories\JobAdFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use function auth;
 
 class JobAd extends Model
 {
@@ -28,13 +30,18 @@ class JobAd extends Model
         'skills.*' => 'Potrebno je unijeti tražene vještine.'
     ];
 
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function orgCv(){
+        return $this->belongsTo(OrgCV::class);
+    }
+
+    protected static function newFactory()
+    {
+        return new JobAdFactory();
     }
 
     public static function store($options){
-        $job = new JobAd;
-        $job->user_id = auth()->id();
+        $job = new self;
+        $job->org_c_v_s_id = Auth()->user()->orgCv->id;
         $job->name = $options['name'];
         $job->minAge = $options['minAge'];
         $job->maxAge = $options['maxAge'];
