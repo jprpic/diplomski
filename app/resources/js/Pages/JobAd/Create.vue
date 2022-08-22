@@ -67,7 +67,6 @@ import BreezeTextArea from '@/Components/TextArea.vue';
                                 </BreezeButton>
                             </div>
                         </form>
-                        {{ jobAd }}
                     </div>
                 </div>
             </div>

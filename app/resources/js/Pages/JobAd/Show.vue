@@ -10,7 +10,7 @@ import JobAdItem from '@/Components/JobAd/ItemDetail.vue'
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <p class="mb-4 -mt-2 text-2xl text-bold"> Job Ad for ...</p>
-                        <JobAdItem :jobAd = "jobAd"></JobAdItem>
+                        <JobAdItem :jobAd = "jobAd"/>
                     </div>
                 </div>
             </div>

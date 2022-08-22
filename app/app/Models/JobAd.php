@@ -22,7 +22,7 @@ class JobAd extends Model
         'maxAge' => 'required|numeric|min:18|max:65',
         'minExp' => 'required|numeric|min:0|max:50',
         'maxExp' => 'required|numeric|min:0|max:50',
-        'description' => 'required|min:0|max:1024',
+        'description' => 'required|min:0|max:5000',
 
         'skills' => 'required|distinct|array',
         'skills.*' => 'required|distinct|numeric',
@@ -35,7 +35,7 @@ class JobAd extends Model
     ];
 
     public function orgCv(){
-        return $this->belongsTo(OrgCV::class);
+        return $this->belongsTo(OrgCV::class, 'org_c_v_s_id', 'id');
     }
 
     protected static function newFactory()

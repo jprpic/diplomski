@@ -13,7 +13,7 @@ class OrgCV extends Model
     const VALID_RULES = [
         'name' => 'required|max:255',
         'img_url' => 'required|url',
-        'description' => 'required|max:255',
+        'description' => 'required|max:1500',
         'street' => 'required|max:255',
         'postcode' => 'required|digits:5',
 

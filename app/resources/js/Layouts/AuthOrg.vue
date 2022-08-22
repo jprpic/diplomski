@@ -33,10 +33,10 @@ const showingNavigationDropdown = ref(false);
                                 <BreezeNavLink :href="route('org-cv.create')" :active="route().current('org-cv.create')">
                                     About us
                                 </BreezeNavLink>
-                                <BreezeNavLink v-if="orgCv" :href="route('job.create')" :active="route().current('job.create')">
+                                <BreezeNavLink v-if="orgCv" :href="route('job-ad.create')" :active="route().current('job-ad.create')">
                                     Create Ad
                                 </BreezeNavLink>
-                                <BreezeNavLink v-if="orgCv" :href="route('job.index')" :active="route().current('job.index')">
+                                <BreezeNavLink v-if="orgCv" :href="route('job-ad.index')" :active="route().current('job-ad.index')">
                                     Job Ads
                                 </BreezeNavLink>
                                 <BreezeNavLink :href="route(`search`)" :active="route().current(`search`)">
@@ -91,10 +91,10 @@ const showingNavigationDropdown = ref(false);
                         <BreezeResponsiveNavLink :href="route('org-cv.create')" :active="route().current('org-cv.create')">
                             About us
                         </BreezeResponsiveNavLink>
-                        <BreezeResponsiveNavLink v-if="orgCv" :href="route('job.create')" :active="route().current('job.create')">
+                        <BreezeResponsiveNavLink v-if="orgCv" :href="route('job-ad.create')" :active="route().current('job-ad.create')">
                             Create Ad
                         </BreezeResponsiveNavLink>
-                        <BreezeResponsiveNavLink v-if="orgCv" :href="route('job.index')" :active="route().current('job.index')">
+                        <BreezeResponsiveNavLink v-if="orgCv" :href="route('job-ad.index')" :active="route().current('job-ad.index')">
                             Job Ads
                         </BreezeResponsiveNavLink>
                         <BreezeResponsiveNavLink :href="route('search')" :active="route().current('search')">

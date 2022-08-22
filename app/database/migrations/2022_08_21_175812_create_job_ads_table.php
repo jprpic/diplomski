@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->json('skills');
             $table->json('responsibilities');
-            $table->string('description', 1024);
+            $table->string('description', 5000);
             $table->timestamps();
         });
     }
