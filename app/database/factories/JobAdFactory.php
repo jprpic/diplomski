@@ -39,6 +39,13 @@ class JobAdFactory extends Factory
                 'maxExp' => $this->faker->numberBetween($minExp, $minExp + 5),
                 'county' => $location->county,
                 'skills' => $this->faker->unique(true)->randomElements(Skill::all(), 5),
+                'description' => $this->faker->sentences(10,true),
+                'responsibilities' => [$this->faker->sentences(3,true),
+                    $this->faker->sentences(3,true),
+                    $this->faker->sentences(3,true),
+                    $this->faker->sentences(3,true),
+                    $this->faker->sentences(3,true),
+                ],
             ];
         });
     }

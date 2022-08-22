@@ -34,10 +34,10 @@ export default {
     props:['postcodes'],
     computed:{
         jobCounty(){
-            return this.$store.getters.job.county;
+            return this.$store.getters.jobAd.county;
         },
         jobCity(){
-            return this.$store.getters.job.city;
+            return this.$store.getters.jobAd.city;
         },
         counties(){
             // get unique counties

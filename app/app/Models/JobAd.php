@@ -12,7 +12,8 @@ class JobAd extends Model
     use HasFactory;
 
     protected $casts = [
-        'skills' => 'array'
+        'skills' => 'array',
+        'responsibilities' => 'array'
     ];
 
     const VALID_RULES = [
@@ -21,9 +22,12 @@ class JobAd extends Model
         'maxAge' => 'required|numeric|min:18|max:65',
         'minExp' => 'required|numeric|min:0|max:50',
         'maxExp' => 'required|numeric|min:0|max:50',
+        'description' => 'required|min:0|max:1024',
 
         'skills' => 'required|distinct|array',
-        'skills.*' => 'required|distinct|numeric'
+        'skills.*' => 'required|distinct|numeric',
+        'responsibilities' => 'required|array',
+        'responsibilities.*' => 'required|min:10|max:500'
     ];
 
     const VALID_MSGS = [
@@ -43,6 +47,7 @@ class JobAd extends Model
         $job = new self;
         $job->org_c_v_s_id = Auth()->user()->orgCv->id;
         $job->name = $options['name'];
+        $job->description = $options['description'];
         $job->minAge = $options['minAge'];
         $job->maxAge = $options['maxAge'];
         $job->minExp = $options['minExp'];
@@ -54,6 +59,7 @@ class JobAd extends Model
             $job->city = $options['city'];
         }
         $job->skills = $options['skills'];
+        $job->responsibilities = $options['responsibilities'];
         $job->save();
     }
 }

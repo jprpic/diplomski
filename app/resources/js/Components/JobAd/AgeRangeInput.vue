@@ -28,8 +28,8 @@ export default {
         }
     },
     computed:{
-        job(){
-          return this.$store.getters.job;
+        jobAd(){
+          return this.$store.getters.jobAd;
         }
     },
     methods:{
@@ -51,10 +51,10 @@ export default {
         },
     },
     mounted(){
-        this.minAge = this.job.minAge;
-        this.maxAge = this.job.maxAge;
-        this.minExp = this.job.minExp;
-        this.maxExp = this.job.maxExp;
+        this.minAge = this.jobAd.minAge;
+        this.maxAge = this.jobAd.maxAge;
+        this.minExp = this.jobAd.minExp;
+        this.maxExp = this.jobAd.maxExp;
     }
 }
 </script>

@@ -134,6 +134,18 @@ const actions = {
     updateJobName(context, name){
         context.commit('updateJobName', name);
     },
+    updateJobDescription(context, description){
+        context.commit('updateJobDescription', description);
+    },
+    addJobResponsibility(context, responsibility){
+        context.commit('addJobResponsibility', responsibility);
+    },
+    removeJobResponsibility(context, index){
+        context.commit('removeJobResponsibility', index);
+    },
+    updateJobResponsibility(context, responsibility){
+        context.commit('updateJobResponsibility', responsibility);
+    },
     refreshOrgCV(context){
         context.commit('refreshOrgCV');
     },

@@ -156,43 +156,58 @@ const mutations = {
         state.search.city = city;
     },
     updateJobMinAge(state, minAge){
-        state.job.minAge = minAge;
+        state.jobAd.minAge = minAge;
     },
     updateJobMaxAge(state, maxAge){
-        state.job.maxAge = maxAge;
+        state.jobAd.maxAge = maxAge;
     },
     updateJobMinExp(state, minExp){
-        state.job.minExp = minExp;
+        state.jobAd.minExp = minExp;
     },
     updateJobMaxExp(state, maxExp){
-        state.job.maxExp = maxExp;
+        state.jobAd.maxExp = maxExp;
     },
     updateJobCounty(state, county){
-        state.job.county = county;
+        state.jobAd.county = county;
     },
     updateJobCity(state, city){
-        state.job.city = city;
+        state.jobAd.city = city;
+    },
+    updateJobDescription(state, description){
+        state.jobAd.description = description;
+    },
+    addJobResponsibility(state, responsibility){
+      state.jobAd.responsibilities.push(responsibility);
+    },
+    removeJobResponsibility(state, index){
+        state.jobAd.responsibilities.splice(index, 1);
+    },
+    updateJobResponsibility(state, responsibility){
+        state.jobAd.responsibilities[responsibility.index] = responsibility.value;
     },
     refreshJobAd(state){
-        state.job = {
+        state.jobAd = {
+            name: '',
+            description: '',
             minAge: 20,
             maxAge: 50,
             minExp: 0,
             maxExp: 5,
             skills: [],
+            responsibilities: [''],
         }
     },
     setJobAd(state, search){
-        state.job = search;
+        state.jobAd = search;
     },
     addJobSkill(state, skill) {
-        state.job.skills.push(skill);
+        state.jobAd.skills.push(skill);
     },
     removeJobSkill(state, skill_id){
-        state.job.skills = state.job.skills.filter(id => id !== skill_id);
+        state.jobAd.skills = state.jobAd.skills.filter(id => id !== skill_id);
     },
     updateJobName(state, name){
-        state.job.name = name;
+        state.jobAd.name = name;
     },
     refreshOrgCV(state){
         state.orgCv = {

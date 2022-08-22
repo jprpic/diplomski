@@ -14,8 +14,8 @@ const getters = {
     search(state){
         return state.search;
     },
-    job(state){
-        return state.job;
+    jobAd(state){
+        return state.jobAd;
     },
     orgCv(state){
         return state.orgCv;

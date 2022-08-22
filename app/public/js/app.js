@@ -22856,8 +22856,8 @@ var __default__ = {
     };
   },
   computed: {
-    job: function job() {
-      return this.$store.getters.job;
+    jobAd: function jobAd() {
+      return this.$store.getters.jobAd;
     }
   },
   methods: {
@@ -22879,10 +22879,10 @@ var __default__ = {
     }
   },
   mounted: function mounted() {
-    this.minAge = this.job.minAge;
-    this.maxAge = this.job.maxAge;
-    this.minExp = this.job.minExp;
-    this.maxExp = this.job.maxExp;
+    this.minAge = this.jobAd.minAge;
+    this.maxAge = this.jobAd.maxAge;
+    this.minExp = this.jobAd.minExp;
+    this.maxExp = this.jobAd.maxExp;
   }
 };
 
@@ -23005,10 +23005,10 @@ var __default__ = {
   props: ['postcodes'],
   computed: {
     jobCounty: function jobCounty() {
-      return this.$store.getters.job.county;
+      return this.$store.getters.jobAd.county;
     },
     jobCity: function jobCity() {
-      return this.$store.getters.job.city;
+      return this.$store.getters.jobAd.city;
     },
     counties: function counties() {
       // get unique counties
@@ -23092,38 +23092,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _Components_Button_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/Button.vue */ "./resources/js/Components/Button.vue");
-/* harmony import */ var _Components_JobAd_SkillInput_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/JobAd/SkillInput.vue */ "./resources/js/Components/JobAd/SkillInput.vue");
-/* harmony import */ var _Components_JobAd_AgeRangeInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/JobAd/AgeRangeInput */ "./resources/js/Components/JobAd/AgeRangeInput.vue");
-/* harmony import */ var _Components_JobAd_LocationInput__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/JobAd/LocationInput */ "./resources/js/Components/JobAd/LocationInput.vue");
-/* harmony import */ var _Components_Label_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/Label.vue */ "./resources/js/Components/Label.vue");
-/* harmony import */ var _Components_Input_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/Input.vue */ "./resources/js/Components/Input.vue");
-
+/* harmony import */ var _Components_JobAd_SkillInput_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/JobAd/SkillInput.vue */ "./resources/js/Components/JobAd/SkillInput.vue");
+/* harmony import */ var _Components_JobAd_AgeRangeInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/JobAd/AgeRangeInput */ "./resources/js/Components/JobAd/AgeRangeInput.vue");
+/* harmony import */ var _Components_JobAd_LocationInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/JobAd/LocationInput */ "./resources/js/Components/JobAd/LocationInput.vue");
 var __default__ = {
   name: "SearchBox",
   props: {
     postcodes: {
       required: true
     }
-  },
-  computed: {
-    job: function job() {
-      return this.$store.getters.job;
-    }
-  },
-  methods: {
-    submit: function submit() {
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.post('/job-ad/', this.$store.getters.job);
-    },
-    updateName: function updateName(name) {
-      this.$store.dispatch('updateJobName', name);
-    }
   }
 };
-
-
-
 
 
 
@@ -23132,13 +23111,9 @@ var __default__ = {
     var expose = _ref.expose;
     expose();
     var __returned__ = {
-      Inertia: _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia,
-      BreezeButton: _Components_Button_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-      SkillInput: _Components_JobAd_SkillInput_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-      AgeRangeInput: _Components_JobAd_AgeRangeInput__WEBPACK_IMPORTED_MODULE_3__["default"],
-      LocationInput: _Components_JobAd_LocationInput__WEBPACK_IMPORTED_MODULE_4__["default"],
-      BreezeLabel: _Components_Label_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-      BreezeInput: _Components_Input_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+      SkillInput: _Components_JobAd_SkillInput_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+      AgeRangeInput: _Components_JobAd_AgeRangeInput__WEBPACK_IMPORTED_MODULE_1__["default"],
+      LocationInput: _Components_JobAd_LocationInput__WEBPACK_IMPORTED_MODULE_2__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -23217,7 +23192,7 @@ var __default__ = {
       });
     },
     userSkills: function userSkills() {
-      return this.$store.getters.job.skills;
+      return this.$store.getters.jobAd.skills;
     },
     addedSkills: function addedSkills() {
       var _this4 = this;
@@ -25093,8 +25068,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
-/* harmony import */ var _Layouts_AuthOrg_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Layouts/AuthOrg.vue */ "./resources/js/Layouts/AuthOrg.vue");
-/* harmony import */ var _Components_JobAd_SearchBox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/JobAd/SearchBox */ "./resources/js/Components/JobAd/SearchBox.vue");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Layouts_AuthOrg_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Layouts/AuthOrg.vue */ "./resources/js/Layouts/AuthOrg.vue");
+/* harmony import */ var _Components_JobAd_SearchBox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/JobAd/SearchBox */ "./resources/js/Components/JobAd/SearchBox.vue");
+/* harmony import */ var _Components_Input_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Components/Input.vue */ "./resources/js/Components/Input.vue");
+/* harmony import */ var _Components_Label_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Components/Label.vue */ "./resources/js/Components/Label.vue");
+/* harmony import */ var _Components_Button_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Components/Button.vue */ "./resources/js/Components/Button.vue");
+/* harmony import */ var _Components_TextArea_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Components/TextArea.vue */ "./resources/js/Components/TextArea.vue");
+
 
 
 var __default__ = {
@@ -25110,14 +25091,45 @@ var __default__ = {
     },
     validErrors: function validErrors() {
       return (0,vue__WEBPACK_IMPORTED_MODULE_0__.toRaw)((0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.value.errors);
+    },
+    jobAd: function jobAd() {
+      return this.$store.getters.jobAd;
+    }
+  },
+  methods: {
+    submit: function submit() {
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post('/job-ad/', this.$store.getters.jobAd);
+    },
+    updateName: function updateName(name) {
+      this.$store.dispatch('updateJobName', name);
+    },
+    updateJobDescription: function updateJobDescription(desc) {
+      this.$store.dispatch('updateJobDescription', desc);
+    },
+    addJobResponsibility: function addJobResponsibility() {
+      this.$store.dispatch('addJobResponsibility', '');
+    },
+    updateResponsibility: function updateResponsibility(index, value) {
+      var responsibility = {
+        value: value,
+        index: index
+      };
+      this.$store.dispatch('updateJobResponsibility', responsibility);
+    },
+    removeJobResponsibility: function removeJobResponsibility(index) {
+      this.$store.dispatch('removeJobResponsibility', index);
     }
   },
   beforeCreate: function beforeCreate() {
-    if (this.$store.getters.job === null) {
+    if (this.$store.getters.jobAd === null) {
       this.$store.dispatch('refreshJobAd');
     }
   }
 };
+
+
+
+
 
 
 
@@ -25128,9 +25140,14 @@ var __default__ = {
     var __returned__ = {
       toRaw: vue__WEBPACK_IMPORTED_MODULE_0__.toRaw,
       usePage: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.usePage,
-      AuthOrg: _Layouts_AuthOrg_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-      SearchBox: _Components_JobAd_SearchBox__WEBPACK_IMPORTED_MODULE_3__["default"],
-      Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head
+      Inertia: _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia,
+      AuthOrg: _Layouts_AuthOrg_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+      SearchBox: _Components_JobAd_SearchBox__WEBPACK_IMPORTED_MODULE_4__["default"],
+      Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
+      BreezeInput: _Components_Input_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+      BreezeLabel: _Components_Label_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+      BreezeButton: _Components_Button_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+      BreezeTextArea: _Components_TextArea_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -26869,51 +26886,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
-  "class": "flex items-center justify-end mt-2"
-};
-
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Submit ");
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", {
-    onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
-      return $options.submit && $options.submit.apply($options, arguments);
-    }, ["prevent"]))
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
-    "for": "name",
-    value: "Job name"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
-    id: "name",
-    type: "text",
-    "class": "mt-1 block w-full",
-    required: "",
-    autofocus: "",
-    value: $options.job.name,
-    onInput: _cache[0] || (_cache[0] = function ($event) {
-      return $options.updateName($event.target.value);
-    })
-  }, null, 8
-  /* PROPS */
-  , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AgeRangeInput"], {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AgeRangeInput"], {
     "class": "mt-2"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["LocationInput"], {
     postcodes: $props.postcodes,
     "class": "mt-2"
   }, null, 8
   /* PROPS */
-  , ["postcodes"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SkillInput"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeButton"], {
-    "class": "ml-4"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_2];
-    }),
-    _: 1
-    /* STABLE */
-
-  })])], 32
-  /* HYDRATE_EVENTS */
-  );
+  , ["postcodes"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SkillInput"])]);
 }
 
 /***/ }),
@@ -29912,7 +29893,7 @@ var _hoisted_3 = {
   "class": "max-w-7xl mx-auto sm:px-6 lg:px-8"
 };
 var _hoisted_4 = {
-  "class": "bg-white shadow-sm sm:rounded-lg"
+  "class": "bg-white overflow-hidden shadow-sm sm:rounded-lg"
 };
 var _hoisted_5 = {
   "class": "p-6 bg-white border-b border-gray-200"
@@ -29933,6 +29914,29 @@ var _hoisted_8 = {
 var _hoisted_9 = {
   "class": "font-medium"
 };
+var _hoisted_10 = {
+  "class": "mt-2"
+};
+var _hoisted_11 = {
+  "class": "mt-2"
+};
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("X");
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Add Responsibility");
+
+var _hoisted_14 = {
+  "class": "mt-2"
+};
+var _hoisted_15 = {
+  "class": "px-4 py-2 border rounded-md"
+};
+var _hoisted_16 = {
+  "class": "flex items-center justify-end mt-2"
+};
+
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Submit ");
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
@@ -29951,11 +29955,107 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* UNKEYED_FRAGMENT */
       ))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Success Flash "), _this.successFlash ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.successFlash), 1
       /* TEXT */
-      )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SearchBox"], {
+      )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+        onSubmit: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+          return $options.submit && $options.submit.apply($options, arguments);
+        }, ["prevent"]))
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+        "for": "name",
+        value: "Job name"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
+        id: "name",
+        type: "text",
+        "class": "mt-1 block w-full",
+        required: "",
+        autofocus: "",
+        value: $options.jobAd.name,
+        onInput: _cache[0] || (_cache[0] = function ($event) {
+          return $options.updateName($event.target.value);
+        })
+      }, null, 8
+      /* PROPS */
+      , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+        "for": "job_description",
+        value: "Job Description"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeTextArea"], {
+        id: "job_description",
+        rows: "5",
+        value: $options.jobAd.description,
+        onInput: _cache[1] || (_cache[1] = function ($event) {
+          return $options.updateJobDescription($event.target.value);
+        })
+      }, null, 8
+      /* PROPS */
+      , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+        "for": "job_responsibilities",
+        value: "Job Responsibilities"
+      }), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.jobAd.responsibilities, function (responsibility, index) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+          key: index,
+          "class": "flex"
+        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeInput"], {
+          id: "result",
+          type: "text",
+          "class": "mt-2 block w-full",
+          required: "",
+          value: $options.jobAd.responsibilities[index],
+          onInput: function onInput($event) {
+            return $options.updateResponsibility(index, $event.target.value);
+          }
+        }, null, 8
+        /* PROPS */
+        , ["value", "onInput"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeButton"], {
+          onClick: function onClick($event) {
+            return $options.removeJobResponsibility(index);
+          },
+          type: "button",
+          "class": "ml-2 self-center mt-2"
+        }, {
+          "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+            return [_hoisted_12];
+          }),
+          _: 2
+          /* DYNAMIC */
+
+        }, 1032
+        /* PROPS, DYNAMIC_SLOTS */
+        , ["onClick"])]);
+      }), 128
+      /* KEYED_FRAGMENT */
+      )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeButton"], {
+        "class": "mt-2",
+        type: "button",
+        onClick: _cache[2] || (_cache[2] = function ($event) {
+          return $options.addJobResponsibility();
+        })
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_13];
+        }),
+        _: 1
+        /* STABLE */
+
+      })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeLabel"], {
+        "for": "name",
+        value: "Candidates Info"
+      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SearchBox"], {
         postcodes: $props.postcodes
       }, null, 8
       /* PROPS */
-      , ["postcodes"])])])])])];
+      , ["postcodes"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BreezeButton"], {
+        "class": "ml-4"
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_17];
+        }),
+        _: 1
+        /* STABLE */
+
+      })])], 32
+      /* HYDRATE_EVENTS */
+      ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.jobAd), 1
+      /* TEXT */
+      )])])])])];
     }),
     _: 1
     /* STABLE */
@@ -30660,6 +30760,18 @@ var actions = {
   updateJobName: function updateJobName(context, name) {
     context.commit('updateJobName', name);
   },
+  updateJobDescription: function updateJobDescription(context, description) {
+    context.commit('updateJobDescription', description);
+  },
+  addJobResponsibility: function addJobResponsibility(context, responsibility) {
+    context.commit('addJobResponsibility', responsibility);
+  },
+  removeJobResponsibility: function removeJobResponsibility(context, index) {
+    context.commit('removeJobResponsibility', index);
+  },
+  updateJobResponsibility: function updateJobResponsibility(context, responsibility) {
+    context.commit('updateJobResponsibility', responsibility);
+  },
   refreshOrgCV: function refreshOrgCV(context) {
     context.commit('refreshOrgCV');
   },
@@ -30725,8 +30837,8 @@ var getters = {
   search: function search(state) {
     return state.search;
   },
-  job: function job(state) {
-    return state.job;
+  jobAd: function jobAd(state) {
+    return state.jobAd;
   },
   orgCv: function orgCv(state) {
     return state.orgCv;
@@ -30761,7 +30873,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_3__["default"].Store({
       user: null,
       cv: null,
       search: null,
-      job: null,
+      jobAd: null,
       orgCv: null
     };
   },
@@ -30946,45 +31058,60 @@ var mutations = {
     state.search.city = city;
   },
   updateJobMinAge: function updateJobMinAge(state, minAge) {
-    state.job.minAge = minAge;
+    state.jobAd.minAge = minAge;
   },
   updateJobMaxAge: function updateJobMaxAge(state, maxAge) {
-    state.job.maxAge = maxAge;
+    state.jobAd.maxAge = maxAge;
   },
   updateJobMinExp: function updateJobMinExp(state, minExp) {
-    state.job.minExp = minExp;
+    state.jobAd.minExp = minExp;
   },
   updateJobMaxExp: function updateJobMaxExp(state, maxExp) {
-    state.job.maxExp = maxExp;
+    state.jobAd.maxExp = maxExp;
   },
   updateJobCounty: function updateJobCounty(state, county) {
-    state.job.county = county;
+    state.jobAd.county = county;
   },
   updateJobCity: function updateJobCity(state, city) {
-    state.job.city = city;
+    state.jobAd.city = city;
+  },
+  updateJobDescription: function updateJobDescription(state, description) {
+    state.jobAd.description = description;
+  },
+  addJobResponsibility: function addJobResponsibility(state, responsibility) {
+    state.jobAd.responsibilities.push(responsibility);
+  },
+  removeJobResponsibility: function removeJobResponsibility(state, index) {
+    state.jobAd.responsibilities.splice(index, 1);
+  },
+  updateJobResponsibility: function updateJobResponsibility(state, responsibility) {
+    state.jobAd.responsibilities[responsibility.index] = responsibility.value;
   },
   refreshJobAd: function refreshJobAd(state) {
-    state.job = {
+    state.jobAd = {
+      name: '',
+      description: '',
       minAge: 20,
       maxAge: 50,
       minExp: 0,
       maxExp: 5,
-      skills: []
+      skills: [],
+      responsibilities: ['']
     };
   },
   setJobAd: function setJobAd(state, search) {
-    state.job = search;
+    state.jobAd = search;
   },
   addJobSkill: function addJobSkill(state, skill) {
-    state.job.skills.push(skill);
+    state.jobAd.skills.push(skill);
   },
   removeJobSkill: function removeJobSkill(state, skill_id) {
-    state.job.skills = state.job.skills.filter(function (id) {
+    state.jobAd.skills = state.jobAd.skills.filter(function (id) {
       return id !== skill_id;
     });
   },
   updateJobName: function updateJobName(state, name) {
-    state.job.name = name;
+    state.jobAd.name = name;
   },
   refreshOrgCV: function refreshOrgCV(state) {
     state.orgCv = {

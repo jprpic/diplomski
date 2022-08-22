@@ -66,7 +66,7 @@ export default {
             return usePage().props.value.availableSkills.filter( ( el ) => !this.userSkills.includes( el.id ) );
         },
         userSkills(){
-            return this.$store.getters.job.skills;
+            return this.$store.getters.jobAd.skills;
         },
         addedSkills(){
             return usePage().props.value.availableSkills.filter( ( el ) => this.userSkills.includes( el.id ) );

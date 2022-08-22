@@ -9,7 +9,7 @@ const store = new Vuex.Store({
             user: null,
             cv: null,
             search : null,
-            job : null,
+            jobAd : null,
             orgCv: null
         }
     },
