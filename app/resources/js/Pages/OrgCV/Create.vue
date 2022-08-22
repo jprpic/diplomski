@@ -62,8 +62,6 @@ import ContactList from "@/Components/OrgCV/ContactList";
                                 </BreezeButton>
                             </div>
                         </form>
-
-                        {{ orgCv }}
                     </div>
                 </div>
             </div>

@@ -11,8 +11,10 @@ use Inertia\Inertia;
 class JobAdController extends Controller
 {
     public function create(){
+        $orgCv = Auth()->user()->orgCv;
         return Inertia::render('JobAd/Create',[
-            'postcodes' => Postcode::all()
+            'postcodes' => Postcode::all(),
+            'hasOrgCv' => (boolean) $orgCv
         ]);
     }
 
@@ -28,7 +30,7 @@ class JobAdController extends Controller
 
     public function index(Request $request){
         return Inertia::render('JobAd/Index',[
-            'jobAds' => Auth()->user()->orgCv->jobAds
+            'jobAds' => Auth()->user()->orgCv?->jobAds
         ]);
     }
 

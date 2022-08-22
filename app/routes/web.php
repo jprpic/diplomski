@@ -4,7 +4,6 @@ use App\Http\Controllers\CVController;
 use App\Http\Controllers\JobAdController;
 use App\Http\Controllers\OrgCVController;
 use App\Http\Controllers\SearchController;
-use App\Models\CV;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -40,7 +39,7 @@ Route::prefix('/cv')->middleware(['auth','employee'])->group(function() {
 });
 Route::get('/cv/{id}', [CVController::class, 'show'])->name('cv.show');
 
-Route::prefix('/job-ad')->middleware(['auth', 'organization'])->group(function() {
+Route::prefix('/job-ad')->middleware(['auth', 'organization', 'hasOrgCv'])->group(function() {
     Route::get('/create', [JobAdController::class, 'create'])->name('job.create');
     Route::post('/', [JobAdController::class, 'store'])->name('job.store');
     Route::get('/', [JobAdController::class, 'index'])->name('job.index');

@@ -43,7 +43,7 @@ export default {
     props:{
         postcodes: {
             required: true
-        }
+        },
     },
     computed:{
         successFlash(){
@@ -51,7 +51,7 @@ export default {
         },
         validErrors(){
             return toRaw(usePage().props.value.errors);
-        },
+        }
     },
     beforeCreate() {
         if(this.$store.getters.job === null){

@@ -30,14 +30,14 @@ const showingNavigationDropdown = ref(false);
                                 <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </BreezeNavLink>
-                                <BreezeNavLink :href="route('job.index')" :active="route().current('job.index')">
-                                    Job Ads
-                                </BreezeNavLink>
-                                <BreezeNavLink :href="route('job.create')" :active="route().current('job.create')">
-                                    Create Ad
-                                </BreezeNavLink>
                                 <BreezeNavLink :href="route('org-cv.create')" :active="route().current('org-cv.create')">
                                     About us
+                                </BreezeNavLink>
+                                <BreezeNavLink v-if="orgCv" :href="route('job.create')" :active="route().current('job.create')">
+                                    Create Ad
+                                </BreezeNavLink>
+                                <BreezeNavLink v-if="orgCv" :href="route('job.index')" :active="route().current('job.index')">
+                                    Job Ads
                                 </BreezeNavLink>
                                 <BreezeNavLink :href="route(`search`)" :active="route().current(`search`)">
                                     Search
@@ -88,14 +88,14 @@ const showingNavigationDropdown = ref(false);
                         <BreezeResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </BreezeResponsiveNavLink>
-                        <BreezeResponsiveNavLink :href="route('job.index')" :active="route().current('job.index')">
-                            Job Ads
-                        </BreezeResponsiveNavLink>
-                        <BreezeResponsiveNavLink :href="route('job.create')" :active="route().current('job.create')">
-                            Create Ad
-                        </BreezeResponsiveNavLink>
                         <BreezeResponsiveNavLink :href="route('org-cv.create')" :active="route().current('org-cv.create')">
                             About us
+                        </BreezeResponsiveNavLink>
+                        <BreezeResponsiveNavLink v-if="orgCv" :href="route('job.create')" :active="route().current('job.create')">
+                            Create Ad
+                        </BreezeResponsiveNavLink>
+                        <BreezeResponsiveNavLink v-if="orgCv" :href="route('job.index')" :active="route().current('job.index')">
+                            Job Ads
                         </BreezeResponsiveNavLink>
                         <BreezeResponsiveNavLink :href="route('search')" :active="route().current('search')">
                             Search
@@ -141,6 +141,9 @@ export default {
     computed:{
         user(){
             return this.$store.getters.user;
+        },
+        orgCv(){
+            return usePage().props.value.auth.orgCv;
         }
     },
     beforeCreate(){
