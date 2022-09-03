@@ -38,4 +38,14 @@ class OrgCVController extends Controller
         OrgCV::edit($reqCV);
         return Redirect::route('org-cv.create')->with('status', 'About us successfully updated!');
     }
+
+    public function show(Request $request, $id){
+        $orgCv = OrgCV::with(['location', 'contacts', 'jobAds', 'contactInfo'])->find($id);
+        if(!$orgCv){
+            return Redirect::route('dashboard');
+        }
+        return Inertia::render('OrgCV/Show', [
+           'orgCv' => $orgCv
+        ]);
+    }
 }

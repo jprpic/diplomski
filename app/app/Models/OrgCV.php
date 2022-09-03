@@ -32,6 +32,15 @@ class OrgCV extends Model
         return $this->hasMany(Contact_OrgCV::class, 'org_c_v_s_id', 'id');
     }
 
+    public function contactInfo(){
+        return $this->belongsToMany(Contact::class, 'contact_cv', 'cv_id', 'contact_id');
+    }
+
+    public function location()
+    {
+        return $this->belongsTo(Postcode::class,'postcode', 'code');
+    }
+
     public function jobAds(){
         return $this->hasMany(JobAd::class, 'org_c_v_s_id', 'id');
     }
@@ -62,6 +71,7 @@ class OrgCV extends Model
             $cvContact->value = $contact['value'];
             $cvContact->save();
         }
+        return $cv;
     }
 
     public static function edit($CVJson){
@@ -77,10 +87,20 @@ class OrgCV extends Model
         $user->cv_id = null;
         $user->save();
 
+        // Since CV is going to be deleted and all affiliated entries
+        // jobAd orgCvId is going to be null and has to be reassigned
+        $jobAds = $cv->jobAds;
+
         // Delete CV and all relationship entries
         // And create new CV
         $cv->delete();
-        OrgCV::store($CVJson);
+        $cv = OrgCV::store($CVJson);
+
+        // Reassign new OrgCvID to previously linked jobAds
+        foreach($jobAds as $jobAd){
+            $jobAd->org_c_v_s_id = $cv->id;
+            $jobAd->save();
+        }
     }
 
     public static function getCurrentUserCV(){

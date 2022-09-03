@@ -44,14 +44,17 @@ Route::prefix('/job-ad')->middleware(['auth', 'organization', 'hasOrgCv'])->grou
     Route::post('/', [JobAdController::class, 'store'])->name('job-ad.store');
     Route::get('/', [JobAdController::class, 'index'])->name('job-ad.index');
     Route::get('/{id}',[JobAdController::class, 'show'])->name('job-ad.show');
-    Route::get('/{id}/details', [JobAdController::class, 'details'])->name('job-ad.details');
 });
+
+Route::get('/job-ad/{id}/details', [JobAdController::class, 'details'])->name('job-ad.details');
 
 Route::prefix('/org-cv')->middleware(['auth', 'organization'])->group(function(){
     Route::get('/create', [OrgCVController::class, 'create'])->name('org-cv.create');
     Route::post('/', [OrgCVController::class, 'store'])->name('org-cv.store');
     Route::post('/edit', [OrgCVController::class, 'update'])->name('org-cv.update');
+
 });
+Route::get('/org-cv/{id}', [OrgCVController::class, 'show'])->name('org-cv.show');
 
 
 Route::middleware(['auth'])->group(function() {

@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('job_ads', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('org_c_v_s_id')->constrained()->onDelete('cascade');
+            // On OrgCV edit, previous OrgCV is deleted and new one is created
+            // After edit, reassign org_c_v_s_id to newly created
+            $table->foreignId('org_c_v_s_id')->nullable()->constrained()->onDelete('set null');
             $table->string('name');
             $table->unsignedTinyInteger('minAge');
             $table->unsignedTinyInteger('maxAge');

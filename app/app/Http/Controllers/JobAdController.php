@@ -37,6 +37,9 @@ class JobAdController extends Controller
 
     public function show(Request $request, $id){
         $jobAd = JobAd::find($id);
+        if(!$jobAd){
+            return Redirect::route('dashboard');
+        }
         if($jobAd->org_c_v_s_id !== $request->user()->orgCv->id){
             return response('Unauthorized.')->setStatusCode(401)->send();
         }
@@ -47,8 +50,8 @@ class JobAdController extends Controller
 
     public function details(Request $request, $id){
         $jobAd = JobAd::with('orgCv')->find($id);
-        if($jobAd->org_c_v_s_id !== $request->user()->orgCv->id){
-            return response('Unauthorized.')->setStatusCode(401)->send();
+        if(!$jobAd){
+            return Redirect::route('dashboard');
         }
         return Inertia::render('JobAd/Details',[
             'jobAd' => $jobAd,

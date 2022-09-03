@@ -33,6 +33,9 @@ class CVController extends Controller
 
     function show(Request $request, $id){
         $CV = CV::with(['contacts','contactInfo', 'experiences','skills', 'skillProficiencies','location'])->find($id);
+        if(!$CV){
+            return Redirect::route('dashboard');
+        }
         return Inertia::Render('CV/CV',[
             'CV' => $CV,
             'location' => Postcode::find($CV->postcode)
