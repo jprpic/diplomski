@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\CV;
+use App\Models\OrgCV;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
@@ -39,6 +40,7 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
                 'cv' => fn() => $request->user() ? CV::getCurrentUserCV() : null,
+                'orgCv' => fn() => $request->user() ? OrgCV::getCurrentUserCV() : null,
             ],
             'availableSkills' => CV\Skill::all(),
             'flash' => [

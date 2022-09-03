@@ -11,4 +11,8 @@ class Postcode extends Model
     public $timestamps = false;
     protected $primaryKey = 'code';
 
+    public function cvs(){
+        return $this->hasMany(CV::class);
+    }
+
 }

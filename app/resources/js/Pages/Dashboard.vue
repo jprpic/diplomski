@@ -1,12 +1,12 @@
 <script setup>
-import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+
 import { Head } from '@inertiajs/inertia-vue3';
 </script>
 
 <template>
     <Head title="Dashboard" />
 
-    <BreezeAuthenticatedLayout>
+    <component v-bind:is="layout">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Dashboard
@@ -22,6 +22,27 @@ import { Head } from '@inertiajs/inertia-vue3';
                 </div>
             </div>
         </div>
-    </BreezeAuthenticatedLayout>
+    </component>
 </template>
+
+<script>
+import AuthOrg from '@/Layouts/AuthOrg.vue';
+import AuthUser from '@/Layouts/AuthUser.vue';
+import {usePage} from "@inertiajs/inertia-vue3";
+export default{
+    components:{
+        AuthUser, AuthOrg
+    },
+    computed:{
+        layout(){
+            const role_id = usePage().props.value.auth.user.role_id;
+            if(role_id === 1){
+                return 'auth-user';
+            }else if(role_id === 2){
+                return 'auth-org';
+            }
+        }
+    }
+}
+</script>
 

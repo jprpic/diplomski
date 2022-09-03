@@ -68,14 +68,20 @@ export default {
         },
         availableSkills(){
             return usePage().props.value.availableSkills.sort((a, b) => a.name.localeCompare(b.name));
+            // return usePage().props.value.availableSkills.filter( ( el ) => !this.userSkills.includes( el.id ) );
         },
         searchedSkills(){
             // If the input is empty or a name of an existing skill is entered, hide the autocompletes
             if(this.name === '' || this.availableSkills.filter(skill => skill.name === this.name).length){
                 return null;
             }
-            return this.availableSkills.filter(skill => skill.name.toLowerCase().includes(this.name.toLowerCase()));
-        }
+            return this.availableSkills
+                .filter( ( el ) => !this.userSkills.includes( el.id ) )
+                .filter(skill => skill.name.toLowerCase().startsWith(this.name.toLowerCase()));
+        },
+        userSkills(){
+            return this.$store.getters.cv.skills.map(skill => skill.skill_id);
+        },
     },
     methods:{
         updateSkill(key, value){

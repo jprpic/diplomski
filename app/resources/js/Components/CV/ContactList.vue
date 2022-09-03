@@ -23,9 +23,6 @@ export default {
         BreezeInput
     },
     computed:{
-        email(){
-            return this.$store.getters.cv.email;
-        },
         contacts(){
             return this.$store.getters.cv.contacts;
         }

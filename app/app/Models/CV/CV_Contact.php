@@ -2,6 +2,7 @@
 
 namespace App\Models\CV;
 
+use App\Models\Contact;
 use App\Models\CV;
 use Database\Factories\CV_ContactFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

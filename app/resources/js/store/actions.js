@@ -65,8 +65,8 @@ const actions = {
     setCV(context, cv){
         context.commit('setCV', cv);
     },
-    removeCV(context){
-        context.commit('removeCV')
+    refreshCV(context){
+        context.commit('refreshCV')
     },
     setUser(context, user){
         context.commit('setUser', user);
@@ -74,8 +74,8 @@ const actions = {
     addSearchSkill(context, skill){
         context.commit('addSearchSkill', skill)
     },
-    restartSearch(context) {
-        context.commit('restartSearch');
+    refreshSearch(context) {
+        context.commit('refreshSearch');
     },
     setSearch(context, search){
         context.commit('setSearch', search)
@@ -83,18 +83,102 @@ const actions = {
     removeSearchSkill(context, index){
         context.commit('removeSearchSkill', index);
     },
-    updateAgeRange(context, ageRange){
-        context.commit('updateAgeRange', ageRange)
+    updateMinAge(context, minAge){
+        context.commit('updateMinAge', minAge)
     },
-    updateExpRange(context, expRange){
-        context.commit('updateExpRange', expRange);
+    updateMaxAge(context, maxAge){
+        context.commit('updateMaxAge', maxAge);
+    },
+    updateMinExp(context, minExp){
+        context.commit('updateMinExp', minExp)
+    },
+    updateMaxExp(context, maxExp){
+        context.commit('updateMaxExp', maxExp);
     },
     updateSearchCounty(context, county){
         context.commit('updateSearchCounty', county);
     },
     updateSearchCity(context, city){
         context.commit('updateSearchCity', city)
-    }
+    },
+    addJobSkill(context, skill){
+        context.commit('addJobSkill', skill)
+    },
+    refreshJobAd(context) {
+        context.commit('refreshJobAd');
+    },
+    setJobAd(context, search){
+        context.commit('setJobAd', search)
+    },
+    removeJobSkill(context, index){
+        context.commit('removeJobSkill', index);
+    },
+    updateJobMinAge(context, minAge){
+        context.commit('updateJobMinAge', minAge)
+    },
+    updateJobMaxAge(context, maxAge){
+        context.commit('updateJobMaxAge', maxAge);
+    },
+    updateJobMinExp(context, minExp){
+        context.commit('updateJobMinExp', minExp)
+    },
+    updateJobMaxExp(context, maxExp){
+        context.commit('updateJobMaxExp', maxExp);
+    },
+    updateJobCounty(context, county){
+        context.commit('updateJobCounty', county);
+    },
+    updateJobCity(context, city){
+        context.commit('updateJobCity', city)
+    },
+    updateJobName(context, name){
+        context.commit('updateJobName', name);
+    },
+    updateJobDescription(context, description){
+        context.commit('updateJobDescription', description);
+    },
+    addJobResponsibility(context, responsibility){
+        context.commit('addJobResponsibility', responsibility);
+    },
+    removeJobResponsibility(context, index){
+        context.commit('removeJobResponsibility', index);
+    },
+    updateJobResponsibility(context, responsibility){
+        context.commit('updateJobResponsibility', responsibility);
+    },
+    refreshOrgCV(context){
+        context.commit('refreshOrgCV');
+    },
+    updateOrgName(context, name){
+        context.commit('updateOrgName', name);
+    },
+    updateOrgEmail(context, email){
+        context.commit('updateOrgEmail', email);
+    },
+    updateOrgDescription(context, description){
+        context.commit('updateOrgDescription', description);
+    },
+    updateOrgImgUrl(context, img_url){
+        context.commit('updateOrgImgUrl', img_url);
+    },
+    updateOrgPostcode(context, postcode) {
+        context.commit('updateOrgPostcode', postcode);
+    },
+    updateOrgStreet(context, street){
+        context.commit('updateOrgStreet', street);
+    },
+    setOrgCv(context, cv){
+        context.commit('setOrgCv', cv);
+    },
+    addOrgContact(context){
+        context.commit('addOrgContact');
+    },
+    updateOrgContact(context, contact){
+        context.commit('updateOrgContact', contact);
+    },
+    removeOrgContact(context, index){
+        context.commit('removeOrgContact', index);
+    },
 
 
 }

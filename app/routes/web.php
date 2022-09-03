@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\CVController;
+use App\Http\Controllers\JobAdController;
+use App\Http\Controllers\OrgCVController;
 use App\Http\Controllers\SearchController;
-use App\Models\CV;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -31,19 +32,37 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-
-Route::prefix('cv')->middleware(['auth'])->group(function() {
+Route::prefix('/cv')->middleware(['auth','employee'])->group(function() {
     Route::post('/', [CVController::class, 'store'])->name('cv.store');
     Route::post('/edit', [CVController::class, 'update'])->name('cv.update');
     Route::get('/create', [CVController::class, 'create'])->name('cv.create');
 });
+Route::get('/cv/{id}', [CVController::class, 'show'])->name('cv.show');
+
+Route::prefix('/job-ad')->middleware(['auth', 'organization', 'hasOrgCv'])->group(function() {
+    Route::get('/create', [JobAdController::class, 'create'])->name('job-ad.create');
+    Route::post('/', [JobAdController::class, 'store'])->name('job-ad.store');
+    Route::get('/', [JobAdController::class, 'index'])->name('job-ad.index');
+    Route::get('/{id}',[JobAdController::class, 'show'])->name('job-ad.show');
+});
+
+Route::get('/job-ad/{id}/details', [JobAdController::class, 'details'])->name('job-ad.details');
+
+Route::prefix('/org-cv')->middleware(['auth', 'organization'])->group(function(){
+    Route::get('/create', [OrgCVController::class, 'create'])->name('org-cv.create');
+    Route::post('/', [OrgCVController::class, 'store'])->name('org-cv.store');
+    Route::post('/edit', [OrgCVController::class, 'update'])->name('org-cv.update');
+
+});
+Route::get('/org-cv/{id}', [OrgCVController::class, 'show'])->name('org-cv.show');
+
 
 Route::middleware(['auth'])->group(function() {
     Route::get('/search', [SearchController::class, 'index'])->name('search');
     Route::post('/search', [SearchController::class, 'search'])->name('search.results');
 });
 
-Route::get('/cv/{id}', [CVController::class, 'show'])->name('cv.show');
+
 
 
 require __DIR__.'/auth.php';
