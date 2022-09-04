@@ -57,4 +57,20 @@ class JobAdController extends Controller
             'jobAd' => $jobAd,
         ]);
     }
+
+    public function remove(Request $request, $id){
+        $jobAd = JobAd::find($id);
+        if($jobAd->orgCv->user_id == $request->user()->id){
+            //$jobAd->delete();
+            return redirect()->back()->with('status', 'JobAd successfully deleted!');
+        }
+        return response()->noContent()->setStatusCode(401);
+    }
+
+    public function edit(Request $request, $id){
+        $jobAd = JobAd::find($id);
+        return Inertia::render('Dashboard/Organization',[
+            'jobAds' => []
+        ]);
+    }
 }

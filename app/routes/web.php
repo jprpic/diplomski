@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CVController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JobAdController;
 use App\Http\Controllers\OrgCVController;
 use App\Http\Controllers\SearchController;
@@ -28,9 +29,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::prefix('/cv')->middleware(['auth','employee'])->group(function() {
     Route::post('/', [CVController::class, 'store'])->name('cv.store');
@@ -44,6 +44,8 @@ Route::prefix('/job-ad')->middleware(['auth', 'organization', 'hasOrgCv'])->grou
     Route::post('/', [JobAdController::class, 'store'])->name('job-ad.store');
     Route::get('/', [JobAdController::class, 'index'])->name('job-ad.index');
     Route::get('/{id}',[JobAdController::class, 'show'])->name('job-ad.show');
+    Route::delete('/{id}',[JobAdController::class, 'remove'])->name('job-ad.remove');
+    Route::get('/{id}/edit',[JobAdController::class, 'edit'])->name('job-ad.edit');
 });
 
 Route::get('/job-ad/{id}/details', [JobAdController::class, 'details'])->name('job-ad.details');

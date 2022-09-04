@@ -47,6 +47,7 @@ import BreezeNavLink from "@/Components/NavLink.vue";
                             <span
                                 v-for="error in validErrors"
                                 class="font-medium"
+                                :key="error"
                                 >{{ error }}</span
                             >
                         </div>
