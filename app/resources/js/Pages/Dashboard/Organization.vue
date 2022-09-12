@@ -79,7 +79,7 @@ import { Link } from "@inertiajs/inertia-vue3";
                                                     <img
                                                         alt="Edit icon"
                                                         :src="'/images/edit.png'"
-                                                        class="object-contain h-8 w-8"
+                                                        class="object-contain h-6 w-6"
                                                     />
                                                 </button>
                                             </div>
@@ -91,7 +91,7 @@ import { Link } from "@inertiajs/inertia-vue3";
                                                     <img
                                                         alt="Delete icon"
                                                         :src="'/images/delete.png'"
-                                                        class="object-contain h-8 w-8"
+                                                        class="object-contain h-6 w-6"
                                                     />
                                                 </button>
                                             </div>
