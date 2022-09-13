@@ -46,6 +46,7 @@ Route::prefix('/job-ad')->middleware(['auth', 'organization', 'hasOrgCv'])->grou
     Route::get('/{id}',[JobAdController::class, 'show'])->name('job-ad.show');
     Route::delete('/{id}',[JobAdController::class, 'remove'])->name('job-ad.remove');
     Route::get('/{id}/edit',[JobAdController::class, 'edit'])->name('job-ad.edit');
+    Route::post('/{id}/edit',[JobAdController::class, 'update'])->name('job-ad.update');
 });
 
 Route::get('/job-ad/{id}/details', [JobAdController::class, 'details'])->name('job-ad.details');

@@ -12,10 +12,8 @@ use Inertia\Inertia;
 class JobAdController extends Controller
 {
     public function create(Request $request){
-        $orgCv = $request->user()->orgCv;
         return Inertia::render('JobAd/Create',[
             'postcodes' => Postcode::all(),
-            'hasOrgCv' => (boolean) $orgCv
         ]);
     }
 
@@ -69,8 +67,34 @@ class JobAdController extends Controller
 
     public function edit(Request $request, $id){
         $jobAd = JobAd::find($id);
-        return Inertia::render('Dashboard/Organization',[
-            'jobAds' => []
-        ]);
+        if($jobAd->orgCv->user_id == $request->user()->id){
+            return Inertia::render('JobAd/Edit',[
+                'jobAdData' => $jobAd->toArray(),
+                'postcodes' => Postcode::all(),
+            ]);
+        }
+        return response()->noContent()->setStatusCode(401);
     }
+
+    public function update(Request $request, $id){
+        $jobAd = JobAd::find($id);
+        if($jobAd->orgCv->user_id == $request->user()->id){
+            $data = $request->all();
+            $jobAd->name = $data['name'];
+            $jobAd->description = $data['description'];
+            $jobAd->minAge = $data['minAge'];
+            $jobAd->maxAge = $data['maxAge'];
+            $jobAd->minExp = $data['minExp'];
+            $jobAd->maxExp = $data['maxExp'];
+            $jobAd->county = $data['county'] ?? null;
+            $jobAd->city = $data['city'] ?? null;
+            $jobAd->skills = $data['skills'];
+            $jobAd->responsibilities = $data['responsibilities'];
+            $jobAd->save();
+            return redirect()->back()->with('status', "JobAd $jobAd->name successfully updated!");
+
+        }
+        return response()->noContent()->setStatusCode(401);
+    }
+
 }

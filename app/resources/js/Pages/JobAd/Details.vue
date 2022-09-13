@@ -98,7 +98,7 @@ export default {
     methods: {
         getSkillName(id) {
             const skills = usePage().props.value.availableSkills;
-            return skills.find((el) => el.id === id).name;
+            return skills.find((el) => el.id === id)?.name;
         },
         showAboutUs(id) {
             Inertia.visit(`/org-cv/${id}`);
