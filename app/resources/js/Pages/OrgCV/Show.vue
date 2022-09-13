@@ -23,7 +23,7 @@ import JobAd from "@/Components/JobAd/Item.vue";
                                 </div>
                                 <!-- Description -->
                                 <div
-                                    class="ml-4 text-gray-800 p-4 border-x border-gray-500/25 text-justify"
+                                    class="ml-4 text-gray-800 p-4 border-x border-gray-500/25 text-justify grow"
                                 >
                                     <p class="text-2xl font-bold uppercase">
                                         {{ orgCv.name }}
@@ -33,7 +33,7 @@ import JobAd from "@/Components/JobAd/Item.vue";
                                     </p>
                                 </div>
                                 <!-- Contacts -->
-                                <div class="p-4 flex flex-col w-full">
+                                <div class="p-4 flex flex-col">
                                     <div
                                         class="flex flex-row items-center my-1"
                                     >

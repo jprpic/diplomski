@@ -31634,13 +31634,13 @@ var _hoisted_7 = {
 };
 var _hoisted_8 = ["src"];
 var _hoisted_9 = {
-  "class": "ml-4 text-gray-800 p-4 border-x border-gray-500/25 text-justify"
+  "class": "ml-4 text-gray-800 p-4 border-x border-gray-500/25 text-justify grow"
 };
 var _hoisted_10 = {
   "class": "text-2xl font-bold uppercase"
 };
 var _hoisted_11 = {
-  "class": "p-4 flex flex-col w-full"
+  "class": "p-4 flex flex-col"
 };
 var _hoisted_12 = {
   "class": "flex flex-row items-center my-1"

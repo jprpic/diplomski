@@ -760,6 +760,9 @@ select {
 .h-1\/2 {
   height: 50%;
 }
+.h-24 {
+  height: 6rem;
+}
 .h-32 {
   height: 8rem;
 }
@@ -768,12 +771,6 @@ select {
 }
 .h-12 {
   height: 3rem;
-}
-.h-14 {
-  height: 3.5rem;
-}
-.h-24 {
-  height: 6rem;
 }
 .max-h-40 {
   max-height: 10rem;
@@ -830,6 +827,9 @@ select {
 .w-1\/3 {
   width: 33.333333%;
 }
+.w-24 {
+  width: 6rem;
+}
 .w-32 {
   width: 8rem;
 }
@@ -838,12 +838,6 @@ select {
 }
 .w-1\/2 {
   width: 50%;
-}
-.w-14 {
-  width: 3.5rem;
-}
-.w-24 {
-  width: 6rem;
 }
 .min-w-fit {
   min-width: -webkit-fit-content;
