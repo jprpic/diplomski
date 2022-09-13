@@ -31,6 +31,7 @@ import BreezeTextArea from "@/Components/TextArea.vue";
                             <span
                                 v-for="error in validErrors"
                                 class="font-medium"
+                                :key="error"
                                 >{{ error }}</span
                             >
                         </div>

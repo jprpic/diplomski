@@ -10,7 +10,7 @@ import { Link } from "@inertiajs/inertia-vue3";
     <AuthOrg>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
+                Your Job Ads
             </h2>
         </template>
 
@@ -26,10 +26,27 @@ import { Link } from "@inertiajs/inertia-vue3";
                         >
                             <span class="font-medium">{{ successFlash }}</span>
                         </div>
-                        <p class="mb-4 text-2xl font-bold">Your Job Ads</p>
-
                         <div
-                            v-if="!jobAds.length"
+                            v-if="jobAds === null"
+                            class="flex p-4 bg-gray-100 rounded-lg dark:bg-gray-700"
+                            role="alert"
+                        >
+                            <div
+                                class="ml-3 font-medium text-gray-700 dark:text-gray-300"
+                            >
+                                <p>
+                                    It seems you don't have an About us! You can
+                                    start out by
+                                    <Link
+                                        href="/org-cv/create"
+                                        class="font-semibold underline"
+                                        >Creating an About us</Link
+                                    >!
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            v-if="jobAds && !jobAds.length"
                             id="alert-5"
                             class="flex p-4 bg-gray-100 rounded-lg dark:bg-gray-700"
                             role="alert"

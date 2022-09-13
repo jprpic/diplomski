@@ -76,11 +76,6 @@ class CV extends Model
         return $this->birthdate;
     }
 
-    public function getSuggestedJobs(){
-        $jobs = JobAd::all();
-        dd($jobs);
-    }
-
     public static function getCurrentUserCV(){
         if(!Auth()->id()){
             return null;

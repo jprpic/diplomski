@@ -27,10 +27,8 @@ class DashboardController extends Controller
 
                 // Get all Job Ads and extract their wanted Skill IDS
                 $jobAds = JobAd::all(['id','skills'])->toArray();
-                $jobAdSkills = array_column($jobAds, 'skills');
-                $jobAdSkillIds = array_map(function($skill) {
-                    return array_column($skill, 'id');
-                }, $jobAdSkills);
+                $jobAdSkillIds = array_column($jobAds, 'skills');
+
 
                 // Expand Users skills to apply array functions
                 // Get matching and different skills
@@ -67,6 +65,15 @@ class DashboardController extends Controller
                     );
                     $suggestedJobAds[] = $jobAd;
                 }
+
+
+                usort($suggestedJobAds, function($a, $b) {
+                    $matchPercentageFirst = count($a["skills"]["matchingSkills"]) / ( count($a["skills"]["matchingSkills"]) + count($a["skills"]["differentSkills"]));
+                    $matchPercentageSecond = count($b["skills"]["matchingSkills"]) / ( count($b["skills"]["matchingSkills"]) + count($b["skills"]["differentSkills"]));
+
+                    return $matchPercentageFirst < $matchPercentageSecond;
+                });
+
             }
             return Inertia::render('Dashboard/User',[
                 'suggestedJobAds' => $suggestedJobAds
