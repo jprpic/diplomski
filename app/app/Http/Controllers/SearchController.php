@@ -35,12 +35,10 @@ class SearchController extends Controller
 
         $targets = self::filterCVs($options);
         return response()->json($targets);
-
     }
 
     private function filterCVs($options){
         $targets = [];
-
         $locationClauses = [];
         if(isset($options['county'])){
             array_push($locationClauses, ['postcodes.county', '=', $options['county']]);
@@ -52,10 +50,10 @@ class SearchController extends Controller
             ->join('postcodes', 'cvs.postcode', '=', 'postcodes.code')
             ->select('cvs.*', 'postcodes.name as postcodes.name', 'postcodes.county as postcodes.county')
             ->where([
-                ['cvs.birthdate', '<', Carbon::now()->subYears($options['ageRange']['bot'])],
-                ['cvs.birthdate', '>', Carbon::now()->subYears($options['ageRange']['top'])],
-                ['cvs.years_of_exp', '>=', $options['expRange']['bot']],
-                ['cvs.years_of_exp', '<=', $options['expRange']['top']],
+                ['cvs.birthdate', '<', Carbon::now()->subYears($options['minAge'])],
+                ['cvs.birthdate', '>', Carbon::now()->subYears($options['maxAge'])],
+                ['cvs.years_of_exp', '>=', $options['minExp']],
+                ['cvs.years_of_exp', '<=', $options['maxExp']],
                 ...$locationClauses
             ])->get()->toArray();
 

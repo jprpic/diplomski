@@ -30,8 +30,14 @@ const showingNavigationDropdown = ref(false);
                                 <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </BreezeNavLink>
-                                <BreezeNavLink :href="route(`cv.create`)" :active="route().current(`cv.create`)">
-                                    <span class="capitalize"> {{ CVRoute }}</span>
+                                <BreezeNavLink :href="route('org-cv.create')" :active="route().current('org-cv.create')">
+                                    About us
+                                </BreezeNavLink>
+                                <BreezeNavLink v-if="orgCv" :href="route('job-ad.create')" :active="route().current('job-ad.create')">
+                                    Create Ad
+                                </BreezeNavLink>
+                                <BreezeNavLink v-if="orgCv" :href="route('job-ad.index')" :active="route().current('job-ad.index')">
+                                    Job Ads
                                 </BreezeNavLink>
                                 <BreezeNavLink :href="route(`search`)" :active="route().current(`search`)">
                                     Search
@@ -82,8 +88,14 @@ const showingNavigationDropdown = ref(false);
                         <BreezeResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </BreezeResponsiveNavLink>
-                        <BreezeResponsiveNavLink :href="route(`cv.create`)" :active="route().current(`cv.create`)">
-                            <span class="capitalize"> {{ CVRoute }}</span>
+                        <BreezeResponsiveNavLink :href="route('org-cv.create')" :active="route().current('org-cv.create')">
+                            About us
+                        </BreezeResponsiveNavLink>
+                        <BreezeResponsiveNavLink v-if="orgCv" :href="route('job-ad.create')" :active="route().current('job-ad.create')">
+                            Create Ad
+                        </BreezeResponsiveNavLink>
+                        <BreezeResponsiveNavLink v-if="orgCv" :href="route('job-ad.index')" :active="route().current('job-ad.index')">
+                            Job Ads
                         </BreezeResponsiveNavLink>
                         <BreezeResponsiveNavLink :href="route('search')" :active="route().current('search')">
                             Search
@@ -130,12 +142,8 @@ export default {
         user(){
             return this.$store.getters.user;
         },
-        CVRoute(){
-            if(usePage().props.value.auth.cv){
-                return 'edit'
-            }else{
-                return 'create'
-            }
+        orgCv(){
+            return usePage().props.value.auth.orgCv;
         }
     },
     beforeCreate(){
@@ -144,10 +152,12 @@ export default {
         // Store data can be initialized
         if(this.$store.getters.user === null){
             this.$store.dispatch('setUser', usePage().props.value.auth.user)
-            // If the authorized user has CV, initialize CV
-            if(JSON.parse(usePage().props.value.auth.cv) !== null){
-                this.$store.dispatch('setCV', JSON.parse(usePage().props.value.auth.cv));
-            }
+        }
+        if(JSON.parse(usePage().props.value.auth.orgCv) !== null){
+            this.$store.dispatch('setOrgCv', JSON.parse(usePage().props.value.auth.orgCv));
+        }
+        else if( this.$store.getters.cv === null){
+            this.$store.dispatch('refreshOrgCV');
         }
     }
 }

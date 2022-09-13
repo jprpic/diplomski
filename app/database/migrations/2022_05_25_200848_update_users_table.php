@@ -16,9 +16,8 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedTinyInteger('role_id');
             $table->foreign('role_id')->references('id')->on('roles');
-            // One-to-one relationship with CV
-            // Employers and admins dont need a CV
-            $table->foreignId('cv_id')->nullable()->constrained();
+            // Zero or One-to-one relationship with CV
+            $table->foreignId('cv_id')->nullable()->constrained()->onDelete('set null');
         });
     }
 

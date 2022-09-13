@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\CV\Contact;
 use App\Models\CV\CV_Contact;
 use App\Models\CV\CV_Skill;
 use App\Models\CV\Experience;
@@ -17,9 +16,6 @@ class CV extends Model
     use HasFactory;
 
     protected $table = 'cvs';
-    protected $casts = [
-        'address' => 'array'
-    ];
 
     const VALID_RULES = [
         'name' => 'required|max:255',
@@ -67,6 +63,11 @@ class CV extends Model
         return $this->belongsToMany(Contact::class, 'contact_cv', 'cv_id', 'contact_id');
     }
 
+    public function location()
+    {
+        return $this->belongsTo(Postcode::class,'postcode', 'code');
+    }
+
     public function user(){
         return $this->hasOne(User::class, 'id', 'user_id');
     }
@@ -89,8 +90,7 @@ class CV extends Model
         $cv->contacts = $cvModel->contacts;
         $cv->experiences = $cvModel->experiences;
         $cv->skills = $cvModel->skillProficiencies;
-        $cv = json_encode($cv);
-        return $cv;
+        return json_encode($cv);
     }
 
     public static function edit($CVJson){

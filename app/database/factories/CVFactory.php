@@ -39,9 +39,8 @@ class CVFactory extends Factory
         return $this->afterCreating(function ($CV){
             // Link the newly created CV to an existing user
             $user = User::find($CV['user_id']);
-            $user->cv_id = $CV['user_id'];
+            $user->cv_id = $CV->id;
             $user->save();
-
             // Fill the many-to-many relationship with cv_skill table
             $randArray = range(1,CV\Skill::all()->count());
             shuffle($randArray);

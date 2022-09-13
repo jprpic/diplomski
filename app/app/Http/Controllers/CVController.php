@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\CV;
-use App\Models\CV\Contact;
 use App\Models\Postcode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Inertia\Inertia;
 use Illuminate\Support\Facades\Validator;
+use Inertia\Inertia;
 
 class CVController extends Controller
 {
     function create(){
         $availableContacts = Contact::all();
         $availablePostcodes = Postcode::all();
-        return Inertia::render('Create', [
+        return Inertia::render('CV/Create', [
             'postcodes' => $availablePostcodes,
             'availableContacts' => $availableContacts,
         ]);
@@ -32,8 +32,11 @@ class CVController extends Controller
     }
 
     function show(Request $request, $id){
-        $CV = CV::with(['contacts','contactInfo', 'experiences','skills', 'skillProficiencies'])->find($id);
-        return Inertia::Render('CV',[
+        $CV = CV::with(['contacts','contactInfo', 'experiences','skills', 'skillProficiencies','location'])->find($id);
+        if(!$CV){
+            return Redirect::route('dashboard');
+        }
+        return Inertia::Render('CV/CV',[
             'CV' => $CV,
             'location' => Postcode::find($CV->postcode)
         ]);

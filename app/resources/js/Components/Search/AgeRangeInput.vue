@@ -1,18 +1,17 @@
 <script setup>
 import BreezeLabel from "@/Components/Label"
-import BreezeInput from "@/Components/Input"
-import RangeInput from "@/Components/Search/RangeInput"
+import RangeInput from "@/Components/RangeInput"
 </script>
 
 <template>
     <div class="flex">
         <div class="w-fit">
             <BreezeLabel for="age_range" value="Age range" />
-            <RangeInput :value="ageRange" @update:top="value => updateTop(value)" @update:bot="value => updateBot(value)"/>
+            <RangeInput :min = "minAge" :max="maxAge" @update:max="value => updateMaxAge(value)" @update:min="value => updateMinAge(value)"/>
         </div>
         <div class="w-fit ml-4">
             <BreezeLabel for="years_of_exp" value="Years of experience range"></BreezeLabel>
-            <RangeInput :value="expRange" @update:top="value => updateExpTop(value)" @update:bot="value => updateExpBot(value)"/>
+            <RangeInput :min = "minExp" :max="maxExp" @update:max="value => updateMaxExp(value)" @update:min="value => updateMinExp(value)"/>
         </div>
     </div>
 </template>
@@ -20,37 +19,42 @@ import RangeInput from "@/Components/Search/RangeInput"
 <script>
 export default {
     name: "AgeRangeInput.vue",
+    data(){
+        return{
+            minAge : 20,
+            maxAge : 50,
+            minExp : 0,
+            maxExp : 5,
+        }
+    },
     computed:{
-        ageRange(){
-            return this.$store.getters.search.ageRange;
-        },
-        expRange(){
-            return this.$store.getters.search.expRange;
+      search(){
+          return this.$store.getters.search;
         }
     },
     methods:{
-        updateBot(value){
-            this.ageRange.bot = value;
-            this.updateAgeRange();
+        updateMinAge(value){
+            this.minAge = value;
+            this.$store.dispatch('updateMinAge', this.minAge);
         },
-        updateTop(value){
-            this.ageRange.top = value;
-            this.updateAgeRange();
+        updateMaxAge(value){
+            this.maxAge = value;
+            this.$store.dispatch('updateMaxAge', this.maxAge);
         },
-        updateAgeRange(){
-            this.$store.dispatch('updateAgeRange', this.ageRange);
+        updateMinExp(value){
+            this.minExp = value;
+            this.$store.dispatch('updateMinExp', this.minExp);
         },
-        updateExpBot(value){
-            this.expRange.bot = value;
-            this.updateExpRange();
+        updateMaxExp(value){
+            this.maxExp = value;
+            this.$store.dispatch('updateMaxExp', this.maxExp);
         },
-        updateExpTop(value){
-            this.expRange.top = value;
-            this.updateExpRange();
-        },
-        updateExpRange(){
-            this.$store.dispatch('updateExpRange', this.expRange);
-        }
+    },
+    mounted(){
+        this.minAge = this.search.minAge;
+        this.maxAge = this.search.maxAge;
+        this.minExp = this.search.minExp;
+        this.maxExp = this.search.maxExp;
     }
 }
 </script>

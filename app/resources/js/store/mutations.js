@@ -88,7 +88,7 @@ const mutations = {
     setCV(state, cv){
         state.cv = cv;
     },
-    removeCV(state){
+    refreshCV(state){
         state.cv = {
             name: '',
             description: '',
@@ -96,7 +96,6 @@ const mutations = {
                 street: '',
                 postcode: ''
             },
-            email: '',
             contacts: [{
                 contact_id: '',
                 value: ''
@@ -120,16 +119,12 @@ const mutations = {
     setUser(state, user){
         state.user = user;
     },
-    restartSearch(state){
+    refreshSearch(state){
         state.search = {
-            ageRange:{
-                bot: 20,
-                top: 40
-            },
-            expRange: {
-                bot: 0,
-                top: 3
-            },
+            minAge: 20,
+            maxAge: 50,
+            minExp: 0,
+            maxExp: 5,
             skills: [],
         }
     },
@@ -142,17 +137,125 @@ const mutations = {
     removeSearchSkill(state, skill_id){
         state.search.skills = state.search.skills.filter(id => id !== skill_id);
     },
-    updateAgeRange(state, ageRange){
-        state.search.ageRange = ageRange;
+    updateMinAge(state, minAge){
+        state.search.minAge = minAge;
     },
-    updateExpRange(state, expRange){
-        state.search.expRange = expRange;
+    updateMaxAge(state, maxAge){
+        state.search.maxAge = maxAge;
+    },
+    updateMinExp(state, minExp){
+        state.search.minExp = minExp;
+    },
+    updateMaxExp(state, maxExp){
+        state.search.maxExp = maxExp;
     },
     updateSearchCounty(state, county){
-    state.search.county = county;
+        state.search.county = county;
     },
     updateSearchCity(state, city){
         state.search.city = city;
+    },
+    updateJobMinAge(state, minAge){
+        state.jobAd.minAge = minAge;
+    },
+    updateJobMaxAge(state, maxAge){
+        state.jobAd.maxAge = maxAge;
+    },
+    updateJobMinExp(state, minExp){
+        state.jobAd.minExp = minExp;
+    },
+    updateJobMaxExp(state, maxExp){
+        state.jobAd.maxExp = maxExp;
+    },
+    updateJobCounty(state, county){
+        state.jobAd.county = county;
+    },
+    updateJobCity(state, city){
+        state.jobAd.city = city;
+    },
+    updateJobDescription(state, description){
+        state.jobAd.description = description;
+    },
+    addJobResponsibility(state, responsibility){
+      state.jobAd.responsibilities.push(responsibility);
+    },
+    removeJobResponsibility(state, index){
+        state.jobAd.responsibilities.splice(index, 1);
+    },
+    updateJobResponsibility(state, responsibility){
+        state.jobAd.responsibilities[responsibility.index] = responsibility.value;
+    },
+    refreshJobAd(state){
+        state.jobAd = {
+            name: '',
+            description: '',
+            minAge: 20,
+            maxAge: 50,
+            minExp: 0,
+            maxExp: 5,
+            skills: [],
+            responsibilities: [''],
+        }
+    },
+    setJobAd(state, search){
+        state.jobAd = search;
+    },
+    addJobSkill(state, skill) {
+        state.jobAd.skills.push(skill);
+    },
+    removeJobSkill(state, skill_id){
+        state.jobAd.skills = state.jobAd.skills.filter(id => id !== skill_id);
+    },
+    updateJobName(state, name){
+        state.jobAd.name = name;
+    },
+    refreshOrgCV(state){
+        state.orgCv = {
+            name: '',
+            contacts: [{
+                contact_id: '',
+                value: ''
+            }],
+            description: '',
+            img_url: '',
+            postcode: '',
+            street: ''
+        }
+    },
+    updateOrgName(state, name){
+        state.orgCv.name = name;
+    },
+    updateOrgEmail(state, email){
+        state.orgCv.email = email;
+    },
+    updateOrgDescription(state, description){
+        state.orgCv.description = description;
+    },
+    updateOrgImgUrl(state, img_url){
+        state.orgCv.img_url = img_url;
+    },
+    updateOrgPostcode(state, postcode) {
+        state.orgCv.postcode = postcode;
+    },
+    updateOrgStreet(state, street){
+        state.orgCv.street = street;
+    },
+    setOrgCv(state, orgCv){
+        state.orgCv = orgCv;
+    },
+    addOrgContact(state){
+        state.orgCv.contacts.push({
+            contact_id: '',
+            value: ''
+        })
+    },
+    updateOrgContact(state, contact){
+        const index = contact.index;
+        delete contact.index;
+        state.orgCv.contacts[index] = contact;
+    },
+    removeOrgContact(state, index){
+        state.orgCv.contacts.splice(index, 1); // 2nd parameter means remove one item only
     },
 }
 

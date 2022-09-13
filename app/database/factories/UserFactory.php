@@ -41,4 +41,12 @@ class UserFactory extends Factory
             ];
         });
     }
+
+    public function company(){
+        return $this->state(function (array $attributes) {
+            return [
+                'role_id' => 2,
+            ];
+        });
+    }
 }

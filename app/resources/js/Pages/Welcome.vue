@@ -17,7 +17,7 @@ export default {
         if(usePage().props.value.auth.user === null && this.$store.getters.user !== null){
             // Logout user
             this.$store.dispatch('setUser', null);
-            this.$store.dispatch('removeCV');
+            this.$store.dispatch('refreshCV');
         }
     }
 }
