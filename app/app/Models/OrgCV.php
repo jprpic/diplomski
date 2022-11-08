@@ -33,7 +33,7 @@ class OrgCV extends Model
     }
 
     public function contactInfo(){
-        return $this->belongsToMany(Contact::class, 'contact_cv', 'cv_id', 'contact_id');
+        return $this->belongsToMany(Contact::class, 'contact__org_c_v_s', 'org_c_v_s_id', 'contact_id');
     }
 
     public function location()

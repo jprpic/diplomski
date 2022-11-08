@@ -290,11 +290,13 @@ import { usePage } from "@inertiajs/inertia-vue3";
 import AuthUser from "@/Layouts/AuthUser";
 import AuthOrg from "@/Layouts/AuthOrg";
 import Empty from "@/Layouts/Empty.vue";
+import AuthAdmin from "@/Layouts/AuthAdmin";
 export default {
     name: "CV.vue",
     components: {
         AuthUser,
         AuthOrg,
+        AuthAdmin,
         Empty,
     },
     props: ["CV"],
@@ -313,6 +315,9 @@ export default {
                 return "auth-user";
             } else if (role_id === 2) {
                 return "auth-org";
+            }
+            else if (role_id === 3) {
+                return 'auth-admin';
             }
         },
     },

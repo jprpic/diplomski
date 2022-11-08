@@ -1,11 +1,10 @@
 <script setup>
-import AuthOrg from "@/Layouts/AuthOrg.vue";
 import { Head } from "@inertiajs/inertia-vue3";
 </script>
 
 <template>
     <Head title="Details" />
-    <AuthOrg>
+    <component v-bind:is="layout">
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -71,15 +70,25 @@ import { Head } from "@inertiajs/inertia-vue3";
                 </div>
             </div>
         </div>
-    </AuthOrg>
+    </component>
 </template>
 
 <script>
 import { usePage } from "@inertiajs/inertia-vue3";
 import { Inertia } from "@inertiajs/inertia";
+import AuthOrg from "@/Layouts/AuthOrg.vue";
+import AuthUser from "@/Layouts/AuthUser";
+import AuthAdmin from "@/Layouts/AuthAdmin";
 
+let Empty;
 export default {
     name: "Details.vue",
+    components: {
+        AuthUser,
+        AuthOrg,
+        AuthAdmin,
+        Empty,
+    },
     props: {
         jobAd: {
             required: true,
@@ -93,6 +102,19 @@ export default {
                 skillNames.push(this.getSkillName(id))
             );
             return skillNames.join(", ");
+        },
+        layout() {
+            if (!usePage().props.value.auth.user) {
+                return "empty";
+            }
+            const role_id = usePage().props.value.auth.user.role_id;
+            if (role_id === 1) {
+                return "auth-user";
+            } else if (role_id === 2) {
+                return "auth-org";
+            } else if (role_id === 3) {
+                return "auth-admin";
+            }
         },
     },
     methods: {
