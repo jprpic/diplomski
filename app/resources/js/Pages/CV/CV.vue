@@ -36,7 +36,7 @@ import { Head } from "@inertiajs/inertia-vue3";
                                 <div class="mt-6">
                                     <div class="flex flex-col">
                                         <div
-                                            class="flex flex row"
+                                            class="flex flex-row"
                                             v-if="
                                                 CV.experiences.find(
                                                     (el) =>
@@ -52,7 +52,7 @@ import { Head } from "@inertiajs/inertia-vue3";
                                             <span
                                                 class="my-2 ml-2 uppercase text-2xl font-bold"
                                             >
-                                                Employment
+                                                Iskustvo
                                             </span>
                                         </div>
                                         <div
@@ -104,7 +104,7 @@ import { Head } from "@inertiajs/inertia-vue3";
                                                             }}</span
                                                         >
                                                         <span v-else>
-                                                            Present
+                                                            Danas
                                                         </span>
                                                     </p>
                                                 </div>
@@ -118,7 +118,7 @@ import { Head } from "@inertiajs/inertia-vue3";
                                             </div>
                                         </div>
                                         <div
-                                            class="flex flex row"
+                                            class="flex flex-row"
                                             v-if="
                                                 CV.experiences.find(
                                                     (el) =>
@@ -134,7 +134,7 @@ import { Head } from "@inertiajs/inertia-vue3";
                                             <span
                                                 class="my-2 ml-2 uppercase text-2xl font-bold"
                                             >
-                                                Education
+                                                Edukacija
                                             </span>
                                         </div>
                                         <div
@@ -185,7 +185,7 @@ import { Head } from "@inertiajs/inertia-vue3";
                                                             }}</span
                                                         >
                                                         <span v-else>
-                                                            Present
+                                                            Danas
                                                         </span>
                                                     </p>
                                                 </div>
@@ -241,7 +241,7 @@ import { Head } from "@inertiajs/inertia-vue3";
                                     class="p-4 mt-8 flex flex-col w-full bg-gray-400 rounded-lg border border-gray-600/75 shadow-lg"
                                 >
                                     <span class="uppercase text-2xl font-bold"
-                                        >Skills</span
+                                        >Vještine</span
                                     >
                                     <ul v-for="skill in sortedSkills">
                                         <li
@@ -315,9 +315,8 @@ export default {
                 return "auth-user";
             } else if (role_id === 2) {
                 return "auth-org";
-            }
-            else if (role_id === 3) {
-                return 'auth-admin';
+            } else if (role_id === 3) {
+                return "auth-admin";
             }
         },
     },

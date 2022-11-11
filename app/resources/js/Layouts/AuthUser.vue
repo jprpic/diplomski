@@ -35,21 +35,21 @@ const showingNavigationDropdown = ref(false);
                                     :href="route('dashboard')"
                                     :active="route().current('dashboard')"
                                 >
-                                    Dashboard
+                                    Naslovna
                                 </BreezeNavLink>
                                 <BreezeNavLink
                                     :href="route(`cv.create`)"
                                     :active="route().current(`cv.create`)"
                                 >
                                     <span class="capitalize">
-                                        {{ CVRoute }} CV</span
+                                        {{ CVRoute }} Životopis</span
                                     >
                                 </BreezeNavLink>
                                 <BreezeNavLink
                                     :href="route(`search`)"
                                     :active="route().current(`search`)"
                                 >
-                                    Search
+                                    Traži
                                 </BreezeNavLink>
                             </div>
                         </div>
@@ -88,7 +88,7 @@ const showingNavigationDropdown = ref(false);
                                             method="post"
                                             as="button"
                                         >
-                                            Log Out
+                                            Odjavi se
                                         </BreezeDropdownLink>
                                     </template>
                                 </BreezeDropdown>
@@ -151,19 +151,21 @@ const showingNavigationDropdown = ref(false);
                             :href="route('dashboard')"
                             :active="route().current('dashboard')"
                         >
-                            Dashboard
+                            Naslovna
                         </BreezeResponsiveNavLink>
                         <BreezeResponsiveNavLink
                             :href="route(`cv.create`)"
                             :active="route().current(`cv.create`)"
                         >
-                            <span class="capitalize"> {{ CVRoute }} CV</span>
+                            <span class="capitalize">
+                                {{ CVRoute }} Životopis</span
+                            >
                         </BreezeResponsiveNavLink>
                         <BreezeResponsiveNavLink
                             :href="route('search')"
                             :active="route().current('search')"
                         >
-                            Search
+                            Traži
                         </BreezeResponsiveNavLink>
                     </div>
 
@@ -184,7 +186,7 @@ const showingNavigationDropdown = ref(false);
                                 method="post"
                                 as="button"
                             >
-                                Log Out
+                                Odjavi se
                             </BreezeResponsiveNavLink>
                         </div>
                     </div>
@@ -217,9 +219,9 @@ export default {
         },
         CVRoute() {
             if (usePage().props.value.auth.cv) {
-                return "edit";
+                return "Uredi";
             } else {
-                return "create";
+                return "Novi";
             }
         },
     },
@@ -237,6 +239,8 @@ export default {
                 );
             } else if (this.$store.getters.cv === null) {
                 this.$store.dispatch("refreshCV");
+                console.log("refreshCv");
+                console.log(this.$store.getters.cv);
             }
         }
     },

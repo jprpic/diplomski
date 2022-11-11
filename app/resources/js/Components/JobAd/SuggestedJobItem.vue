@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div>
-                <p>Matching: {{ matchingPercentage }}</p>
+                <p>Sličnost: {{ matchingPercentage }}</p>
             </div>
         </div>
 

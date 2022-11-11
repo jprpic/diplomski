@@ -36,7 +36,7 @@ import { Head } from "@inertiajs/inertia-vue3";
                                 </div>
                                 <div class="ml-4 mt-2">
                                     <p class="text-lg font-semibold">
-                                        Job Description
+                                        Opis Posla
                                     </p>
                                     <p class="whitespace-pre-line">
                                         {{ jobAd.description }}
@@ -44,7 +44,7 @@ import { Head } from "@inertiajs/inertia-vue3";
                                 </div>
                                 <div class="ml-4 mt-2">
                                     <p class="text-lg font-semibold">
-                                        Job Responsibilities
+                                        Odgovornosti
                                     </p>
                                     <ul class="list-disc ml-6">
                                         <li
@@ -56,7 +56,7 @@ import { Head } from "@inertiajs/inertia-vue3";
                                 </div>
                                 <div class="ml-4 mt-2">
                                     <p class="text-lg font-semibold">
-                                        Required skills
+                                        Potrebne vještine
                                     </p>
                                     <ul class="list-disc ml-6">
                                         <li v-for="skill in jobAd.skills">

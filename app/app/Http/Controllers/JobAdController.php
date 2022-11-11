@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\JobAd;
 use App\Models\OrgCV;
 use App\Models\Postcode;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -24,7 +25,7 @@ class JobAdController extends Controller
             return Redirect::route('job-ad.create')->withErrors($validator);
         }
         JobAd::store($options);
-        return Redirect::route('job-ad.create')->with('status', 'Job Ad successfully created!');
+        return Redirect::route('dashboard')->with('status', 'Oglas za posao uspješno kreiran!');
     }
 
     public function index(Request $request){
@@ -58,28 +59,41 @@ class JobAdController extends Controller
 
     public function remove(Request $request, $id){
         $jobAd = JobAd::find($id);
-        if($jobAd->orgCv->user_id == $request->user()->id){
-            //$jobAd->delete();
-            return redirect()->back()->with('status', 'JobAd successfully deleted!');
+        if($jobAd->orgCv->user_id == $request->user()->id || $request->user()->role_id == Role::ROLE_ADMIN){
+            $jobAd->delete();
+            return redirect()->back()->with('status', 'Oglas za posao uspješno obrisan!');
         }
-        return response()->noContent()->setStatusCode(401);
+        return response()->noContent()->setStatusCode(403);
+    }
+
+    public function removeAdmin(Request $request, $id){
+        $jobAd = JobAd::find($id);
+        if($jobAd->orgCv->user_id == $request->user()->id || $request->user()->role_id == Role::ROLE_ADMIN){
+            $jobAd->delete();
+            return response()->noContent()->setStatusCode(204);
+        }
+        return response()->noContent()->setStatusCode(403);
     }
 
     public function edit(Request $request, $id){
         $jobAd = JobAd::find($id);
-        if($jobAd->orgCv->user_id == $request->user()->id){
+        if($jobAd->orgCv->user_id == $request->user()->id || $request->user()->role_id == Role::ROLE_ADMIN){
             return Inertia::render('JobAd/Edit',[
                 'jobAdData' => $jobAd->toArray(),
                 'postcodes' => Postcode::all(),
             ]);
         }
-        return response()->noContent()->setStatusCode(401);
+        return redirect('/dashboard');
     }
 
     public function update(Request $request, $id){
         $jobAd = JobAd::find($id);
-        if($jobAd->orgCv->user_id == $request->user()->id){
+        if($jobAd->orgCv->user_id == $request->user()->id || $request->user()->role_id == Role::ROLE_ADMIN){
             $data = $request->all();
+            $validator = Validator::make($data, JobAd::VALID_RULES, JobAd::VALID_MSGS);
+            if ($validator->stopOnFirstFailure()->fails()) {
+                return redirect()->back()->withErrors($validator);
+            }
             $jobAd->name = $data['name'];
             $jobAd->description = $data['description'];
             $jobAd->minAge = $data['minAge'];
@@ -91,7 +105,7 @@ class JobAdController extends Controller
             $jobAd->skills = $data['skills'];
             $jobAd->responsibilities = $data['responsibilities'];
             $jobAd->save();
-            return redirect()->back()->with('status', "JobAd $jobAd->name successfully updated!");
+            return redirect()->back()->with('status', "Oglas za posao $jobAd->name uspješno ažuriran!");
 
         }
         return response()->noContent()->setStatusCode(401);

@@ -1,186 +1,193 @@
 const actions = {
-    updateName(context, name){
-        context.commit('updateName', name);
+    updateName(context, name) {
+        context.commit("updateName", name);
     },
     updateImgUrl(context, url) {
-        context.commit('updateImgUrl', url);
+        context.commit("updateImgUrl", url);
     },
-    updateDescription(context, description){
-        context.commit('updateDescription', description);
+    updateDescription(context, description) {
+        context.commit("updateDescription", description);
     },
-    updateAddressStreet(context, street){
-        context.commit('updateAddressStreet', street);
+    updateAddressStreet(context, street) {
+        context.commit("updateAddressStreet", street);
     },
-    updateBirthdate(context, date){
-        context.commit('updateBirthdate', date);
+    updateBirthdate(context, date) {
+        context.commit("updateBirthdate", date);
     },
-    updateYearsOfExp(context, value){
-        context.commit('updateYearsOfExp', value);
+    updateYearsOfExp(context, value) {
+        context.commit("updateYearsOfExp", value);
     },
-    updatePostcode(context, code){
-        context.commit('updatePostcode', code);
+    updatePostcode(context, code) {
+        context.commit("updatePostcode", code);
     },
-    updateSex(context, sex){
-        context.commit('updateSex', sex)
+    updateSex(context, sex) {
+        context.commit("updateSex", sex);
     },
-    updateJob(context, job){
-        context.commit('updateJob', job);
+    updateJob(context, job) {
+        context.commit("updateJob", job);
     },
-    updateReferences(context, references){
-        context.commit('updateReferences', references);
+    updateReferences(context, references) {
+        context.commit("updateReferences", references);
     },
-    addContact(context){
-      context.commit('addContact');
+    addContact(context) {
+        context.commit("addContact");
     },
-    updateContact(context, contact){
-        context.commit('updateContact', contact);
+    updateContact(context, contact) {
+        context.commit("updateContact", contact);
     },
-    removeContact(context, index){
-        context.commit('removeContact', index);
+    removeContact(context, index) {
+        context.commit("removeContact", index);
     },
-    addExperience(context){
-        context.commit('addExperience')
+    addExperience(context) {
+        context.commit("addExperience");
     },
-    updateExperience(context, experience){
-        context.commit('updateExperience', experience);
+    updateExperience(context, experience) {
+        context.commit("updateExperience", experience);
     },
-    removeExperience(context, index){
-        context.commit('removeExperience', index);
+    removeExperience(context, index) {
+        context.commit("removeExperience", index);
     },
-    addSkill(context){
-        context.commit('addSkill');
+    addSkill(context) {
+        context.commit("addSkill");
     },
-    updateSkill(context, skill){
-        context.commit('updateSkill', skill);
+    updateSkill(context, skill) {
+        context.commit("updateSkill", skill);
     },
-    removeSkill(context, index){
-        context.commit('removeSkill', index);
+    removeSkill(context, index) {
+        context.commit("removeSkill", index);
     },
-    setAvailableSkills(context, skills){
-        context.commit('setAvailableSkills', skills);
+    setAvailableSkills(context, skills) {
+        context.commit("setAvailableSkills", skills);
     },
-    setAvailableContacts(context, contacts){
-        context.commit('setAvailableContacts', contacts);
+    setAvailableContacts(context, contacts) {
+        context.commit("setAvailableContacts", contacts);
     },
-    setCV(context, cv){
-        context.commit('setCV', cv);
+    setCV(context, cv) {
+        context.commit("setCV", cv);
     },
-    refreshCV(context){
-        context.commit('refreshCV')
+    setCvFromProp(context, cv) {
+        context.commit("setCvFromProp", cv);
     },
-    setUser(context, user){
-        context.commit('setUser', user);
+    refreshCV(context) {
+        context.commit("refreshCV");
     },
-    addSearchSkill(context, skill){
-        context.commit('addSearchSkill', skill)
+    setUser(context, user) {
+        context.commit("setUser", user);
+    },
+    addSearchSkill(context, skill) {
+        context.commit("addSearchSkill", skill);
     },
     refreshSearch(context) {
-        context.commit('refreshSearch');
+        context.commit("refreshSearch");
     },
-    setSearch(context, search){
-        context.commit('setSearch', search)
+    setSearch(context, search) {
+        context.commit("setSearch", search);
     },
-    removeSearchSkill(context, index){
-        context.commit('removeSearchSkill', index);
+    removeSearchSkill(context, index) {
+        context.commit("removeSearchSkill", index);
     },
-    updateMinAge(context, minAge){
-        context.commit('updateMinAge', minAge)
+    updateMinAge(context, minAge) {
+        context.commit("updateMinAge", minAge);
     },
-    updateMaxAge(context, maxAge){
-        context.commit('updateMaxAge', maxAge);
+    updateMaxAge(context, maxAge) {
+        context.commit("updateMaxAge", maxAge);
     },
-    updateMinExp(context, minExp){
-        context.commit('updateMinExp', minExp)
+    updateMinExp(context, minExp) {
+        context.commit("updateMinExp", minExp);
     },
-    updateMaxExp(context, maxExp){
-        context.commit('updateMaxExp', maxExp);
+    updateMaxExp(context, maxExp) {
+        context.commit("updateMaxExp", maxExp);
     },
-    updateSearchCounty(context, county){
-        context.commit('updateSearchCounty', county);
+    updateSearchCounty(context, county) {
+        context.commit("updateSearchCounty", county);
     },
-    updateSearchCity(context, city){
-        context.commit('updateSearchCity', city)
+    updateSearchCity(context, city) {
+        context.commit("updateSearchCity", city);
     },
-    addJobSkill(context, skill){
-        context.commit('addJobSkill', skill)
+    addJobSkill(context, skill) {
+        context.commit("addJobSkill", skill);
     },
     refreshJobAd(context) {
-        context.commit('refreshJobAd');
+        context.commit("refreshJobAd");
     },
-    setJobAd(context, search){
-        context.commit('setJobAd', search)
+    setJobAd(context, search) {
+        context.commit("setJobAd", search);
     },
-    removeJobSkill(context, index){
-        context.commit('removeJobSkill', index);
+    removeJobSkill(context, index) {
+        context.commit("removeJobSkill", index);
     },
-    updateJobMinAge(context, minAge){
-        context.commit('updateJobMinAge', minAge)
+    updateJobMinAge(context, minAge) {
+        context.commit("updateJobMinAge", minAge);
     },
-    updateJobMaxAge(context, maxAge){
-        context.commit('updateJobMaxAge', maxAge);
+    updateJobMaxAge(context, maxAge) {
+        context.commit("updateJobMaxAge", maxAge);
     },
-    updateJobMinExp(context, minExp){
-        context.commit('updateJobMinExp', minExp)
+    updateJobMinExp(context, minExp) {
+        context.commit("updateJobMinExp", minExp);
     },
-    updateJobMaxExp(context, maxExp){
-        context.commit('updateJobMaxExp', maxExp);
+    updateJobMaxExp(context, maxExp) {
+        context.commit("updateJobMaxExp", maxExp);
     },
-    updateJobCounty(context, county){
-        context.commit('updateJobCounty', county);
+    updateJobCounty(context, county) {
+        context.commit("updateJobCounty", county);
     },
-    updateJobCity(context, city){
-        context.commit('updateJobCity', city)
+    updateJobCity(context, city) {
+        context.commit("updateJobCity", city);
     },
-    updateJobName(context, name){
-        context.commit('updateJobName', name);
+    updateJobName(context, name) {
+        context.commit("updateJobName", name);
     },
-    updateJobDescription(context, description){
-        context.commit('updateJobDescription', description);
+    updateJobDescription(context, description) {
+        context.commit("updateJobDescription", description);
     },
-    addJobResponsibility(context, responsibility){
-        context.commit('addJobResponsibility', responsibility);
+    addJobResponsibility(context, responsibility) {
+        context.commit("addJobResponsibility", responsibility);
     },
-    removeJobResponsibility(context, index){
-        context.commit('removeJobResponsibility', index);
+    removeJobResponsibility(context, index) {
+        context.commit("removeJobResponsibility", index);
     },
-    updateJobResponsibility(context, responsibility){
-        context.commit('updateJobResponsibility', responsibility);
+    updateJobResponsibility(context, responsibility) {
+        context.commit("updateJobResponsibility", responsibility);
     },
-    refreshOrgCV(context){
-        context.commit('refreshOrgCV');
+    refreshOrgCV(context) {
+        context.commit("refreshOrgCV");
     },
-    updateOrgName(context, name){
-        context.commit('updateOrgName', name);
+    updateOrgName(context, name) {
+        context.commit("updateOrgName", name);
     },
-    updateOrgEmail(context, email){
-        context.commit('updateOrgEmail', email);
+    updateOrgEmail(context, email) {
+        context.commit("updateOrgEmail", email);
     },
-    updateOrgDescription(context, description){
-        context.commit('updateOrgDescription', description);
+    updateOrgDescription(context, description) {
+        context.commit("updateOrgDescription", description);
     },
-    updateOrgImgUrl(context, img_url){
-        context.commit('updateOrgImgUrl', img_url);
+    updateOrgImgUrl(context, img_url) {
+        context.commit("updateOrgImgUrl", img_url);
     },
     updateOrgPostcode(context, postcode) {
-        context.commit('updateOrgPostcode', postcode);
+        context.commit("updateOrgPostcode", postcode);
     },
-    updateOrgStreet(context, street){
-        context.commit('updateOrgStreet', street);
+    updateOrgStreet(context, street) {
+        context.commit("updateOrgStreet", street);
     },
-    setOrgCv(context, cv){
-        context.commit('setOrgCv', cv);
+    setOrgCv(context, cv) {
+        context.commit("setOrgCv", cv);
     },
-    addOrgContact(context){
-        context.commit('addOrgContact');
+    setOrgCvFromProp(context, cv) {
+        context.commit("setOrgCvFromProp", cv);
     },
-    updateOrgContact(context, contact){
-        context.commit('updateOrgContact', contact);
+    addOrgContact(context) {
+        context.commit("addOrgContact");
     },
-    removeOrgContact(context, index){
-        context.commit('removeOrgContact', index);
+    updateOrgContact(context, contact) {
+        context.commit("updateOrgContact", contact);
     },
-
-
-}
+    removeOrgContact(context, index) {
+        context.commit("removeOrgContact", index);
+    },
+    setEditUser(context, user) {
+        context.commit("setEditUser", user);
+    },
+};
 
 export default actions;

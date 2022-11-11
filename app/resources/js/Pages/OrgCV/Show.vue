@@ -75,7 +75,7 @@ import JobAd from "@/Components/JobAd/Item.vue";
                                     class="object-contain h-10 w-10"
                                 />
                                 <span class="ml-2 text-xl font-bold"
-                                    >Open positions
+                                    >Otvorene pozicije
                                 </span>
                             </div>
                             <div v-for="ad in orgCv.job_ads" :key="ad.id">
@@ -126,8 +126,8 @@ export default {
                 return "auth-user";
             } else if (role_id === 2) {
                 return "auth-org";
-            } else if( role_id === 3) {
-                return 'auth-admin';
+            } else if (role_id === 3) {
+                return "auth-admin";
             }
         },
     },

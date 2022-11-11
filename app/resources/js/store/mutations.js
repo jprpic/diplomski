@@ -1,262 +1,308 @@
 const mutations = {
-    updateName(state, name){
+    updateName(state, name) {
         state.cv.name = name;
     },
-    updateImgUrl(state, url){
+    updateImgUrl(state, url) {
         state.cv.img_url = url;
     },
-    updateDescription(state, description){
+    updateDescription(state, description) {
         state.cv.description = description;
     },
-    updateAddressStreet(state, street){
+    updateAddressStreet(state, street) {
         state.cv.street = street;
     },
-    updatePostcode(state, code){
+    updatePostcode(state, code) {
         state.cv.postcode = code;
     },
-    updateBirthdate(state, date){
+    updateBirthdate(state, date) {
         state.cv.birthdate = date;
     },
-    updateYearsOfExp(state, value){
+    updateYearsOfExp(state, value) {
         state.cv.years_of_exp = value;
     },
-    updateSex(state, sex){
+    updateSex(state, sex) {
         state.cv.sex = sex;
     },
-    updateJob(state, job){
+    updateJob(state, job) {
         state.cv.job = job;
     },
-    updateReferences(state, references){
+    updateReferences(state, references) {
         state.cv.references = references;
     },
-    addContact(state){
+    addContact(state) {
         state.cv.contacts.push({
-            contact_id: '',
-            value: ''
-        })
+            contact_id: "",
+            value: "",
+        });
     },
-    updateContact(state, contact){
+    updateContact(state, contact) {
         const index = contact.index;
         delete contact.index;
         state.cv.contacts[index] = contact;
     },
-    removeContact(state, index){
+    removeContact(state, index) {
         state.cv.contacts.splice(index, 1); // 2nd parameter means remove one item only
     },
-    addExperience(state){
+    addExperience(state) {
         state.cv.experiences.push({
-            name: '',
-            source: '',
-            type: '',
-            results: [''],
+            name: "",
+            source: "",
+            type: "",
+            results: [""],
             started_at: null,
-            finished_at: null
-        })
+            finished_at: null,
+        });
     },
-    updateExperience(state, experience){
+    updateExperience(state, experience) {
         const index = experience.index;
         delete experience.index;
         state.cv.experiences[index] = experience;
     },
-    removeExperience(state, index){
+    removeExperience(state, index) {
         state.cv.experiences.splice(index, 1); // 2nd parameter means remove one item only
     },
-    addSkill(state){
+    addSkill(state) {
         state.cv.skills.push({
-            skill_id: '',
-            proficiency: ''
-        })
+            skill_id: "",
+            proficiency: "",
+        });
     },
-    updateSkill(state, skill){
+    updateSkill(state, skill) {
         const index = skill.index;
         delete skill.index;
         state.cv.skills[index] = skill;
     },
-    removeSkill(state, skill_id){
-        state.cv.skills = state.cv.skills.filter(skill => skill.skill_id !== skill_id);
+    removeSkill(state, skill_id) {
+        state.cv.skills = state.cv.skills.filter(
+            (skill) => skill.skill_id !== skill_id
+        );
     },
-    setAvailableSkills(state, skills){
-        if(state.available_skills === undefined) {
+    setAvailableSkills(state, skills) {
+        if (state.available_skills === undefined) {
             state.available_skills = skills;
         }
     },
-    setAvailableContacts(state, contacts){
-        if(state.available_contacts === undefined){
+    setAvailableContacts(state, contacts) {
+        if (state.available_contacts === undefined) {
             state.available_contacts = contacts;
         }
     },
-    setCV(state, cv){
+    setCV(state, cv) {
         state.cv = cv;
     },
-    refreshCV(state){
+    setCvFromProp(state, cv) {
         state.cv = {
-            name: '',
-            description: '',
-            address: {
-                street: '',
-                postcode: ''
-            },
-            contacts: [{
-                contact_id: '',
-                value: ''
-            }],
-            job: '',
-            experiences: [{
-                name: '',
-                source: '',
-                type: '',
-                results: [''],
-                started_at: null,
-                finished_at: null
-            }],
-            skills:[{
-                skill_id: '',
-                proficiency: ''
-            }],
-            references: '',
-        }
+            id: cv.id,
+            name: cv.name,
+            description: cv.description,
+            street: cv.street,
+            postcode: cv.postcode,
+            img_url: cv.img_url,
+            birthdate: cv.birthdate,
+            sex: cv.sex,
+            years_of_exp: cv.years_of_exp,
+            contacts: cv.contacts,
+            job: cv.job,
+            experiences: cv.experiences,
+            skills: cv.skill_proficiencies,
+            references: cv.references,
+        };
     },
-    setUser(state, user){
+    refreshCV(state) {
+        state.cv = {
+            name: "",
+            description: "",
+            address: {
+                street: "",
+                postcode: "",
+            },
+            contacts: [
+                {
+                    contact_id: "",
+                    value: "",
+                },
+            ],
+            job: "",
+            experiences: [
+                {
+                    name: "",
+                    source: "",
+                    type: "",
+                    results: [""],
+                    started_at: null,
+                    finished_at: null,
+                },
+            ],
+            skills: [
+                {
+                    skill_id: "",
+                    proficiency: "",
+                },
+            ],
+            references: "",
+        };
+    },
+    setUser(state, user) {
         state.user = user;
     },
-    refreshSearch(state){
+    refreshSearch(state) {
         state.search = {
             minAge: 20,
             maxAge: 50,
             minExp: 0,
             maxExp: 5,
             skills: [],
-        }
+        };
     },
-    setSearch(state, search){
+    setSearch(state, search) {
         state.search = search;
     },
     addSearchSkill(state, skill) {
         state.search.skills.push(skill);
     },
-    removeSearchSkill(state, skill_id){
-        state.search.skills = state.search.skills.filter(id => id !== skill_id);
+    removeSearchSkill(state, skill_id) {
+        state.search.skills = state.search.skills.filter(
+            (id) => id !== skill_id
+        );
     },
-    updateMinAge(state, minAge){
+    updateMinAge(state, minAge) {
         state.search.minAge = minAge;
     },
-    updateMaxAge(state, maxAge){
+    updateMaxAge(state, maxAge) {
         state.search.maxAge = maxAge;
     },
-    updateMinExp(state, minExp){
+    updateMinExp(state, minExp) {
         state.search.minExp = minExp;
     },
-    updateMaxExp(state, maxExp){
+    updateMaxExp(state, maxExp) {
         state.search.maxExp = maxExp;
     },
-    updateSearchCounty(state, county){
+    updateSearchCounty(state, county) {
         state.search.county = county;
     },
-    updateSearchCity(state, city){
+    updateSearchCity(state, city) {
         state.search.city = city;
     },
-    updateJobMinAge(state, minAge){
+    updateJobMinAge(state, minAge) {
         state.jobAd.minAge = minAge;
     },
-    updateJobMaxAge(state, maxAge){
+    updateJobMaxAge(state, maxAge) {
         state.jobAd.maxAge = maxAge;
     },
-    updateJobMinExp(state, minExp){
+    updateJobMinExp(state, minExp) {
         state.jobAd.minExp = minExp;
     },
-    updateJobMaxExp(state, maxExp){
+    updateJobMaxExp(state, maxExp) {
         state.jobAd.maxExp = maxExp;
     },
-    updateJobCounty(state, county){
+    updateJobCounty(state, county) {
         state.jobAd.county = county;
     },
-    updateJobCity(state, city){
+    updateJobCity(state, city) {
         state.jobAd.city = city;
     },
-    updateJobDescription(state, description){
+    updateJobDescription(state, description) {
         state.jobAd.description = description;
     },
-    addJobResponsibility(state, responsibility){
-      state.jobAd.responsibilities.push(responsibility);
+    addJobResponsibility(state, responsibility) {
+        state.jobAd.responsibilities.push(responsibility);
     },
-    removeJobResponsibility(state, index){
+    removeJobResponsibility(state, index) {
         state.jobAd.responsibilities.splice(index, 1);
     },
-    updateJobResponsibility(state, responsibility){
-        state.jobAd.responsibilities[responsibility.index] = responsibility.value;
+    updateJobResponsibility(state, responsibility) {
+        state.jobAd.responsibilities[responsibility.index] =
+            responsibility.value;
     },
-    refreshJobAd(state){
+    refreshJobAd(state) {
         state.jobAd = {
-            name: '',
-            description: '',
+            name: "",
+            description: "",
             minAge: 20,
             maxAge: 50,
             minExp: 0,
             maxExp: 5,
             skills: [],
-            responsibilities: [''],
-        }
+            responsibilities: [""],
+        };
     },
-    setJobAd(state, search){
+    setJobAd(state, search) {
         state.jobAd = search;
     },
     addJobSkill(state, skill) {
         state.jobAd.skills.push(skill);
     },
-    removeJobSkill(state, skill_id){
-        state.jobAd.skills = state.jobAd.skills.filter(id => id !== skill_id);
+    removeJobSkill(state, skill_id) {
+        state.jobAd.skills = state.jobAd.skills.filter((id) => id !== skill_id);
     },
-    updateJobName(state, name){
+    updateJobName(state, name) {
         state.jobAd.name = name;
     },
-    refreshOrgCV(state){
+    refreshOrgCV(state) {
         state.orgCv = {
-            name: '',
-            contacts: [{
-                contact_id: '',
-                value: ''
-            }],
-            description: '',
-            img_url: '',
-            postcode: '',
-            street: ''
-        }
+            name: "",
+            contacts: [
+                {
+                    contact_id: "",
+                    value: "",
+                },
+            ],
+            description: "",
+            img_url: "",
+            postcode: "",
+            street: "",
+        };
     },
-    updateOrgName(state, name){
+    updateOrgName(state, name) {
         state.orgCv.name = name;
     },
-    updateOrgEmail(state, email){
+    updateOrgEmail(state, email) {
         state.orgCv.email = email;
     },
-    updateOrgDescription(state, description){
+    updateOrgDescription(state, description) {
         state.orgCv.description = description;
     },
-    updateOrgImgUrl(state, img_url){
+    updateOrgImgUrl(state, img_url) {
         state.orgCv.img_url = img_url;
     },
     updateOrgPostcode(state, postcode) {
         state.orgCv.postcode = postcode;
     },
-    updateOrgStreet(state, street){
+    updateOrgStreet(state, street) {
         state.orgCv.street = street;
     },
-    setOrgCv(state, orgCv){
+    setOrgCv(state, orgCv) {
         state.orgCv = orgCv;
     },
-    addOrgContact(state){
-        state.orgCv.contacts.push({
-            contact_id: '',
-            value: ''
-        })
+    setOrgCvFromProp(state, orgCv) {
+        state.orgCv = orgCv;
+        state.orgCv = {
+            id: orgCv.id,
+            name: orgCv.name,
+            contacts: orgCv.contacts,
+            description: orgCv.description,
+            img_url: orgCv.img_url,
+            postcode: orgCv.postcode,
+            street: orgCv.street,
+        };
     },
-    updateOrgContact(state, contact){
+    addOrgContact(state) {
+        state.orgCv.contacts.push({
+            contact_id: "",
+            value: "",
+        });
+    },
+    updateOrgContact(state, contact) {
         const index = contact.index;
         delete contact.index;
         state.orgCv.contacts[index] = contact;
     },
-    removeOrgContact(state, index){
+    removeOrgContact(state, index) {
         state.orgCv.contacts.splice(index, 1); // 2nd parameter means remove one item only
     },
-}
+    setEditUser(state, user) {
+        state.editUser = user;
+    },
+};
 
 export default mutations;

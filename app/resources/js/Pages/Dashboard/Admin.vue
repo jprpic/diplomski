@@ -81,7 +81,7 @@ export default {
         UsersTable,
         CvsTable,
         JobadsTable,
-        OrgcvsTable
+        OrgcvsTable,
     },
     data() {
         return {

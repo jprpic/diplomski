@@ -1,6 +1,6 @@
 <script setup>
 import SearchBox from "@/Components/Search/SearchBox";
-import { Head } from '@inertiajs/inertia-vue3';
+import { Head } from "@inertiajs/inertia-vue3";
 </script>
 
 <template>
@@ -9,7 +9,7 @@ import { Head } from '@inertiajs/inertia-vue3';
     <component v-bind:is="layout">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Search
+                Tražilica
             </h2>
         </template>
 
@@ -17,7 +17,10 @@ import { Head } from '@inertiajs/inertia-vue3';
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
-                        <SearchBox :targets = "targets" :postcodes = "postcodes"></SearchBox>
+                        <SearchBox
+                            :targets="targets"
+                            :postcodes="postcodes"
+                        ></SearchBox>
                     </div>
                 </div>
             </div>
@@ -25,67 +28,65 @@ import { Head } from '@inertiajs/inertia-vue3';
     </component>
 </template>
 
-
-
 <script>
-import AuthOrg from '@/Layouts/AuthOrg.vue';
-import AuthUser from '@/Layouts/AuthUser.vue';
-import {usePage} from "@inertiajs/inertia-vue3";
+import AuthOrg from "@/Layouts/AuthOrg.vue";
+import AuthUser from "@/Layouts/AuthUser.vue";
+import { usePage } from "@inertiajs/inertia-vue3";
 export default {
     name: "Search.vue",
-    components:{
-        AuthUser, AuthOrg
+    components: {
+        AuthUser,
+        AuthOrg,
     },
     props: {
-        targets:{
+        targets: {
             type: Object,
-            required: false
+            required: false,
         },
-        postcodes:{
-            required: true
-        }
+        postcodes: {
+            required: true,
+        },
     },
-    computed:{
-      search(){
-          return this.$store.getters.search;
-      },
-      layout(){
-          const role_id = usePage().props.value.auth.user.role_id;
-          if(role_id === 1){
-            return 'auth-user';
-          }else if(role_id === 2){
-            return 'auth-org';
-        }
-      }
+    computed: {
+        search() {
+            return this.$store.getters.search;
+        },
+        layout() {
+            const role_id = usePage().props.value.auth.user.role_id;
+            if (role_id === 1) {
+                return "auth-user";
+            } else if (role_id === 2) {
+                return "auth-org";
+            }
+        },
     },
     beforeCreate() {
         // Get params from URL and update store search with the object
         const queryString = window.location.search;
-        if(queryString){
+        if (queryString) {
             const urlParams = new URLSearchParams(queryString);
             const search = {
-                minAge: urlParams.get('minAge'),
-                maxAge: urlParams.get('maxAge'),
-                minExp: urlParams.get('minExp'),
-                maxExp: urlParams.get('maxExp'),
-                skills: urlParams.getAll('skills[]').map( skill => { return Number(skill); }),
-            }
+                minAge: urlParams.get("minAge"),
+                maxAge: urlParams.get("maxAge"),
+                minExp: urlParams.get("minExp"),
+                maxExp: urlParams.get("maxExp"),
+                skills: urlParams.getAll("skills[]").map((skill) => {
+                    return Number(skill);
+                }),
+            };
             // Optional params
-            if(urlParams.has('county')){
-                search.county = urlParams.get('county');
+            if (urlParams.has("county")) {
+                search.county = urlParams.get("county");
             }
-            if(urlParams.has('city')){
-                search.city = urlParams.get('city');
+            if (urlParams.has("city")) {
+                search.city = urlParams.get("city");
             }
-            this.$store.dispatch('setSearch', search);
-        }
-        else if(this.$store.getters.search === null){
-            this.$store.dispatch('refreshSearch');
+            this.$store.dispatch("setSearch", search);
+        } else if (this.$store.getters.search === null) {
+            this.$store.dispatch("refreshSearch");
         }
     },
-}
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

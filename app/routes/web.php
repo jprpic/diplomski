@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JobAdController;
 use App\Http\Controllers\OrgCVController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -21,12 +22,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return redirect('dashboard');
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
@@ -34,30 +30,42 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 
 Route::prefix('/cv')->middleware(['auth','employee'])->group(function() {
     Route::post('/', [CVController::class, 'store'])->name('cv.store');
-    Route::post('/edit', [CVController::class, 'update'])->name('cv.update');
     Route::get('/create', [CVController::class, 'create'])->name('cv.create');
 });
 Route::get('/cv/{id}', [CVController::class, 'show'])->name('cv.show');
+Route::post('/cv/edit', [CVController::class, 'update'])->name('cv.update');
+
+Route::middleware(['auth','admin'])->group(function() {
+    Route::get('/cv/{id}/edit', [CVController::class, 'edit'])->name('cv.edit');
+    Route::delete('/admin/cv/{id}', [CVController::class, 'remove'])->name('cv.remove');
+    Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+    Route::post('/user/{id}/edit', [UserController::class, 'update'])->name('user.update');
+    Route::delete('/user/{id}', [UserController::class, 'remove'])->name('user.remove');
+});
 
 Route::prefix('/job-ad')->middleware(['auth', 'organization', 'hasOrgCv'])->group(function() {
     Route::get('/create', [JobAdController::class, 'create'])->name('job-ad.create');
     Route::post('/', [JobAdController::class, 'store'])->name('job-ad.store');
     Route::get('/', [JobAdController::class, 'index'])->name('job-ad.index');
     Route::get('/{id}',[JobAdController::class, 'show'])->name('job-ad.show');
-    Route::delete('/{id}',[JobAdController::class, 'remove'])->name('job-ad.remove');
     Route::get('/{id}/edit',[JobAdController::class, 'edit'])->name('job-ad.edit');
-    Route::post('/{id}/edit',[JobAdController::class, 'update'])->name('job-ad.update');
+    Route::delete('/{id}',[JobAdController::class, 'remove'])->name('job-ad.remove');
 });
-
+Route::prefix('/admin/job-ad')->middleware(['auth','admin'])->group(function() {
+    Route::get('/{id}/edit',[JobAdController::class, 'edit'])->name('job-ad.edit.admin');
+    Route::delete('/{id}',[JobAdController::class, 'removeAdmin'])->name('job-ad.remove.admin');
+});
+Route::post('/job-ad/{id}/edit',[JobAdController::class, 'update'])->name('job-ad.update');
 Route::get('/job-ad/{id}/details', [JobAdController::class, 'details'])->name('job-ad.details');
 
 Route::prefix('/org-cv')->middleware(['auth', 'organization'])->group(function(){
     Route::get('/create', [OrgCVController::class, 'create'])->name('org-cv.create');
     Route::post('/', [OrgCVController::class, 'store'])->name('org-cv.store');
-    Route::post('/edit', [OrgCVController::class, 'update'])->name('org-cv.update');
-
 });
+Route::get('/org-cv/{id}/edit', [OrgCVController::class, 'edit'])->name('org-cv.edit')->middleware(['auth']);
 Route::get('/org-cv/{id}', [OrgCVController::class, 'show'])->name('org-cv.show');
+Route::post('/org-cv/{id}/edit', [OrgCVController::class, 'update'])->name('org-cv.update')->middleware(['auth']);
+Route::delete('/org-cv/{id}', [OrgCVController::class, 'delete'])->name('org-cv.delete')->middleware(['auth','admin']);
 
 
 Route::middleware(['auth'])->group(function() {

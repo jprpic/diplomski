@@ -12,7 +12,7 @@ class OrgCV extends Model
 
     const VALID_RULES = [
         'name' => 'required|max:255',
-        'img_url' => 'required|url',
+        'img_url' => 'required|url|max:500',
         'description' => 'required|max:1500',
         'street' => 'required|max:255',
         'postcode' => 'required|digits:5',
@@ -21,7 +21,10 @@ class OrgCV extends Model
         'contacts.*.value' => 'required|max:255',
     ];
     const VALID_MSGS = [
-        'contacts.*.contact_id.distinct' => 'There is a repeating type of contact.',
+        'contacts.*.contact_id.distinct' => 'Vrsta kontakta se ponavlja!',
+        'description' => 'Opis ne može sadržavati više od 1500 znakova!',
+        'contacts.*.value' => 'Vrijednost kontakta ne može sadržavati više od 500 znakova!',
+        'img_url' => 'URL profilne slike ne može sadržavati više od 500 znakova!',
     ];
 
     public function user(){
@@ -46,8 +49,12 @@ class OrgCV extends Model
     }
 
 
-    public static function store($CVJson){
+    public static function store($CVJson, $userId = null){
+
         $user_id = Auth()->id();
+        if($userId){
+            $user_id = $userId;
+        }
         $cv = new self;
         // Create new CV
         $cv->user_id = $user_id;
@@ -74,7 +81,7 @@ class OrgCV extends Model
         return $cv;
     }
 
-    public static function edit($CVJson){
+    public static function edit($CVJson, $userId = null){
         // Editing CV is deleting CV and all associated entries
         // And then recreating CV and associated entries
         $cv = OrgCV::find($CVJson['id']);
@@ -94,13 +101,14 @@ class OrgCV extends Model
         // Delete CV and all relationship entries
         // And create new CV
         $cv->delete();
-        $cv = OrgCV::store($CVJson);
+        $cv = OrgCV::store($CVJson, $userId);
 
         // Reassign new OrgCvID to previously linked jobAds
         foreach($jobAds as $jobAd){
             $jobAd->org_c_v_s_id = $cv->id;
             $jobAd->save();
         }
+        return $cv;
     }
 
     public static function getCurrentUserCV(){

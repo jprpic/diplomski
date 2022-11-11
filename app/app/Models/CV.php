@@ -18,33 +18,39 @@ class CV extends Model
     protected $table = 'cvs';
 
     const VALID_RULES = [
-        'name' => 'required|max:255',
-        'img_url' => 'required|url',
+        'name' => 'required|max:255|min:3',
+        'img_url' => 'required|url|max:500',
         'sex' => 'required|alpha|size:1',
         'birthdate' => 'required|date',
         'years_of_exp' => 'required|min:0|max:50|numeric',
-        'description' => 'required|max:255',
+        'description' => 'required|max:1500',
         'street' => 'required|max:255',
         'postcode' => 'required|digits:5',
         'job' => 'required|max:255',
-        'references' => 'required|max:255',
 
         'contacts.*.contact_id' => 'required|distinct|numeric',
-        'contacts.*.value' => 'required|max:255',
+        'contacts.*.value' => 'required|max:500',
 
         'experiences.*.name' => 'required|max:255',
         'experiences.*.source' => 'required|max:255',
         'experiences.*.type' => 'required|alpha',
-        'experiences.*.results.*' => 'required|max:255',
+        'experiences.*.results.*' => 'required|max:500',
         'experiences.*.started_at' => 'required|date',
 
         'skills.*.skill_id' => 'required|distinct|numeric',
         'skills.*.proficiency' => 'required|numeric'
     ];
     const VALID_MSGS = [
-        'contacts.*.contact_id.distinct' => 'There is a repeating type of contact.',
-        'skills.*.skill_id.distinct' => 'There is a same skill repeating.',
-        'skills.*.skill_id.required' => 'Please choose an existing skill.',
+        'contacts.*.contact_id.distinct' => 'Vrsta kontakta se ponavlja!',
+        'skills.*.skill_id.distinct' => 'Vještina se ponavlja!',
+        'skills.*.skill_id.required' => 'Molimo odaberite postojeću vještinu!',
+        'name.min' => 'Ime i prezime moraju sadržavati bar 3 znaka!',
+        'job.max' => 'Ime pozicije ne može biti duže od 255 znakova!',
+        'street.max' => 'Ulica ne može sadržavati više od 255 znakova!',
+        'contacts.*.value' => 'Vrijednost kontakta ne može sadržavati više od 500 znakova!',
+        'experiences.*.results.*' => 'Opis rezultata ne može sadržavati više od 500 znakova!',
+        'description' => 'Opis ne može sadržavati više od 1500 znakova!',
+        'img_url' => 'URL profilne slike ne može sadržavati više od 500 znakova!',
     ];
 
     public function skillProficiencies(){
@@ -93,7 +99,7 @@ class CV extends Model
         return json_encode($cv);
     }
 
-    public static function edit($CVJson){
+    public static function edit($CVJson, $user_id = null){
         // Editing CV is deleting CV and all associated entries
         // And then recreating CV and associated entries
         $cv = CV::find($CVJson['id']);
@@ -109,11 +115,14 @@ class CV extends Model
         // Delete CV and all relationship entries
         // And create new CV
         $cv->delete();
-        CV::store($CVJson);
+        return CV::store($CVJson, $user_id);
     }
 
-    public static function store($CVJson){
+    public static function store($CVJson, $userId = null){
         $user_id = Auth()->id();
+        if($userId) {
+            $user_id = $userId;
+        }
         $cv = new self;
         // Create new CV
         $cv->user_id = $user_id;
@@ -170,5 +179,7 @@ class CV extends Model
             $cvSkill->proficiency = $skill['proficiency'];
             $cvSkill->save();
         }
+
+        return $cv;
     }
 }
