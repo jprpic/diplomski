@@ -10,7 +10,7 @@ import SuggestedJobItem from "@/Components/JobAd/SuggestedJobItem";
     <AuthUser>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Suggested Jobs
+                Preporučeni oglasi za posao
             </h2>
         </template>
 
@@ -29,12 +29,12 @@ import SuggestedJobItem from "@/Components/JobAd/SuggestedJobItem";
                                 class="ml-3 font-medium text-gray-700 dark:text-gray-300"
                             >
                                 <p>
-                                    It seems you don't have a CV! You can start
-                                    out by
+                                    Nemate životopis! Možete ga kreirati
+                                    odlaskom na
                                     <Link
                                         href="/cv/create"
                                         class="font-semibold underline"
-                                        >Creating a CV</Link
+                                        >Novi životopis</Link
                                     >!
                                 </p>
                             </div>

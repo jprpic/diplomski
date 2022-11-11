@@ -7,7 +7,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class Employee
+class Admin
 {
     /**
      * Handle an incoming request.
@@ -18,7 +18,7 @@ class Employee
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->user()->role->id == Role::ROLE_EMPLOYEE) {
+        if (Auth::user()->role->id == Role::ROLE_ADMIN) {
             return $next($request);
         }
 

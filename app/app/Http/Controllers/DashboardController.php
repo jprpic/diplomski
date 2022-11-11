@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CV;
 use App\Models\JobAd;
+use App\Models\OrgCV;
 use App\Models\Role;
+use App\Models\User;
+use http\Client\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class DashboardController extends Controller
@@ -12,7 +17,11 @@ class DashboardController extends Controller
     public function index(Request $request){
         $role = $request->user()->role->id;
 
-        if($role == Role::ROLE_ORGANIZATION){
+        if($role == Role::ROLE_ADMIN){
+            return Inertia::render('Dashboard/Admin');
+        }
+
+        else if($role == Role::ROLE_ORGANIZATION){
             $orgCv = $request->user()->orgCv;
             return Inertia::render('Dashboard/Organization',[
                 'jobAds' => $orgCv?->jobAds
@@ -80,5 +89,25 @@ class DashboardController extends Controller
             ]);
         }
         return Inertia::render('Dashboard');
+    }
+
+    public function getUsers(){
+        $users = User::all()->toJson();
+        return response($users);
+    }
+
+    public function getCVs(){
+        $cvs = CV::all()->toJson();
+        return response($cvs);
+    }
+
+    public function getOrgCVs(){
+        $orgCVs = OrgCV::with(['location'])->get()->toJson();
+        return response($orgCVs);
+    }
+
+    public function getJobAds(){
+        $jobAds = JobAd::with(['orgCv'])->get()->toJson();
+        return response($jobAds);
     }
 }

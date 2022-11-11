@@ -6,7 +6,6 @@ import BreezeDropdownLink from "@/Components/DropdownLink.vue";
 import BreezeNavLink from "@/Components/NavLink.vue";
 import BreezeResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import { Link } from "@inertiajs/inertia-vue3";
-import { Inertia } from "@inertiajs/inertia";
 const showingNavigationDropdown = ref(false);
 </script>
 
@@ -36,20 +35,6 @@ const showingNavigationDropdown = ref(false);
                                     :active="route().current('dashboard')"
                                 >
                                     Naslovna
-                                </BreezeNavLink>
-                                <BreezeNavLink
-                                    :href="route(`cv.create`)"
-                                    :active="route().current(`cv.create`)"
-                                >
-                                    <span class="capitalize">
-                                        {{ CVRoute }} Životopis</span
-                                    >
-                                </BreezeNavLink>
-                                <BreezeNavLink
-                                    :href="route(`search`)"
-                                    :active="route().current(`search`)"
-                                >
-                                    Traži
                                 </BreezeNavLink>
                             </div>
                         </div>
@@ -88,7 +73,7 @@ const showingNavigationDropdown = ref(false);
                                             method="post"
                                             as="button"
                                         >
-                                            Odjavi se
+                                            Log Out
                                         </BreezeDropdownLink>
                                     </template>
                                 </BreezeDropdown>
@@ -151,21 +136,7 @@ const showingNavigationDropdown = ref(false);
                             :href="route('dashboard')"
                             :active="route().current('dashboard')"
                         >
-                            Naslovna
-                        </BreezeResponsiveNavLink>
-                        <BreezeResponsiveNavLink
-                            :href="route(`cv.create`)"
-                            :active="route().current(`cv.create`)"
-                        >
-                            <span class="capitalize">
-                                {{ CVRoute }} Životopis</span
-                            >
-                        </BreezeResponsiveNavLink>
-                        <BreezeResponsiveNavLink
-                            :href="route('search')"
-                            :active="route().current('search')"
-                        >
-                            Traži
+                            Dashboard
                         </BreezeResponsiveNavLink>
                     </div>
 
@@ -186,7 +157,7 @@ const showingNavigationDropdown = ref(false);
                                 method="post"
                                 as="button"
                             >
-                                Odjavi se
+                                Log Out
                             </BreezeResponsiveNavLink>
                         </div>
                     </div>
@@ -212,17 +183,10 @@ const showingNavigationDropdown = ref(false);
 import { usePage } from "@inertiajs/inertia-vue3";
 
 export default {
-    name: "Authenticated.vue",
+    name: "AuthAdmin.vue",
     computed: {
         user() {
             return this.$store.getters.user;
-        },
-        CVRoute() {
-            if (usePage().props.value.auth.cv) {
-                return "Uredi";
-            } else {
-                return "Novi";
-            }
         },
     },
     beforeCreate() {
@@ -231,17 +195,6 @@ export default {
         // Store data can be initialized
         if (this.$store.getters.user === null) {
             this.$store.dispatch("setUser", usePage().props.value.auth.user);
-            // If the authorized user has CV, initialize CV
-            if (JSON.parse(usePage().props.value.auth.cv) !== null) {
-                this.$store.dispatch(
-                    "setCV",
-                    JSON.parse(usePage().props.value.auth.cv)
-                );
-            } else if (this.$store.getters.cv === null) {
-                this.$store.dispatch("refreshCV");
-                console.log("refreshCv");
-                console.log(this.$store.getters.cv);
-            }
         }
     },
 };

@@ -1,25 +1,28 @@
 const getters = {
-    cv(state){
+    cv(state) {
         return state.cv;
     },
-    availableSkills(state){
+    availableSkills(state) {
         return state.available_skills;
     },
-    availableContacts(state){
+    availableContacts(state) {
         return state.available_contacts;
     },
-    user(state){
+    user(state) {
         return state.user;
     },
-    search(state){
+    search(state) {
         return state.search;
     },
-    jobAd(state){
+    jobAd(state) {
         return state.jobAd;
     },
-    orgCv(state){
+    orgCv(state) {
         return state.orgCv;
-    }
-}
+    },
+    editUser(state) {
+        return state.editUser;
+    },
+};
 
 export default getters;

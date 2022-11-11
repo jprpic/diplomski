@@ -5,7 +5,7 @@
         </div>
     </div>
     <BreezeButton class="mt-2" type="button" @click="addExperience()"
-        >Add Experience</BreezeButton
+        >Dodaj iskustvo</BreezeButton
     >
 </template>
 

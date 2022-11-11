@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id')->unique()->constrained()->onDelete('cascade');
             $table->string('name');
             $table->string('description', 1500);
-            $table->string('img_url');
+            $table->string('img_url', 500);
             $table->unsignedInteger('postcode');
             $table->foreign('postcode')->references('code')->on('postcodes');
             $table->string('street');
