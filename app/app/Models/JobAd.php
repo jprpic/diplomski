@@ -31,7 +31,10 @@ class JobAd extends Model
     ];
 
     const VALID_MSGS = [
-        'skills.*' => 'Potrebno je unijeti tražene vještine.'
+        'skills.*' => 'Potrebno je unijeti tražene vještine.',
+        'responsibilities.*.max' => 'Odgovornost ne može imati više od 500 znakova!',
+        'responsibilities.*.min' => 'Odgovornost ne može imati manje od 10 znakova!',
+        'description' => 'Opis ne može imati više od 500 znakova!',
     ];
 
     public function orgCv(){

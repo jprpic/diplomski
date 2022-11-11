@@ -1,8 +1,8 @@
 <script setup>
-import BreezeButton from "@/Components/Button.vue"
-import SkillInput from "@/Components/Search/SkillInput.vue"
+import BreezeButton from "@/Components/Button.vue";
+import SkillInput from "@/Components/Search/SkillInput.vue";
 import AgeRangeInput from "@/Components/Search/AgeRangeInput";
-import LocationInput from "@/Components/Search/LocationInput"
+import LocationInput from "@/Components/Search/LocationInput";
 import SearchItem from "@/Components/Search/SearchItem";
 import TargetList from "@/Components/TargetList";
 </script>
@@ -11,47 +11,47 @@ import TargetList from "@/Components/TargetList";
     <div>
         <form @submit.prevent="submit">
             <AgeRangeInput></AgeRangeInput>
-            <LocationInput :postcodes = "postcodes" class="mt-2"></LocationInput>
+            <LocationInput :postcodes="postcodes" class="mt-2"></LocationInput>
             <SkillInput></SkillInput>
             <div class="flex items-center justify-end mt-2">
-                <BreezeButton class="ml-4" >
-                    Search
-                </BreezeButton>
+                <BreezeButton class="ml-4"> Traži </BreezeButton>
             </div>
         </form>
 
-        <TargetList :search="this.search" :searchedSkills="searchedSkills"></TargetList>
+        <TargetList
+            :search="this.search"
+            :searchedSkills="searchedSkills"
+        ></TargetList>
     </div>
 </template>
 
 <script>
-import {Inertia} from "@inertiajs/inertia";
+import { Inertia } from "@inertiajs/inertia";
 export default {
     name: "SearchBox",
-    props:['postcodes'],
+    props: ["postcodes"],
 
-    computed:{
-        search(){
+    computed: {
+        search() {
             return this.$store.getters.search;
         },
-        searchedSkills(){
+        searchedSkills() {
             const queryString = window.location.search;
-            if(queryString){
+            if (queryString) {
                 const urlParams = new URLSearchParams(queryString);
-                return urlParams.getAll('skills[]').map( skill => { return Number(skill); });
+                return urlParams.getAll("skills[]").map((skill) => {
+                    return Number(skill);
+                });
             }
             return [];
         },
     },
-    methods:{
-        submit(){
-            Inertia.get('/search', this.$store.getters.search);
+    methods: {
+        submit() {
+            Inertia.get("/search", this.$store.getters.search);
         },
-    }
-
-}
+    },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -10,7 +10,7 @@ import { Link } from "@inertiajs/inertia-vue3";
     <AuthOrg>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Your Job Ads
+                Vaši oglasi za posao
             </h2>
         </template>
 
@@ -35,12 +35,11 @@ import { Link } from "@inertiajs/inertia-vue3";
                                 class="ml-3 font-medium text-gray-700 dark:text-gray-300"
                             >
                                 <p>
-                                    It seems you don't have an About us! You can
-                                    start out by
+                                    Nemate opis tvrtke! Možete započeti s
                                     <Link
                                         href="/org-cv/create"
                                         class="font-semibold underline"
-                                        >Creating an About us</Link
+                                        >Kreiranjem 'O nama'</Link
                                     >!
                                 </p>
                             </div>
@@ -56,12 +55,12 @@ import { Link } from "@inertiajs/inertia-vue3";
                                 class="ml-3 font-medium text-gray-700 dark:text-gray-300"
                             >
                                 <p>
-                                    There seems nothing to be here! You can
-                                    start out by
+                                    Nemate niti jedan oglas za posao! Možete
+                                    započeti s
                                     <Link
                                         href="/job-ad/create"
                                         class="font-semibold underline"
-                                        >Creating a Job Ad</Link
+                                        >Kreiranjem oglasa</Link
                                     >!
                                 </p>
                             </div>
@@ -146,7 +145,7 @@ export default {
         RemoveAd(id) {
             Inertia.delete(`/job-ad/${id}`, {
                 onBefore: () =>
-                    confirm("Are you sure you want to delete this Job Ad?"),
+                    confirm("Jeste li sigurni da želite obrisati ovaj oglas?"),
             });
         },
         EditAd(id) {

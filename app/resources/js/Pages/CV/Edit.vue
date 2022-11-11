@@ -1,5 +1,5 @@
 <script setup>
-import BreezeAuthenticatedLayout from "@/Layouts/AuthUser.vue";
+import AuthAdmin from "@/Layouts/AuthAdmin.vue";
 import { Head, useForm } from "@inertiajs/inertia-vue3";
 import BreezeInput from "@/Components/Input.vue";
 import BreezeButton from "@/Components/Button.vue";
@@ -21,115 +21,19 @@ const props = defineProps({
         type: Array,
         required: true,
     },
+    propCv: {
+        type: String,
+        requied: true,
+    },
 });
-</script>
-
-<script>
-import { Inertia } from "@inertiajs/inertia";
-import { usePage } from "@inertiajs/inertia-vue3";
-import { toRaw } from "vue";
-
-export default {
-    name: "Create",
-    computed: {
-        CV() {
-            return this.$store.getters.cv;
-        },
-        validErrors() {
-            return toRaw(usePage().props.value.errors);
-        },
-        successFlash() {
-            return toRaw(usePage().props.value.flash.status);
-        },
-        isEdit() {
-            return Boolean(usePage().props.value.auth.cv);
-        },
-    },
-    methods: {
-        updateName(name) {
-            this.$store.dispatch("updateName", name);
-        },
-        updateImgUrl(imgUrl) {
-            this.$store.dispatch("updateImgUrl", imgUrl);
-        },
-        updateDescription(description) {
-            this.$store.dispatch("updateDescription", description);
-        },
-        updateJob(job) {
-            this.$store.dispatch("updateJob", job);
-        },
-        updateSex(value) {
-            this.$store.dispatch("updateSex", value);
-        },
-        updateReferences(references) {
-            this.$store.dispatch("updateReferences", references);
-        },
-        submit() {
-            if (this.isEdit) {
-                Inertia.post("/cv/edit", this.CV);
-            } else {
-                Inertia.post("/cv/", this.CV);
-            }
-        },
-    },
-    beforeCreate() {
-        // If a user wants to access edit but has no CV
-        this.$store.dispatch("setAvailableContacts", this.availableContacts);
-    },
-    beforeUpdate() {
-        // After sending POST req to edit CV
-        // Page will be reloaded and updated lifecycle hook
-        // Will be triggered, allowing the store CV to be reloaded
-        const cv = this.$store.getters.cv;
-        // Creating CV for the first time will update user'\s cv_id.
-        // If there is a validation error, prop CV will remain null
-        if (usePage().props.value.auth.cv) {
-            if (!cv.id) {
-                this.$store.dispatch(
-                    "setUser",
-                    usePage().props.value.auth.user
-                );
-            }
-            // Update CV if it'\s either just created or edited
-            if (
-                !cv.id ||
-                (cv.id &&
-                    cv.id !== JSON.parse(usePage().props.value.auth.cv).id)
-            ) {
-                this.$store.dispatch(
-                    "setCV",
-                    JSON.parse(usePage().props.value.auth.cv)
-                );
-            }
-        }
-    },
-};
 </script>
 
 <template>
     <Head title="Create" />
-    <BreezeAuthenticatedLayout>
+    <AuthAdmin>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                <div v-if="isEdit">
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <BreezeNavLink
-                            class="text-lg font-semibold"
-                            :href="route('cv.create')"
-                            :active="route().current('cv.create')"
-                        >
-                            Uredi
-                        </BreezeNavLink>
-                        <BreezeNavLink
-                            class="text-lg font-semibold"
-                            :href="route('cv.show', CV.id)"
-                            :active="route().current('cv.show', CV.id)"
-                        >
-                            Pregledaj
-                        </BreezeNavLink>
-                    </div>
-                </div>
-                <span v-else>Novi Životopis</span>
+                Uredi Životopis
             </h2>
         </template>
         <div class="py-12">
@@ -159,7 +63,10 @@ export default {
 
                         <form @submit.prevent="submit">
                             <div>
-                                <BreezeLabel for="name" value="Ime i prezime" />
+                                <BreezeLabel
+                                    for="name"
+                                    value="First and Last name"
+                                />
                                 <BreezeInput
                                     id="name"
                                     type="text"
@@ -173,7 +80,7 @@ export default {
 
                             <div class="flex w-full flex-wrap">
                                 <div class="mt-6">
-                                    <BreezeLabel for="sex" value="Spol" />
+                                    <BreezeLabel for="sex" value="Sex" />
                                     <select
                                         name="sex"
                                         id="sex"
@@ -183,17 +90,17 @@ export default {
                                         @input="updateSex($event.target.value)"
                                     >
                                         <option disabled value="">
-                                            Odaberite
+                                            Please select one
                                         </option>
-                                        <option value="M">Muško</option>
-                                        <option value="F">Žensko</option>
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
                                     </select>
                                 </div>
                                 <AgeInput></AgeInput>
                                 <div class="mt-6 ml-4 w-1/3">
                                     <BreezeLabel
                                         for="img_url"
-                                        value="Profilna slika URL"
+                                        value="Profile picture URL"
                                     />
                                     <BreezeInput
                                         id="img_url"
@@ -213,7 +120,7 @@ export default {
                             <div class="mt-2">
                                 <BreezeLabel
                                     for="description"
-                                    value="Opis profila"
+                                    value="Profile description"
                                 />
                                 <BreezeTextArea
                                     id="description"
@@ -228,16 +135,13 @@ export default {
 
                             <div class="mt-2">
                                 <span class="font-medium text-sm text-gray-700"
-                                    >Kontakti</span
+                                    >Contacts</span
                                 >
                                 <ContactList />
                             </div>
 
                             <div class="mt-2">
-                                <BreezeLabel
-                                    for="job"
-                                    value="Željena pozicija"
-                                />
+                                <BreezeLabel for="job" value="Job position" />
                                 <BreezeInput
                                     id="job"
                                     type="text"
@@ -251,7 +155,7 @@ export default {
                             <div class="mt-2">
                                 <span
                                     class="font-medium text-sm text-gray-700 pb-2"
-                                    >Iskustva</span
+                                    >Experiences</span
                                 >
                                 <ExperienceList />
                             </div>
@@ -259,14 +163,29 @@ export default {
                             <div class="mt-2">
                                 <span
                                     class="font-medium text-sm text-gray-700 pb-2"
-                                    >Vještine</span
+                                    >Skills</span
                                 >
                                 <SkillList />
                             </div>
 
+                            <!-- <div class="mt-2">
+                                <BreezeLabel
+                                    for="references"
+                                    value="References"
+                                />
+                                <BreezeTextArea
+                                    id="references"
+                                    rows="2"
+                                    :value="CV.references"
+                                    @input="
+                                        updateReferences($event.target.value)
+                                    "
+                                />
+                            </div> -->
+
                             <div class="flex items-center justify-end mt-4">
                                 <BreezeButton class="ml-4">
-                                    Pošalji
+                                    Submit
                                 </BreezeButton>
                             </div>
                         </form>
@@ -274,5 +193,59 @@ export default {
                 </div>
             </div>
         </div>
-    </BreezeAuthenticatedLayout>
+    </AuthAdmin>
 </template>
+
+<script>
+import { Inertia } from "@inertiajs/inertia";
+import { usePage } from "@inertiajs/inertia-vue3";
+import { toRaw } from "vue";
+
+export default {
+    name: "Edit.vue",
+    computed: {
+        CV() {
+            return this.$store.getters.cv;
+        },
+        validErrors() {
+            return toRaw(usePage().props.value.errors);
+        },
+        successFlash() {
+            return toRaw(usePage().props.value.flash.status);
+        },
+    },
+    methods: {
+        updateName(name) {
+            this.$store.dispatch("updateName", name);
+        },
+        updateImgUrl(imgUrl) {
+            this.$store.dispatch("updateImgUrl", imgUrl);
+        },
+        updateDescription(description) {
+            this.$store.dispatch("updateDescription", description);
+        },
+        updateJob(job) {
+            this.$store.dispatch("updateJob", job);
+        },
+        updateSex(value) {
+            this.$store.dispatch("updateSex", value);
+        },
+        updateReferences(references) {
+            this.$store.dispatch("updateReferences", references);
+        },
+        submit() {
+            Inertia.post("/cv/edit", this.CV);
+        },
+    },
+    created() {
+        const cv = JSON.parse(this.propCv);
+        this.$store.dispatch("setCvFromProp", cv);
+        // If a user wants to access edit but has no CV
+        this.$store.dispatch("setAvailableContacts", this.availableContacts);
+    },
+    beforeUpdate() {
+        const cv = JSON.parse(this.propCv);
+        this.$store.dispatch("setCvFromProp", cv);
+    },
+};
+</script>

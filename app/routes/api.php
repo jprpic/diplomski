@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CVController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/search', [SearchController::class, 'apiSearch']);
+
+Route::get('/users', [DashboardController::class, 'getUsers']);
+Route::get('/cvs', [DashboardController::class, 'getCVs']);
+Route::get('/org-cvs', [DashboardController::class, 'getOrgCVs']);
+Route::get('/job-ads', [DashboardController::class, 'getJobAds']);
+

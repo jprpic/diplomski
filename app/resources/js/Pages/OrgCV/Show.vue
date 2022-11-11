@@ -53,7 +53,7 @@ import JobAd from "@/Components/JobAd/Item.vue";
                                         :key="contact.contact_id"
                                     >
                                         <img
-                                            :src="getImgUrl(contact.contact_id)"
+                                            :src="getImgUrl(contact)"
                                             alt="contact icon"
                                             class="object-contain h-6 w-6"
                                         />
@@ -75,7 +75,7 @@ import JobAd from "@/Components/JobAd/Item.vue";
                                     class="object-contain h-10 w-10"
                                 />
                                 <span class="ml-2 text-xl font-bold"
-                                    >Open positions
+                                    >Otvorene pozicije
                                 </span>
                             </div>
                             <div v-for="ad in orgCv.job_ads" :key="ad.id">
@@ -102,10 +102,12 @@ import AuthUser from "@/Layouts/AuthUser";
 import AuthOrg from "@/Layouts/AuthOrg";
 import Empty from "@/Layouts/Empty.vue";
 import { Inertia } from "@inertiajs/inertia";
+import AuthAdmin from "@/Layouts/AuthAdmin";
 export default {
     components: {
         AuthUser,
         AuthOrg,
+        AuthAdmin,
         Empty,
     },
     props: {
@@ -124,6 +126,8 @@ export default {
                 return "auth-user";
             } else if (role_id === 2) {
                 return "auth-org";
+            } else if (role_id === 3) {
+                return "auth-admin";
             }
         },
     },
@@ -135,7 +139,7 @@ export default {
         },
         getImgUrl(contact_id) {
             return `/images/${this.getContactName(
-                contact_id
+                contact_id.contact_id
             ).toLowerCase()}.png`;
         },
         showAd(id) {

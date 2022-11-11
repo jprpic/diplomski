@@ -1,5 +1,4 @@
 <script setup>
-import AuthOrg from "@/Layouts/AuthOrg.vue";
 import SearchBox from "@/Components/JobAd/SearchBox";
 import { Head } from "@inertiajs/inertia-vue3";
 import BreezeInput from "@/Components/Input.vue";
@@ -11,10 +10,10 @@ import BreezeTextArea from "@/Components/TextArea.vue";
 <template>
     <Head title="Dashboard" />
 
-    <AuthOrg>
+    <component v-bind:is="layout">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Job Ad
+                Oglas za posao
             </h2>
         </template>
 
@@ -45,7 +44,7 @@ import BreezeTextArea from "@/Components/TextArea.vue";
                         </div>
                         <form @submit.prevent="submit">
                             <div>
-                                <BreezeLabel for="name" value="Job name" />
+                                <BreezeLabel for="name" value="Ime pozicije" />
                                 <BreezeInput
                                     id="name"
                                     type="text"
@@ -60,7 +59,7 @@ import BreezeTextArea from "@/Components/TextArea.vue";
                             <div class="mt-2">
                                 <BreezeLabel
                                     for="job_description"
-                                    value="Job Description"
+                                    value="Opis Posla"
                                 />
                                 <BreezeTextArea
                                     id="job_description"
@@ -77,7 +76,7 @@ import BreezeTextArea from "@/Components/TextArea.vue";
                             <div class="mt-2">
                                 <BreezeLabel
                                     for="job_responsibilities"
-                                    value="Job Responsibilities"
+                                    value="Odgovornosti"
                                 />
                                 <div
                                     v-for="(
@@ -110,14 +109,14 @@ import BreezeTextArea from "@/Components/TextArea.vue";
                                     class="mt-2"
                                     type="button"
                                     @click="addJobResponsibility()"
-                                    >Add Responsibility</BreezeButton
+                                    >Dodaj odgovornost</BreezeButton
                                 >
                             </div>
 
                             <div class="mt-2">
                                 <BreezeLabel
                                     for="name"
-                                    value="Candidates Info"
+                                    value="Opis traženog kandidata"
                                 />
                                 <div class="px-4 py-2 border rounded-md">
                                     <SearchBox
@@ -128,7 +127,7 @@ import BreezeTextArea from "@/Components/TextArea.vue";
 
                             <div class="flex items-center justify-end mt-2">
                                 <BreezeButton class="ml-4">
-                                    Submit
+                                    Pošalji
                                 </BreezeButton>
                             </div>
                         </form>
@@ -136,16 +135,22 @@ import BreezeTextArea from "@/Components/TextArea.vue";
                 </div>
             </div>
         </div>
-    </AuthOrg>
+    </component>
 </template>
 
 <script>
 import { toRaw } from "vue";
 import { usePage } from "@inertiajs/inertia-vue3";
 import { Inertia } from "@inertiajs/inertia";
+import AuthOrg from "@/Layouts/AuthOrg.vue";
+import AuthAdmin from "@/Layouts/AuthAdmin.vue";
 
 export default {
     name: "JobAdCreate.vue",
+    components: {
+        AuthAdmin,
+        AuthOrg,
+    },
     props: {
         postcodes: {
             required: true,
@@ -163,6 +168,14 @@ export default {
         },
         jobAd() {
             return this.$store.getters.jobAd;
+        },
+        layout() {
+            const role_id = usePage().props.value.auth.user.role_id;
+            if (role_id === 2) {
+                return "auth-org";
+            } else if (role_id === 3) {
+                return "auth-admin";
+            }
         },
     },
     methods: {
@@ -194,6 +207,7 @@ export default {
     },
     beforeCreate() {
         const jobAd = {
+            id: this.jobAdData.id,
             name: this.jobAdData.name,
             description: this.jobAdData.description,
             minAge: this.jobAdData.minAge,
@@ -201,6 +215,8 @@ export default {
             minExp: this.jobAdData.minExp,
             maxExp: this.jobAdData.maxExp,
             skills: this.jobAdData.skills,
+            county: this.jobAdData.county,
+            city: this.jobAdData.city,
             responsibilities: this.jobAdData.responsibilities,
         };
         this.$store.dispatch("setJobAd", jobAd);

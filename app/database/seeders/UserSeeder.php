@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
         $employee = User::create([
             'name' => 'Jakov Prpic',
             'email' => 'jakov@gmail.com',
-            'email_verified_at' => now(),
+            'email_verified_at' => null,
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
             'role_id' => Role::ROLE_EMPLOYEE,
@@ -36,6 +36,16 @@ class UserSeeder extends Seeder
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
             'role_id' => Role::ROLE_ORGANIZATION,
+            'cv_id' => null
+        ]);
+
+        $admin = User::create([
+            'name' => 'admin',
+            'email' => 'admin@admin.com',
+            'email_verified_at' => now(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'remember_token' => Str::random(10),
+            'role_id' => Role::ROLE_ADMIN,
             'cv_id' => null
         ]);
 

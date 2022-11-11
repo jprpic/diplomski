@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('user_id')->unique()->constrained()->onDelete('cascade');
             $table->string('name');
             $table->string('img_url', 500);
-            $table->string('description', 800);
+            $table->string('description', 1500);
             $table->string('job');
             $table->string('references');
             $table->timestamps();
