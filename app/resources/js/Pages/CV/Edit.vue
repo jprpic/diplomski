@@ -100,7 +100,7 @@ const props = defineProps({
                                 <div class="mt-6 ml-4 w-1/3">
                                     <BreezeLabel
                                         for="img_url"
-                                        value="Profile picture URL"
+                                        value="URL Profilne slike"
                                     />
                                     <BreezeInput
                                         id="img_url"

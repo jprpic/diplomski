@@ -17,7 +17,7 @@ import JobAd from "@/Components/JobAd/Item.vue";
                                 <div class="min-w-fit mt-2">
                                     <img
                                         :src="orgCv.img_url"
-                                        alt="Company image"
+                                        alt="Profilna slika"
                                         class="object-contain max-h-24"
                                     />
                                 </div>

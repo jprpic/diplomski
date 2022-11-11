@@ -6,7 +6,7 @@
             <div class="flex-initial">
                 <img
                     :src="target.img_url"
-                    alt="Profile picture"
+                    alt="Profilna slika"
                     class="object-contain h-20 w-20 rounded-full"
                 />
             </div>

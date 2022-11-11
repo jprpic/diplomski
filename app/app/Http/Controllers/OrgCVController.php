@@ -27,7 +27,7 @@ class OrgCVController extends Controller
             return Redirect::route('org-cv.create')->withErrors($validator);
         }
         OrgCV::store($reqCV);
-        return Redirect::route('org-cv.create')->with('status', 'About us successfully created!');
+        return Redirect::route('org-cv.create')->with('status', '\'O nama\' uspješno kreiran!');
     }
 
     function update(Request $request){

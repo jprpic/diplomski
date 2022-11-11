@@ -20,7 +20,7 @@ import { Head } from "@inertiajs/inertia-vue3";
                                     <div class="min-w-fit mt-2">
                                         <img
                                             :src="jobAd.org_cv.img_url"
-                                            alt="Company image"
+                                            alt="Profilna slika"
                                             class="object-contain h-32 w-32"
                                         />
                                     </div>

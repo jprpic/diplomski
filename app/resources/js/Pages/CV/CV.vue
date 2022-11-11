@@ -16,7 +16,7 @@ import { Head } from "@inertiajs/inertia-vue3";
                                     <div class="min-w-fit mt-2">
                                         <img
                                             :src="CV.img_url"
-                                            alt="Profile picture"
+                                            alt="Profilna slika"
                                             class="outline outline-offset-2 outline-1 outline-gray-900/75 object-contain h-32 w-32 rounded-lg"
                                         />
                                     </div>
