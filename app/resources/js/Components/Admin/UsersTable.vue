@@ -17,7 +17,7 @@
                     <div class="table-cell text-left">Rola</div>
                     <div class="table-cell text-center">Životopis</div>
                     <div class="table-cell text-center">O nama</div>
-                    <div class="table-cell text-left">Akcije</div>
+                    <div class="table-cell text-left w-16">Akcije</div>
                 </div>
             </div>
             <div class="table-row-group">

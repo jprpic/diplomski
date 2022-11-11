@@ -26835,7 +26835,7 @@ var _hoisted_4 = {
   "class": "table w-full"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"table-header-group\"><div class=\"table-row font-semibold text-lg\"><div class=\"table-cell text-center\">Id</div><div class=\"table-cell text-center\">Id Korisnika</div><div class=\"table-cell text-left\">Ime i Prezime</div><div class=\"table-cell text-left\">Traženi Posao</div><div class=\"table-cell text-center\">Spol</div><div class=\"table-cell text-center\">Godine Iskustva</div><div class=\"table-cell text-left\">Akcije</div></div></div>", 1);
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"table-header-group\"><div class=\"table-row font-semibold text-lg\"><div class=\"table-cell text-center\">Id</div><div class=\"table-cell text-center\">Id Korisnika</div><div class=\"table-cell text-left\">Ime i Prezime</div><div class=\"table-cell text-left\">Traženi Posao</div><div class=\"table-cell text-center\">Spol</div><div class=\"table-cell text-center\">Godine Iskustva</div><div class=\"table-cell text-left w-16\">Akcije</div></div></div>", 1);
 
 var _hoisted_6 = {
   "class": "table-row-group"
@@ -26953,7 +26953,7 @@ var _hoisted_4 = {
   "class": "table w-full"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"table-header-group\"><div class=\"table-row font-semibold text-lg\"><div class=\"table-cell text-center\">Id</div><div class=\"table-cell text-left\">Tvrtka</div><div class=\"table-cell text-left\">Posao</div><div class=\"table-cell text-center\">Dob</div><div class=\"table-cell text-center\">Godine Iskustva</div><div class=\"table-cell text-left\">Županija</div><div class=\"table-cell text-left\">Akcije</div></div></div>", 1);
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"table-header-group\"><div class=\"table-row font-semibold text-lg\"><div class=\"table-cell text-center\">Id</div><div class=\"table-cell text-left\">Tvrtka</div><div class=\"table-cell text-left\">Posao</div><div class=\"table-cell text-center w-16\">Dob</div><div class=\"table-cell text-center\">Godine Iskustva</div><div class=\"table-cell text-left\">Županija</div><div class=\"table-cell text-left w-16\">Akcije</div></div></div>", 1);
 
 var _hoisted_6 = {
   "class": "table-row-group"
@@ -27071,7 +27071,7 @@ var _hoisted_4 = {
   "class": "table w-full"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"table-header-group\"><div class=\"table-row font-semibold text-lg\"><div class=\"table-cell text-center\">Id</div><div class=\"table-cell text-left\">Ime</div><div class=\"table-cell text-left\">Adresa</div><div class=\"table-cell text-left\">Akcije</div></div></div>", 1);
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"table-header-group\"><div class=\"table-row font-semibold text-lg\"><div class=\"table-cell text-center\">Id</div><div class=\"table-cell text-left\">Ime</div><div class=\"table-cell text-left\">Adresa</div><div class=\"table-cell text-left w-16\">Akcije</div></div></div>", 1);
 
 var _hoisted_6 = {
   "class": "table-row-group"
@@ -27174,7 +27174,7 @@ var _hoisted_4 = {
   "class": "table w-full"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"table-header-group\"><div class=\"table-row font-semibold text-lg\"><div class=\"table-cell text-center\">Id</div><div class=\"table-cell text-left\">Ime i Prezime</div><div class=\"table-cell text-left\">Email</div><div class=\"table-cell text-left\">Rola</div><div class=\"table-cell text-center\">Životopis</div><div class=\"table-cell text-center\">O nama</div><div class=\"table-cell text-left\">Akcije</div></div></div>", 1);
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"table-header-group\"><div class=\"table-row font-semibold text-lg\"><div class=\"table-cell text-center\">Id</div><div class=\"table-cell text-left\">Ime i Prezime</div><div class=\"table-cell text-left\">Email</div><div class=\"table-cell text-left\">Rola</div><div class=\"table-cell text-center\">Životopis</div><div class=\"table-cell text-center\">O nama</div><div class=\"table-cell text-left w-16\">Akcije</div></div></div>", 1);
 
 var _hoisted_6 = {
   "class": "table-row-group"

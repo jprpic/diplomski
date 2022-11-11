@@ -14,7 +14,7 @@
                     <div class="table-cell text-center">Id</div>
                     <div class="table-cell text-left">Ime</div>
                     <div class="table-cell text-left">Adresa</div>
-                    <div class="table-cell text-left">Akcije</div>
+                    <div class="table-cell text-left w-16">Akcije</div>
                 </div>
             </div>
             <div class="table-row-group">

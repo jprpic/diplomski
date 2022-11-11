@@ -17,7 +17,7 @@
                     <div class="table-cell text-left">Traženi Posao</div>
                     <div class="table-cell text-center">Spol</div>
                     <div class="table-cell text-center">Godine Iskustva</div>
-                    <div class="table-cell text-left">Akcije</div>
+                    <div class="table-cell text-left w-16">Akcije</div>
                 </div>
             </div>
             <div class="table-row-group">

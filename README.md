@@ -12,4 +12,10 @@ php artisan migrate:fresh --seed
 
 php artisan serve
 
-Za login koristiti jakov@gmail.com password
+## Login
+
+Korisnik - jakov@gmail.com
+Tvrtka - ferit@gmail.com
+Admin - admin@admin.com
+
+Lozinka je 'password' za svaki profil.

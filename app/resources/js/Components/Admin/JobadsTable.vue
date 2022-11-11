@@ -14,10 +14,10 @@
                     <div class="table-cell text-center">Id</div>
                     <div class="table-cell text-left">Tvrtka</div>
                     <div class="table-cell text-left">Posao</div>
-                    <div class="table-cell text-center">Dob</div>
+                    <div class="table-cell text-center w-16">Dob</div>
                     <div class="table-cell text-center">Godine Iskustva</div>
                     <div class="table-cell text-left">Županija</div>
-                    <div class="table-cell text-left">Akcije</div>
+                    <div class="table-cell text-left w-16">Akcije</div>
                 </div>
             </div>
             <div class="table-row-group">
