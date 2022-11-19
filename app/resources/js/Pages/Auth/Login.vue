@@ -103,6 +103,7 @@ export default {
     mounted() {
         this.$store.dispatch("refreshCV");
         this.$store.dispatch("refreshOrgCV");
+        this.$store.dispatch("setUser", null);
     },
 };
 </script>

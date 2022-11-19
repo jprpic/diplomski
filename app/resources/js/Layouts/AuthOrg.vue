@@ -248,7 +248,6 @@ export default {
             );
         } else if (this.$store.getters.orgCv === null) {
             this.$store.dispatch("refreshOrgCV");
-            console.log("refreshing");
         }
     },
 };

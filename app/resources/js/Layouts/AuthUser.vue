@@ -51,6 +51,14 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     Traži
                                 </BreezeNavLink>
+                                <BreezeNavLink
+                                    :href="route(`user.applications`)"
+                                    :active="
+                                        route().current(`user.applications`)
+                                    "
+                                >
+                                    Prijave
+                                </BreezeNavLink>
                             </div>
                         </div>
 
@@ -167,6 +175,12 @@ const showingNavigationDropdown = ref(false);
                         >
                             Traži
                         </BreezeResponsiveNavLink>
+                        <BreezeResponsiveNavLink
+                            :href="route('user.applications')"
+                            :active="route().current('user.applications')"
+                        >
+                            Prijave
+                        </BreezeResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
@@ -239,8 +253,6 @@ export default {
                 );
             } else if (this.$store.getters.cv === null) {
                 this.$store.dispatch("refreshCV");
-                console.log("refreshCv");
-                console.log(this.$store.getters.cv);
             }
         }
     },

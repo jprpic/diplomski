@@ -58,7 +58,18 @@ import { Head } from "@inertiajs/inertia-vue3";
                                     Oglasi za posao
                                 </button>
                             </div>
+                            <div>
+                                <button
+                                    class="bg-transparent text-indigo-600 font-semibold hover:bg-indigo-400 hover:text-white py-2 px-4 border border-indigo-400 rounded"
+                                    :class="activeClass('applications')"
+                                    type="button"
+                                    @click="setCategory('applications')"
+                                >
+                                    Prijave na posao
+                                </button>
+                            </div>
                         </div>
+
                         <div class="flex mt-4 justify-center">
                             <component v-bind:is="datatable"> </component>
                         </div>
@@ -74,6 +85,7 @@ import UsersTable from "@/Components/Admin/UsersTable";
 import CvsTable from "@/Components/Admin/CvsTable";
 import JobadsTable from "@/Components/Admin/JobadsTable";
 import OrgcvsTable from "@/Components/Admin/OrgcvsTable";
+import ApplicationsTable from "@/Components/Admin/ApplicationsTable";
 
 export default {
     name: "DashboardAdmin.vue",
@@ -82,6 +94,7 @@ export default {
         CvsTable,
         JobadsTable,
         OrgcvsTable,
+        ApplicationsTable
     },
     data() {
         return {

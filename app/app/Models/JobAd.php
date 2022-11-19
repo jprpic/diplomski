@@ -34,7 +34,8 @@ class JobAd extends Model
         'skills.*' => 'Potrebno je unijeti tražene vještine.',
         'responsibilities.*.max' => 'Odgovornost ne može imati više od 500 znakova!',
         'responsibilities.*.min' => 'Odgovornost ne može imati manje od 10 znakova!',
-        'description' => 'Opis ne može imati više od 500 znakova!',
+        'description.max' => 'Opis ne može imati više od 500 znakova!',
+        'description.required' => 'Opis posla je obavezan!',
     ];
 
     public function orgCv(){
