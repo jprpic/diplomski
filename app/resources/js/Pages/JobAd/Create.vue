@@ -70,6 +70,7 @@ import BreezeTextArea from "@/Components/TextArea.vue";
                                             $event.target.value
                                         )
                                     "
+                                    required
                                 />
                             </div>
 

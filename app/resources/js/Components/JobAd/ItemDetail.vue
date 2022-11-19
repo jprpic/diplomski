@@ -60,10 +60,19 @@ import { Link } from "@inertiajs/inertia-vue3";
             </div>
         </button>
         <div class="mt-4">
-            <TargetList
-                :search="this.jobAd"
-                :searchedSkills="this.jobAd.skills"
-            />
+            <div class="flex flex-row justify-center space-x-8">
+                <div>
+                    <button type="button" @click="setComponent('kandidati')" :class="activeClass('kandidati')" class="bg-transparent text-indigo-600 font-semibold hover:bg-indigo-400 hover:text-white py-2 px-4 border-indigo-400 rounded">
+                            Kandidati
+                    </button>
+                </div>
+                <div>
+                    <button type="button" @click="setComponent('prijavnici')" :class="activeClass('prijavnici')" class="bg-transparent text-indigo-600 font-semibold hover:bg-indigo-400 hover:text-white py-2 px-4 border-indigo-400 rounded">
+                            Prijavnici
+                    </button>
+                </div>
+            </div>
+            <component :is="componentClass" v-bind="componentProperties"></component>
         </div>
     </div>
 </template>
@@ -71,14 +80,20 @@ import { Link } from "@inertiajs/inertia-vue3";
 <script>
 import { usePage } from "@inertiajs/inertia-vue3";
 import TargetList from "@/Components/TargetList.vue";
+import ApplicantsList from "@/Components/ApplicantsList";
 import { Inertia } from "@inertiajs/inertia";
 export default {
     name: "Item.vue",
-    components: { TargetList },
+    components: { TargetList, ApplicantsList },
     props: {
         jobAd: {
             required: true,
         },
+    },
+    data() {
+        return {
+            component: 'kandidati'
+        }
     },
     computed: {
         wantedSkills() {
@@ -88,6 +103,23 @@ export default {
             );
             return skillNames.join(", ");
         },
+        componentClass() {
+            return this.component === 'kandidati' ? 'TargetList' : 'ApplicantsList';
+        },
+        componentProperties: function() {
+            if (this.component === 'kandidati') {
+                return {
+                    search : this.jobAd,
+                    searchedSkills : this.jobAd.skills
+                }
+            }
+            else {
+                return {
+                    jobAd: this.jobAd,
+                    searchedSkills : this.jobAd.skills
+                }
+            }
+        }
     },
     methods: {
         getSkillName(id) {
@@ -96,6 +128,12 @@ export default {
         },
         showDetails() {
             Inertia.visit(`/job-ad/${this.jobAd.id}/details`);
+        },
+        setComponent(value) {
+            this.component = value;
+        },
+        activeClass(component) {
+            return this.component === component ? "border-b-4" : "";
         },
     },
 };

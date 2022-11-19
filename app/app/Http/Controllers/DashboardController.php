@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Application;
 use App\Models\CV;
 use App\Models\JobAd;
 use App\Models\OrgCV;
@@ -66,11 +67,13 @@ class DashboardController extends Controller
 
                 $suggestedJobAds = [];
                 foreach(array_keys($matchingJobAds) as $index){
+                    $jobAdInfo = JobAd::with(['orgCv' => function ($query) {
+                        $query->select('id', 'name', 'img_url');
+                    }])->select(['id','name','org_c_v_s_id'])->find($jobAds[$index]['id'])->toArray();
                     $jobAd = array(
-                        "jobAd" => JobAd::with(['orgCv' => function ($query) {
-                            $query->select('id', 'name', 'img_url');
-                        }])->select(['id','name','org_c_v_s_id'])->find($jobAds[$index]['id'])->toArray(),
-                        "skills" => $matchingJobAds[$index]
+                        "jobAd" => $jobAdInfo,
+                        "skills" => $matchingJobAds[$index],
+                        "isApplied" => Application::where('job_id', $jobAdInfo['id'])->where('user_id', $request->user()->id)->first()
                     );
                     $suggestedJobAds[] = $jobAd;
                 }
@@ -109,5 +112,10 @@ class DashboardController extends Controller
     public function getJobAds(){
         $jobAds = JobAd::with(['orgCv'])->get()->toJson();
         return response($jobAds);
+    }
+
+    public function getApplications() {
+        $applications = Application::with(['job_ad','user'])->get()->toJson();
+        return response($applications);
     }
 }

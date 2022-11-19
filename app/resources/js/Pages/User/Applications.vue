@@ -10,7 +10,7 @@ import SuggestedJobItem from "@/Components/JobAd/SuggestedJobItem";
     <AuthUser>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Preporučeni oglasi za posao
+                Oglasi na koje ste prijavljeni
             </h2>
         </template>
 

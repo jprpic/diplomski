@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\CVController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JobAdController;
@@ -67,11 +68,17 @@ Route::get('/org-cv/{id}', [OrgCVController::class, 'show'])->name('org-cv.show'
 Route::post('/org-cv/{id}/edit', [OrgCVController::class, 'update'])->name('org-cv.update')->middleware(['auth']);
 Route::delete('/org-cv/{id}', [OrgCVController::class, 'delete'])->name('org-cv.delete')->middleware(['auth','admin']);
 
-
 Route::middleware(['auth'])->group(function() {
     Route::get('/search', [SearchController::class, 'index'])->name('search');
     Route::post('/search', [SearchController::class, 'search'])->name('search.results');
+    Route::get('/applications', [ApplicationController::class, 'userIndex'])->name('user.applications');
+    Route::post('/application/', [ApplicationController::class,'store'])->name('application.store');
 });
+
+
+
+
+
 
 
 

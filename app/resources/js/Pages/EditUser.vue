@@ -158,7 +158,6 @@ export default {
         },
     },
     created() {
-        console.log(this.propUser);
         const editUser = JSON.parse(this.propUser);
         this.$store.dispatch("setEditUser", editUser);
     },

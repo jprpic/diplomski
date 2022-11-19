@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\CVController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SearchController;
@@ -27,4 +28,11 @@ Route::get('/users', [DashboardController::class, 'getUsers']);
 Route::get('/cvs', [DashboardController::class, 'getCVs']);
 Route::get('/org-cvs', [DashboardController::class, 'getOrgCVs']);
 Route::get('/job-ads', [DashboardController::class, 'getJobAds']);
+
+Route::get('/applications', [DashboardController::class, 'getApplications']);
+
+Route::prefix('/application')->group(function() {
+    Route::get('/', [ApplicationController::class,'index'])->name('application.index');
+    Route::get('/{id}', [ApplicationController::class,'applicantsIndex'])->name('application.applicantsIndex');
+});
 

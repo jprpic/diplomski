@@ -24,8 +24,8 @@
                         </div>
                         <div>
                             <span
-                                >{{ target["postcodes.name"] }},
-                                {{ target["postcodes.county"] }}</span
+                                >{{ userCity }},
+                                {{ userCounty }}</span
                             >
                         </div>
                     </div>
@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import { usePage } from "@inertiajs/inertia-vue3";
+import {usePage} from "@inertiajs/inertia-vue3";
 
 export default {
     name: "SearchItem.vue",
@@ -110,7 +110,36 @@ export default {
                 missingSkillIDs.includes(el.id)
             );
         },
+        userCity() {
+          if(this.target["postcodes.name"]){
+            return this.target["postcodes.name"];
+          }else if(this.target.location.name) {
+            return this.target.location.name;
+          }
+          return '';
+        },
+      userCounty() {
+        if(this.target["postcodes.county"]){
+          return this.target["postcodes.county"];
+        }else if(this.target.location.county) {
+          return this.target.location.county;
+        }
+        return '';
+      },
+      userAge() {
+        if(this.target["postcodes.county"]){
+          return this.target["postcodes.county"];
+        }else if(this.target.location.county) {
+          return this.target.location.county;
+        }
+        return '';
+      }
     },
+  created() {
+      if(this.target.age === undefined) {
+        this.target.age = Math.floor((new Date() - new Date(this.target.birthdate).getTime()) / 3.15576e+10);
+      }
+  }
 };
 </script>
 

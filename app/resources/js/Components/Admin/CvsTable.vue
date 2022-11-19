@@ -94,7 +94,6 @@ export default {
         refreshData() {
             axios.get("/api/cvs").then((response) => {
                 this.cvs = response.data;
-                console.log(this.cvs);
             });
         },
     },

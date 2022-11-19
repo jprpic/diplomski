@@ -91,7 +91,6 @@ export default {
         refreshData() {
             axios.get("/api/job-ads").then((response) => {
                 this.jobAds = response.data;
-                console.log(this.jobAds);
             });
         },
     },
