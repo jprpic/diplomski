@@ -25,6 +25,7 @@ class ApplicationController extends Controller
             $app = new Application;
             $app->job_id = $job_id;
             $app->user_id = $user_id;
+            $app->status = 'pending';
             $app->save();
             return response('Successfully stored application!')->setStatusCode(201);
         }
@@ -99,9 +100,33 @@ class ApplicationController extends Controller
     }
 
     public function applicantsIndex(Request $request, $job_id){
-        $applications = Application::where('job_id', $job_id)->get('user_id')->toArray();
-        $users = CV::with(['location','skillProficiencies'])->whereIn('user_id',array_column($applications, 'user_id'))->get()->toJson();
-        return response()->json($users);
+        $applications = Application::where('job_id', $job_id)->get()->toArray();
+        $users = CV::with(['location','skillProficiencies'])->whereIn('user_id',array_column($applications, 'user_id'))->get()->toArray();
+        $result = [];
+        for($i = 0; $i < count($applications); $i++) {
+            $result[] = array(
+                "application" => $applications[$i],
+                "user" => $users[$i]
+            );
+        }
+        return response()->json($result);
+    }
+
+    public function respondApplication(Request $request) {
+        $data = $request->json()->all();
+        $user_id = $data['user_id'];
+        $job_id = $data['job_id'];
+        $response = $data['response'];
+
+        $job = JobAd::where('id',$job_id)->first();
+        $owner_id = $job->orgCv->user->id;
+        if($request->user()->role_id == Role::ROLE_ADMIN || $request->user()->id == $owner_id) {
+            $responseLabel = $response ? 'accepted' : 'denied';
+            Application::where('job_id',$job_id)->where('user_id', $user_id)->update(['status' => $responseLabel]);
+            $app = Application::where('job_id',$job_id)->where('user_id', $user_id)->first();
+            return response($app)->setStatusCode(200);
+        }
+        return response()->noContent()->setStatusCode(403);
     }
 
 

@@ -43,6 +43,7 @@ import BreezeButton from "@/Components/Button";
                         class="inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest focus:outline-none focus:shadow-outline-gray transition ease-in-out duration-150"
                         type="button"
                         :class="buttonClass"
+                        :disabled="buttonDisabled"
                         @click="applyForJob()"
                     >
                         {{ applyButtonlabel }}
@@ -113,14 +114,40 @@ export default {
             );
         },
         buttonClass() {
-            if (this.isAppliedData) {
-                return "bg-indigo-400  hover:bg-indigo-300 active:bg-indigo-500  focus:border-indigo-500 ";
-            } else {
+            if (!this.isAppliedData) {
                 return "bg-gray-800  hover:bg-gray-700 active:bg-gray-900  focus:border-gray-900 ";
+            }
+            switch (this.isAppliedData?.status) {
+                case "pending":
+                    return "bg-indigo-400  hover:bg-indigo-300 active:bg-indigo-500  focus:border-indigo-500 ";
+                case "denied":
+                    return "bg-red-400 hover:bg-red-300 active:bg-red-500 focus:border-red-500";
+                case "accepted":
+                    return "bg-green-400 hover:bg-green-300 active:bg-green-500 focus:border-green-500";
+                default:
+                    return "bg-indigo-400  hover:bg-indigo-300 active:bg-indigo-500  focus:border-indigo-500 ";
             }
         },
         applyButtonlabel() {
-            return this.isAppliedData ? "Prijavljen" : "Prijavi se";
+            if (!this.isAppliedData) {
+                return "Prijavi se";
+            }
+            switch (this.isAppliedData?.status) {
+                case "pending":
+                    return "Prijavljen";
+                case "denied":
+                    return "Odbijen";
+                case "accepted":
+                    return "Prihvaćen!";
+                default:
+                    return "Prijavljen";
+            }
+        },
+        buttonDisabled() {
+            return (
+                this.isApplied?.status === "accepted" ||
+                this.isApplied?.status === "denied"
+            );
         },
     },
     methods: {

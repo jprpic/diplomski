@@ -73,6 +73,7 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/search', [SearchController::class, 'search'])->name('search.results');
     Route::get('/applications', [ApplicationController::class, 'userIndex'])->name('user.applications');
     Route::post('/application/', [ApplicationController::class,'store'])->name('application.store');
+    Route::post('/application/response', [ApplicationController::class ,'respondApplication'])->name('application.response');
 });
 
 

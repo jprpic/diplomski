@@ -22236,7 +22236,7 @@ var __default__ = {
   },
   data: function data() {
     return {
-      applicants: []
+      data: []
     };
   },
   methods: {
@@ -22247,8 +22247,28 @@ var __default__ = {
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_1___default().get("/api/application/".concat(this.jobAd.id)).then(function (response) {
-        _this.applicants = JSON.parse(response.data);
+        _this.data = response.data;
+        console.log(_this.data);
       });
+    },
+    sendResponse: function sendResponse(btnId, user_id, response) {
+      var _this2 = this;
+
+      var model = {
+        user_id: user_id,
+        job_id: this.jobAd.id,
+        response: response
+      };
+      axios__WEBPACK_IMPORTED_MODULE_1___default().post("/application/response", model).then(function (res) {
+        _this2.data[btnId].application.status = res.data.status;
+        console.log(res);
+      });
+    },
+    getDenyButtonClass: function getDenyButtonClass(response) {
+      return response ? "bg-red-600 hover:bg-red-500 active:bg-red-700 focus:border-red-700" : "bg-red-400 hover:bg-red-300 active:bg-red-500 focus:border-red-500";
+    },
+    getAcceptButtonClass: function getAcceptButtonClass(response) {
+      return response ? "bg-green-600 hover:bg-green-500 active:bg-green-700 focus:border-green-700" : "bg-green-400 hover:bg-green-300 active:bg-green-500 focus:border-green-500";
     }
   },
   mounted: function mounted() {
@@ -23695,14 +23715,51 @@ var __default__ = {
       return 100 * Object.keys(this.skills.matchingSkills).length / (Object.keys(this.skills.matchingSkills).length + Object.keys(this.skills.differentSkills).length) + "%";
     },
     buttonClass: function buttonClass() {
-      if (this.isAppliedData) {
-        return "bg-indigo-400  hover:bg-indigo-300 active:bg-indigo-500  focus:border-indigo-500 ";
-      } else {
+      var _this$isAppliedData;
+
+      if (!this.isAppliedData) {
         return "bg-gray-800  hover:bg-gray-700 active:bg-gray-900  focus:border-gray-900 ";
+      }
+
+      switch ((_this$isAppliedData = this.isAppliedData) === null || _this$isAppliedData === void 0 ? void 0 : _this$isAppliedData.status) {
+        case "pending":
+          return "bg-indigo-400  hover:bg-indigo-300 active:bg-indigo-500  focus:border-indigo-500 ";
+
+        case "denied":
+          return "bg-red-400 hover:bg-red-300 active:bg-red-500 focus:border-red-500";
+
+        case "accepted":
+          return "bg-green-400 hover:bg-green-300 active:bg-green-500 focus:border-green-500";
+
+        default:
+          return "bg-indigo-400  hover:bg-indigo-300 active:bg-indigo-500  focus:border-indigo-500 ";
       }
     },
     applyButtonlabel: function applyButtonlabel() {
-      return this.isAppliedData ? "Prijavljen" : "Prijavi se";
+      var _this$isAppliedData2;
+
+      if (!this.isAppliedData) {
+        return "Prijavi se";
+      }
+
+      switch ((_this$isAppliedData2 = this.isAppliedData) === null || _this$isAppliedData2 === void 0 ? void 0 : _this$isAppliedData2.status) {
+        case "pending":
+          return "Prijavljen";
+
+        case "denied":
+          return "Odbijen";
+
+        case "accepted":
+          return "Prihvaćen!";
+
+        default:
+          return "Prijavljen";
+      }
+    },
+    buttonDisabled: function buttonDisabled() {
+      var _this$isApplied, _this$isApplied2;
+
+      return ((_this$isApplied = this.isApplied) === null || _this$isApplied === void 0 ? void 0 : _this$isApplied.status) === "accepted" || ((_this$isApplied2 = this.isApplied) === null || _this$isApplied2 === void 0 ? void 0 : _this$isApplied2.status) === "denied";
     }
   },
   methods: {
@@ -27655,41 +27712,72 @@ var _hoisted_1 = {
   key: 0,
   "class": "flex flex-col"
 };
-var _hoisted_2 = ["onClick"];
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "grow"
+}, null, -1
+/* HOISTED */
+);
+
 var _hoisted_3 = {
+  "class": "grow mr-4 mt-2"
+};
+var _hoisted_4 = ["onClick"];
+var _hoisted_5 = {
+  "class": "flex flex-row space-x-4 ml-2 px-4"
+};
+var _hoisted_6 = ["onClick"];
+var _hoisted_7 = ["onClick"];
+var _hoisted_8 = {
   key: 1,
   "class": "flex justify-center w-full"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-lg font-semibold"
 }, " Nažalost, nemate prijavnika na ovom oglasu! ", -1
 /* HOISTED */
 );
 
-var _hoisted_5 = [_hoisted_4];
+var _hoisted_10 = [_hoisted_9];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return $data.applicants.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.applicants, function (target) {
+  return $data.data.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.data, function (target) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-      "class": "flex justify-center",
-      key: target.id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-      "class": "mt-2 w-2/3",
+      "class": "flex justify-around items-center",
+      key: target.user.id
+    }, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      "class": "w-full",
       type: "button",
       onClick: function onClick($event) {
-        return $options.showCV(target.id);
+        return $options.showCV(target.user.id);
       }
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["SearchItem"], {
-      target: target,
+      target: target.user,
       searchedSkills: $props.searchedSkills
     }, null, 8
     /* PROPS */
     , ["target", "searchedSkills"])], 8
     /* PROPS */
-    , _hoisted_2)]);
+    , _hoisted_4)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      type: "button",
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest focus:outline-none focus:shadow-outline-gray transition ease-in-out duration-150", $options.getDenyButtonClass(target.application.status === 'denied')]),
+      onClick: function onClick($event) {
+        return $options.sendResponse($data.data.indexOf(target), target.user.user_id, false);
+      }
+    }, " Odbij ", 10
+    /* CLASS, PROPS */
+    , _hoisted_6), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      type: "button",
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest focus:outline-none focus:shadow-outline-gray transition ease-in-out duration-150", $options.getAcceptButtonClass(target.application.status === 'accepted')]),
+      onClick: function onClick($event) {
+        return $options.sendResponse($data.data.indexOf(target), target.user.user_id, true);
+      }
+    }, " Primi ", 10
+    /* CLASS, PROPS */
+    , _hoisted_7)])]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))])) : !$data.applicants.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, _hoisted_5)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
+  ))])) : !$data.data.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, _hoisted_10)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
 }
 
 /***/ }),
@@ -29214,16 +29302,17 @@ var _hoisted_9 = {
 var _hoisted_10 = {
   "class": "mt-2"
 };
-var _hoisted_11 = {
+var _hoisted_11 = ["disabled"];
+var _hoisted_12 = {
   "class": "mt-2 flex w-full justify-center"
 };
-var _hoisted_12 = {
+var _hoisted_13 = {
   "class": "text-md font-medium w-1/3 rounded-lg bg-gradient-to-r from-lime-400/50 flex flex-col text-center py-2"
 };
-var _hoisted_13 = {
+var _hoisted_14 = {
   "class": "text-lime-900"
 };
-var _hoisted_14 = {
+var _hoisted_15 = {
   "class": "text-md font-medium w-1/3 rounded-lg bg-gradient-to-l from-red-400/50 flex flex-col text-center py-2"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -29247,20 +29336,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest focus:outline-none focus:shadow-outline-gray transition ease-in-out duration-150", $options.buttonClass]),
     type: "button",
+    disabled: $options.buttonDisabled,
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $options.applyForJob();
     })
-  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.applyButtonlabel), 3
-  /* TEXT, CLASS */
-  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.skills.matchingSkills, function (skillId) {
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.applyButtonlabel), 11
+  /* TEXT, CLASS, PROPS */
+  , _hoisted_11)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.skills.matchingSkills, function (skillId) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       key: skillId
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.getSkillName(skillId)), 1
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.getSkillName(skillId)), 1
     /* TEXT */
     )]);
   }), 128
   /* KEYED_FRAGMENT */
-  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.skills.differentSkills, function (skillId) {
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.skills.differentSkills, function (skillId) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       key: skillId
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.getSkillName(skillId)), 1
